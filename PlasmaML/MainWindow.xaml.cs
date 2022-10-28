@@ -40,7 +40,7 @@ namespace PlasmaML
                 Multiselect = false,
                 InitialDirectory = "E:\\Documents\\GitHub\\PlasmaML\\OBJ_test",
                 CheckFileExists = true,
-                DefaultExt = "OBJ File|*.obj"
+                Filter = "OBJ File|*.obj"
             };
             if (d.ShowDialog() == true)
             {
