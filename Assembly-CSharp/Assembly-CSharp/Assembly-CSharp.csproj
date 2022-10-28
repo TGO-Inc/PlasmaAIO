@@ -1,0 +1,916 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9630B967-A794-42D6-88F7-A469318D67CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Assembly-CSharp</RootNamespace>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnity">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="GlitchLibraryAssembly">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\GlitchLibraryAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="jianglong.library.gif-player">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\jianglong.library.gif-player.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PlasmaLibrary">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\PlasmaLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="QFSW.QC">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\QFSW.QC.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Rewired_Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Serialization.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Tayx.Graphy">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Tayx.Graphy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Unity Projects\Plasma Remade\BUILD\Plasma Remade_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Unity Projects\Plasma Remade\BUILD\Plasma Remade_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="ZFBrowser">
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\ZFBrowser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccelerometerAgent.cs" />
+    <Compile Include="AccelerometerDriver.cs" />
+    <Compile Include="ActiveObjectType.cs" />
+    <Compile Include="Agent.cs" />
+    <Compile Include="AgentDebugger.cs" />
+    <Compile Include="AgentDebuggerCell.cs" />
+    <Compile Include="AgentDebuggerPanel.cs" />
+    <Compile Include="AgentGestalt.cs" />
+    <Compile Include="AgentId.cs" />
+    <Compile Include="AgentProperty.cs" />
+    <Compile Include="AgentPropertyHandlerAttribute.cs" />
+    <Compile Include="Articulation.cs" />
+    <Compile Include="AssetController.cs" />
+    <Compile Include="AudioController.cs" />
+    <Compile Include="AuraParameterSet.cs" />
+    <Compile Include="AuraPostProcess.cs" />
+    <Compile Include="AuraPostProcess2.cs" />
+    <Compile Include="AuraPostProcess3.cs" />
+    <Compile Include="AutoRotator.cs" />
+    <Compile Include="BatchingTester.cs" />
+    <Compile Include="BeautifyEffect\Beautify.cs" />
+    <Compile Include="BeautifyEffect\BeautifyProfile.cs" />
+    <Compile Include="BeautifyEffect\BEAUTIFY_BLINK_STYLE.cs" />
+    <Compile Include="BeautifyEffect\BEAUTIFY_BOKEH_COMPOSITION.cs" />
+    <Compile Include="BeautifyEffect\BEAUTIFY_DOF_CAMERA_SETTINGS.cs" />
+    <Compile Include="BeautifyEffect\BEAUTIFY_OUTLINE_STAGE.cs" />
+    <Compile Include="BeautifyEffect\BEAUTIFY_PRERENDER_EVENT.cs" />
+    <Compile Include="BeautifyEffect\BEAUTIFY_PRESET.cs" />
+    <Compile Include="BeautifyEffect\BEAUTIFY_QUALITY.cs" />
+    <Compile Include="BeautifyEffect\BEAUTIFY_TMO.cs" />
+    <Compile Include="BeautifyEffect\CameraAnimator.cs" />
+    <Compile Include="BeautifyEffect\Demo1.cs" />
+    <Compile Include="BeautifyEffect\Demo2.cs" />
+    <Compile Include="BeautifyEffect\Demo4.cs" />
+    <Compile Include="BeautifyEffect\FreeCameraMove.cs" />
+    <Compile Include="BeautifyEffect\OnBeforeFocusEvent.cs" />
+    <Compile Include="BeautifyEffect\SphereAnimator.cs" />
+    <Compile Include="Behavior\Data.cs" />
+    <Compile Include="Behavior\DataSelectionProvider.cs" />
+    <Compile Include="Behavior\IDataSelectionProvider.cs" />
+    <Compile Include="Behavior\Sketch.cs" />
+    <Compile Include="Behavior\SketchConnection.cs" />
+    <Compile Include="Behavior\SketchNode.cs" />
+    <Compile Include="Behavior\SketchNodePort.cs" />
+    <Compile Include="Behavior\SketchNotifications.cs" />
+    <Compile Include="BiomeGestalt.cs" />
+    <Compile Include="BiomeReferences.cs" />
+    <Compile Include="BlockerWindowAgent.cs" />
+    <Compile Include="BlockerWindowDriver.cs" />
+    <Compile Include="BlockingTutorialGestalt.cs" />
+    <Compile Include="BooleanOperatorAgent.cs" />
+    <Compile Include="BrowserAgent.cs" />
+    <Compile Include="BuildReplayCanvas.cs" />
+    <Compile Include="BuildReplayComponent.cs" />
+    <Compile Include="ButtonAgent.cs" />
+    <Compile Include="ButtonDriver.cs" />
+    <Compile Include="ButtonSimpleAgent.cs" />
+    <Compile Include="ButtonSimpleDriver.cs" />
+    <Compile Include="CameraAgent.cs" />
+    <Compile Include="CameraDriver.cs" />
+    <Compile Include="CameraFakeControllerFPS.cs" />
+    <Compile Include="CameraMasterAgent.cs" />
+    <Compile Include="CameraMasterDriver.cs" />
+    <Compile Include="CharacterJointDestroyListener.cs" />
+    <Compile Include="CheckStaticCSharpEventValue.cs" />
+    <Compile Include="ChrisSimpleMover.cs" />
+    <Compile Include="ClawAgent.cs" />
+    <Compile Include="ClawDriver.cs" />
+    <Compile Include="CloudDrawer.cs" />
+    <Compile Include="CollisionDetectorAgent.cs" />
+    <Compile Include="CollisionDetectorCollisionListener.cs" />
+    <Compile Include="CollisionDetectorDriver.cs" />
+    <Compile Include="ColorComposerAgent.cs" />
+    <Compile Include="ColorDecomposerAgent.cs" />
+    <Compile Include="ColorEntityAttribute.cs" />
+    <Compile Include="Colorizer.cs" />
+    <Compile Include="ColorMapperAgent.cs" />
+    <Compile Include="ColorTweenerAgent.cs" />
+    <Compile Include="CommandBufferBlurRefraction.cs" />
+    <Compile Include="CommandBufferGrabPass.cs" />
+    <Compile Include="CommandInterfacerAgent.cs" />
+    <Compile Include="Common\Math\Basis.cs" />
+    <Compile Include="Common\Math\QTransform.cs" />
+    <Compile Include="Common\Math\Smoothing.cs" />
+    <Compile Include="Common\Math\VectorUtil.cs" />
+    <Compile Include="ComparatorAgent.cs" />
+    <Compile Include="ComponentDriver.cs" />
+    <Compile Include="ComponentHandler.cs" />
+    <Compile Include="ComponentMeshHandler.cs" />
+    <Compile Include="ComponentRotator.cs" />
+    <Compile Include="ComponentRotatorSettings.cs" />
+    <Compile Include="ConsoleController.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Controllers.cs" />
+    <Compile Include="CorridorAgent.cs" />
+    <Compile Include="CorridorDriver.cs" />
+    <Compile Include="CounterAgent.cs" />
+    <Compile Include="CylinderTester.cs" />
+    <Compile Include="DebugToolsController.cs" />
+    <Compile Include="Delayer.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="DeviceComponentModifier.cs" />
+    <Compile Include="DeviceControllerAgent.cs" />
+    <Compile Include="DeviceListenerAgent.cs" />
+    <Compile Include="DigitalGaugeAgent.cs" />
+    <Compile Include="DigitalGaugeDriver.cs" />
+    <Compile Include="DirectionalIndicatorAgent.cs" />
+    <Compile Include="DirectionalIndicatorDriver.cs" />
+    <Compile Include="Director.cs" />
+    <Compile Include="DirectorController.cs" />
+    <Compile Include="DirectorData.cs" />
+    <Compile Include="DispatcherAgent.cs" />
+    <Compile Include="DisplayChanger.cs" />
+    <Compile Include="DisplayCommonDriver.cs" />
+    <Compile Include="DisplayCommonnAgent.cs" />
+    <Compile Include="DisplayUIButton.cs" />
+    <Compile Include="DisplayUIConverter.cs" />
+    <Compile Include="DisplayUIElement.cs" />
+    <Compile Include="DisplayUIImage.cs" />
+    <Compile Include="DisplayUIText.cs" />
+    <Compile Include="DistanceSensorAgent.cs" />
+    <Compile Include="DistanceSensorDriver.cs" />
+    <Compile Include="DockingStationAgent.cs" />
+    <Compile Include="DockingStationDriver.cs" />
+    <Compile Include="DoorAgent.cs" />
+    <Compile Include="DoorDriver.cs" />
+    <Compile Include="DoorSimpleAgent.cs" />
+    <Compile Include="DoorSimpleDriver.cs" />
+    <Compile Include="DroneAgent.cs" />
+    <Compile Include="DroneDriver.cs" />
+    <Compile Include="DynamicGridProjector.cs" />
+    <Compile Include="DynamicProp.cs" />
+    <Compile Include="DynamicPropsManager.cs" />
+    <Compile Include="EasyFSM\EasyFSM.cs" />
+    <Compile Include="EasyFSM\EasyFSMController.cs" />
+    <Compile Include="EasyFSM\EasyFSMEnum.cs" />
+    <Compile Include="EasyFSM\EasyState.cs" />
+    <Compile Include="EasyFSM\EasyStateMachine.cs" />
+    <Compile Include="EasyFSM\EasyTransition.cs" />
+    <Compile Include="EffectsTester.cs" />
+    <Compile Include="EmissiveLabelAgent.cs" />
+    <Compile Include="EmissiveLabelDriver.cs" />
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="EnvironmentController.cs" />
+    <Compile Include="EnvironmentControllerAgent.cs" />
+    <Compile Include="EnvironmentPreset.cs" />
+    <Compile Include="EventBroadcasterAgent.cs" />
+    <Compile Include="EventListenerAgent.cs" />
+    <Compile Include="EvilScreenShotterStandalone.cs" />
+    <Compile Include="ExhaustAgent.cs" />
+    <Compile Include="ExhaustDriver.cs" />
+    <Compile Include="FanAgent.cs" />
+    <Compile Include="FanDriver.cs" />
+    <Compile Include="FastColorPicker.cs" />
+    <Compile Include="FemaleSocketPoint.cs" />
+    <Compile Include="FlipFlopAgent.cs" />
+    <Compile Include="FoliageLightSetter.cs" />
+    <Compile Include="FollowTargetOnUpdate.cs" />
+    <Compile Include="FormatterAgent.cs" />
+    <Compile Include="FrameAgent.cs" />
+    <Compile Include="FrameDriver.cs" />
+    <Compile Include="FrontalExtenderAgent.cs" />
+    <Compile Include="FrontalExtenderDriver.cs" />
+    <Compile Include="FunctionCallerAgent.cs" />
+    <Compile Include="FunctionEntryAgent.cs" />
+    <Compile Include="FXTester.cs" />
+    <Compile Include="GamepadInterfaceAgent.cs" />
+    <Compile Include="GamepadInterfaceDriver.cs" />
+    <Compile Include="GateAgent.cs" />
+    <Compile Include="GateControllerAgent.cs" />
+    <Compile Include="GlobalControllers.cs" />
+    <Compile Include="GPSAgent.cs" />
+    <Compile Include="GPSController.cs" />
+    <Compile Include="GPSDriver.cs" />
+    <Compile Include="GPSTagAgent.cs" />
+    <Compile Include="GPSTagDriver.cs" />
+    <Compile Include="GPSTrackerAgent.cs" />
+    <Compile Include="GPSTrackerDriver.cs" />
+    <Compile Include="GrabDetectorAgent.cs" />
+    <Compile Include="GradientClass.cs" />
+    <Compile Include="GradientToTexture.cs" />
+    <Compile Include="GraphicsControllers.cs" />
+    <Compile Include="GrassQuality.cs" />
+    <Compile Include="GrassTestChris.cs" />
+    <Compile Include="GravityGun.cs" />
+    <Compile Include="GyroscopeAgent.cs" />
+    <Compile Include="GyroscopeDriver.cs" />
+    <Compile Include="HeightFogGlobalQuality.cs" />
+    <Compile Include="HintGestalt.cs" />
+    <Compile Include="Holder.cs" />
+    <Compile Include="ImageBlitterAgent.cs" />
+    <Compile Include="ImageDebugger.cs" />
+    <Compile Include="ImageDebuggerCell.cs" />
+    <Compile Include="ImageExporterAgent.cs" />
+    <Compile Include="ImageGeneratorAgent.cs" />
+    <Compile Include="ImpactSensorAgent.cs" />
+    <Compile Include="ImpactSensorCollisionListener.cs" />
+    <Compile Include="ImpactSensorDriver.cs" />
+    <Compile Include="ImpactSoundCollisionListener.cs" />
+    <Compile Include="InteractiveMeshFollow.cs" />
+    <Compile Include="ISmoothScrollListProvider.cs" />
+    <Compile Include="JoystickAgent.cs" />
+    <Compile Include="JoystickDriver.cs" />
+    <Compile Include="JsonCreationConverter.cs" />
+    <Compile Include="KeyboardAgent.cs" />
+    <Compile Include="KeyboardDriver.cs" />
+    <Compile Include="KeypadAgent.cs" />
+    <Compile Include="KeypadDriver.cs" />
+    <Compile Include="KnobAgent.cs" />
+    <Compile Include="KnobDriver.cs" />
+    <Compile Include="LabelAgent.cs" />
+    <Compile Include="LabelDriver.cs" />
+    <Compile Include="LampAgent.cs" />
+    <Compile Include="LampDriver.cs" />
+    <Compile Include="LateralExtenderAgent.cs" />
+    <Compile Include="LateralExtenderDriver.cs" />
+    <Compile Include="LCDAgent.cs" />
+    <Compile Include="LCDDriver.cs" />
+    <Compile Include="LedAgent.cs" />
+    <Compile Include="LedDriver.cs" />
+    <Compile Include="Lever1AxisAgent.cs" />
+    <Compile Include="Lever1AxisDriver.cs" />
+    <Compile Include="LightProbesChris.cs" />
+    <Compile Include="LightSensorAgent.cs" />
+    <Compile Include="LightSensorDriver.cs" />
+    <Compile Include="LinkBallAgent.cs" />
+    <Compile Include="LinkBallDriver.cs" />
+    <Compile Include="LoadingScreen.cs" />
+    <Compile Include="LocalCharacterInterpolation.cs" />
+    <Compile Include="LoggerAgent.cs" />
+    <Compile Include="LoggerController.cs" />
+    <Compile Include="LogicOperatorAgent.cs" />
+    <Compile Include="LogMonitorAgent.cs" />
+    <Compile Include="LUACommonAgent.cs" />
+    <Compile Include="LUAFunctionAgent.cs" />
+    <Compile Include="LUAProgramAgent.cs" />
+    <Compile Include="MagnetAgent.cs" />
+    <Compile Include="MagnetDriver.cs" />
+    <Compile Include="MapperAgent.cs" />
+    <Compile Include="MaterialTransitionerTransparentParameters.cs" />
+    <Compile Include="MathExpressionAgent.cs" />
+    <Compile Include="MatSphereBehaviour.cs" />
+    <Compile Include="MechanicFunctions.cs" />
+    <Compile Include="MechanicState.cs" />
+    <Compile Include="MountAgent.cs" />
+    <Compile Include="MountDriver.cs" />
+    <Compile Include="MoveVertices.cs" />
+    <Compile Include="MultiPropertyReaderAgent.cs" />
+    <Compile Include="NFCInterfaceAgent.cs" />
+    <Compile Include="NFCInterfaceDriver.cs" />
+    <Compile Include="NFCTagAgent.cs" />
+    <Compile Include="NFCTagDriver.cs" />
+    <Compile Include="NodeCanvas\Tasks\Conditions\CheckFunctionSetValueInt.cs" />
+    <Compile Include="NumberArrayAgent.cs" />
+    <Compile Include="NumberArrayComposerAgent.cs" />
+    <Compile Include="NumberArrayDecomposerAgent.cs" />
+    <Compile Include="NumberComparatorAgent.cs" />
+    <Compile Include="NumberDecoratorAgent.cs" />
+    <Compile Include="NumberNegatorAgent.cs" />
+    <Compile Include="NumberTweenerAgent.cs" />
+    <Compile Include="NUSBaker.cs" />
+    <Compile Include="OutputInterfacerAgent.cs" />
+    <Compile Include="PanelWindowAgent.cs" />
+    <Compile Include="PanelWindowDriver.cs" />
+    <Compile Include="ParserAgent.cs" />
+    <Compile Include="ParticleEmitterCommonDriver.cs" />
+    <Compile Include="PercentageMapperAgent.cs" />
+    <Compile Include="PhysicsForceAgent.cs" />
+    <Compile Include="PhysicsUtilities.cs" />
+    <Compile Include="PIDControllerAgent.cs" />
+    <Compile Include="PistonAgent.cs" />
+    <Compile Include="PistonDriver.cs" />
+    <Compile Include="Plasma.cs" />
+    <Compile Include="PlasmaArticulationBody.cs" />
+    <Compile Include="PlasmaCannonAgent.cs" />
+    <Compile Include="PlasmaCannonDriver.cs" />
+    <Compile Include="PlasmaCollidersGroup.cs" />
+    <Compile Include="PlasmaLodDebugger.cs" />
+    <Compile Include="PlasmaOverlayModeEnum.cs" />
+    <Compile Include="PlasmaPhysicsConstraint.cs" />
+    <Compile Include="PlasmaPhysicsConstraintConstantRelativeForce.cs" />
+    <Compile Include="PlasmaProfiler.cs" />
+    <Compile Include="PlasmaProjectile.cs" />
+    <Compile Include="PlasmaQualitySetting.cs" />
+    <Compile Include="PlasmaRay.cs" />
+    <Compile Include="PlasmaRayStatus.cs" />
+    <Compile Include="PlasmaTerrainProjector.cs" />
+    <Compile Include="PlasmaTogglerAgent.cs" />
+    <Compile Include="PlasmaTogglerDriver.cs" />
+    <Compile Include="PlasmAuraRenderer.cs" />
+    <Compile Include="PlayerPreferences.cs" />
+    <Compile Include="PolygonDrawerAgent.cs" />
+    <Compile Include="PositionalHingeAgent.cs" />
+    <Compile Include="PositionalHingeDriver.cs" />
+    <Compile Include="PostEffectsQuality.cs" />
+    <Compile Include="PowerSwitchAgent.cs" />
+    <Compile Include="PowerSwitchDriver.cs" />
+    <Compile Include="PreloadScene.cs" />
+    <Compile Include="ProcessorAgent.cs" />
+    <Compile Include="ProcessorDriver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyInterfacerAgent.cs" />
+    <Compile Include="PropertyReaderAgent.cs" />
+    <Compile Include="ProximitySensorAgent.cs" />
+    <Compile Include="ProximitySensorDriver.cs" />
+    <Compile Include="QualitySettingsController.cs" />
+    <Compile Include="QuarterCylinderWindowAgent.cs" />
+    <Compile Include="QuarterCylinderWindowDriver.cs" />
+    <Compile Include="RandomNumberAgent.cs" />
+    <Compile Include="RangeMapperAgent.cs" />
+    <Compile Include="RangeTesterAgent.cs" />
+    <Compile Include="RaycastFunctions.cs" />
+    <Compile Include="RectTransformExtensions.cs" />
+    <Compile Include="ReflectionHelpers.cs" />
+    <Compile Include="ReflectionProbesQuality.cs" />
+    <Compile Include="RelayAgent.cs" />
+    <Compile Include="RenderQueueController.cs" />
+    <Compile Include="RepeaterAgent.cs" />
+    <Compile Include="RigidbodyCharacter.cs" />
+    <Compile Include="RigidbodyCharacterTriggerListener.cs" />
+    <Compile Include="RoofAgent.cs" />
+    <Compile Include="RoofDriver.cs" />
+    <Compile Include="RotationalHingeAgent.cs" />
+    <Compile Include="RotationalHingeDriver.cs" />
+    <Compile Include="RotationalHingeOtherAgent.cs" />
+    <Compile Include="RotationalHingeOtherDriver.cs" />
+    <Compile Include="RotationOverlay.cs" />
+    <Compile Include="RotatorProcessData.cs" />
+    <Compile Include="RouterAgent.cs" />
+    <Compile Include="ScaleOverlay.cs" />
+    <Compile Include="ScreenAgent.cs" />
+    <Compile Include="Screener.cs" />
+    <Compile Include="ScreenerItem.cs" />
+    <Compile Include="ScrollRectNoDragging.cs" />
+    <Compile Include="ScrollWheelBypass.cs" />
+    <Compile Include="ScrollWheelCatcher.cs" />
+    <Compile Include="SelectorAgent.cs" />
+    <Compile Include="SensorTriggerListener.cs" />
+    <Compile Include="SequencerAgent.cs" />
+    <Compile Include="SerializedAgent.cs" />
+    <Compile Include="SerializedAssetsLibrary.cs" />
+    <Compile Include="SerializedComponent.cs" />
+    <Compile Include="SerializedDevice.cs" />
+    <Compile Include="SerializedDeviceBlueprint.cs" />
+    <Compile Include="SerializedDeviceMetaData.cs" />
+    <Compile Include="SerializedDyamicProp.cs" />
+    <Compile Include="SerializedPropsManager.cs" />
+    <Compile Include="SerializedSocket.cs" />
+    <Compile Include="SerializedWorld.cs" />
+    <Compile Include="SerializedWorldMetaData.cs" />
+    <Compile Include="SerializedWorldMinimalMetaData.cs" />
+    <Compile Include="SerialPortAgent.cs" />
+    <Compile Include="SerialPortDriver.cs" />
+    <Compile Include="SevenSegmentDisplayAgent.cs" />
+    <Compile Include="SevenSegmentDisplayDriver.cs" />
+    <Compile Include="ShapeDrawerAgent.cs" />
+    <Compile Include="ShockAbsorberAgent.cs" />
+    <Compile Include="ShockAbsorberDriver.cs" />
+    <Compile Include="SimpleInterpolation.cs" />
+    <Compile Include="SketchNodePortOperationAttribute.cs" />
+    <Compile Include="SketchNotificationStrings.cs" />
+    <Compile Include="SliderAgent.cs" />
+    <Compile Include="SliderDriver.cs" />
+    <Compile Include="SmallerHingeAgent.cs" />
+    <Compile Include="SmallerHingeDriver.cs" />
+    <Compile Include="SmokeEmitterAgent.cs" />
+    <Compile Include="SmokeEmitterDriver.cs" />
+    <Compile Include="SnappingGeneric.cs" />
+    <Compile Include="SocketsTest.cs" />
+    <Compile Include="SpeakerAgent.cs" />
+    <Compile Include="SpeakerDriver.cs" />
+    <Compile Include="SplineMaker.cs" />
+    <Compile Include="SpotlightAgent.cs" />
+    <Compile Include="SpotlightDriver.cs" />
+    <Compile Include="SpriteColorMapper.cs" />
+    <Compile Include="StageControllerAgent.cs" />
+    <Compile Include="SteamController.cs" />
+    <Compile Include="StorageHelperController.cs" />
+    <Compile Include="StructureTriggerListener.cs" />
+    <Compile Include="SubComponentHandler.cs" />
+    <Compile Include="SwitchAgent.cs" />
+    <Compile Include="SwitchDriver.cs" />
+    <Compile Include="SynchronizerAgent.cs" />
+    <Compile Include="TabItem.cs" />
+    <Compile Include="TabletAgent.cs" />
+    <Compile Include="TabletDriver.cs" />
+    <Compile Include="TagSelectorAttribute.cs" />
+    <Compile Include="TerrainQuality.cs" />
+    <Compile Include="TextArrayAgent.cs" />
+    <Compile Include="TextArrayComposerAgent.cs" />
+    <Compile Include="TextArrayDecomposerAgent.cs" />
+    <Compile Include="TextColorMapper.cs" />
+    <Compile Include="TextDrawerAgent.cs" />
+    <Compile Include="TextEditorAgent.cs" />
+    <Compile Include="TextManipulatorAgent.cs" />
+    <Compile Include="TextureBlitter.cs" />
+    <Compile Include="TextureBlitter2.cs" />
+    <Compile Include="TextureScale.cs" />
+    <Compile Include="TheLineRenderer.cs" />
+    <Compile Include="TheLineRendererFactory.cs" />
+    <Compile Include="TheMeshChain.cs" />
+    <Compile Include="TheMeshChainRenderer.cs" />
+    <Compile Include="TheraBytes\BetterUi\AlphaTransitions.cs" />
+    <Compile Include="TheraBytes\BetterUi\AnimationTransitions.cs" />
+    <Compile Include="TheraBytes\BetterUi\AspectRatio.cs" />
+    <Compile Include="TheraBytes\BetterUi\AspectRatioExtensions.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterAspectRatioFitter.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterAxisAlignedLayoutGroup.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterButton.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterContentSizeFitter.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterDropdown.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterGridLayoutGroup.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterHorizontalLayoutGroup.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterImage.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterInputField.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterLayoutElement.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterLocator.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterRawImage.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterScrollbar.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterScrollRect.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterSelectable.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterSlider.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterText.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterTextMeshProDropdown.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterTextMeshProInputField.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterTextMeshProUGUI.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterToggle.cs" />
+    <Compile Include="TheraBytes\BetterUi\BetterVerticalLayoutGroup.cs" />
+    <Compile Include="TheraBytes\BetterUi\Color32Transitions.cs" />
+    <Compile Include="TheraBytes\BetterUi\ColorMode.cs" />
+    <Compile Include="TheraBytes\BetterUi\ColorTransitions.cs" />
+    <Compile Include="TheraBytes\BetterUi\DpiManager.cs" />
+    <Compile Include="TheraBytes\BetterUi\FloatSizeConfigCollection.cs" />
+    <Compile Include="TheraBytes\BetterUi\FloatSizeModifier.cs" />
+    <Compile Include="TheraBytes\BetterUi\GameObjectActivator.cs" />
+    <Compile Include="TheraBytes\BetterUi\IBetterHorizontalOrVerticalLayoutGroup.cs" />
+    <Compile Include="TheraBytes\BetterUi\IBetterTransitionUiElement.cs" />
+    <Compile Include="TheraBytes\BetterUi\IImageAppearanceProvider.cs" />
+    <Compile Include="TheraBytes\BetterUi\IIsActive.cs" />
+    <Compile Include="TheraBytes\BetterUi\ILayoutChildDependency.cs" />
+    <Compile Include="TheraBytes\BetterUi\ImageAppearanceProviderHelper.cs" />
+    <Compile Include="TheraBytes\BetterUi\ImpactMode.cs" />
+    <Compile Include="TheraBytes\BetterUi\IngameResolutionMonitor.cs" />
+    <Compile Include="TheraBytes\BetterUi\IResolutionDependency.cs" />
+    <Compile Include="TheraBytes\BetterUi\IsCertainAspectRatio.cs" />
+    <Compile Include="TheraBytes\BetterUi\IsCertainScreenOrientation.cs" />
+    <Compile Include="TheraBytes\BetterUi\IScreenConfigConnection.cs" />
+    <Compile Include="TheraBytes\BetterUi\IScreenTypeCheck.cs" />
+    <Compile Include="TheraBytes\BetterUi\ISizeConfigCollection.cs" />
+    <Compile Include="TheraBytes\BetterUi\IsScreenOfCertainDeviceInfo.cs" />
+    <Compile Include="TheraBytes\BetterUi\IsScreenOfCertainSize.cs" />
+    <Compile Include="TheraBytes\BetterUi\Margin.cs" />
+    <Compile Include="TheraBytes\BetterUi\MarginSizeConfigCollection.cs" />
+    <Compile Include="TheraBytes\BetterUi\MarginSizeModifier.cs" />
+    <Compile Include="TheraBytes\BetterUi\MaterialEffect.cs" />
+    <Compile Include="TheraBytes\BetterUi\MaterialPropertyTransition.cs" />
+    <Compile Include="TheraBytes\BetterUi\Materials.cs" />
+    <Compile Include="TheraBytes\BetterUi\ObjectActivenessTransitions.cs" />
+    <Compile Include="TheraBytes\BetterUi\RectTransformData.cs" />
+    <Compile Include="TheraBytes\BetterUi\RectTransformExtensions.cs" />
+    <Compile Include="TheraBytes\BetterUi\ResolutionMonitor.cs" />
+    <Compile Include="TheraBytes\BetterUi\ResolutionSizer.cs" />
+    <Compile Include="TheraBytes\BetterUi\ScreenDependentSize.2.cs" />
+    <Compile Include="TheraBytes\BetterUi\ScreenDependentSize.cs" />
+    <Compile Include="TheraBytes\BetterUi\ScreenInfo.cs" />
+    <Compile Include="TheraBytes\BetterUi\ScreenTypeConditions.cs" />
+    <Compile Include="TheraBytes\BetterUi\SingletonScriptableObject.cs" />
+    <Compile Include="TheraBytes\BetterUi\SizeChangeTracker.cs" />
+    <Compile Include="TheraBytes\BetterUi\SizeConfigCollection.cs" />
+    <Compile Include="TheraBytes\BetterUi\SizeDeltaSizer.cs" />
+    <Compile Include="TheraBytes\BetterUi\SizeModifierCollection.cs" />
+    <Compile Include="TheraBytes\BetterUi\SpriteSwapTransitions.cs" />
+    <Compile Include="TheraBytes\BetterUi\TransformScaler.cs" />
+    <Compile Include="TheraBytes\BetterUi\Transitions.cs" />
+    <Compile Include="TheraBytes\BetterUi\TransitionStateCollection.2.cs" />
+    <Compile Include="TheraBytes\BetterUi\TransitionStateCollection.cs" />
+    <Compile Include="TheraBytes\BetterUi\Vector2SizeConfigCollection.cs" />
+    <Compile Include="TheraBytes\BetterUi\Vector2SizeModifier.cs" />
+    <Compile Include="TheraBytes\BetterUi\Vector3SizeConfigCollection.cs" />
+    <Compile Include="TheraBytes\BetterUi\Vector3SizeModifier.cs" />
+    <Compile Include="TheraBytes\BetterUi\VertexMaterialData.cs" />
+    <Compile Include="ThrusterAgent.cs" />
+    <Compile Include="ThrusterDriver.cs" />
+    <Compile Include="TickerAgent.cs" />
+    <Compile Include="TimelineAgent.cs" />
+    <Compile Include="TimerAgent.cs" />
+    <Compile Include="TLRTester.cs" />
+    <Compile Include="TouchDisplayCommonAgent.cs" />
+    <Compile Include="TouchDisplayCommonDriver.cs" />
+    <Compile Include="TouchScreenAgent.cs" />
+    <Compile Include="TouchScreenDriver.cs" />
+    <Compile Include="TransceiverAgent.cs" />
+    <Compile Include="TransceiverDriver.cs" />
+    <Compile Include="TransformExtensions.cs" />
+    <Compile Include="TreeNode.cs" />
+    <Compile Include="TubeRayRenderer.cs" />
+    <Compile Include="TubeRenderer.cs" />
+    <Compile Include="TubeRendererExamples\CameraMan.cs" />
+    <Compile Include="TubeRendererExamples\Digestion.cs" />
+    <Compile Include="TubeRendererExamples\Flower.cs" />
+    <Compile Include="TubeRendererExamples\Helpers.cs" />
+    <Compile Include="TubeRendererExamples\Herd.cs" />
+    <Compile Include="TubeRendererExamples\Paw.cs" />
+    <Compile Include="TubeRendererExamples\Skin.cs" />
+    <Compile Include="TubeRendererExamples\Slide.cs" />
+    <Compile Include="TubeRendererExamples\Spline.cs" />
+    <Compile Include="TubeRendererExamples\Starfish.cs" />
+    <Compile Include="TubeRendererExamples\Volume.cs" />
+    <Compile Include="TutorialGestalt.cs" />
+    <Compile Include="TutorialPresenterAgent.cs" />
+    <Compile Include="TutorialVideoPlayer.cs" />
+    <Compile Include="TweenTester.cs" />
+    <Compile Include="UIBetterButtonColorMapper.cs" />
+    <Compile Include="UIBetterInputFieldColorMapper.cs" />
+    <Compile Include="UIBetterSelectableColorMapper.cs" />
+    <Compile Include="UIBetterSliderColorMapper.cs" />
+    <Compile Include="UIBetterToggleColorMapper.cs" />
+    <Compile Include="UIBetterToggleOtherColorMapper.cs" />
+    <Compile Include="UIButtonAgent.cs" />
+    <Compile Include="UIColorEntity.cs" />
+    <Compile Include="UIColorMapper.cs" />
+    <Compile Include="UIColorMapperController.cs" />
+    <Compile Include="UIColorSelector.cs" />
+    <Compile Include="UIComposerAgent.cs" />
+    <Compile Include="UIImageAgent.cs" />
+    <Compile Include="UIImageColorMapper.cs" />
+    <Compile Include="UIInputFieldColorMapper.cs" />
+    <Compile Include="UIScrollBar.cs" />
+    <Compile Include="UIScrollBarColorMapper.cs" />
+    <Compile Include="UISelectableColorMapper.cs" />
+    <Compile Include="UISmoothScrollList.cs" />
+    <Compile Include="UITextAgent.cs" />
+    <Compile Include="UITextColorMapper.cs" />
+    <Compile Include="UndoOperation.cs" />
+    <Compile Include="UndoOperationAttach.cs" />
+    <Compile Include="UndoOperationDetach.cs" />
+    <Compile Include="UndoOperationOffset.cs" />
+    <Compile Include="UndoOperationPaint.cs" />
+    <Compile Include="UndoOperationPin.cs" />
+    <Compile Include="UndoOperationRebase.cs" />
+    <Compile Include="UndoOperationRotateComponent.cs" />
+    <Compile Include="UndoOperationRotateDevice.cs" />
+    <Compile Include="UndoOperationScale.cs" />
+    <Compile Include="UndoOperationSpawn.cs" />
+    <Compile Include="UndoOperationType.cs" />
+    <Compile Include="UnityEngine\UI\Extensions\BezierPath.cs" />
+    <Compile Include="UnityEngine\UI\Extensions\CableCurve.cs" />
+    <Compile Include="UnityEngine\UI\Extensions\ResolutionMode.cs" />
+    <Compile Include="UnityEngine\UI\Extensions\SetPropertyUtility.cs" />
+    <Compile Include="UnityEngine\UI\Extensions\UILineRenderer.cs" />
+    <Compile Include="UnityEngine\UI\Extensions\UIPrimitiveBase.cs" />
+    <Compile Include="UnityTemplateProjects\SimpleCameraControllerino.cs" />
+    <Compile Include="UserAssetsController.cs" />
+    <Compile Include="ValueInjectorAgent.cs" />
+    <Compile Include="VariableReaderAgent.cs" />
+    <Compile Include="VariablesContainerAgent.cs" />
+    <Compile Include="VariableWriterAgent.cs" />
+    <Compile Include="VectorComposerAgent.cs" />
+    <Compile Include="VectorDecomposerAgent.cs" />
+    <Compile Include="VectorMathAgent.cs" />
+    <Compile Include="VectorUtilityAgent.cs" />
+    <Compile Include="VFXCameraComposer.cs" />
+    <Compile Include="VFXComponent.cs" />
+    <Compile Include="VFXController.cs" />
+    <Compile Include="VFXDevice.cs" />
+    <Compile Include="VisorUIController.cs" />
+    <Compile Include="Visor\AdvancedHudProperty.cs" />
+    <Compile Include="Visor\AssetFileItem.cs" />
+    <Compile Include="Visor\AssetItem.cs" />
+    <Compile Include="Visor\BlockingTutorialPopup.cs" />
+    <Compile Include="Visor\BooleanEditor.cs" />
+    <Compile Include="Visor\ColorEditor.cs" />
+    <Compile Include="Visor\ColorSwatch.cs" />
+    <Compile Include="Visor\ComponentCategoryButton.cs" />
+    <Compile Include="Visor\ComponentItem.cs" />
+    <Compile Include="Visor\ComponentLibrary.cs" />
+    <Compile Include="Visor\Crosshair.cs" />
+    <Compile Include="Visor\DataEditor.cs" />
+    <Compile Include="Visor\DeviceBrowser.cs" />
+    <Compile Include="Visor\DeviceEditor.cs" />
+    <Compile Include="Visor\DeviceItem.cs" />
+    <Compile Include="Visor\DevicePermission.cs" />
+    <Compile Include="Visor\DevicePopup.cs" />
+    <Compile Include="Visor\DialogBox.cs" />
+    <Compile Include="Visor\DisplayItem.cs" />
+    <Compile Include="Visor\DraggedWire.cs" />
+    <Compile Include="Visor\EncyclopediaPopup.cs" />
+    <Compile Include="Visor\EscapeManager.cs" />
+    <Compile Include="Visor\ExceptionPopup.cs" />
+    <Compile Include="Visor\FeedbackPopup.cs" />
+    <Compile Include="Visor\FindDevicePopup.cs" />
+    <Compile Include="Visor\FindWorldPopup.cs" />
+    <Compile Include="Visor\FunctionKey.cs" />
+    <Compile Include="Visor\FunctionKeysPanel.cs" />
+    <Compile Include="Visor\GenericPopup.cs" />
+    <Compile Include="Visor\GenericWindow.cs" />
+    <Compile Include="Visor\GIFPlayer.cs" />
+    <Compile Include="Visor\GlobalPermission.cs" />
+    <Compile Include="Visor\Hud.cs" />
+    <Compile Include="Visor\HudHint.cs" />
+    <Compile Include="Visor\IEscapeHandler.cs" />
+    <Compile Include="Visor\IGenericWindow.cs" />
+    <Compile Include="Visor\IKnobHandler.cs" />
+    <Compile Include="Visor\ImageBrowser.cs" />
+    <Compile Include="Visor\ImageEditor.cs" />
+    <Compile Include="Visor\ImageManager.cs" />
+    <Compile Include="Visor\ImageRow.cs" />
+    <Compile Include="Visor\ImageScrollRect.cs" />
+    <Compile Include="Visor\IMassButtonHandler.cs" />
+    <Compile Include="Visor\Importer.cs" />
+    <Compile Include="Visor\InterfaceEditor.cs" />
+    <Compile Include="Visor\InterfaceItem.cs" />
+    <Compile Include="Visor\ISketchViewInteractable.cs" />
+    <Compile Include="Visor\Knob.cs" />
+    <Compile Include="Visor\LoadingCircle.cs" />
+    <Compile Include="Visor\MassButton.cs" />
+    <Compile Include="Visor\News.cs" />
+    <Compile Include="Visor\NewWorldPopup.cs" />
+    <Compile Include="Visor\NumberDecoratorButton.cs" />
+    <Compile Include="Visor\NumberEditor.cs" />
+    <Compile Include="Visor\PaletteSelector.cs" />
+    <Compile Include="Visor\PauseMenu.cs" />
+    <Compile Include="Visor\PlasmaActionPlugins.cs" />
+    <Compile Include="Visor\PlaySoundButton.cs" />
+    <Compile Include="Visor\PortTypeSelectionItem.cs" />
+    <Compile Include="Visor\ProcessorLibraryItem.cs" />
+    <Compile Include="Visor\ProcessorUI.cs" />
+    <Compile Include="Visor\ProcessorUIBlocker.cs" />
+    <Compile Include="Visor\ProcessorUICategoryItem.cs" />
+    <Compile Include="Visor\ProcessorUIComponentItem.cs" />
+    <Compile Include="Visor\ProcessorUIComponentPropertyEditor.cs" />
+    <Compile Include="Visor\ProcessorUIImageEditor.cs" />
+    <Compile Include="Visor\ProcessorUIImageRow.cs" />
+    <Compile Include="Visor\ProcessorUIInterfaceManager.cs" />
+    <Compile Include="Visor\ProcessorUIInterfaceManagerItem.cs" />
+    <Compile Include="Visor\ProcessorUIInterfacePortDescription.cs" />
+    <Compile Include="Visor\ProcessorUILabelSettings.cs" />
+    <Compile Include="Visor\ProcessorUIMinimap.cs" />
+    <Compile Include="Visor\ProcessorUIMiniNode.cs" />
+    <Compile Include="Visor\ProcessorUINodeItem.cs" />
+    <Compile Include="Visor\ProcessorUINodeLibrary.cs" />
+    <Compile Include="Visor\ProcessorUIPortTypeSelector.cs" />
+    <Compile Include="Visor\ProcessorUIPropertyItem.cs" />
+    <Compile Include="Visor\ProcessorUISoundEditor.cs" />
+    <Compile Include="Visor\ProcessorUISoundRow.cs" />
+    <Compile Include="Visor\ProcessorUITypeSelector.cs" />
+    <Compile Include="Visor\ProcessorUIVariableEditor.cs" />
+    <Compile Include="Visor\ProcessorUIVariableEditorItem.cs" />
+    <Compile Include="Visor\ProcessorUIVariableManager.cs" />
+    <Compile Include="Visor\ProcessorUIVariableManagerItem.cs" />
+    <Compile Include="Visor\PropertyEditor.cs" />
+    <Compile Include="Visor\PropertyList.cs" />
+    <Compile Include="Visor\PropertyRow.cs" />
+    <Compile Include="Visor\QualityItem.cs" />
+    <Compile Include="Visor\Quickbar.cs" />
+    <Compile Include="Visor\QuickbarSlot.cs" />
+    <Compile Include="Visor\ResolutionItem.cs" />
+    <Compile Include="Visor\SaveDevicePopup.cs" />
+    <Compile Include="Visor\SaveWorldPopup.cs" />
+    <Compile Include="Visor\SelectionEditor.cs" />
+    <Compile Include="Visor\SelectionItem.cs" />
+    <Compile Include="Visor\SettingsPopup.cs" />
+    <Compile Include="Visor\ShareDevicePopup.cs" />
+    <Compile Include="Visor\ShareWorldPopup.cs" />
+    <Compile Include="Visor\SketchView.cs" />
+    <Compile Include="Visor\SketchViewAreaTrigger.cs" />
+    <Compile Include="Visor\SketchViewButton.cs" />
+    <Compile Include="Visor\SketchViewConnection.cs" />
+    <Compile Include="Visor\SketchViewConnectionPin.cs" />
+    <Compile Include="Visor\SketchViewDatatypeWarning.cs" />
+    <Compile Include="Visor\SketchViewHeaderTooltip.cs" />
+    <Compile Include="Visor\SketchViewInteractables.cs" />
+    <Compile Include="Visor\SketchViewLabel.cs" />
+    <Compile Include="Visor\SketchViewLineTrigger.cs" />
+    <Compile Include="Visor\SketchViewNode.cs" />
+    <Compile Include="Visor\SketchViewNodePort.cs" />
+    <Compile Include="Visor\SketchViewNodeRow.cs" />
+    <Compile Include="Visor\SketchViewPropertyTooltip.cs" />
+    <Compile Include="Visor\SketchViewSelection.cs" />
+    <Compile Include="Visor\SketchViewTrigger.cs" />
+    <Compile Include="Visor\SketchViewTriggerContainer.cs" />
+    <Compile Include="Visor\SoundBrowser.cs" />
+    <Compile Include="Visor\SoundEditor.cs" />
+    <Compile Include="Visor\SoundRow.cs" />
+    <Compile Include="Visor\StageTools.cs" />
+    <Compile Include="Visor\StringEditor.cs" />
+    <Compile Include="Visor\TooltipManager.cs" />
+    <Compile Include="Visor\TutorialPanel.cs" />
+    <Compile Include="Visor\TutorialVideoPlayer.cs" />
+    <Compile Include="Visor\TypeButton.cs" />
+    <Compile Include="Visor\TypeSelectionItem.cs" />
+    <Compile Include="Visor\VariableSelectionItem.cs" />
+    <Compile Include="Visor\VFSPanel.cs" />
+    <Compile Include="Visor\Visor.cs" />
+    <Compile Include="Visor\VisorElement.cs" />
+    <Compile Include="Visor\VisorElements.cs" />
+    <Compile Include="Visor\WelcomePopup.cs" />
+    <Compile Include="Visor\WorldBrowser.cs" />
+    <Compile Include="Visor\WorldItem.cs" />
+    <Compile Include="Visor\WorldPermission.cs" />
+    <Compile Include="Visor\WorldPopup.cs" />
+    <Compile Include="Visor\WorldSettingsPopup.cs" />
+    <Compile Include="VisualBehaviour.cs" />
+    <Compile Include="VisualTests.cs" />
+    <Compile Include="WebcamAgent.cs" />
+    <Compile Include="WebcamDriver.cs" />
+    <Compile Include="WheelColliderMaker.cs" />
+    <Compile Include="WifiController.cs" />
+    <Compile Include="WindowCommonDriver.cs" />
+    <Compile Include="WindowOpenerAgent.cs" />
+    <Compile Include="WireframeComponentListener.cs" />
+    <Compile Include="WorkshopController.cs" />
+    <Compile Include="WorldController.cs" />
+    <Compile Include="WorldCreatorAgent.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
