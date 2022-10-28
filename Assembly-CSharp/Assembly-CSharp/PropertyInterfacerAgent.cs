@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200011E RID: 286
 public class PropertyInterfacerAgent : Agent
 {
@@ -63,4 +65,5 @@ public class PropertyInterfacerAgent : Agent
 
 	// Token: 0x040009E4 RID: 2532
 	private bool _shouldRun;
+}
 }

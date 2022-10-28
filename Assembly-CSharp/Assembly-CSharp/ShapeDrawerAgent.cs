@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000128 RID: 296
 public class ShapeDrawerAgent : Agent
 {
@@ -65,4 +67,5 @@ public class ShapeDrawerAgent : Agent
 
 	// Token: 0x04000A08 RID: 2568
 	private AgentProperty _destinationProperty;
+}
 }

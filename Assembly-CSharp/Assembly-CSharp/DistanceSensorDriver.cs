@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000071 RID: 113
 public class DistanceSensorDriver : ComponentDriver
 {
@@ -105,4 +107,5 @@ public class DistanceSensorDriver : ComponentDriver
 
 	// Token: 0x0400058A RID: 1418
 	private int _mainTexId;
+}
 }

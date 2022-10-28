@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000DA RID: 218
 public class SwitchAgent : Agent
 {
@@ -51,4 +53,5 @@ public class SwitchAgent : Agent
 		// Token: 0x04001C8B RID: 7307
 		UpdateVisuals
 	}
+}
 }

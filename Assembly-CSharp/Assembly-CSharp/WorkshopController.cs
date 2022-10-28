@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -5,6 +6,7 @@ using Sirenix.Serialization;
 using Steamworks;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000050 RID: 80
 public class WorkshopController : Controller
 {
@@ -415,4 +417,5 @@ public class WorkshopController : Controller
 		// Token: 0x04001A2B RID: 6699
 		public ulong publishedFileId;
 	}
+}
 }

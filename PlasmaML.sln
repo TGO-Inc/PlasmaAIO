@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaML", "PlasmaML\PlasmaML.csproj", "{B898627B-BB91-42A1-BFC8-17B783402D90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaEML", "PlasmaML\PlasmaEML.csproj", "{B898627B-BB91-42A1-BFC8-17B783402D90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaDevToolkit", "PlasmaDevToolkit\PlasmaDevToolkit.csproj", "{F823247D-68CB-48CA-913F-4BB36EA958E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaAPI", "PlasmaAPI\PlasmaAPI.csproj", "{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaMLL", "PlasmaAPI\PlasmaMLL.csproj", "{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp\Assembly-CSharp\Assembly-CSharp.csproj", "{9630B967-A794-42D6-88F7-A469318D67CC}"
 EndProject

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200008B RID: 139
 public class GPSTrackerDriver : ComponentDriver
 {
@@ -81,4 +83,5 @@ public class GPSTrackerDriver : ComponentDriver
 
 	// Token: 0x04000649 RID: 1609
 	private Transform _transform;
+}
 }

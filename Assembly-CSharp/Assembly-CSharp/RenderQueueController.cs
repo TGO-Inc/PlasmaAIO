@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000046 RID: 70
 public class RenderQueueController : Controller
 {
@@ -372,4 +374,5 @@ public class RenderQueueController : Controller
 			ExportImage
 		}
 	}
+}
 }

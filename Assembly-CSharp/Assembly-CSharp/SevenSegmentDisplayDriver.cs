@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000CD RID: 205
 public class SevenSegmentDisplayDriver : ComponentDriver
 {
@@ -60,4 +62,5 @@ public class SevenSegmentDisplayDriver : ComponentDriver
 
 	// Token: 0x04000872 RID: 2162
 	private const float _offset = 0.16f;
+}
 }

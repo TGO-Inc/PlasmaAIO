@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using Steamworks;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F0 RID: 240
 public class BrowserAgent : Agent, IDataSelectionProvider
 {
@@ -24,4 +26,5 @@ public class BrowserAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000930 RID: 2352
 	private AgentProperty _modeProperty;
+}
 }

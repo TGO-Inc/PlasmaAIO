@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Newtonsoft.Json;
 using UnityEngine;
-using Visor;
+using PlasmaAPI.GameClass.Visor;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000EB RID: 235
 public abstract class DisplayUIElement
 {
@@ -97,4 +99,5 @@ public abstract class DisplayUIElement
 	// Token: 0x0400091C RID: 2332
 	[NonSerialized]
 	private RectInt _rect;
+}
 }

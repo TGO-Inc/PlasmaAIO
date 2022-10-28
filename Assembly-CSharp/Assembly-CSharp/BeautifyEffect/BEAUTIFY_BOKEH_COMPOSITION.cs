@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002C7 RID: 711
 	public enum BEAUTIFY_BOKEH_COMPOSITION

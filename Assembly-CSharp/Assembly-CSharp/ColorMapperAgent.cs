@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F3 RID: 243
 public class ColorMapperAgent : Agent
 {
@@ -26,4 +28,5 @@ public class ColorMapperAgent : Agent
 
 	// Token: 0x04000933 RID: 2355
 	private AgentProperty _toProperty;
+}
 }

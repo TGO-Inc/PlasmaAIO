@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E3 RID: 227
 public class TouchScreenDriver : TouchDisplayCommonDriver
 {
@@ -8,4 +10,5 @@ public class TouchScreenDriver : TouchDisplayCommonDriver
 	{
 
 	}
+}
 }

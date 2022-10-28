@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000043 RID: 67
 public enum GrassQuality
 {
@@ -13,4 +15,5 @@ public enum GrassQuality
 	High,
 	// Token: 0x0400024A RID: 586
 	Ultra
+}
 }

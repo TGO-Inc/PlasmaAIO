@@ -1,10 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000269 RID: 617
 	public class ProcessorUIImageRow : MonoBehaviour

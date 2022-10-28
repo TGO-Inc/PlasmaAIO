@@ -1,9 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000275 RID: 629
 	public class ProcessorUISoundRow : MonoBehaviour

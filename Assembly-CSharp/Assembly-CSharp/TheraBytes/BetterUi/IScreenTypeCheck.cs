@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x0200020F RID: 527
 	public interface IScreenTypeCheck : IIsActive

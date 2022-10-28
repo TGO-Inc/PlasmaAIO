@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000119 RID: 281
 public class ParserAgent : Agent, IDataSelectionProvider
 {
@@ -22,4 +24,5 @@ public class ParserAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x040009C7 RID: 2503
 	private AgentProperty _decorationProperty;
+}
 }

@@ -1,10 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x020002A6 RID: 678
 	public class TypeButton : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler

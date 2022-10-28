@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001BC RID: 444
 public class TextureBlitter2 : MonoBehaviour
 {
@@ -71,4 +73,5 @@ public class TextureBlitter2 : MonoBehaviour
 
 	// Token: 0x04000E41 RID: 3649
 	public RenderTexture temporaryRT;
+}
 }

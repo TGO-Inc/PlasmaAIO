@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Runtime.CompilerServices;
 using Behavior;
@@ -5,6 +6,7 @@ using FMODUnity;
 using TMPro;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200006F RID: 111
 public class DisplayCommonDriver : ComponentDriver
 {
@@ -118,4 +120,5 @@ public class DisplayCommonDriver : ComponentDriver
 
 	// Token: 0x04000578 RID: 1400
 	private TextAlignmentOptions[,] _alignments;
+}
 }

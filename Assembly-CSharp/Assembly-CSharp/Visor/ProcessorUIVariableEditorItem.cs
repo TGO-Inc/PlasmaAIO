@@ -1,8 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Sirenix.OdinInspector;
 using TMPro;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000278 RID: 632
 	public class ProcessorUIVariableEditorItem : SerializedMonoBehaviour

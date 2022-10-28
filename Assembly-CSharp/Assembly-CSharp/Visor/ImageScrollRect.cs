@@ -1,9 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200024B RID: 587
 	public class ImageScrollRect : ScrollRect, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler

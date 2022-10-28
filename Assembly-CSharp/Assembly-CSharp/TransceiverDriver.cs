@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using Behavior;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E5 RID: 229
 public class TransceiverDriver : ComponentDriver
 {
@@ -100,4 +102,5 @@ public class TransceiverDriver : ComponentDriver
 
 	// Token: 0x040008FD RID: 2301
 	private bool _blink;
+}
 }

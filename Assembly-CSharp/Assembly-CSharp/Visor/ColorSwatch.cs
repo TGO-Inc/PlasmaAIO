@@ -1,8 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000290 RID: 656
 	public class ColorSwatch : MonoBehaviour, IPointerDownHandler, IEventSystemHandler

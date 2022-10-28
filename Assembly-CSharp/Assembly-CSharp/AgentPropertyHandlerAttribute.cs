@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000057 RID: 87
 [AttributeUsage(AttributeTargets.Method)]
 public class AgentPropertyHandlerAttribute : Attribute
@@ -12,4 +14,5 @@ public class AgentPropertyHandlerAttribute : Attribute
 
 	// Token: 0x040004D9 RID: 1241
 	public readonly int id;
+}
 }

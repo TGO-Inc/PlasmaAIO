@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Behavior
+namespace PlasmaAPI.GameClass.Behavior
 {
 	// Token: 0x0200021E RID: 542
 	public static class DataSelectionProvider

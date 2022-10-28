@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000168 RID: 360
 public class CloudDrawer : MonoBehaviour
 {
@@ -13,4 +15,5 @@ public class CloudDrawer : MonoBehaviour
 	private void Update()
 	{
 	}
+}
 }

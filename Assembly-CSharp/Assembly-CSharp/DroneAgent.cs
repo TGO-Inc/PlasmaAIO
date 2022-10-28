@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000078 RID: 120
 public class DroneAgent : Agent
 {
@@ -9,4 +11,5 @@ public class DroneAgent : Agent
 		// Token: 0x04001BC5 RID: 7109
 		SetState = 1
 	}
+}
 }

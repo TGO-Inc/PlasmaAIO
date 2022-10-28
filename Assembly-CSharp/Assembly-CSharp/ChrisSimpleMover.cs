@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001AB RID: 427
 public class ChrisSimpleMover : MonoBehaviour
 {
@@ -33,4 +35,5 @@ public class ChrisSimpleMover : MonoBehaviour
 
 	// Token: 0x04000D88 RID: 3464
 	private Quaternion startRotation;
+}
 }

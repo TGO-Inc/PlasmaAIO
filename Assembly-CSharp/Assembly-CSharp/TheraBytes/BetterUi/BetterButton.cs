@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001CA RID: 458
 	[AddComponentMenu("Better UI/Controls/Better Button", 30)]

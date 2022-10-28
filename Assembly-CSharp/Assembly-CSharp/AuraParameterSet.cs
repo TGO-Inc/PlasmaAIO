@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200004C RID: 76
 [Serializable]
 public class AuraParameterSet
@@ -75,4 +77,5 @@ public class AuraParameterSet
 
 	// Token: 0x04000362 RID: 866
 	public float colorMUL;
+}
 }

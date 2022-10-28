@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F4 RID: 244
 public class ColorTweenerAgent : Agent, IDataSelectionProvider
 {
@@ -70,4 +72,5 @@ public class ColorTweenerAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001CA5 RID: 7333
 		Yoyo
 	}
+}
 }

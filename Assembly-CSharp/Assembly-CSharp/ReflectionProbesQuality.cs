@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000041 RID: 65
 public enum ReflectionProbesQuality
 {
@@ -11,4 +13,5 @@ public enum ReflectionProbesQuality
 	Sliced,
 	// Token: 0x04000240 RID: 576
 	Realtime
+}
 }

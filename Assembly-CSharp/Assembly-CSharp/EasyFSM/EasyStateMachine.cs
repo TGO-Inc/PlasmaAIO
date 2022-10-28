@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EasyFSM
+namespace PlasmaAPI.GameClass.EasyFSM
 {
 	// Token: 0x02000229 RID: 553
 	public class EasyStateMachine

@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using Newtonsoft.Json;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000113 RID: 275
 public class NumberArrayDecomposerAgent : Agent
 {
@@ -21,4 +23,5 @@ public class NumberArrayDecomposerAgent : Agent
 
 	// Token: 0x040009B5 RID: 2485
 	private AgentProperty _arrayProperty;
+}
 }

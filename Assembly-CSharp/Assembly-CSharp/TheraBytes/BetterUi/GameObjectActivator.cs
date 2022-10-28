@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001E8 RID: 488
 	[AddComponentMenu("Better UI/Helpers/Game Object Activator", 30)]

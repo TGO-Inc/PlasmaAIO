@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000020 RID: 32
 public class ImageDebugger : MonoBehaviour
 {
@@ -77,4 +79,5 @@ public class ImageDebugger : MonoBehaviour
 
 	// Token: 0x040000BD RID: 189
 	private int _totalMemory;
+}
 }

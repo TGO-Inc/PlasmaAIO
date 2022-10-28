@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PlasmaDevToolkit.Overrides;
-using _WorldController = WorldController;
+using _WorldController = PlasmaAPI.GameClass.WorldController;
 using UnityEngine;
 using Console = PlasmaDevToolkit.Overrides.Console;
 

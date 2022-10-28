@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002C4 RID: 708
 	public enum BEAUTIFY_PRERENDER_EVENT

@@ -1,8 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Sirenix.OdinInspector;
 using TMPro;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000266 RID: 614
 	public class ProcessorUIComponentItem : SerializedMonoBehaviour

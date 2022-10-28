@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using Newtonsoft.Json;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F9 RID: 249
 public class DeviceListenerAgent : Agent
 {
@@ -96,4 +98,5 @@ public class DeviceListenerAgent : Agent
 
 	// Token: 0x04000959 RID: 2393
 	private string _toggledDevice;
+}
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002C6 RID: 710
 	public enum BEAUTIFY_OUTLINE_STAGE

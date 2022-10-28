@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001E7 RID: 487
 	[AddComponentMenu("Better UI/Obsolete/Better Vertical Layout Group", 30)]

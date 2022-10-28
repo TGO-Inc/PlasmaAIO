@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Behavior;
 using Newtonsoft.Json;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000140 RID: 320
 public class VectorMathAgent : Agent
 {
@@ -56,4 +58,5 @@ public class VectorMathAgent : Agent
 
 	// Token: 0x04000A71 RID: 2673
 	private AgentProperty _scalarProperty;
+}
 }

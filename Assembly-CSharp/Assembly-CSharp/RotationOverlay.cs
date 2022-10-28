@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200002C RID: 44
 public class RotationOverlay : MonoBehaviour
 {
@@ -51,4 +53,5 @@ public class RotationOverlay : MonoBehaviour
 
 	// Token: 0x0400010E RID: 270
 	private bool _active;
+}
 }

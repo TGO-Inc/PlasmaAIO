@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A2 RID: 162
 public class Lever1AxisAgent : Agent
 {
@@ -58,4 +60,5 @@ public class Lever1AxisAgent : Agent
 		// Token: 0x04001C11 RID: 7185
 		UpdateVisuals
 	}
+}
 }

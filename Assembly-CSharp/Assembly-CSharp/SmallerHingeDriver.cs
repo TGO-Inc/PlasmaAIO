@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D3 RID: 211
 public class SmallerHingeDriver : ComponentDriver
 {
@@ -139,4 +141,5 @@ public class SmallerHingeDriver : ComponentDriver
 
 	// Token: 0x040008A4 RID: 2212
 	private const string _FMODParamSize = "Size";
+}
 }

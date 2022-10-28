@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000095 RID: 149
 public class KeypadDriver : ComponentDriver
 {
@@ -106,4 +108,5 @@ public class KeypadDriver : ComponentDriver
 
 	// Token: 0x040006BC RID: 1724
 	private const string _FMODParamSize = "Size";
+}
 }

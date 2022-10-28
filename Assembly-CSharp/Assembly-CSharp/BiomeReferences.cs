@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000167 RID: 359
 public class BiomeReferences : MonoBehaviour
 {
@@ -45,4 +47,5 @@ public class BiomeReferences : MonoBehaviour
 
 	// Token: 0x04000B81 RID: 2945
 	public List<MeshRenderer> allRenderers = new List<MeshRenderer>();
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000129 RID: 297
 public class StageControllerAgent : Agent
 {
@@ -29,4 +31,5 @@ public class StageControllerAgent : Agent
 
 	// Token: 0x04000A0C RID: 2572
 	private Dictionary<AgentProperty, WorldController.WorldPermissions> _permissionProperties;
+}
 }

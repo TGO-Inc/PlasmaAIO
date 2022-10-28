@@ -1,9 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000293 RID: 659
 	public class ImageBrowser : MonoBehaviour, ISmoothScrollListProvider

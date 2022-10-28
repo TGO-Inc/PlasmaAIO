@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200001A RID: 26
 public class UIInputFieldColorMapper : UIColorMapper
 {
@@ -30,4 +32,5 @@ public class UIInputFieldColorMapper : UIColorMapper
 	// Token: 0x0400009E RID: 158
 	[ColorEntity]
 	public int disabledColor;
+}
 }

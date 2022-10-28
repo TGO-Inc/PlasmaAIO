@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000069 RID: 105
 public class CorridorDriver : WindowCommonDriver
 {
@@ -8,4 +10,5 @@ public class CorridorDriver : WindowCommonDriver
 	{
 
 	}
+}
 }

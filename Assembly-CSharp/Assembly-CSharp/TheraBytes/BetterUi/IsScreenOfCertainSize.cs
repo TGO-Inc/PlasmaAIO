@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x02000211 RID: 529
 	[Serializable]

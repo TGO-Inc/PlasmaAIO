@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000151 RID: 337
 [AttributeUsage(AttributeTargets.Method)]
 public class SketchNodePortOperationAttribute : Attribute
@@ -12,4 +14,5 @@ public class SketchNodePortOperationAttribute : Attribute
 
 	// Token: 0x04000B0E RID: 2830
 	public readonly int id;
+}
 }

@@ -1,9 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000288 RID: 648
 	public class SketchViewSelection : SerializedMonoBehaviour

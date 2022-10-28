@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000242 RID: 578
 	public class GenericWindow : MonoBehaviour

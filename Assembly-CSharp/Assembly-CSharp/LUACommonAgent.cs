@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using MoonSharp.Interpreter;
 using Newtonsoft.Json;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200010B RID: 267
 public class LUACommonAgent : Agent
 {
@@ -132,4 +134,5 @@ public class LUACommonAgent : Agent
 
 	// Token: 0x0400099A RID: 2458
 	private const int _maxCycles = 1000;
+}
 }

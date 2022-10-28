@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200014D RID: 333
 public class FollowTargetOnUpdate : MonoBehaviour
 {
@@ -21,4 +23,5 @@ public class FollowTargetOnUpdate : MonoBehaviour
 
 	// Token: 0x04000B09 RID: 2825
 	private Vector3 _offset;
+}
 }

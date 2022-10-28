@@ -1,11 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Globalization;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200023B RID: 571
 	public class SaveDevicePopup : MonoBehaviour, IGenericWindow

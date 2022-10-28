@@ -1,8 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200027D RID: 637
 	public class SketchViewButton : MonoBehaviour, ISketchViewInteractable

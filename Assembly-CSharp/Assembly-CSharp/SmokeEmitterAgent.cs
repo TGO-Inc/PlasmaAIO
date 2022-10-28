@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D4 RID: 212
 public class SmokeEmitterAgent : Agent, IDataSelectionProvider
 {
@@ -12,4 +14,5 @@ public class SmokeEmitterAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001C70 RID: 7280
 		SetState
 	}
+}
 }

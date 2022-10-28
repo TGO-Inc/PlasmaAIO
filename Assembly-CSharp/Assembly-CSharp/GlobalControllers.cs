@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200016C RID: 364
 public class GlobalControllers : MonoBehaviour
 {
@@ -40,4 +42,5 @@ public class GlobalControllers : MonoBehaviour
 
 	// Token: 0x04000BA7 RID: 2983
 	public static ConsoleController consoleController;
+}
 }

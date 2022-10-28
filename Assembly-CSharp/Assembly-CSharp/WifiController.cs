@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200004F RID: 79
 public class WifiController : Controller
 {
@@ -98,4 +100,5 @@ public class WifiController : Controller
 		// Token: 0x04001A13 RID: 6675
 		public Data data;
 	}
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200013A RID: 314
 public class ValueInjectorAgent : Agent
 {
@@ -19,4 +21,5 @@ public class ValueInjectorAgent : Agent
 
 	// Token: 0x04000A62 RID: 2658
 	private AgentProperty _valueProperty;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000143 RID: 323
 public class WorldCreatorAgent : Agent, IDataSelectionProvider
 {
@@ -34,4 +36,5 @@ public class WorldCreatorAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000A75 RID: 2677
 	private AgentProperty _biomeProperty;
+}
 }

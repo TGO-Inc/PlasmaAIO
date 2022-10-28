@@ -1,12 +1,13 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x020002AC RID: 684
 	public class SettingsPopup : MonoBehaviour, IGenericWindow

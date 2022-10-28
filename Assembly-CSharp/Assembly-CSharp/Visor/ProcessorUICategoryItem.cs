@@ -1,10 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000265 RID: 613
 	public class ProcessorUICategoryItem : MonoBehaviour

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002C0 RID: 704
 	// (Invoke) Token: 0x06001C8F RID: 7311

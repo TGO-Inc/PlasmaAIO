@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000B1 RID: 177
 public class PanelWindowDriver : WindowCommonDriver
 {
@@ -8,4 +10,5 @@ public class PanelWindowDriver : WindowCommonDriver
 	{
 
 	}
+}
 }

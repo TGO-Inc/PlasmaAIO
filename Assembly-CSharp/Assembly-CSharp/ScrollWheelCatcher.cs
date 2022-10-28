@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Visor;
+using PlasmaAPI.GameClass.Visor;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000028 RID: 40
 public class ScrollWheelCatcher : MonoBehaviour, IScrollHandler, IEventSystemHandler
 {
@@ -20,4 +22,5 @@ public class ScrollWheelCatcher : MonoBehaviour, IScrollHandler, IEventSystemHan
 
 	// Token: 0x040000EB RID: 235
 	private PropertyList _propertyList;
+}
 }

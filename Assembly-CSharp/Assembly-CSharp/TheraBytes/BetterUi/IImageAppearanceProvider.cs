@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x02000202 RID: 514
 	public interface IImageAppearanceProvider

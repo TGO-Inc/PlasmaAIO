@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -6,6 +7,7 @@ using DG.Tweening.Plugins.Options;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200001E RID: 30
 public class UISmoothScrollList : MonoBehaviour, IScrollHandler, IEventSystemHandler
 {
@@ -83,4 +85,5 @@ public class UISmoothScrollList : MonoBehaviour, IScrollHandler, IEventSystemHan
 
 	// Token: 0x040000B6 RID: 182
 	private List<bool> _itemsStates;
+}
 }

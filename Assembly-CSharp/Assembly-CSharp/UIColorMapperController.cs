@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000017 RID: 23
 public class UIColorMapperController : MonoBehaviour
 {
@@ -28,4 +30,5 @@ public class UIColorMapperController : MonoBehaviour
 
 	// Token: 0x04000097 RID: 151
 	private Dictionary<string, List<UIColorMapper>> _colorMappers;
+}
 }

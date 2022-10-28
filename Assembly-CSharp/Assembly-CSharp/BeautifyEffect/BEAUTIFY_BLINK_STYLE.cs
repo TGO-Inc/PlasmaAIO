@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002C5 RID: 709
 	public enum BEAUTIFY_BLINK_STYLE

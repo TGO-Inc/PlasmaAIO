@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000070 RID: 112
 public class DistanceSensorAgent : Agent, IDataSelectionProvider
 {
@@ -37,4 +39,5 @@ public class DistanceSensorAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001BBD RID: 7101
 		UpdateVisuals = 1
 	}
+}
 }

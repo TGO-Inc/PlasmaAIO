@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000074 RID: 116
 public class DoorAgent : Agent
 {
@@ -70,4 +72,5 @@ public class DoorAgent : Agent
 		// Token: 0x04001BC1 RID: 7105
 		SetPhysics = 1
 	}
+}
 }

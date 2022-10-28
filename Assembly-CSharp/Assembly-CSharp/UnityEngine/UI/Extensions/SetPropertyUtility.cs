@@ -1,6 +1,7 @@
 ﻿using System;
+using UnityEngine;
 
-namespace UnityEngine.UI.Extensions
+namespace PlasmaAPI.GameClass.UnityEngine.UI.Extensions
 {
 	// Token: 0x0200022E RID: 558
 	internal static class SetPropertyUtility

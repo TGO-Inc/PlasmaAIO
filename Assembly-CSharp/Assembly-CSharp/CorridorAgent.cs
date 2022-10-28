@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000068 RID: 104
 public class CorridorAgent : Agent
 {
@@ -9,4 +11,5 @@ public class CorridorAgent : Agent
 		// Token: 0x04001BA9 RID: 7081
 		UpdateVisuals = 1
 	}
+}
 }

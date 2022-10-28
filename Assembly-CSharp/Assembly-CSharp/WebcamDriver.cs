@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E7 RID: 231
 public class WebcamDriver : ComponentDriver
 {
@@ -81,4 +83,5 @@ public class WebcamDriver : ComponentDriver
 
 	// Token: 0x04000908 RID: 2312
 	private WebCamTexture _webcamTexture;
+}
 }

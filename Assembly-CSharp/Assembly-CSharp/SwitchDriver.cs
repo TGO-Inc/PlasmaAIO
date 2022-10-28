@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000DB RID: 219
 public class SwitchDriver : ComponentDriver
 {
@@ -107,4 +109,5 @@ public class SwitchDriver : ComponentDriver
 
 	// Token: 0x040008CD RID: 2253
 	private const string _FMODParamSize = "Size";
+}
 }

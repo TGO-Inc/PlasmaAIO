@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000045 RID: 69
 public enum HeightFogGlobalQuality
 {
@@ -9,4 +11,5 @@ public enum HeightFogGlobalQuality
 	Normal,
 	// Token: 0x04000254 RID: 596
 	High
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000103 RID: 259
 public class GateControllerAgent : Agent
 {
@@ -20,4 +22,5 @@ public class GateControllerAgent : Agent
 
 	// Token: 0x0400096C RID: 2412
 	private List<Agent> _gates;
+}
 }

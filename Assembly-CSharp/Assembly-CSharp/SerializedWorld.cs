@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Runtime.Serialization;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000189 RID: 393
 public class SerializedWorld
 {
@@ -84,4 +86,5 @@ public class SerializedWorld
 	// Token: 0x04000C6B RID: 3179
 	[NonSerialized]
 	private const int currentVersion = 2;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000096 RID: 150
 public class KnobAgent : Agent, IDataSelectionProvider
 {
@@ -110,4 +112,5 @@ public class KnobAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001BF9 RID: 7161
 		Stepped
 	}
+}
 }

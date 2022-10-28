@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000142 RID: 322
 public class WindowOpenerAgent : Agent, IDataSelectionProvider
 {
@@ -34,4 +36,5 @@ public class WindowOpenerAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000A74 RID: 2676
 	private AgentProperty _windowProperty;
+}
 }

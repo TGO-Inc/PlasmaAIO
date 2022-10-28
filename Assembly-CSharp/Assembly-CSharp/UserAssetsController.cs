@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -5,6 +6,7 @@ using System.Linq;
 using Sirenix.Serialization;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000049 RID: 73
 public class UserAssetsController : Controller
 {
@@ -216,4 +218,5 @@ public class UserAssetsController : Controller
 		// Token: 0x04001A07 RID: 6663
 		public Dictionary<string, UserAssetsController.AssetDescription> assetDescriptions;
 	}
+}
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _SteamController = SteamController;
+using _SteamController = PlasmaAPI.GameClass.SteamController;
 using PlasmaDevToolkit.Overrides;
 using Console = PlasmaDevToolkit.Overrides.Console;
 

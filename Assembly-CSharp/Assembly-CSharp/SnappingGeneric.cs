@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000153 RID: 339
 public class SnappingGeneric : MonoBehaviour
 {
@@ -71,4 +73,5 @@ public class SnappingGeneric : MonoBehaviour
 		// Token: 0x04001D08 RID: 7432
 		Horizontal
 	}
+}
 }

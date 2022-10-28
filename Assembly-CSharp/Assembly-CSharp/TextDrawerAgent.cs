@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200012E RID: 302
 public class TextDrawerAgent : Agent
 {
@@ -31,4 +33,5 @@ public class TextDrawerAgent : Agent
 
 	// Token: 0x04000A1E RID: 2590
 	private AgentProperty _destinationProperty;
+}
 }

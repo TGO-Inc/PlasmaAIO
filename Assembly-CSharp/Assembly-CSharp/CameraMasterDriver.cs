@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000063 RID: 99
 public class CameraMasterDriver : ComponentDriver
 {
@@ -30,4 +32,5 @@ public class CameraMasterDriver : ComponentDriver
 
 	// Token: 0x04000512 RID: 1298
 	private float _savedFOV;
+}
 }

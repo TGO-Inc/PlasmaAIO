@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000B3 RID: 179
 public class PistonAgent : Agent
 {
@@ -65,4 +67,5 @@ public class PistonAgent : Agent
 		// Token: 0x04001C28 RID: 7208
 		SetPhysics = 1
 	}
+}
 }

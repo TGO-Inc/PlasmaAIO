@@ -1,10 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using GifPlayer;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000282 RID: 642
 	public class SketchViewLabel : SerializedMonoBehaviour, ISketchViewInteractable

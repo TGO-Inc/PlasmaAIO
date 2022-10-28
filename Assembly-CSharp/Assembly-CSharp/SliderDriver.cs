@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D1 RID: 209
 public class SliderDriver : ComponentDriver
 {
@@ -125,4 +127,5 @@ public class SliderDriver : ComponentDriver
 
 	// Token: 0x04000892 RID: 2194
 	private const string _FMODParamMovementSpeed = "MovmentSpeed";
+}
 }

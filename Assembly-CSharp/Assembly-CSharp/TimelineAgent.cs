@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000132 RID: 306
 public class TimelineAgent : Agent
 {
@@ -43,4 +45,5 @@ public class TimelineAgent : Agent
 
 	// Token: 0x04000A2A RID: 2602
 	private AgentProperty _runningProperty;
+}
 }

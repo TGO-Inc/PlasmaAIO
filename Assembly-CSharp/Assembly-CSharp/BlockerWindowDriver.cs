@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200005B RID: 91
 public class BlockerWindowDriver : WindowCommonDriver
 {
@@ -8,4 +10,5 @@ public class BlockerWindowDriver : WindowCommonDriver
 	{
 
 	}
+}
 }

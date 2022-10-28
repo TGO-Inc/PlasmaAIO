@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002BE RID: 702
 	public class FreeCameraMove : MonoBehaviour

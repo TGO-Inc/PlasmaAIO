@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200012A RID: 298
 public class SynchronizerAgent : Agent
 {
@@ -28,4 +30,5 @@ public class SynchronizerAgent : Agent
 
 	// Token: 0x04000A10 RID: 2576
 	private AgentProperty _v4Property;
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E0 RID: 224
 public class TouchDisplayCommonAgent : DisplayCommonnAgent
 {
@@ -48,4 +50,5 @@ public class TouchDisplayCommonAgent : DisplayCommonnAgent
 
 	// Token: 0x040008E3 RID: 2275
 	private bool _pointerWasActive;
+}
 }

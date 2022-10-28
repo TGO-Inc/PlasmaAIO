@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200000A RID: 10
 public class ScrollWheelBypass : MonoBehaviour, IScrollHandler, IEventSystemHandler
 {
@@ -20,4 +22,5 @@ public class ScrollWheelBypass : MonoBehaviour, IScrollHandler, IEventSystemHand
 
 	// Token: 0x04000045 RID: 69
 	private ScrollRect _scrollRect;
+}
 }

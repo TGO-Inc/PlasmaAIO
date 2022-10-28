@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000AC RID: 172
 public class NFCInterfaceAgent : Agent, IDataSelectionProvider
 {
@@ -46,4 +48,5 @@ public class NFCInterfaceAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001C1D RID: 7197
 		ReadValue
 	}
+}
 }

@@ -1,6 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x020002AD RID: 685
 	[Flags]

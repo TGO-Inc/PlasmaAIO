@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200003D RID: 61
 public class LoggerController : Controller
 {
@@ -87,4 +89,5 @@ public class LoggerController : Controller
 		// Token: 0x040019A8 RID: 6568
 		GPS
 	}
+}
 }

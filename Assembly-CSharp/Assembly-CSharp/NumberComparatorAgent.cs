@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000114 RID: 276
 public class NumberComparatorAgent : Agent, IDataSelectionProvider
 {
@@ -28,4 +30,5 @@ public class NumberComparatorAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001CB8 RID: 7352
 		GreaterOrEqual
 	}
+}
 }

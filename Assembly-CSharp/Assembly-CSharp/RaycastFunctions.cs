@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000181 RID: 385
 public static class RaycastFunctions
 {
@@ -76,4 +78,5 @@ public static class RaycastFunctions
 
 	// Token: 0x04000C05 RID: 3077
 	private static RaycastHit[] _hits;
+}
 }

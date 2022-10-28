@@ -85,9 +85,8 @@ namespace PlasmaML
         public void StartGame()
         {
             string outputDir = CurrentDirectory.Parent.FullName;
-            string dll = Path.Combine(outputDir, "PlasmaDevToolkit.dll");
+            string dll = Path.Combine(outputDir, "ModLoader.dll");
             Registry.SetValue("HKEY_CURRENT_USER\\SOFTWARE\\DryLicorice\\Plasma", "ModLoader", dll);
-            Registry.SetValue("HKEY_CURRENT_USER\\SOFTWARE\\DryLicorice\\Plasma", "ModLoaderInit", 0);
             Game = Process.Start(Path.Combine(GameDir, "Plasma.exe"));
             Task.Run(() =>
             {

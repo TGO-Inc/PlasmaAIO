@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200010E RID: 270
 public class MapperAgent : Agent
 {
@@ -53,4 +55,5 @@ public class MapperAgent : Agent
 
 	// Token: 0x040009A5 RID: 2469
 	private const int _firstOutput = 1;
+}
 }

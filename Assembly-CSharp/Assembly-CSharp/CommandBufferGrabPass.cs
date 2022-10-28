@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000199 RID: 409
 [ExecuteInEditMode]
 public class CommandBufferGrabPass : MonoBehaviour
@@ -33,4 +35,5 @@ public class CommandBufferGrabPass : MonoBehaviour
 
 	// Token: 0x04000CD1 RID: 3281
 	private static readonly Dictionary<Camera, CommandBuffer> cameras = new Dictionary<Camera, CommandBuffer>();
+}
 }

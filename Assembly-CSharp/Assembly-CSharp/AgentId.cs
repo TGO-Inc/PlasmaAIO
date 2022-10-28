@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000054 RID: 84
 public class AgentId
 {
@@ -60,4 +62,5 @@ public class AgentId
 
 	// Token: 0x0400048D RID: 1165
 	public string displayName;
+}
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Behavior
+namespace PlasmaAPI.GameClass.Behavior
 {
 	// Token: 0x02000223 RID: 547
 	public class SketchNodePort

@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000048 RID: 72
 public class StorageHelperController : Controller
 {
@@ -230,4 +232,5 @@ public class StorageHelperController : Controller
 		// Token: 0x040019C6 RID: 6598
 		Progress
 	}
+}
 }

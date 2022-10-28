@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000CA RID: 202
 public class SerialPortAgent : Agent
 {
@@ -53,4 +55,5 @@ public class SerialPortAgent : Agent
 		// Token: 0x04001C5E RID: 7262
 		Send
 	}
+}
 }

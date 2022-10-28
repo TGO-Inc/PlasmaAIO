@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200019E RID: 414
 [ExecuteInEditMode]
 public class CylinderTester : MonoBehaviour
@@ -33,4 +35,5 @@ public class CylinderTester : MonoBehaviour
 
 	// Token: 0x04000D24 RID: 3364
 	public Material mat;
+}
 }

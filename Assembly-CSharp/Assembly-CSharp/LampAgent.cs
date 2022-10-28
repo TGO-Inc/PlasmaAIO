@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200009A RID: 154
 public class LampAgent : Agent
 {
@@ -32,4 +34,5 @@ public class LampAgent : Agent
 		// Token: 0x04001C00 RID: 7168
 		SetIntensity
 	}
+}
 }

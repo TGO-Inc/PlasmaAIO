@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B9 RID: 441
 [ExecuteInEditMode]
 public class VisualTests : MonoBehaviour
@@ -26,4 +28,5 @@ public class VisualTests : MonoBehaviour
 	// Token: 0x04000E1E RID: 3614
 	[Header("[COMMANDS]")]
 	public bool GETREFS;
+}
 }

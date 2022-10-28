@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000080 RID: 128
 public class FrameAgent : Agent
 {
@@ -38,4 +40,5 @@ public class FrameAgent : Agent
 		// Token: 0x04001BCE RID: 7118
 		Render = 1
 	}
+}
 }

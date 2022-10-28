@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.IO;
@@ -5,13 +6,13 @@ using EasyFeedback;
 using EasyFeedback.APIs;
 using Tayx.Graphy;
 using Tayx.Graphy.Utils;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000251 RID: 593
 	public class FeedbackPopup : MonoBehaviour, IGenericWindow

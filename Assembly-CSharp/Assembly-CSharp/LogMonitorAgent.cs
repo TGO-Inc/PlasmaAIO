@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200010A RID: 266
 public class LogMonitorAgent : Agent, IDataSelectionProvider
 {
@@ -44,4 +46,5 @@ public class LogMonitorAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x0400098B RID: 2443
 	private SketchNotificationStrings _sketchNotificationStrings;
+}
 }

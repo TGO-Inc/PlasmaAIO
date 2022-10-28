@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000094 RID: 148
 public class KeypadAgent : Agent
 {
@@ -122,4 +124,5 @@ public class KeypadAgent : Agent
 		// Token: 0x04001BF3 RID: 7155
 		None = 32
 	}
+}
 }

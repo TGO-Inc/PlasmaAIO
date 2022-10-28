@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200018B RID: 395
 public class SerializedWorldMinimalMetaData
 {
@@ -31,4 +33,5 @@ public class SerializedWorldMinimalMetaData
 
 	// Token: 0x04000C89 RID: 3209
 	public SerializedWorldMetaData.States state;
+}
 }

@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000249 RID: 585
 	public class AssetItem : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler

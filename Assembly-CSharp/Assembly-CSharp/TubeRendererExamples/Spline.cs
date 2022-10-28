@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TubeRendererExamples
+namespace PlasmaAPI.GameClass.TubeRendererExamples
 {
 	// Token: 0x020001C7 RID: 455
 	public class Spline : MonoBehaviour

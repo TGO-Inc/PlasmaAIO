@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 using UnityEngine.Sprites;
 using UnityEngine.UI;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001CD RID: 461
 	[AddComponentMenu("Better UI/Controls/Better Image", 30)]

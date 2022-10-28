@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -5,6 +6,7 @@ using Behavior;
 using Newtonsoft.Json;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200008A RID: 138
 public class GPSTrackerAgent : Agent
 {
@@ -86,4 +88,5 @@ public class GPSTrackerAgent : Agent
 
 	// Token: 0x04000641 RID: 1601
 	private GPSTrackerDriver _gpsTrackerDriver;
+}
 }

@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000084 RID: 132
 public class GamepadInterfaceAgent : Agent, IDataSelectionProvider
 {
@@ -108,4 +110,5 @@ public class GamepadInterfaceAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000628 RID: 1576
 	private bool _shouldConsumeInput;
+}
 }

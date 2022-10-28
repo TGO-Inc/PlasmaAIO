@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using DG.Tweening;
 using DG.Tweening.Timeline;
@@ -5,7 +6,7 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.Video;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000259 RID: 601
 	public class TutorialVideoPlayer : VisorElement

@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000CC RID: 204
 public class SevenSegmentDisplayAgent : Agent
 {
@@ -24,4 +26,5 @@ public class SevenSegmentDisplayAgent : Agent
 		// Token: 0x04001C63 RID: 7267
 		UpdateVisuals
 	}
+}
 }

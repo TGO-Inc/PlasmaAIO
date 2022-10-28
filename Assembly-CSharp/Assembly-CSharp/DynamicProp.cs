@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000169 RID: 361
 public class DynamicProp : MonoBehaviour
 {
@@ -39,4 +41,5 @@ public class DynamicProp : MonoBehaviour
 
 	// Token: 0x04000B85 RID: 2949
 	private MeshRenderer _meshRenderer;
+}
 }

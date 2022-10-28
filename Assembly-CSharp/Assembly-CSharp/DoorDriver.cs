@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000075 RID: 117
 public class DoorDriver : ComponentDriver
 {
@@ -124,4 +126,5 @@ public class DoorDriver : ComponentDriver
 
 	// Token: 0x040005B1 RID: 1457
 	private const string _FMODParamResistance = "Resistance";
+}
 }

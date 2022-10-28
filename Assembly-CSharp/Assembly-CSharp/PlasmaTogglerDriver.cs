@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000B8 RID: 184
 public class PlasmaTogglerDriver : ComponentDriver
 {
@@ -96,4 +98,5 @@ public class PlasmaTogglerDriver : ComponentDriver
 
 	// Token: 0x040007DB RID: 2011
 	private const float _cooldown = 1f;
+}
 }

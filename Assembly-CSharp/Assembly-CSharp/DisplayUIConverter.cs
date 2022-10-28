@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E9 RID: 233
 public class DisplayUIConverter : JsonCreationConverter<DisplayUIElement>
 {
@@ -24,4 +26,5 @@ public class DisplayUIConverter : JsonCreationConverter<DisplayUIElement>
 
         return default;
     }
+}
 }

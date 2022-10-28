@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.IO;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200017E RID: 382
 public static class Plasma
 {
@@ -37,4 +39,5 @@ public static class Plasma
 
 	// Token: 0x04000BED RID: 3053
 	private const string localBuild = "BETA 0.1.95";
+}
 }

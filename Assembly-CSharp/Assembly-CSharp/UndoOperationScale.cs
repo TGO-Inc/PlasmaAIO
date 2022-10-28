@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000161 RID: 353
 public class UndoOperationScale : UndoOperation
 {
@@ -18,4 +20,5 @@ public class UndoOperationScale : UndoOperation
 
 	// Token: 0x04000B56 RID: 2902
 	private Vector3 _scale;
+}
 }

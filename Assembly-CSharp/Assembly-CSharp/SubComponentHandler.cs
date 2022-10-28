@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000154 RID: 340
 public class SubComponentHandler : MonoBehaviour
 {
@@ -320,4 +322,5 @@ public class SubComponentHandler : MonoBehaviour
 		// Token: 0x04001D0E RID: 7438
 		Ball
 	}
+}
 }

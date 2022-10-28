@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace EasyFSM
+namespace PlasmaAPI.GameClass.EasyFSM
 {
 	// Token: 0x02000228 RID: 552
 	public class EasyState

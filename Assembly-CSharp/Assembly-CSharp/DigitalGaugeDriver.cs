@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200006B RID: 107
 public class DigitalGaugeDriver : ComponentDriver
 {
@@ -89,4 +91,5 @@ public class DigitalGaugeDriver : ComponentDriver
 
 	// Token: 0x04000542 RID: 1346
 	private int _colorId;
+}
 }

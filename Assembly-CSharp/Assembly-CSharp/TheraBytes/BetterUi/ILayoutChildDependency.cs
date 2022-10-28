@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001E9 RID: 489
 	public interface ILayoutChildDependency

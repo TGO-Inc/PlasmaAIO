@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Reflection;
 using NodeCanvas.Framework;
@@ -5,6 +6,7 @@ using ParadoxNotion;
 using ParadoxNotion.Design;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000032 RID: 50
 [Category("✫ Script Control/Common")]
 [Description("STOCA Will subscribe to a public static event of Action type and return true when the event is raised and its value is equal to provided value as well.\n(eg public event System.Action<T> [name])")]
@@ -56,4 +58,5 @@ public class CheckStaticCSharpEventValue<T> : ConditionTask
 	[SerializeField]
 	[BlackboardOnly]
 	private BBParameter<T> checkValue;
+}
 }

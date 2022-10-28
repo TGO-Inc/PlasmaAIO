@@ -1,8 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using DigitalRuby.FastLineRenderer;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200025D RID: 605
 	public class DraggedWire : MonoBehaviour

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000003 RID: 3
 public class ScreenerItem : MonoBehaviour
 {
@@ -24,4 +26,5 @@ public class ScreenerItem : MonoBehaviour
 
 	// Token: 0x04000004 RID: 4
 	private TextMeshProUGUI _text;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using MoonSharp.Interpreter;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200010C RID: 268
 public class LUAFunctionAgent : LUACommonAgent
 {
@@ -33,4 +35,5 @@ public class LUAFunctionAgent : LUACommonAgent
 
 	// Token: 0x0400099B RID: 2459
 	private DynValue _entryPoint;
+}
 }

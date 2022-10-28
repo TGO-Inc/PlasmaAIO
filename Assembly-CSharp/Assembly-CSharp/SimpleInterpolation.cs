@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200018F RID: 399
 public class SimpleInterpolation : MonoBehaviour
 {
@@ -46,4 +48,5 @@ public class SimpleInterpolation : MonoBehaviour
 		// Token: 0x04001D64 RID: 7524
 		public Quaternion rotation;
 	}
+}
 }

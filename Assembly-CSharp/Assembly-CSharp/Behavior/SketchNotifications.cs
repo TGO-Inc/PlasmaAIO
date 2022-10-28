@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Behavior
+namespace PlasmaAPI.GameClass.Behavior
 {
 	// Token: 0x02000224 RID: 548
 	public static class SketchNotifications

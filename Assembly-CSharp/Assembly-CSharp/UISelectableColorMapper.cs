@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200001D RID: 29
 public class UISelectableColorMapper : UIColorMapper
 {
@@ -25,4 +27,5 @@ public class UISelectableColorMapper : UIColorMapper
 	// Token: 0x040000AD RID: 173
 	[ColorEntity]
 	public int disabledColor;
+}
 }

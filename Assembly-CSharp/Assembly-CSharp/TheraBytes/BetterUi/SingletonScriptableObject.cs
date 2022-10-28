@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x02000214 RID: 532
 	public abstract class SingletonScriptableObject<T> : ScriptableObject where T : SingletonScriptableObject<T>

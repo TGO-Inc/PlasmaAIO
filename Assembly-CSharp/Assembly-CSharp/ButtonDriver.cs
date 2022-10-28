@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200005D RID: 93
 public class ButtonDriver : ComponentDriver
 {
@@ -118,4 +120,5 @@ public class ButtonDriver : ComponentDriver
 
 	// Token: 0x040004F2 RID: 1266
 	private const string _FMODParamSize = "Size";
+}
 }

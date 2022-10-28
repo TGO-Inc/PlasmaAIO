@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using FMODUnity;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200002F RID: 47
 public class RigidbodyCharacter : MonoBehaviour
 {
@@ -467,4 +469,5 @@ public class RigidbodyCharacter : MonoBehaviour
 		// Token: 0x04001964 RID: 6500
 		Ghost
 	}
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000163 RID: 355
 [CanSpill(true)]
 public class Director : Controller
@@ -84,4 +86,5 @@ public class Director : Controller
 
 	// Token: 0x04000B5F RID: 2911
 	private float _gameHoursPerSecond;
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D6 RID: 214
 public class SpeakerAgent : Agent
 {
@@ -104,4 +106,5 @@ public class SpeakerAgent : Agent
 		// Token: 0x04001C7E RID: 7294
 		WireframePaused
 	}
+}
 }

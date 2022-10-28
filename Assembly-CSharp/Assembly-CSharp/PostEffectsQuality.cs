@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000044 RID: 68
 public enum PostEffectsQuality
 {
@@ -13,4 +15,5 @@ public enum PostEffectsQuality
 	High,
 	// Token: 0x04000250 RID: 592
 	Ultra
+}
 }

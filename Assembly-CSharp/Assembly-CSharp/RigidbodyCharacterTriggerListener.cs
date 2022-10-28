@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000030 RID: 48
 public class RigidbodyCharacterTriggerListener : MonoBehaviour
 {
@@ -24,4 +26,5 @@ public class RigidbodyCharacterTriggerListener : MonoBehaviour
 
 	// Token: 0x04000149 RID: 329
 	private RigidbodyCharacter _character;
+}
 }

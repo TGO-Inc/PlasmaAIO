@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200008F RID: 143
 public class ImpactSensorDriver : ComponentDriver
 {
@@ -80,4 +82,5 @@ public class ImpactSensorDriver : ComponentDriver
 
 	// Token: 0x0400066F RID: 1647
 	private int _projectilesLayer;
+}
 }

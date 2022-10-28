@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000089 RID: 137
 public class GPSTagDriver : ComponentDriver
 {
@@ -62,4 +64,5 @@ public class GPSTagDriver : ComponentDriver
 
 	// Token: 0x0400063C RID: 1596
 	private ArticulationBody _articulationBody;
+}
 }

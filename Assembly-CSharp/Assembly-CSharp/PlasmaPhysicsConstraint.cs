@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000177 RID: 375
 public class PlasmaPhysicsConstraint : MonoBehaviour
 {
@@ -8,4 +10,5 @@ public class PlasmaPhysicsConstraint : MonoBehaviour
 	public virtual void Tick()
 	{
 	}
+}
 }

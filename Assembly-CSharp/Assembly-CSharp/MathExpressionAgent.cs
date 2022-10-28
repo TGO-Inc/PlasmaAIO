@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using AK;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200010F RID: 271
 public class MathExpressionAgent : Agent, IDataSelectionProvider
 {
@@ -34,4 +36,5 @@ public class MathExpressionAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x040009A7 RID: 2471
 	private Expression _expression;
+}
 }

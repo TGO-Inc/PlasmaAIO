@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000002 RID: 2
 public static class Screener
 {
@@ -25,4 +27,5 @@ public static class Screener
 
 	// Token: 0x04000003 RID: 3
 	private static Dictionary<int, ScreenerItem> _ids;
+}
 }

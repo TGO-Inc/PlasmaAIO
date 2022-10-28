@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Behavior
+namespace PlasmaAPI.GameClass.Behavior
 {
 	// Token: 0x02000221 RID: 545
 	public class SketchConnection

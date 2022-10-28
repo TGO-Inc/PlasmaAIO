@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001D6 RID: 470
 	[Serializable]
@@ -11,7 +12,7 @@ namespace TheraBytes.BetterUi
 	{
 		// Token: 0x17000173 RID: 371
 		// (get) Token: 0x060010B5 RID: 4277 RVA: 0x00059C00 File Offset: 0x00057E00
-		public override UnityEngine.Object Target
+		public override Object Target
 		{
 			get
 			{

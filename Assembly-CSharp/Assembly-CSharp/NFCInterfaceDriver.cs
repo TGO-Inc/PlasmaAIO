@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000AD RID: 173
 public class NFCInterfaceDriver : ComponentDriver
 {
@@ -132,4 +134,5 @@ public class NFCInterfaceDriver : ComponentDriver
 
 	// Token: 0x0400078D RID: 1933
 	private bool _shouldWrite;
+}
 }

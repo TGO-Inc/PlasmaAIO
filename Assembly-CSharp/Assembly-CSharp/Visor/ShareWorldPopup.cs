@@ -1,11 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Steamworks;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x020002B4 RID: 692
 	public class ShareWorldPopup : MonoBehaviour, IGenericWindow

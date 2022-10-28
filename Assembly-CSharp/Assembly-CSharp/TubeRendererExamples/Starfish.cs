@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TubeRendererExamples
+namespace PlasmaAPI.GameClass.TubeRendererExamples
 {
 	// Token: 0x020001C8 RID: 456
 	public class Starfish : MonoBehaviour

@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using DG.Tweening.Timeline;
 using TMPro;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000258 RID: 600
 	public class TutorialPanel : MonoBehaviour

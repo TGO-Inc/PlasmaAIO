@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200006E RID: 110
 public class DisplayCommonnAgent : Agent, IDataSelectionProvider
 {
@@ -106,4 +108,5 @@ public class DisplayCommonnAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001BBB RID: 7099
 		SetAlignment
 	}
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000106 RID: 262
 public class ImageExporterAgent : Agent
 {
@@ -22,4 +24,5 @@ public class ImageExporterAgent : Agent
 
 	// Token: 0x0400097C RID: 2428
 	private AgentProperty _imageProperty;
+}
 }

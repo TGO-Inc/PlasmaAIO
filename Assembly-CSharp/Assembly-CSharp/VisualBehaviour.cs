@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B8 RID: 440
 public class VisualBehaviour : MonoBehaviour
 {
@@ -18,4 +20,5 @@ public class VisualBehaviour : MonoBehaviour
 	public virtual void Activate()
 	{
 	}
+}
 }

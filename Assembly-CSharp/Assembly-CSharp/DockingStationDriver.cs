@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening.Timeline;
@@ -5,6 +6,7 @@ using FMODUnity;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000073 RID: 115
 public class DockingStationDriver : ComponentDriver
 {
@@ -131,4 +133,5 @@ public class DockingStationDriver : ComponentDriver
 
 	// Token: 0x0400059A RID: 1434
 	private Transform _movingPart;
+}
 }

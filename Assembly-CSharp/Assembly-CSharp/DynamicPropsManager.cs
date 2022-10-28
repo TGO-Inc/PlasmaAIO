@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200016A RID: 362
 public class DynamicPropsManager : MonoBehaviour
 {
@@ -44,4 +46,5 @@ public class DynamicPropsManager : MonoBehaviour
 
 	// Token: 0x04000B86 RID: 2950
 	private Dictionary<int, DynamicProp> _registeredProps;
+}
 }

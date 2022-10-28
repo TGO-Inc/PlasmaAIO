@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000EC RID: 236
 public class DisplayUIText : DisplayUIElement
 {
@@ -39,4 +41,5 @@ public class DisplayUIText : DisplayUIElement
 
 	// Token: 0x0400091F RID: 2335
 	public int horizontalAlignment;
+}
 }

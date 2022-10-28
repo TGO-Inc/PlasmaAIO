@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200015F RID: 351
 public class UndoOperationRebase : UndoOperation
 {
@@ -33,4 +35,5 @@ public class UndoOperationRebase : UndoOperation
 
 	// Token: 0x04000B55 RID: 2901
 	private bool _restoreTransforms;
+}
 }

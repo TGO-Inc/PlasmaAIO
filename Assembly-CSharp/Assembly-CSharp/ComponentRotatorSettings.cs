@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200002B RID: 43
 [CreateAssetMenu(fileName = "RotatorSettings", menuName = "Plasma/Rotator Settings")]
 public class ComponentRotatorSettings : ScriptableObject
@@ -21,4 +23,5 @@ public class ComponentRotatorSettings : ScriptableObject
 
 	// Token: 0x04000108 RID: 264
 	public float rollRotationAnglePerSecond = 90f;
+}
 }

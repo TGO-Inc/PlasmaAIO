@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000026 RID: 38
 [CreateAssetMenu(menuName = "Plasma/Blocking Tutorial Gestalt")]
 public class BlockingTutorialGestalt : SerializedScriptableObject
@@ -29,4 +31,5 @@ public class BlockingTutorialGestalt : SerializedScriptableObject
 
 	// Token: 0x040000E5 RID: 229
 	public BlockingTutorialGestaltEnum id;
+}
 }

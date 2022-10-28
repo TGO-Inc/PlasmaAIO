@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200001B RID: 27
 public class UIScrollBar : MonoBehaviour
 {
@@ -34,4 +36,5 @@ public class UIScrollBar : MonoBehaviour
 
 	// Token: 0x040000A4 RID: 164
 	private float _positionIncrement;
+}
 }

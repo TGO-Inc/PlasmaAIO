@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Steamworks;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000188 RID: 392
 public class SerializedDeviceMetaData
 {
@@ -127,4 +129,5 @@ public class SerializedDeviceMetaData
 		// Token: 0x04001D58 RID: 7512
 		Downloading
 	}
+}
 }

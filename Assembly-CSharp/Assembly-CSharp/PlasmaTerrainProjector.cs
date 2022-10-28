@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200019A RID: 410
 [ExecuteInEditMode]
 public class PlasmaTerrainProjector : MonoBehaviour
@@ -77,4 +79,5 @@ public class PlasmaTerrainProjector : MonoBehaviour
 
 	// Token: 0x04000CDE RID: 3294
 	private Vector3 terrainCenter;
+}
 }

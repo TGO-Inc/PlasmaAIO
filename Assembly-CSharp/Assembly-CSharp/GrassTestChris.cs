@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001A2 RID: 418
 public class GrassTestChris : MonoBehaviour
 {
@@ -46,4 +48,5 @@ public class GrassTestChris : MonoBehaviour
 
 	// Token: 0x04000D41 RID: 3393
 	public float rSharpness;
+}
 }

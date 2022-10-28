@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000118 RID: 280
 public class OutputInterfacerAgent : Agent
 {
@@ -32,4 +34,5 @@ public class OutputInterfacerAgent : Agent
 
 	// Token: 0x040009C5 RID: 2501
 	private AgentProperty _payloadProperty;
+}
 }

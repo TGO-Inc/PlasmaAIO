@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200008C RID: 140
 public class GyroscopeAgent : Agent
 {
@@ -33,4 +35,5 @@ public class GyroscopeAgent : Agent
 
 	// Token: 0x0400064F RID: 1615
 	private AgentProperty _rollSpeedProperty;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000110 RID: 272
 public class MultiPropertyReaderAgent : Agent
 {
@@ -68,4 +70,5 @@ public class MultiPropertyReaderAgent : Agent
 
 	// Token: 0x040009AC RID: 2476
 	private AgentProperty _backwardProperty;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F8 RID: 248
 public class DeviceControllerAgent : Agent
 {
@@ -66,4 +68,5 @@ public class DeviceControllerAgent : Agent
 
 	// Token: 0x04000951 RID: 2385
 	private Dictionary<AgentProperty, WorldController.GlobalPermissions> _permissionProperties;
+}
 }

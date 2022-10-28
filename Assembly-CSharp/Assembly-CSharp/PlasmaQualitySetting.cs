@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000040 RID: 64
 [Serializable]
 public class PlasmaQualitySetting
@@ -46,4 +48,5 @@ public class PlasmaQualitySetting
 
 	// Token: 0x0400023B RID: 571
 	public string _;
+}
 }

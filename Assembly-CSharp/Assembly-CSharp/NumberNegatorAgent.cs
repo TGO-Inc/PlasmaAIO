@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000116 RID: 278
 public class NumberNegatorAgent : Agent
 {
@@ -19,4 +21,5 @@ public class NumberNegatorAgent : Agent
 
 	// Token: 0x040009B8 RID: 2488
 	private AgentProperty _numberProperty;
+}
 }

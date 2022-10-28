@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000156 RID: 342
 public enum UndoOperationType
 {
@@ -23,4 +25,5 @@ public enum UndoOperationType
 	Spawn,
 	// Token: 0x04000B3C RID: 2876
 	Scale
+}
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001D1 RID: 465
 	[AddComponentMenu("Better UI/Controls/Better Scroll Rect", 30)]

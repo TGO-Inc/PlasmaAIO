@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200009D RID: 157
 public class LateralExtenderDriver : ComponentDriver
 {
@@ -203,4 +205,5 @@ public class LateralExtenderDriver : ComponentDriver
 
 	// Token: 0x04000705 RID: 1797
 	private const string _FMODParamSize = "Size";
+}
 }

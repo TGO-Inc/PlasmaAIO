@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200005E RID: 94
 public class ButtonSimpleAgent : Agent
 {
@@ -36,4 +38,5 @@ public class ButtonSimpleAgent : Agent
 
 	// Token: 0x040004F5 RID: 1269
 	private AgentProperty _pressedProperty;
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A1 RID: 161
 public class LedDriver : ComponentDriver
 {
@@ -42,4 +44,5 @@ public class LedDriver : ComponentDriver
 
 	// Token: 0x0400072A RID: 1834
 	private int _colorId;
+}
 }

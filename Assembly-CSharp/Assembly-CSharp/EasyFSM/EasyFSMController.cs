@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EasyFSM
+namespace PlasmaAPI.GameClass.EasyFSM
 {
 	// Token: 0x02000225 RID: 549
 	public class EasyFSMController : Controller

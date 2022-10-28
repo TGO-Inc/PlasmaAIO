@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Behavior
+namespace PlasmaAPI.GameClass.Behavior
 {
 	// Token: 0x02000220 RID: 544
 	public class Sketch

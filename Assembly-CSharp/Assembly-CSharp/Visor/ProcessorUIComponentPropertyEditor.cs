@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,7 +6,7 @@ using Behavior;
 using TMPro;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000267 RID: 615
 	public class ProcessorUIComponentPropertyEditor : DataEditor

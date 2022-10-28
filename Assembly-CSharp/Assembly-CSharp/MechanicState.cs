@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Sirenix.Serialization;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000174 RID: 372
 public class MechanicState
 {
@@ -243,4 +245,5 @@ public class MechanicState
 		// Token: 0x04001D3B RID: 7483
 		public float velocity;
 	}
+}
 }

@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000C2 RID: 194
 public class QuarterCylinderWindowDriver : WindowCommonDriver
 {
@@ -8,4 +10,5 @@ public class QuarterCylinderWindowDriver : WindowCommonDriver
 	{
 
 	}
+}
 }

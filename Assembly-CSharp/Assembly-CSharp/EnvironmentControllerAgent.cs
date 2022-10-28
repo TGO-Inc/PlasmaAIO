@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000FB RID: 251
 public class EnvironmentControllerAgent : Agent, IDataSelectionProvider
 {
@@ -36,4 +38,5 @@ public class EnvironmentControllerAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x0400095E RID: 2398
 	private AgentProperty _targetTimeSpeedProperty;
+}
 }

@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B6 RID: 438
 public class PlasmAuraRenderer : MonoBehaviour
 {
@@ -45,4 +47,5 @@ public class PlasmAuraRenderer : MonoBehaviour
 
 	// Token: 0x04000E16 RID: 3606
 	public CommandBuffer m_GlowBuffer;
+}
 }

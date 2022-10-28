@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000064 RID: 100
 public class ClawAgent : Agent
 {
@@ -11,4 +13,5 @@ public class ClawAgent : Agent
 		// Token: 0x04001BA7 RID: 7079
 		UpdateVisuals = 4
 	}
+}
 }

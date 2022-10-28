@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D2 RID: 210
 public class SmallerHingeAgent : Agent
 {
@@ -57,4 +59,5 @@ public class SmallerHingeAgent : Agent
 		// Token: 0x04001C6D RID: 7277
 		SetPhysics = 1
 	}
+}
 }

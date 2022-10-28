@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using DG.Tweening.Timeline;
 using FMODUnity;
@@ -6,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x020002A8 RID: 680
 	public class QuickbarSlot : MonoBehaviour

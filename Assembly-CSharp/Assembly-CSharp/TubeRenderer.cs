@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200019C RID: 412
 [AddComponentMenu("Effects/TubeRenderer")]
 [RequireComponent(typeof(MeshFilter))]
@@ -841,4 +843,5 @@ public class TubeRenderer : MonoBehaviour
 	// Token: 0x020003D3 RID: 979
 	// (Invoke) Token: 0x0600210F RID: 8463
 	public delegate void Postprocess(Vector3[] vertices, Vector3[] normals, Vector4[] tangents);
+}
 }

@@ -1,11 +1,13 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Common.Math;
+using PlasmaAPI.GameClass.Common.Math;
 using NodeCanvas.Framework;
 using ParadoxNotion;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000007 RID: 7
 public class BuildReplayCanvas : MonoBehaviour
 {
@@ -272,4 +274,5 @@ public class BuildReplayCanvas : MonoBehaviour
 		// Token: 0x04001932 RID: 6450
 		public bool openSketch;
 	}
+}
 }

@@ -1,8 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000264 RID: 612
 	public class ProcessorUIBlocker : MonoBehaviour, IPointerClickHandler, IEventSystemHandler

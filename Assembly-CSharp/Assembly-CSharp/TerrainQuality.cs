@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000042 RID: 66
 public enum TerrainQuality
 {
@@ -9,4 +11,5 @@ public enum TerrainQuality
 	Normal,
 	// Token: 0x04000244 RID: 580
 	High
+}
 }

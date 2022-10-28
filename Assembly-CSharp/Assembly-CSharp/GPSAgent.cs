@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000086 RID: 134
 public class GPSAgent : Agent
 {
@@ -21,4 +23,5 @@ public class GPSAgent : Agent
 
 	// Token: 0x04000636 RID: 1590
 	private AgentProperty _positionZProperty;
+}
 }

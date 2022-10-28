@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000134 RID: 308
 public class TutorialPresenterAgent : Agent, IDataSelectionProvider
 {
@@ -34,4 +36,5 @@ public class TutorialPresenterAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000A32 RID: 2610
 	private AgentProperty _tutorialProperty;
+}
 }

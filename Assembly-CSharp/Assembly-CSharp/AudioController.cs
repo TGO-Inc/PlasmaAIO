@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000036 RID: 54
 public class AudioController : Controller
 {
@@ -147,4 +149,5 @@ public class AudioController : Controller
 
 	// Token: 0x0400017A RID: 378
 	private const float _defaultMasterVolume = 0.75f;
+}
 }

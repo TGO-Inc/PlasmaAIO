@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200014A RID: 330
 public class DeviceComponentModifier : MonoBehaviour
 {
@@ -27,4 +29,5 @@ public class DeviceComponentModifier : MonoBehaviour
 
 	// Token: 0x04000AEC RID: 2796
 	private ComponentHandler _componentHandler;
+}
 }

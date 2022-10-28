@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,14 +10,14 @@ using FMODUnity;
 using NodeCanvas.StateMachines;
 using Rewired;
 using Sirenix.OdinInspector;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000263 RID: 611
 	public class ProcessorUI : SerializedMonoBehaviour, IEscapeHandler

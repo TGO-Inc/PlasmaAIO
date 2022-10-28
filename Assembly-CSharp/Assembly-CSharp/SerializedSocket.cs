@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200018E RID: 398
 public struct SerializedSocket
 {
@@ -15,4 +17,5 @@ public struct SerializedSocket
 
 	// Token: 0x04000C93 RID: 3219
 	public Quaternion localRotation;
+}
 }

@@ -1,11 +1,13 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Common.Extension;
-using Common.Math;
+using PlasmaAPI.GameClass.Common.Math;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000147 RID: 327
 public class ComponentHandler : MonoBehaviour
 {
@@ -1165,4 +1167,5 @@ public class ComponentHandler : MonoBehaviour
 		Vector3.up,
 		Vector3.right
 	};
+}
 }

@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D7 RID: 215
 public class SpeakerDriver : ComponentDriver
 {
@@ -136,4 +138,5 @@ public class SpeakerDriver : ComponentDriver
 
 	// Token: 0x040008B6 RID: 2230
 	private const float _maxRange = 50f;
+}
 }

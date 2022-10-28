@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TubeRendererExamples
+namespace PlasmaAPI.GameClass.TubeRendererExamples
 {
 	// Token: 0x020001C9 RID: 457
 	public class Volume : MonoBehaviour

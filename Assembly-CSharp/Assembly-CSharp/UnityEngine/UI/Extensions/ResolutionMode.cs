@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UnityEngine.UI.Extensions
+namespace PlasmaAPI.GameClass.UnityEngine.UI.Extensions
 {
 	// Token: 0x02000230 RID: 560
 	public enum ResolutionMode

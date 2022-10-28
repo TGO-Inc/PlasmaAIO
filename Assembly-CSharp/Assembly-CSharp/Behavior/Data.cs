@@ -4,7 +4,7 @@ using System.Globalization;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Behavior
+namespace PlasmaAPI.GameClass.Behavior
 {
 	// Token: 0x0200021D RID: 541
 	[Serializable]

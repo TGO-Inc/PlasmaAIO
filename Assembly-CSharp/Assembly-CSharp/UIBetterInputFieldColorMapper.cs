@@ -1,10 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200000F RID: 15
 public class UIBetterInputFieldColorMapper : UIColorMapper
 {
@@ -53,4 +55,5 @@ public class UIBetterInputFieldColorMapper : UIColorMapper
 	// Token: 0x0400005B RID: 91
 	[ColorEntity]
 	public int selectionColor;
+}
 }

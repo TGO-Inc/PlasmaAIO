@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001A0 RID: 416
 [ExecuteInEditMode]
 public class FoliageLightSetter : MonoBehaviour
@@ -27,4 +29,5 @@ public class FoliageLightSetter : MonoBehaviour
 
 	// Token: 0x04000D30 RID: 3376
 	public Material[] mats;
+}
 }

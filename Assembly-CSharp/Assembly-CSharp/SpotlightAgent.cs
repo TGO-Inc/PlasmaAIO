@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D8 RID: 216
 public class SpotlightAgent : Agent
 {
@@ -34,4 +36,5 @@ public class SpotlightAgent : Agent
 		// Token: 0x04001C88 RID: 7304
 		SetIntensity
 	}
+}
 }

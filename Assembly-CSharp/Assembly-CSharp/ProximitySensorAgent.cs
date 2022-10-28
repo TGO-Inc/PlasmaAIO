@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000BF RID: 191
 public class ProximitySensorAgent : Agent, IDataSelectionProvider
 {
@@ -43,4 +45,5 @@ public class ProximitySensorAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001C50 RID: 7248
 		SetBoxSize
 	}
+}
 }

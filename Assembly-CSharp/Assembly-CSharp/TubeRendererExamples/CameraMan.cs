@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TubeRendererExamples
+namespace PlasmaAPI.GameClass.TubeRendererExamples
 {
 	// Token: 0x020001BF RID: 447
 	public class CameraMan : MonoBehaviour

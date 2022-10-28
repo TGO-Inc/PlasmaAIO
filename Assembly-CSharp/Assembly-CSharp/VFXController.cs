@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -5,6 +6,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200004A RID: 74
 public class VFXController : Controller
 {
@@ -912,4 +914,5 @@ public class VFXController : Controller
 	// Token: 0x04000349 RID: 841
 	[HideInInspector]
 	public int p_wireframeMUL;
+}
 }

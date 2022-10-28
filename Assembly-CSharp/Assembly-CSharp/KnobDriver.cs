@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000097 RID: 151
 public class KnobDriver : ComponentDriver
 {
@@ -143,4 +145,5 @@ public class KnobDriver : ComponentDriver
 
 	// Token: 0x040006D8 RID: 1752
 	private const string _FMODParamMovementSpeed = "MovmentSpeed";
+}
 }

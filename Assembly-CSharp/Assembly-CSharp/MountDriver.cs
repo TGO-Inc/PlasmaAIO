@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening.Timeline;
@@ -5,6 +6,7 @@ using FMODUnity;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000AB RID: 171
 public class MountDriver : ComponentDriver
 {
@@ -222,4 +224,5 @@ public class MountDriver : ComponentDriver
 
 	// Token: 0x0400077B RID: 1915
 	private bool _moveFromKeyboardInput;
+}
 }

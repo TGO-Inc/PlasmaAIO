@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PlasmaDevToolkit</RootNamespace>
-    <AssemblyName>ModLoader</AssemblyName>
+    <AssemblyName>DevToolkit</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -282,41 +282,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entry.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\DataSet.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\IMaterialFactory.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\IShaderSelector.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\MaterialData.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\MaterialFactory.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\ModelReferences.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\ModelUtil.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\ObjectBuilder.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\ShaderSelector.cs" />
-    <Compile Include="Packs\Model\Scripts\Dataset\Triangulator.cs" />
-    <Compile Include="Packs\Model\Scripts\ImportOptions.cs" />
-    <Compile Include="Packs\Model\Scripts\IO\FileFilesystem.cs" />
-    <Compile Include="Packs\Model\Scripts\IO\IFilesystem.cs" />
-    <Compile Include="Packs\Model\Scripts\Loaders\Loader.cs" />
-    <Compile Include="Packs\Model\Scripts\Loaders\LoaderObj.cs" />
-    <Compile Include="Packs\Model\Scripts\Loaders\TextureLoader.cs" />
-    <Compile Include="Packs\Model\Scripts\LoadingProgress.cs" />
-    <Compile Include="Packs\Model\Scripts\MathUtil\MathData\Triangle.cs" />
-    <Compile Include="Packs\Model\Scripts\MathUtil\MathData\Vertex.cs" />
-    <Compile Include="Packs\Model\Scripts\MathUtil\MathUtility.cs" />
-    <Compile Include="Packs\Model\Scripts\MathUtil\Triangulation.cs" />
-    <Compile Include="Packs\Model\Scripts\ModelImportInfo.cs" />
-    <Compile Include="Packs\Model\Scripts\MultiObjectImporter.cs" />
-    <Compile Include="Packs\Model\Scripts\ObjectImporter.cs" />
-    <Compile Include="Packs\Model\Scripts\PathSettings.cs" />
-    <Compile Include="ModLoader\API\ObjImporter.cs" />
-    <Compile Include="ModLoader\AssemblyContainer.cs" />
-    <Compile Include="ModLoader\AssemblyManager.cs" />
-    <Compile Include="ModLoader\AssemblyType.cs" />
-    <Compile Include="ModLoader\SocketCommunication\Client.cs" />
-    <Compile Include="ModLoader\SocketCommunication\Command.cs" />
-    <Compile Include="ModLoader\SocketCommunication\CommandCommunication.cs" />
-    <Compile Include="ModLoader\Extensions\Extensions.cs" />
-    <Compile Include="ModLoader\Extensions\SocketExtrensions.cs" />
-    <Compile Include="ModLoader\SocketCommunication\CommandHandler.cs" />
+    <Compile Include="DevToolkit\SocketCommunication\Client.cs" />
+    <Compile Include="DevToolkit\SocketCommunication\Command.cs" />
+    <Compile Include="DevToolkit\SocketCommunication\CommandCommunication.cs" />
+    <Compile Include="DevToolkit\Extensions\SocketExtrensions.cs" />
+    <Compile Include="DevToolkit\SocketCommunication\CommandHandler.cs" />
     <Compile Include="Overrides\Console.cs" />
     <Compile Include="Patches\Controllers.cs" />
     <Compile Include="Patches\LoggerController.cs" />
@@ -335,9 +305,9 @@
       <Project>{9630b967-a794-42d6-88f7-a469318d67cc}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PlasmaAPI\PlasmaAPI.csproj">
+    <ProjectReference Include="..\PlasmaAPI\PlasmaMLL.csproj">
       <Project>{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}</Project>
-      <Name>PlasmaAPI</Name>
+      <Name>PlasmaMLL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

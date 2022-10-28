@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.IO;
@@ -5,12 +6,12 @@ using EasyFeedback;
 using EasyFeedback.APIs;
 using Tayx.Graphy;
 using Tayx.Graphy.Utils;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000250 RID: 592
 	public class ExceptionPopup : MonoBehaviour

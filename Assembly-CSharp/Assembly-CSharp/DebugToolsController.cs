@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000038 RID: 56
 public class DebugToolsController : Controller
 {
@@ -15,4 +17,5 @@ public class DebugToolsController : Controller
 
 	// Token: 0x0400017D RID: 381
 	private GameObject _imageDebuggerCanvas;
+}
 }

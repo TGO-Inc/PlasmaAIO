@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200006D RID: 109
 public class DirectionalIndicatorDriver : ComponentDriver
 {
@@ -99,4 +101,5 @@ public class DirectionalIndicatorDriver : ComponentDriver
 
 	// Token: 0x04000557 RID: 1367
 	private AgentProperty _compassProperty;
+}
 }

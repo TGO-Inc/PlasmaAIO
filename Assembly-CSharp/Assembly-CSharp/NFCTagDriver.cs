@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000AF RID: 175
 public class NFCTagDriver : ComponentDriver
 {
@@ -87,4 +89,5 @@ public class NFCTagDriver : ComponentDriver
 
 	// Token: 0x04000793 RID: 1939
 	private Coroutine _coroutine;
+}
 }

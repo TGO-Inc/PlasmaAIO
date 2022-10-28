@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F6 RID: 246
 public class ComparatorAgent : Agent
 {
@@ -28,4 +30,5 @@ public class ComparatorAgent : Agent
 	{
 
 	}
+}
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002CA RID: 714
 	[CreateAssetMenu(fileName = "BeautifyProfile", menuName = "Beautify Profile", order = 101)]

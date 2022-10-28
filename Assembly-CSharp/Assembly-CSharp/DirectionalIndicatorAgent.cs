@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200006C RID: 108
 public class DirectionalIndicatorAgent : Agent
 {
@@ -90,4 +92,5 @@ public class DirectionalIndicatorAgent : Agent
 		// Token: 0x04001BB4 RID: 7092
 		UpdateVisuals
 	}
+}
 }

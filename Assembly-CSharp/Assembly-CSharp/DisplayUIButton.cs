@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000ED RID: 237
 public class DisplayUIButton : DisplayUIElement
 {
@@ -84,4 +86,5 @@ public class DisplayUIButton : DisplayUIElement
 	// Token: 0x0400092A RID: 2346
 	[NonSerialized]
 	private Color _highlightColor;
+}
 }

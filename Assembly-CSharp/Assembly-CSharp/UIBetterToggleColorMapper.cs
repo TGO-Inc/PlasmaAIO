@@ -1,10 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000012 RID: 18
 public class UIBetterToggleColorMapper : UIColorMapper
 {
@@ -88,4 +90,5 @@ public class UIBetterToggleColorMapper : UIColorMapper
 
 	// Token: 0x0400007E RID: 126
 	public bool extraBorder;
+}
 }

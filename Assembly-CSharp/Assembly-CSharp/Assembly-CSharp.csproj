@@ -61,10 +61,6 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
@@ -125,7 +121,7 @@
     </Reference>
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Unity Projects\Plasma Remade\BUILD\Plasma Remade_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
       <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
@@ -135,7 +131,7 @@
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Unity Projects\Plasma Remade\BUILD\Plasma Remade_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
       <HintPath>..\..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>

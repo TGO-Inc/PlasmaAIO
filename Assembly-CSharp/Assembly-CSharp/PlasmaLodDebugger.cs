@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B2 RID: 434
 public class PlasmaLodDebugger : MonoBehaviour
 {
@@ -13,4 +15,5 @@ public class PlasmaLodDebugger : MonoBehaviour
 	private void Update()
 	{
 	}
+}
 }

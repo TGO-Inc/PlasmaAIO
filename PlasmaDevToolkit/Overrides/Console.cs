@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using static LoggerController;
 using UnityEngine;
 using Color = UnityEngine.Color;
 using System.Drawing;
@@ -16,6 +15,7 @@ using System.Collections.Concurrent;
 using Random = System.Random;
 using System.Runtime.InteropServices;
 using System.Timers;
+using static PlasmaAPI.GameClass.LoggerController;
 
 namespace PlasmaDevToolkit.Overrides
 {

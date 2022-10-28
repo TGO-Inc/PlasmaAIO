@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200001C RID: 28
 public class UIScrollBarColorMapper : UIColorMapper
 {
@@ -29,4 +31,5 @@ public class UIScrollBarColorMapper : UIColorMapper
 	// Token: 0x040000A9 RID: 169
 	[ColorEntity]
 	public int disabledColor;
+}
 }

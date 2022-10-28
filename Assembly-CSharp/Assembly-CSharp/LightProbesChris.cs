@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001A3 RID: 419
 public class LightProbesChris : MonoBehaviour
 {
@@ -19,4 +21,5 @@ public class LightProbesChris : MonoBehaviour
 
 	// Token: 0x04000D43 RID: 3395
 	private Bounds bounds;
+}
 }

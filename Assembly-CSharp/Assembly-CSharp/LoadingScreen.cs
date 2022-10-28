@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using DG.Tweening;
 using DG.Tweening.Core;
@@ -5,6 +6,7 @@ using DG.Tweening.Plugins.Options;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000025 RID: 37
 public class LoadingScreen : MonoBehaviour
 {
@@ -143,4 +145,5 @@ public class LoadingScreen : MonoBehaviour
 		// Token: 0x04001951 RID: 6481
 		Stopping
 	}
+}
 }

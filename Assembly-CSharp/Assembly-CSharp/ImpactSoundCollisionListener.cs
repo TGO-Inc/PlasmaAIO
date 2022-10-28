@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200014E RID: 334
 public class ImpactSoundCollisionListener : MonoBehaviour
 {
@@ -14,4 +16,5 @@ public class ImpactSoundCollisionListener : MonoBehaviour
 	{
 
 	}
+}
 }

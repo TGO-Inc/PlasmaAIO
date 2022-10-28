@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200007B RID: 123
 public class EmissiveLabelDriver : ComponentDriver
 {
@@ -89,4 +91,5 @@ public class EmissiveLabelDriver : ComponentDriver
 
 	// Token: 0x040005F2 RID: 1522
 	private TextAlignmentOptions[] _alignments;
+}
 }

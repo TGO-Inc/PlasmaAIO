@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000B5 RID: 181
 public class PlasmaCannonAgent : Agent, IDataSelectionProvider
 {
@@ -22,4 +24,5 @@ public class PlasmaCannonAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001C2A RID: 7210
 		Fire = 1
 	}
+}
 }

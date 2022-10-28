@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001F2 RID: 498
 	public enum ImpactMode

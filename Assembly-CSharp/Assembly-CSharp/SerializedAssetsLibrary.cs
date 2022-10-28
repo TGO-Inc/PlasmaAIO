@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000185 RID: 389
 public class SerializedAssetsLibrary
 {
@@ -35,4 +37,5 @@ public class SerializedAssetsLibrary
 		// Token: 0x04001D4E RID: 7502
 		public UserAssetsController.AssetDescription assetDescription;
 	}
+}
 }

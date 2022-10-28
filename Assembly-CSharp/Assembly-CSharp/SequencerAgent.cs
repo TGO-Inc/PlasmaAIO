@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000127 RID: 295
 public class SequencerAgent : Agent
 {
@@ -64,4 +66,5 @@ public class SequencerAgent : Agent
 
 	// Token: 0x04000A01 RID: 2561
 	private AgentProperty _backwardProperty;
+}
 }

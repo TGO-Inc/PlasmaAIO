@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Threading;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000191 RID: 401
 public static class TextureScale
 {
@@ -81,4 +83,5 @@ public static class TextureScale
 		// Token: 0x04001D66 RID: 7526
 		public int end;
 	}
+}
 }

@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
@@ -8,7 +9,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000284 RID: 644
 	public class SketchViewNode : SerializedMonoBehaviour, ISketchViewInteractable

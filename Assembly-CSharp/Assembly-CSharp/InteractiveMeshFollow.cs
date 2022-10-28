@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200014F RID: 335
 public class InteractiveMeshFollow : MonoBehaviour
 {
@@ -31,4 +33,5 @@ public class InteractiveMeshFollow : MonoBehaviour
 
 	// Token: 0x04000B0C RID: 2828
 	private bool _follow;
+}
 }

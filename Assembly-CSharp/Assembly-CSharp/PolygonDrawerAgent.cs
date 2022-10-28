@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using Newtonsoft.Json;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200011D RID: 285
 public class PolygonDrawerAgent : Agent
 {
@@ -29,4 +31,5 @@ public class PolygonDrawerAgent : Agent
 
 	// Token: 0x040009DF RID: 2527
 	private AgentProperty _destinationProperty;
+}
 }

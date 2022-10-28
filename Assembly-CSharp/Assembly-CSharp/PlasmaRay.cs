@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B3 RID: 435
 public class PlasmaRay : VisualBehaviour
 {
@@ -117,4 +119,5 @@ public class PlasmaRay : VisualBehaviour
 
 	// Token: 0x04000DEC RID: 3564
 	private Vector3 currentPosition;
+}
 }

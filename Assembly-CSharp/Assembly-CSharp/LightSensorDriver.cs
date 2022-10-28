@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A5 RID: 165
 public class LightSensorDriver : ComponentDriver
 {
@@ -21,4 +23,5 @@ public class LightSensorDriver : ComponentDriver
 
 	// Token: 0x04000739 RID: 1849
 	private AgentProperty _intensityProperty;
+}
 }

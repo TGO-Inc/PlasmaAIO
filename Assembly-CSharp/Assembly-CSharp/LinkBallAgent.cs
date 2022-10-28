@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A6 RID: 166
 public class LinkBallAgent : Agent
 {
@@ -76,4 +78,5 @@ public class LinkBallAgent : Agent
 		// Token: 0x04001C13 RID: 7187
 		SetPhysics = 1
 	}
+}
 }

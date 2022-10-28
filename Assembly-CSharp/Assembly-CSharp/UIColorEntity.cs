@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000014 RID: 20
 public class UIColorEntity
 {
@@ -12,4 +14,5 @@ public class UIColorEntity
 
 	// Token: 0x04000091 RID: 145
 	public string description;
+}
 }

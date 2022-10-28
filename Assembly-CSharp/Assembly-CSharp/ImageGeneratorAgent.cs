@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000107 RID: 263
 public class ImageGeneratorAgent : Agent
 {
@@ -79,4 +81,5 @@ public class ImageGeneratorAgent : Agent
 
 	// Token: 0x04000981 RID: 2433
 	private const int _imageTextureLabel = 1;
+}
 }

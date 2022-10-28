@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200017C RID: 380
 public class WheelColliderMaker : MonoBehaviour
 {
@@ -18,4 +20,5 @@ public class WheelColliderMaker : MonoBehaviour
 
 	// Token: 0x04000BE5 RID: 3045
 	public float thickness;
+}
 }

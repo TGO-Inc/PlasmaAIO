@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Sprites;
+using UnityEngine.UI;
 
-namespace UnityEngine.UI.Extensions
+namespace PlasmaAPI.GameClass.UnityEngine.UI.Extensions
 {
 	// Token: 0x0200022F RID: 559
 	[AddComponentMenu("UI/Extensions/Primitives/UILineRenderer")]

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000BE RID: 190
 public class ProcessorDriver : ComponentDriver
 {
@@ -74,4 +76,5 @@ public class ProcessorDriver : ComponentDriver
 
 	// Token: 0x04000812 RID: 2066
 	private ProcessorAgent _processorAgent;
+}
 }

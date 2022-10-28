@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000035 RID: 53
 public class AssetController : Controller
 {
@@ -365,4 +367,5 @@ public class AssetController : Controller
 	// Token: 0x020002DD RID: 733
 	// (Invoke) Token: 0x06001E64 RID: 7780
 	public delegate void AssetImageRemoveEvent(List<int> indices);
+}
 }

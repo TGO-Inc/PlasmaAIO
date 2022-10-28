@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x02000200 RID: 512
 	public interface IBetterHorizontalOrVerticalLayoutGroup

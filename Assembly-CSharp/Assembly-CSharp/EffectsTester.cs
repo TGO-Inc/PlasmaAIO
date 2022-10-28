@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001AC RID: 428
 public class EffectsTester : MonoBehaviour
 {
@@ -78,4 +80,5 @@ public class EffectsTester : MonoBehaviour
 
 	// Token: 0x04000D9C RID: 3484
 	public int currentAuraPreset;
+}
 }

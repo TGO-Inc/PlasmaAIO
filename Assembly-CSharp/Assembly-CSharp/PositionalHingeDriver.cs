@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000BA RID: 186
 public class PositionalHingeDriver : ComponentDriver
 {
@@ -147,4 +149,5 @@ public class PositionalHingeDriver : ComponentDriver
 
 	// Token: 0x040007F2 RID: 2034
 	private const string _FMODParamResistance = "Resistance";
+}
 }

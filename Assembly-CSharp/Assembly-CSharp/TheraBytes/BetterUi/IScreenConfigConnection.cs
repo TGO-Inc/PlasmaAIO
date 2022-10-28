@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x020001EA RID: 490
 	public interface IScreenConfigConnection

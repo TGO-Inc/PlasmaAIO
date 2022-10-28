@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200017F RID: 383
 public static class PlayerPreferences
 {
@@ -68,4 +70,5 @@ public static class PlayerPreferences
 
 	// Token: 0x04000C03 RID: 3075
 	public const string QualitySettingId = "QualitySettingId";
+}
 }

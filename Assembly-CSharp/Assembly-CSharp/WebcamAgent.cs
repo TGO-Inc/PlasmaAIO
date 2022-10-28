@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E6 RID: 230
 public class WebcamAgent : Agent, IDataSelectionProvider
 {
@@ -106,4 +108,5 @@ public class WebcamAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001C9E RID: 7326
 		SetWebcam
 	}
+}
 }

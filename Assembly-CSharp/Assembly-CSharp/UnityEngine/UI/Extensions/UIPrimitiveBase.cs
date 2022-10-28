@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
-namespace UnityEngine.UI.Extensions
+namespace PlasmaAPI.GameClass.UnityEngine.UI.Extensions
 {
 	// Token: 0x02000231 RID: 561
 	public class UIPrimitiveBase : MaskableGraphic, ILayoutElement, ICanvasRaycastFilter

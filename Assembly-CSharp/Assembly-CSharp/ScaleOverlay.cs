@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200002D RID: 45
 public class ScaleOverlay : SerializedMonoBehaviour
 {
@@ -50,4 +52,5 @@ public class ScaleOverlay : SerializedMonoBehaviour
 
 	// Token: 0x04000113 RID: 275
 	private bool _active;
+}
 }

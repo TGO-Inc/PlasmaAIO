@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001AD RID: 429
 public class FastColorPicker : MonoBehaviour, IDragHandler, IEventSystemHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -224,4 +226,5 @@ public class FastColorPicker : MonoBehaviour, IDragHandler, IEventSystemHandler,
 	// Token: 0x020003D5 RID: 981
 	// (Invoke) Token: 0x06002113 RID: 8467
 	public delegate void ChangedColorEvent(Color color);
+}
 }

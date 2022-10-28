@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000FE RID: 254
 public class FlipFlopAgent : Agent
 {
@@ -25,4 +27,5 @@ public class FlipFlopAgent : Agent
 
 	// Token: 0x04000963 RID: 2403
 	private AgentProperty _currentOutputProperty;
+}
 }

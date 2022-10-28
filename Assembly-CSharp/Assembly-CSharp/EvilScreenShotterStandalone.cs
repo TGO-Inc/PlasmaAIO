@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200019F RID: 415
 public class EvilScreenShotterStandalone : MonoBehaviour
 {
@@ -90,4 +92,5 @@ public class EvilScreenShotterStandalone : MonoBehaviour
 		// Token: 0x04001D8B RID: 7563
 		AspectRatio
 	}
+}
 }

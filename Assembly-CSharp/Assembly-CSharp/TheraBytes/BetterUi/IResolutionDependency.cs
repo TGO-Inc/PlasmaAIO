@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x02000203 RID: 515
 	public interface IResolutionDependency

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000024 RID: 36
 [CreateAssetMenu(menuName = "Plasma/Hint Gestalt")]
 public class HintGestalt : SerializedScriptableObject
@@ -32,4 +34,5 @@ public class HintGestalt : SerializedScriptableObject
 
 	// Token: 0x040000C8 RID: 200
 	public HintGestaltEnum id;
+}
 }

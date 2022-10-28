@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
-using Common.Math;
+using PlasmaAPI.GameClass.Common.Math;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200015A RID: 346
 public class UndoOperationDetach : UndoOperation
 {
@@ -31,4 +33,5 @@ public class UndoOperationDetach : UndoOperation
 
 	// Token: 0x04000B4C RID: 2892
 	private QTransform _childTransform;
+}
 }

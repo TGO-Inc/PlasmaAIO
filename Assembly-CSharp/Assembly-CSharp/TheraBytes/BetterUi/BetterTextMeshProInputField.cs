@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x02000217 RID: 535
 	[AddComponentMenu("Better UI/TextMeshPro/Better TextMeshPro - Input Field", 30)]

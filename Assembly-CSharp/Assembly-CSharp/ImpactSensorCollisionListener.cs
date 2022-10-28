@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Linq;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000173 RID: 371
 public class ImpactSensorCollisionListener : DeviceComponentModifier
 {
@@ -38,4 +40,5 @@ public class ImpactSensorCollisionListener : DeviceComponentModifier
 
 	// Token: 0x04000BCC RID: 3020
 	private Collider[] _colliders;
+}
 }

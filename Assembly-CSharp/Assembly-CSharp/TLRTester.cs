@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001BD RID: 445
 public class TLRTester : MonoBehaviour
 {
@@ -24,4 +26,5 @@ public class TLRTester : MonoBehaviour
 
 	// Token: 0x04000E44 RID: 3652
 	private TheLineRenderer tlr2;
+}
 }

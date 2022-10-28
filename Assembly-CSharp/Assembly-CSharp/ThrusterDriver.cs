@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000DF RID: 223
 public class ThrusterDriver : ComponentDriver
 {
@@ -125,4 +127,5 @@ public class ThrusterDriver : ComponentDriver
 
 	// Token: 0x040008DC RID: 2268
 	private const string _FMODParamSize = "Size";
+}
 }

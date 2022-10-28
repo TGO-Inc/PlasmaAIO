@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001AF RID: 431
 [ExecuteInEditMode]
 public class GradientToTexture : MonoBehaviour
@@ -45,4 +47,5 @@ public class GradientToTexture : MonoBehaviour
 
 	// Token: 0x04000DC4 RID: 3524
 	private Material material;
+}
 }

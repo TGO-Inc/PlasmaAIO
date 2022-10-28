@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.IO.Ports;
 using System.Threading;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000CB RID: 203
 public class SerialPortDriver : ComponentDriver
 {
@@ -117,4 +119,5 @@ public class SerialPortDriver : ComponentDriver
 
 	// Token: 0x04000866 RID: 2150
 	private bool _isOpen;
+}
 }

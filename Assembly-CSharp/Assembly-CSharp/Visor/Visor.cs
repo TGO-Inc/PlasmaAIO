@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,8 +14,9 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using CanvasGroup = UnityEngine.CanvasGroup;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x020002AE RID: 686
 	public class Visor : MonoBehaviour
@@ -834,7 +836,7 @@ namespace Visor
 		private Dictionary<VisorElements, VisorElement> _visorElements;
 
 		// Token: 0x04001653 RID: 5715
-		private UnityEngine.CanvasGroup _radialCanvasGroup;
+		private CanvasGroup _radialCanvasGroup;
 
 		// Token: 0x04001654 RID: 5716
 		private TextMeshProUGUI _radialMessage;

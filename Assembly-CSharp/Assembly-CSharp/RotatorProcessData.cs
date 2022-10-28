@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Common.Extension;
-using Common.Math;
+using PlasmaAPI.GameClass.Common.Math;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000029 RID: 41
 public class RotatorProcessData
 {
@@ -59,4 +61,5 @@ public class RotatorProcessData
 
 	// Token: 0x040000EE RID: 238
 	public ComponentHandler debug_activeComponent;
+}
 }

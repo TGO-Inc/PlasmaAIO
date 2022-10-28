@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000139 RID: 313
 public class UITextAgent : Agent, IDataSelectionProvider
 {
@@ -49,4 +51,5 @@ public class UITextAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000A61 RID: 2657
 	private DisplayUIText _uiText;
+}
 }

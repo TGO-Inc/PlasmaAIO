@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200011C RID: 284
 public class PIDControllerAgent : Agent
 {
@@ -128,4 +130,5 @@ public class PIDControllerAgent : Agent
 		// Token: 0x04001CBD RID: 7357
 		private double _processVariable;
 	}
+}
 }

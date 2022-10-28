@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000148 RID: 328
 public class ComponentMeshHandler : MonoBehaviour
 {
@@ -86,4 +88,5 @@ public class ComponentMeshHandler : MonoBehaviour
 		// Token: 0x04001CCA RID: 7370
 		public Quaternion rotation;
 	}
+}
 }

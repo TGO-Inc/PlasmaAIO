@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A3 RID: 163
 public class Lever1AxisDriver : ComponentDriver
 {
@@ -91,4 +93,5 @@ public class Lever1AxisDriver : ComponentDriver
 
 	// Token: 0x04000736 RID: 1846
 	private const float _maxRotationRange = 25f;
+}
 }

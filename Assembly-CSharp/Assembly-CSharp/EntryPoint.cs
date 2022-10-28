@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000165 RID: 357
 public class EntryPoint : MonoBehaviour
 {
@@ -10,4 +12,5 @@ public class EntryPoint : MonoBehaviour
 	{
 
 	}
+}
 }

@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -5,6 +6,7 @@ using Behavior;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000056 RID: 86
 [CreateAssetMenu(menuName = "Plasma/Agent Gestalt")]
 public class AgentGestalt : SerializedScriptableObject
@@ -721,4 +723,5 @@ public class AgentGestalt : SerializedScriptableObject
 		// Token: 0x04001B89 RID: 7049
 		public float cellSize;
 	}
+}
 }

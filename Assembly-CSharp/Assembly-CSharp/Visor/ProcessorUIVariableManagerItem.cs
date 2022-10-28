@@ -1,13 +1,14 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200027A RID: 634
 	public class ProcessorUIVariableManagerItem : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler

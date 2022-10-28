@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000092 RID: 146
 public class KeyboardAgent : Agent
 {
@@ -144,4 +146,5 @@ public class KeyboardAgent : Agent
 		// Token: 0x04001BDD RID: 7133
 		SetLEDIndicatorColor
 	}
+}
 }

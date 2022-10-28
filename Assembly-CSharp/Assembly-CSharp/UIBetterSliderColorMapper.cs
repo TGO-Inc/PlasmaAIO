@@ -1,10 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000011 RID: 17
 public class UIBetterSliderColorMapper : UIColorMapper
 {
@@ -45,4 +47,5 @@ public class UIBetterSliderColorMapper : UIColorMapper
 	// Token: 0x0400006B RID: 107
 	[ColorEntity]
 	public int handleDisabledColor;
+}
 }

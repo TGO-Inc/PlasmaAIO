@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000EF RID: 239
 public class BooleanOperatorAgent : Agent, IDataSelectionProvider
 {
@@ -25,4 +27,5 @@ public class BooleanOperatorAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x0400092E RID: 2350
 	private AgentProperty _operatorProperty;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000067 RID: 103
 public class CollisionDetectorDriver : ComponentDriver
 {
@@ -92,4 +94,5 @@ public class CollisionDetectorDriver : ComponentDriver
 
 	// Token: 0x04000532 RID: 1330
 	private int _projectilesLayer;
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D9 RID: 217
 public class SpotlightDriver : ComponentDriver
 {
@@ -102,4 +104,5 @@ public class SpotlightDriver : ComponentDriver
 
 	// Token: 0x040008C0 RID: 2240
 	private int _colorId;
+}
 }

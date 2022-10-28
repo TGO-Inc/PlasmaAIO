@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -5,6 +6,7 @@ using Behavior;
 using Newtonsoft.Json;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000141 RID: 321
 public class VectorUtilityAgent : Agent
 {
@@ -67,4 +69,5 @@ public class VectorUtilityAgent : Agent
 
 	// Token: 0x04000A73 RID: 2675
 	private AgentProperty _v2Property;
+}
 }

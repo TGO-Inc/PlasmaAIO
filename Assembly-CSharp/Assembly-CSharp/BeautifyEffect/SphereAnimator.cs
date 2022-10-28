@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002BF RID: 703
 	public class SphereAnimator : MonoBehaviour

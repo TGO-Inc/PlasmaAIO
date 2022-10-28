@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000135 RID: 309
 public class TutorialVideoPlayer : Agent, IDataSelectionProvider
 {
@@ -26,4 +28,5 @@ public class TutorialVideoPlayer : Agent, IDataSelectionProvider
 
 	// Token: 0x04000A33 RID: 2611
 	private AgentProperty _videoClipProperty;
+}
 }

@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Steamworks;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200018A RID: 394
 public class SerializedWorldMetaData
 {
@@ -143,4 +145,5 @@ public class SerializedWorldMetaData
 		// Token: 0x04001D62 RID: 7522
 		Downloading
 	}
+}
 }

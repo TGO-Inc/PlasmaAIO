@@ -1,10 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000013 RID: 19
 public class UIBetterToggleOtherColorMapper : UIColorMapper
 {
@@ -77,4 +79,5 @@ public class UIBetterToggleOtherColorMapper : UIColorMapper
 	// Token: 0x0400008E RID: 142
 	[ColorEntity]
 	public int labelOffColor;
+}
 }

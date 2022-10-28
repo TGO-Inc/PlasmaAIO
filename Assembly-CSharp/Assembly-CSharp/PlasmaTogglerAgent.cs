@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000B7 RID: 183
 public class PlasmaTogglerAgent : Agent, IDataSelectionProvider
 {
@@ -31,4 +33,5 @@ public class PlasmaTogglerAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001C31 RID: 7217
 		FireInteraction
 	}
+}
 }

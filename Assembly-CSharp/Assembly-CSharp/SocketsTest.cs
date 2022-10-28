@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001BA RID: 442
 public class SocketsTest : MonoBehaviour
 {
@@ -38,4 +40,5 @@ public class SocketsTest : MonoBehaviour
 
 	// Token: 0x04000E25 RID: 3621
 	private ParticleSystem.Particle[] socketsParticles;
+}
 }

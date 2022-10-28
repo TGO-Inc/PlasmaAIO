@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000198 RID: 408
 [ExecuteInEditMode]
 public class CommandBufferBlurRefraction : MonoBehaviour
@@ -42,4 +44,5 @@ public class CommandBufferBlurRefraction : MonoBehaviour
 
 	// Token: 0x04000CD0 RID: 3280
 	private Material _material;
+}
 }

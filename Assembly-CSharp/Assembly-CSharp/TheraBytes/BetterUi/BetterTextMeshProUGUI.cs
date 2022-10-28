@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x02000218 RID: 536
 	[AddComponentMenu("Better UI/TextMeshPro/Better TextMeshPro Text", 30)]

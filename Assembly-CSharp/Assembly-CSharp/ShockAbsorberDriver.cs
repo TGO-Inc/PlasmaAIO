@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000CF RID: 207
 public class ShockAbsorberDriver : ComponentDriver
 {
@@ -155,4 +157,5 @@ public class ShockAbsorberDriver : ComponentDriver
 
 	// Token: 0x0400087F RID: 2175
 	private const float _restScale = 0.15f;
+}
 }

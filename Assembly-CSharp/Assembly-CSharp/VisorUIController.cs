@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Visor;
+using PlasmaAPI.GameClass.Visor;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200004E RID: 78
 public class VisorUIController : Controller
 {
@@ -51,4 +53,5 @@ public class VisorUIController : Controller
 
 	// Token: 0x04000373 RID: 883
 	private Visor.Visor _visor;
+}
 }

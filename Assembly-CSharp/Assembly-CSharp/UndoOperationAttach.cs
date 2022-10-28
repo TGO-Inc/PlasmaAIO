@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000159 RID: 345
 public class UndoOperationAttach : UndoOperation
 {
@@ -34,4 +36,5 @@ public class UndoOperationAttach : UndoOperation
 
 	// Token: 0x04000B47 RID: 2887
 	private Quaternion _baseRotation;
+}
 }

@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000083 RID: 131
 public class FrontalExtenderDriver : ComponentDriver
 {
@@ -200,4 +202,5 @@ public class FrontalExtenderDriver : ComponentDriver
 
 	// Token: 0x0400061F RID: 1567
 	private const string _FMODParamIsBlocked = "IsBlocked";
+}
 }

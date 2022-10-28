@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000131 RID: 305
 public class TickerAgent : Agent
 {
@@ -30,4 +32,5 @@ public class TickerAgent : Agent
 
 	// Token: 0x04000A25 RID: 2597
 	private AgentProperty _intervalProperty;
+}
 }

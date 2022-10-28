@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000125 RID: 293
 public class RouterAgent : Agent
 {
@@ -22,4 +24,5 @@ public class RouterAgent : Agent
 
 	// Token: 0x040009F8 RID: 2552
 	private AgentProperty _usePrimaryProperty;
+}
 }

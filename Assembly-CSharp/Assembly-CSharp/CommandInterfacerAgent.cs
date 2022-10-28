@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F5 RID: 245
 public class CommandInterfacerAgent : Agent
 {
@@ -53,4 +55,5 @@ public class CommandInterfacerAgent : Agent
 
 	// Token: 0x04000941 RID: 2369
 	private bool _shouldRun;
+}
 }

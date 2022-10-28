@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000091 RID: 145
 public class JoystickDriver : ComponentDriver
 {
@@ -121,4 +123,5 @@ public class JoystickDriver : ComponentDriver
 
 	// Token: 0x04000684 RID: 1668
 	private AgentProperty _returnToCenterProperty;
+}
 }

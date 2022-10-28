@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200013C RID: 316
 public class VariablesContainerAgent : Agent
 {
@@ -46,4 +48,5 @@ public class VariablesContainerAgent : Agent
 
 	// Token: 0x04000A65 RID: 2661
 	public Dictionary<string, AgentProperty> runtimeVariables;
+}
 }

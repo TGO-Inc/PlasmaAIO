@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E4 RID: 228
 public class TransceiverAgent : Agent
 {
@@ -59,4 +61,5 @@ public class TransceiverAgent : Agent
 		// Token: 0x04001C94 RID: 7316
 		SendOnChannel3
 	}
+}
 }

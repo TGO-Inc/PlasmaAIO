@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000155 RID: 341
 public class TreeNode : MonoBehaviour
 {
@@ -41,4 +43,5 @@ public class TreeNode : MonoBehaviour
 		// Token: 0x04001D12 RID: 7442
 		Highlighted
 	}
+}
 }

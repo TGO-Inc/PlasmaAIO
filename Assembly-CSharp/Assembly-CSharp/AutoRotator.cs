@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001A9 RID: 425
 public class AutoRotator : MonoBehaviour
 {
@@ -17,4 +19,5 @@ public class AutoRotator : MonoBehaviour
 
 	// Token: 0x04000D6C RID: 3436
 	public Vector3 rotation;
+}
 }

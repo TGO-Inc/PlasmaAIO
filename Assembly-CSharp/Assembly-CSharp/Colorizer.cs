@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000145 RID: 325
 public class Colorizer : MonoBehaviour
 {
@@ -38,4 +40,5 @@ public class Colorizer : MonoBehaviour
 
 	// Token: 0x04000A78 RID: 2680
 	private MaterialPropertyBlock _propertyBlock;
+}
 }

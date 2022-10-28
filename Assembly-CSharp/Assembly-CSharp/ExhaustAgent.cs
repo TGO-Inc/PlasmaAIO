@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200007C RID: 124
 public class ExhaustAgent : Agent
 {
@@ -11,4 +13,5 @@ public class ExhaustAgent : Agent
 		// Token: 0x04001BCA RID: 7114
 		SetState
 	}
+}
 }

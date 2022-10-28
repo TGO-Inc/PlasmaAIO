@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000022 RID: 34
 public static class RectTransformExtensions
 {
@@ -62,4 +64,5 @@ public static class RectTransformExtensions
 
         return default;
     }
+}
 }

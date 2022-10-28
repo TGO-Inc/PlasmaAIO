@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
@@ -8,7 +9,7 @@ using DigitalRuby.FastLineRenderer;
 using Rewired;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200027E RID: 638
 	public class SketchViewConnection : MonoBehaviour, ISketchViewInteractable

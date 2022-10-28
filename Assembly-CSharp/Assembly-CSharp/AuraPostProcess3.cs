@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001A8 RID: 424
 public class AuraPostProcess3 : MonoBehaviour
 {
@@ -65,4 +67,5 @@ public class AuraPostProcess3 : MonoBehaviour
 
 	// Token: 0x04000D6B RID: 3435
 	private Camera cam;
+}
 }

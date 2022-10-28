@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Behavior;
 using Newtonsoft.Json;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200013F RID: 319
 public class VectorDecomposerAgent : Agent
 {
@@ -45,4 +47,5 @@ public class VectorDecomposerAgent : Agent
 
 	// Token: 0x04000A6E RID: 2670
 	private AgentProperty _maskZProperty;
+}
 }

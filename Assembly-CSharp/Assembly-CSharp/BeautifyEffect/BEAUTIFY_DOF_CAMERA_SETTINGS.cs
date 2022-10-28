@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002C8 RID: 712
 	public enum BEAUTIFY_DOF_CAMERA_SETTINGS

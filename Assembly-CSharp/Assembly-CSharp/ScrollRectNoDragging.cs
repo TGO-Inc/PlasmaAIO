@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000023 RID: 35
 public class ScrollRectNoDragging : ScrollRect
 {
@@ -32,4 +34,5 @@ public class ScrollRectNoDragging : ScrollRect
 	{
 
 	}
+}
 }

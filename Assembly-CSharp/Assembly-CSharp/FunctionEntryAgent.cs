@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000101 RID: 257
 public class FunctionEntryAgent : Agent
 {
@@ -19,4 +21,5 @@ public class FunctionEntryAgent : Agent
 
 	// Token: 0x04000969 RID: 2409
 	private AgentProperty _payloadProperty;
+}
 }

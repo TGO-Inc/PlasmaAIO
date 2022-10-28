@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000186 RID: 390
 public class SerializedComponent
 {
@@ -122,4 +124,5 @@ public class SerializedComponent
 	// Token: 0x04000C40 RID: 3136
 	[NonSerialized]
 	private const int currentVersion = 4;
+}
 }

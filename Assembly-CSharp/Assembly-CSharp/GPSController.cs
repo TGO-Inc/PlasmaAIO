@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200003B RID: 59
 public class GPSController : Controller
 {
@@ -71,4 +73,5 @@ public class GPSController : Controller
 
 	// Token: 0x040001D1 RID: 465
 	private Dictionary<int, GPSTagDriver> _tags;
+}
 }

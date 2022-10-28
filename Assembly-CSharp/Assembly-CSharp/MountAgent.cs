@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000AA RID: 170
 public class MountAgent : Agent
 {
@@ -35,4 +37,5 @@ public class MountAgent : Agent
 		// Token: 0x04001C19 RID: 7193
 		SetPhysics = 1
 	}
+}
 }

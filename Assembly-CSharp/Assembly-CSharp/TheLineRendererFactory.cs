@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000193 RID: 403
 public static class TheLineRendererFactory
 {
@@ -13,4 +15,5 @@ public static class TheLineRendererFactory
 
 	// Token: 0x04000CA2 RID: 3234
 	private static GameObject _parent;
+}
 }

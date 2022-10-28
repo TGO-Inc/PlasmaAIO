@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Common.Math
+namespace PlasmaAPI.GameClass.Common.Math
 {
 	// Token: 0x0200021C RID: 540
 	public static class VectorUtil

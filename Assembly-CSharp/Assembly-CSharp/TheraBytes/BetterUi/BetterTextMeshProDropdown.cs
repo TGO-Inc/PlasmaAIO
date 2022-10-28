@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TheraBytes.BetterUi
+namespace PlasmaAPI.GameClass.TheraBytes.BetterUi
 {
 	// Token: 0x02000216 RID: 534
 	[AddComponentMenu("Better UI/TextMeshPro/Better TextMeshPro - Dropdown", 30)]

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200019B RID: 411
 [ExecuteInEditMode]
 public class SplineMaker : MonoBehaviour
@@ -138,4 +140,5 @@ public class SplineMaker : MonoBehaviour
 	public class Vector3ArrayEvent : UnityEvent<Vector3[]>
 	{
 	}
+}
 }

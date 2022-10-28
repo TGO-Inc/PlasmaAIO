@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200015B RID: 347
 public class UndoOperationPin : UndoOperation
 {
@@ -21,4 +23,5 @@ public class UndoOperationPin : UndoOperation
 
 	// Token: 0x04000B4E RID: 2894
 	private Quaternion _rotation;
+}
 }

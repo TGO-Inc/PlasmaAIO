@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200011A RID: 282
 public class PercentageMapperAgent : Agent, IDataSelectionProvider
 {
@@ -41,4 +43,5 @@ public class PercentageMapperAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x040009CD RID: 2509
 	private AgentProperty _decorationProperty;
+}
 }

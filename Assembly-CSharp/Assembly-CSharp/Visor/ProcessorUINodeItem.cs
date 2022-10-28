@@ -1,9 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000270 RID: 624
 	public class ProcessorUINodeItem : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerClickHandler

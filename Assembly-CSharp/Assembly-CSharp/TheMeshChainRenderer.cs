@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000195 RID: 405
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshFilter))]
@@ -198,4 +200,5 @@ public abstract class TheMeshChainRenderer : MonoBehaviour
 
 	// Token: 0x04000CB8 RID: 3256
 	protected float m_StepSize = 1f;
+}
 }

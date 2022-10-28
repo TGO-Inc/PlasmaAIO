@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -5,6 +6,7 @@ using DG.Tweening.Core;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000196 RID: 406
 public class VFXComponent : SerializedMonoBehaviour
 {
@@ -142,4 +144,5 @@ public class VFXComponent : SerializedMonoBehaviour
 		// Token: 0x04001D6E RID: 7534
 		public Material transparent;
 	}
+}
 }

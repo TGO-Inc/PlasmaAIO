@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000018 RID: 24
 public abstract class UIColorSelector : MonoBehaviour
 {
@@ -26,4 +28,5 @@ public abstract class UIColorSelector : MonoBehaviour
 	// Token: 0x04000098 RID: 152
 	[ColorEntity]
 	public int color;
+}
 }

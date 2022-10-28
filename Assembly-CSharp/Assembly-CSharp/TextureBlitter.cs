@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001BB RID: 443
 public class TextureBlitter : MonoBehaviour
 {
@@ -58,4 +60,5 @@ public class TextureBlitter : MonoBehaviour
 
 	// Token: 0x04000E32 RID: 3634
 	public Vector4 coords;
+}
 }

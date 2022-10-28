@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000031 RID: 49
 public class VFXCameraComposer : MonoBehaviour
 {
@@ -21,4 +23,5 @@ public class VFXCameraComposer : MonoBehaviour
 
 	// Token: 0x0400014B RID: 331
 	private Camera _camera;
+}
 }

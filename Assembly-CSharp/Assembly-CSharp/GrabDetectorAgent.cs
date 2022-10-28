@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000104 RID: 260
 public class GrabDetectorAgent : Agent
 {
@@ -48,4 +50,5 @@ public class GrabDetectorAgent : Agent
 
 	// Token: 0x0400096F RID: 2415
 	private bool _wasGrabbed;
+}
 }

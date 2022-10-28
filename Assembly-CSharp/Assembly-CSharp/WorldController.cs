@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,8 +7,8 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Common.Extension;
-using Common.Math;
-using EasyFSM;
+using PlasmaAPI.GameClass.Common.Math;
+using PlasmaAPI.GameClass.EasyFSM;
 using FMOD.Studio;
 using FMODUnity;
 using Microsoft.Win32;
@@ -22,10 +23,11 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
-using Visor;
+using PlasmaAPI.GameClass.Visor;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000051 RID: 81
-public class WorldController : global::Controller
+public class WorldController : Controller
 {
 	// Token: 0x060002C3 RID: 707 RVA: 0x00014C4C File Offset: 0x00012E4C
 	private void SetupDeleteComponentFSM()
@@ -3625,4 +3627,5 @@ public class WorldController : global::Controller
 		// Token: 0x04001A5F RID: 6751
 		TreeLine = 16
 	}
+}
 }

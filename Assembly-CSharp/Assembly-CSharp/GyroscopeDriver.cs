@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200008D RID: 141
 public class GyroscopeDriver : ComponentDriver
 {
@@ -94,4 +96,5 @@ public class GyroscopeDriver : ComponentDriver
 
 	// Token: 0x0400065F RID: 1631
 	private float _ring2Speed;
+}
 }

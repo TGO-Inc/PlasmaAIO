@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200001F RID: 31
 public class UITextColorMapper : UIColorMapper
 {
@@ -13,4 +15,5 @@ public class UITextColorMapper : UIColorMapper
 	// Token: 0x040000B8 RID: 184
 	[ColorEntity]
 	public int normalColor;
+}
 }

@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200007F RID: 127
 public class FanDriver : ComponentDriver
 {
@@ -122,4 +124,5 @@ public class FanDriver : ComponentDriver
 
 	// Token: 0x040005FE RID: 1534
 	private const string _FMODParamSize = "Size";
+}
 }

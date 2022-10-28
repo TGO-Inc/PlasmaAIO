@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000009 RID: 9
 public interface ISmoothScrollListProvider
 {
@@ -21,4 +23,5 @@ public interface ISmoothScrollListProvider
 
 	// Token: 0x06000055 RID: 85
 	void OnExitViewport(RectTransform item);
+}
 }

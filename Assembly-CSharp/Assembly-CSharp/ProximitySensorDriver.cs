@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000C0 RID: 192
 public class ProximitySensorDriver : ComponentDriver
 {
@@ -194,4 +196,5 @@ public class ProximitySensorDriver : ComponentDriver
 
 	// Token: 0x0400082F RID: 2095
 	private const int _maxColliders = 1024;
+}
 }

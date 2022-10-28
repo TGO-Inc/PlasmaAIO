@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001A5 RID: 421
 public class PlasmaProfiler : MonoBehaviour
 {
@@ -124,4 +126,5 @@ public class PlasmaProfiler : MonoBehaviour
 
 	// Token: 0x04000D50 RID: 3408
 	public Camera cam;
+}
 }

@@ -1,11 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200029F RID: 671
 	public class PropertyRow : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler

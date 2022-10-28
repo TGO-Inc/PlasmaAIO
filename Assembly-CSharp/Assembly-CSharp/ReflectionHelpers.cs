@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000182 RID: 386
 public static class ReflectionHelpers
 {
@@ -19,4 +21,5 @@ public static class ReflectionHelpers
 
         return default;
     }
+}
 }

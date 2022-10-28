@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000179 RID: 377
 public class PlasmaProjectile : MonoBehaviour
 {
@@ -95,4 +97,5 @@ public class PlasmaProjectile : MonoBehaviour
 
 	// Token: 0x04000BDF RID: 3039
 	private const float _articulationPowerFactor = 80f;
+}
 }

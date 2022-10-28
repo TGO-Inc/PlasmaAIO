@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000133 RID: 307
 public class TimerAgent : Agent
 {
@@ -49,4 +51,5 @@ public class TimerAgent : Agent
 
 	// Token: 0x04000A31 RID: 2609
 	private Data _elapsedTime;
+}
 }

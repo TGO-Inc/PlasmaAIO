@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000079 RID: 121
 public class DroneDriver : ComponentDriver
 {
@@ -176,4 +178,5 @@ public class DroneDriver : ComponentDriver
 
 	// Token: 0x040005E5 RID: 1509
 	private const string _FMODParamDown = "RobotMoveDown";
+}
 }

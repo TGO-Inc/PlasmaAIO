@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Video;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200003C RID: 60
 public class Holder : SerializedMonoBehaviour
 {
@@ -456,4 +458,5 @@ public class Holder : SerializedMonoBehaviour
 		[ColorEntity]
 		public int moduleInterface;
 	}
+}
 }

@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000DE RID: 222
 public class ThrusterAgent : Agent
 {
@@ -9,4 +11,5 @@ public class ThrusterAgent : Agent
 		// Token: 0x04001C8D RID: 7309
 		SetForce = 1
 	}
+}
 }

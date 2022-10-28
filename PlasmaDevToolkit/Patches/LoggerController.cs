@@ -2,18 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using PlasmaDevToolkit.Overrides;
-using _LoggerController = LoggerController;
+using _LoggerController = PlasmaAPI.GameClass.LoggerController;
 using Console = PlasmaDevToolkit.Overrides.Console;
 using System.Diagnostics;
 using UnityEngine;
-using System.Text.RegularExpressions;
-using Doorstop;
-using System.Collections.Concurrent;
-using static LoggerController;
+using static PlasmaAPI.GameClass.LoggerController;
 
 namespace PlasmaDevToolkit.Patches
 {

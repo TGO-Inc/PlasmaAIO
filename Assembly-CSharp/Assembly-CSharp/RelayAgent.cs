@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000123 RID: 291
 public class RelayAgent : Agent
 {
@@ -19,4 +21,5 @@ public class RelayAgent : Agent
 
 	// Token: 0x040009F3 RID: 2547
 	private AgentProperty _payloadProperty;
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000108 RID: 264
 public class LoggerAgent : Agent, IDataSelectionProvider
 {
@@ -22,4 +24,5 @@ public class LoggerAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000983 RID: 2435
 	private AgentProperty _levelProperty;
+}
 }

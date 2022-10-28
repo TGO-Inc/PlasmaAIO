@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000058 RID: 88
 public class AccelerometerAgent : Agent
 {
@@ -30,4 +32,5 @@ public class AccelerometerAgent : Agent
 
 	// Token: 0x040004DC RID: 1244
 	private AgentProperty _propertyZ;
+}
 }

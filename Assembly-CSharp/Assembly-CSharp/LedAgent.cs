@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A0 RID: 160
 public class LedAgent : Agent
 {
@@ -26,4 +28,5 @@ public class LedAgent : Agent
 		// Token: 0x04001C0E RID: 7182
 		UpdateVisuals = 1
 	}
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200002E RID: 46
 public class LocalCharacterInterpolation : SimpleInterpolation
 {
@@ -12,4 +14,5 @@ public class LocalCharacterInterpolation : SimpleInterpolation
 
 	// Token: 0x04000114 RID: 276
 	public Transform cameraContainer;
+}
 }

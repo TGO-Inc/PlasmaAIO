@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000138 RID: 312
 public class UIImageAgent : Agent, IDataSelectionProvider
 {
@@ -28,4 +30,5 @@ public class UIImageAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000A56 RID: 2646
 	private DisplayUIImage _uiImage;
+}
 }

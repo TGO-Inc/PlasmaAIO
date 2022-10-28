@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Common.Math
+namespace PlasmaAPI.GameClass.Common.Math
 {
 	// Token: 0x02000219 RID: 537
 	[Serializable]

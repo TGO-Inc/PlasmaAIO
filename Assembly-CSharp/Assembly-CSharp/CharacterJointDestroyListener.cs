@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000170 RID: 368
 public class CharacterJointDestroyListener : MonoBehaviour
 {
@@ -8,4 +10,5 @@ public class CharacterJointDestroyListener : MonoBehaviour
 	private void OnJointBreak(float breakForce)
 	{
 	}
+}
 }

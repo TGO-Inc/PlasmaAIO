@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000016 RID: 22
 public abstract class UIColorMapper : MonoBehaviour
 {
@@ -63,4 +65,5 @@ public abstract class UIColorMapper : MonoBehaviour
 
 	// Token: 0x04000095 RID: 149
 	private bool _enabled;
+}
 }

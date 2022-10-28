@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000052 RID: 82
 public class Delayer : MonoBehaviour
 {
@@ -49,4 +51,5 @@ public class Delayer : MonoBehaviour
 
 	// Token: 0x04000478 RID: 1144
 	public static AnimationCurve curveEaseInOut = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
+}
 }

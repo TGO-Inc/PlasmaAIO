@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200003F RID: 63
 [ExecuteInEditMode]
 public class QualitySettingsController : Controller
@@ -250,4 +252,5 @@ public class QualitySettingsController : Controller
 	// Token: 0x020002E7 RID: 743
 	// (Invoke) Token: 0x06001E81 RID: 7809
 	public delegate void QualitySettingsEvent();
+}
 }

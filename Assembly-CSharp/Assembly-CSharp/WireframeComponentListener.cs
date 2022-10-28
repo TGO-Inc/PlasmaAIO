@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200017D RID: 381
 public class WireframeComponentListener : MonoBehaviour
 {
@@ -124,4 +126,5 @@ public class WireframeComponentListener : MonoBehaviour
 		// Token: 0x04001D48 RID: 7496
 		public Vector3 otherScale;
 	}
+}
 }

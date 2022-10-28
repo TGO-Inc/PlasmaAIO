@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -5,6 +6,7 @@ using Behavior;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000053 RID: 83
 public class Agent
 {
@@ -591,4 +593,5 @@ public class Agent
 			Removed
 		}
 	}
+}
 }

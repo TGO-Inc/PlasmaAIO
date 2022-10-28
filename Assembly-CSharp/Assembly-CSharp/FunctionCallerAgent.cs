@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000100 RID: 256
 public class FunctionCallerAgent : Agent
 {
@@ -77,4 +79,5 @@ public class FunctionCallerAgent : Agent
 		// Token: 0x04001CAA RID: 7338
 		Done
 	}
+}
 }

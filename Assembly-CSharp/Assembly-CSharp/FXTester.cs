@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001A1 RID: 417
 public class FXTester : MonoBehaviour
 {
@@ -39,4 +41,5 @@ public class FXTester : MonoBehaviour
 
 	// Token: 0x04000D37 RID: 3383
 	public float sampleTime;
+}
 }

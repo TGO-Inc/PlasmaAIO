@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000B4 RID: 180
 public class PistonDriver : ComponentDriver
 {
@@ -129,4 +131,5 @@ public class PistonDriver : ComponentDriver
 
 	// Token: 0x040007B9 RID: 1977
 	private const string _FMODParamSize = "Size";
+}
 }

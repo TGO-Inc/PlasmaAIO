@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B0 RID: 432
 [Serializable]
 public class GradientClass
@@ -19,4 +21,5 @@ public class GradientClass
 	[HideInInspector]
 	[Header("[DEBUG]")]
 	public Texture2D texture;
+}
 }

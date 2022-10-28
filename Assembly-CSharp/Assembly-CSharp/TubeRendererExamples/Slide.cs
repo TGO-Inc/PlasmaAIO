@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace TubeRendererExamples
+namespace PlasmaAPI.GameClass.TubeRendererExamples
 {
 	// Token: 0x020001C6 RID: 454
 	public class Slide : MonoBehaviour

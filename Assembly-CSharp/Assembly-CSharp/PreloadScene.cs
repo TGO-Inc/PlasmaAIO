@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000180 RID: 384
 public class PreloadScene : MonoBehaviour
 {
@@ -9,4 +11,5 @@ public class PreloadScene : MonoBehaviour
 	{
 
 	}
+}
 }

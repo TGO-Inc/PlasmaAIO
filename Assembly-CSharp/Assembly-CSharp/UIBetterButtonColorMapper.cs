@@ -1,10 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200000E RID: 14
 public class UIBetterButtonColorMapper : UIColorMapper
 {
@@ -45,4 +47,5 @@ public class UIBetterButtonColorMapper : UIColorMapper
 	// Token: 0x04000051 RID: 81
 	[ColorEntity]
 	public int contentDisabledColor;
+}
 }

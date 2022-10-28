@@ -1,6 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
-using BeautifyEffect;
+using PlasmaAPI.GameClass.BeautifyEffect;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
@@ -9,6 +10,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200003A RID: 58
 public class EnvironmentController : Controller
 {
@@ -416,4 +418,5 @@ public class EnvironmentController : Controller
 
 	// Token: 0x040001C9 RID: 457
 	private Beautify _beautify;
+}
 }

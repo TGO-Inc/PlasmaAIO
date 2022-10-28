@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F7 RID: 247
 public class CounterAgent : Agent
 {
@@ -22,4 +24,5 @@ public class CounterAgent : Agent
 
 	// Token: 0x04000943 RID: 2371
 	private AgentProperty _incrementProperty;
+}
 }

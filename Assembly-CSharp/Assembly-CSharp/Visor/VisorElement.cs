@@ -1,11 +1,12 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using DG.Tweening;
 using DG.Tweening.Timeline;
-using EasyFSM;
+using PlasmaAPI.GameClass.EasyFSM;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x020002AF RID: 687
 	public abstract class VisorElement : MonoBehaviour

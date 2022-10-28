@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200003E RID: 62
 public static class MechanicFunctions
 {
@@ -78,4 +80,5 @@ public static class MechanicFunctions
 
 	// Token: 0x04000213 RID: 531
 	private static RaycastHit[] _hits;
+}
 }

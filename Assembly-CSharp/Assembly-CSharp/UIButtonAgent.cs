@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000136 RID: 310
 public class UIButtonAgent : Agent
 {
@@ -52,4 +54,5 @@ public class UIButtonAgent : Agent
 
 	// Token: 0x04000A3F RID: 2623
 	private DisplayUIButton _uiButton;
+}
 }

@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B7 RID: 439
 public class TweenTester : MonoBehaviour
 {
@@ -39,4 +41,5 @@ public class TweenTester : MonoBehaviour
 
 	// Token: 0x04000E1B RID: 3611
 	public bool GO;
+}
 }

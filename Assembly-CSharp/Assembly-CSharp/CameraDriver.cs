@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000061 RID: 97
 public class CameraDriver : ComponentDriver
 {
@@ -87,4 +89,5 @@ public class CameraDriver : ComponentDriver
 
 	// Token: 0x0400050D RID: 1293
 	private int _colorId;
+}
 }

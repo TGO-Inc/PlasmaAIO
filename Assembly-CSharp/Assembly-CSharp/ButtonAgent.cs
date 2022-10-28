@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200005C RID: 92
 public class ButtonAgent : Agent
 {
@@ -46,4 +48,5 @@ public class ButtonAgent : Agent
 		// Token: 0x04001B8F RID: 7055
 		SetLEDStripColor = 1
 	}
+}
 }

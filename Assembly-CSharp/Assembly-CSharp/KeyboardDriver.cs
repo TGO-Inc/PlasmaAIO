@@ -1,3 +1,4 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -5,6 +6,7 @@ using FMODUnity;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000093 RID: 147
 public class KeyboardDriver : ComponentDriver
 {
@@ -186,4 +188,5 @@ public class KeyboardDriver : ComponentDriver
 
 	// Token: 0x040006A7 RID: 1703
 	private const string _FMODParamSize = "Size";
+}
 }

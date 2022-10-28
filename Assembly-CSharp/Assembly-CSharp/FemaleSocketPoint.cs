@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200014C RID: 332
 public class FemaleSocketPoint : MonoBehaviour
 {
@@ -124,4 +126,5 @@ public class FemaleSocketPoint : MonoBehaviour
 
 	// Token: 0x04000B05 RID: 2821
 	private bool _isCustom;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000F2 RID: 242
 public class ColorDecomposerAgent : Agent
 {
@@ -11,4 +13,5 @@ public class ColorDecomposerAgent : Agent
 	{
 
 	}
+}
 }

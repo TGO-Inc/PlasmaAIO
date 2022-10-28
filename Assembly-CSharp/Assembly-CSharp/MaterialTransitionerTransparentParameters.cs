@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200004D RID: 77
 [Serializable]
 public class MaterialTransitionerTransparentParameters
@@ -51,4 +53,5 @@ public class MaterialTransitionerTransparentParameters
 
 	// Token: 0x04000371 RID: 881
 	public float emissionGlobalMUL;
+}
 }

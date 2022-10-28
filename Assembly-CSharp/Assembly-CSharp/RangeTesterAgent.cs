@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000122 RID: 290
 public class RangeTesterAgent : Agent
 {
@@ -35,4 +37,5 @@ public class RangeTesterAgent : Agent
 
 	// Token: 0x040009F2 RID: 2546
 	private AgentProperty _upperLimitProperty;
+}
 }

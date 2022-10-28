@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001AA RID: 426
 public class CameraFakeControllerFPS : MonoBehaviour
 {
@@ -108,4 +110,5 @@ public class CameraFakeControllerFPS : MonoBehaviour
 
 	// Token: 0x04000D82 RID: 3458
 	private Vector3 vout;
+}
 }

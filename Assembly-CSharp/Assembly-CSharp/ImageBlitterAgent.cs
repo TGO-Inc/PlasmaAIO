@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000105 RID: 261
 public class ImageBlitterAgent : Agent
 {
@@ -64,4 +66,5 @@ public class ImageBlitterAgent : Agent
 
 	// Token: 0x0400097A RID: 2426
 	private AgentProperty _destinationProperty;
+}
 }

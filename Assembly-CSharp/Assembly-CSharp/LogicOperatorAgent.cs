@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000109 RID: 265
 public class LogicOperatorAgent : Agent, IDataSelectionProvider
 {
@@ -56,4 +58,5 @@ public class LogicOperatorAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000988 RID: 2440
 	private AgentProperty _operatorProperty;
+}
 }

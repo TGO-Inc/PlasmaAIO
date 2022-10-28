@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D0 RID: 208
 public class SliderAgent : Agent, IDataSelectionProvider
 {
@@ -58,4 +60,5 @@ public class SliderAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001C6B RID: 7275
 		UpdateVisuals
 	}
+}
 }

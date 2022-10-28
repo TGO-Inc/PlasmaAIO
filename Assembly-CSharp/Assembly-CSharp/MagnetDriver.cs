@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A9 RID: 169
 public class MagnetDriver : ComponentDriver
 {
@@ -169,4 +171,5 @@ public class MagnetDriver : ComponentDriver
 
 	// Token: 0x04000763 RID: 1891
 	private bool _usingHighFrictionMaterial;
+}
 }

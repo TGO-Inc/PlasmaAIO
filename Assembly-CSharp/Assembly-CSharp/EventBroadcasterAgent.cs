@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000FC RID: 252
 public class EventBroadcasterAgent : Agent
 {
@@ -45,4 +47,5 @@ public class EventBroadcasterAgent : Agent
 
 	// Token: 0x04000961 RID: 2401
 	private Dictionary<string, List<SketchNodePort>> _eventListenerPorts;
+}
 }

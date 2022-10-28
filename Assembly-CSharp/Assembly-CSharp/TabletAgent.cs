@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000DC RID: 220
 public class TabletAgent : TouchDisplayCommonAgent
 {
@@ -14,4 +16,5 @@ public class TabletAgent : TouchDisplayCommonAgent
 	{
 
 	}
+}
 }

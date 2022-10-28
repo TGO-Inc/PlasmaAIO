@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000066 RID: 102
 public class CollisionDetectorAgent : Agent, IDataSelectionProvider
 {
@@ -33,4 +35,5 @@ public class CollisionDetectorAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x04000526 RID: 1318
 	private AgentProperty _hitEntityProperty;
+}
 }

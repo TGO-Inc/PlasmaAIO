@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000126 RID: 294
 public class SelectorAgent : Agent
 {
@@ -22,4 +24,5 @@ public class SelectorAgent : Agent
 
 	// Token: 0x040009FA RID: 2554
 	private const int _firstPayload = 3;
+}
 }

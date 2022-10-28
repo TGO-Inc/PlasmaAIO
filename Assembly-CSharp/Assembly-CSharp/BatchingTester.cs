@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200019D RID: 413
 public class BatchingTester : MonoBehaviour
 {
@@ -31,4 +33,5 @@ public class BatchingTester : MonoBehaviour
 
 	// Token: 0x04000D20 RID: 3360
 	private List<MaterialPropertyBlock> blocks;
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000062 RID: 98
 public class CameraMasterAgent : Agent
 {
@@ -46,4 +48,5 @@ public class CameraMasterAgent : Agent
 		// Token: 0x04001BA4 RID: 7076
 		StartAutobuild
 	}
+}
 }

@@ -1,15 +1,17 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Text;
 using Steamworks;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000047 RID: 71
 public class SteamController : Controller
 {
 	// Token: 0x14000005 RID: 5
 	// (add) Token: 0x0600021C RID: 540 RVA: 0x0000F364 File Offset: 0x0000D564
 	// (remove) Token: 0x0600021D RID: 541 RVA: 0x0000F39C File Offset: 0x0000D59C
-	public event global::SteamController.UserInformationRetrieved OnUserInformationRetrieved;
+	public event UserInformationRetrieved OnUserInformationRetrieved;
 
 	// Token: 0x1700002C RID: 44
 	// (get) Token: 0x0600021E RID: 542 RVA: 0x0000F3D1 File Offset: 0x0000D5D1
@@ -136,4 +138,5 @@ public class SteamController : Controller
 	// Token: 0x020002E9 RID: 745
 	// (Invoke) Token: 0x06001E92 RID: 7826
 	public delegate void UserInformationRetrieved(ulong steamId, string userName);
+}
 }

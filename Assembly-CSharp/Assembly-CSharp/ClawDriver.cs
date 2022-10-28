@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000065 RID: 101
 public class ClawDriver : ComponentDriver
 {
@@ -159,4 +161,5 @@ public class ClawDriver : ComponentDriver
 
 	// Token: 0x04000522 RID: 1314
 	private const string _FMODParamSize = "Size";
+}
 }

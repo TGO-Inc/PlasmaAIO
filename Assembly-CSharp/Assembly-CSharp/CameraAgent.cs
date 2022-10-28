@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000060 RID: 96
 public class CameraAgent : Agent
 {
@@ -66,4 +68,5 @@ public class CameraAgent : Agent
 		// Token: 0x04001B9B RID: 7067
 		SetViewDistance
 	}
+}
 }

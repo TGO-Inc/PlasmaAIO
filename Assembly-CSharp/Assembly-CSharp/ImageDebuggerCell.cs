@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000021 RID: 33
 public class ImageDebuggerCell : MonoBehaviour
 {
@@ -17,4 +19,5 @@ public class ImageDebuggerCell : MonoBehaviour
 
 	// Token: 0x040000C1 RID: 193
 	public TextMeshProUGUI info;
+}
 }

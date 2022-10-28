@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E8 RID: 232
 public class WindowCommonDriver : ComponentDriver
 {
@@ -60,4 +62,5 @@ public class WindowCommonDriver : ComponentDriver
 
 	// Token: 0x0400090F RID: 2319
 	private Color _originalColor;
+}
 }

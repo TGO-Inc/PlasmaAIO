@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A7 RID: 167
 public class LinkBallDriver : ComponentDriver
 {
@@ -105,4 +107,5 @@ public class LinkBallDriver : ComponentDriver
 
 	// Token: 0x0400074E RID: 1870
 	private ArticulationDrive _articulationZDrive;
+}
 }

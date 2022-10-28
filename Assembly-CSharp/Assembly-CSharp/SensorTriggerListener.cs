@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200017A RID: 378
 public class SensorTriggerListener : MonoBehaviour
 {
@@ -40,4 +42,5 @@ public class SensorTriggerListener : MonoBehaviour
 
 	// Token: 0x04000BE1 RID: 3041
 	private ComponentDriver _componentDriver;
+}
 }

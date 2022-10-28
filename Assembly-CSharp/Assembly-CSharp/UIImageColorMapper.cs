@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000019 RID: 25
 public class UIImageColorMapper : UIColorMapper
 {
@@ -13,4 +15,5 @@ public class UIImageColorMapper : UIColorMapper
 	// Token: 0x04000099 RID: 153
 	[ColorEntity]
 	public int normalColor;
+}
 }

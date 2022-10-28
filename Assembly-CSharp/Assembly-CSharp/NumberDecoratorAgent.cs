@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000115 RID: 277
 public class NumberDecoratorAgent : Agent, IDataSelectionProvider
 {
@@ -22,4 +24,5 @@ public class NumberDecoratorAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x040009B7 RID: 2487
 	private AgentProperty _decorationProperty;
+}
 }

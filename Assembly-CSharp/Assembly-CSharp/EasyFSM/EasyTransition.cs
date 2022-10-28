@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EasyFSM
+namespace PlasmaAPI.GameClass.EasyFSM
 {
 	// Token: 0x0200022A RID: 554
 	public class EasyTransition

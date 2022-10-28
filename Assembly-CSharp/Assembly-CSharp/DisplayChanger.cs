@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000164 RID: 356
 public class DisplayChanger : MonoBehaviour
 {
@@ -150,4 +152,5 @@ public class DisplayChanger : MonoBehaviour
 		// Token: 0x04001D24 RID: 7460
 		public int width;
 	}
+}
 }

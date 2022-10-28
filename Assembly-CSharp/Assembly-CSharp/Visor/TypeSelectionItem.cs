@@ -1,12 +1,13 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
-using TheraBytes.BetterUi;
+using PlasmaAPI.GameClass.TheraBytes.BetterUi;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200028C RID: 652
 	public class TypeSelectionItem : MonoBehaviour

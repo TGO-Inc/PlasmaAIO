@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000B6 RID: 182
 public class PlasmaCannonDriver : ComponentDriver
 {
@@ -96,4 +98,5 @@ public class PlasmaCannonDriver : ComponentDriver
 
 	// Token: 0x040007C9 RID: 1993
 	private const float _cooldown = 0.25f;
+}
 }

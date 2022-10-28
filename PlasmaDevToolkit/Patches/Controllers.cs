@@ -16,8 +16,7 @@ namespace PlasmaDevToolkit.Patches
         {
             public static void Prefix()
             {
-                Console.FormatMessage(LogType.Log, global::LoggerController.LogClass.Generic, "LOAD AWAKE");
-                //Doorstop.Entrypoint.GameLoaded();
+                Console.FormatMessage(LogType.Log, PlasmaAPI.GameClass.LoggerController.LogClass.Generic, "LOAD AWAKE");
             }
         }
     }

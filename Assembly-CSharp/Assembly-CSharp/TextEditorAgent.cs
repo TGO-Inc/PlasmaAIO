@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200012F RID: 303
 public class TextEditorAgent : Agent
 {
@@ -115,4 +117,5 @@ public class TextEditorAgent : Agent
 
 	// Token: 0x04000A21 RID: 2593
 	private AgentProperty _subtextProperty;
+}
 }

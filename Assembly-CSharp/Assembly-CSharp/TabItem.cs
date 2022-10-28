@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200000C RID: 12
 public class TabItem : MonoBehaviour
 {
@@ -15,4 +17,5 @@ public class TabItem : MonoBehaviour
 
 	// Token: 0x04000048 RID: 72
 	public UIBetterToggleColorMapper selectedMapper;
+}
 }

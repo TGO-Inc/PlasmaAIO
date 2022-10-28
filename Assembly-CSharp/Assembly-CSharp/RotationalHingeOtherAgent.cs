@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000C7 RID: 199
 public class RotationalHingeOtherAgent : Agent
 {
@@ -25,4 +27,5 @@ public class RotationalHingeOtherAgent : Agent
 		// Token: 0x04001C5A RID: 7258
 		SetPhysics = 1
 	}
+}
 }

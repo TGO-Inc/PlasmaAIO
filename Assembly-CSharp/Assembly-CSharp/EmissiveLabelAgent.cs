@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200007A RID: 122
 public class EmissiveLabelAgent : Agent, IDataSelectionProvider
 {
@@ -26,4 +28,5 @@ public class EmissiveLabelAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001BC7 RID: 7111
 		UpdateVisuals = 1
 	}
+}
 }

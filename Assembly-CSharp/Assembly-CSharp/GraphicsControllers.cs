@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200016D RID: 365
 public class GraphicsControllers : MonoBehaviour
 {
@@ -25,4 +27,5 @@ public class GraphicsControllers : MonoBehaviour
 
 	// Token: 0x04000BAA RID: 2986
 	public static QualitySettingsController qualitySettingsController;
+}
 }

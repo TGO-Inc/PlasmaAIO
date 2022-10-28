@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B4 RID: 436
 public enum PlasmaRayStatus
 {
@@ -11,4 +13,5 @@ public enum PlasmaRayStatus
 	active,
 	// Token: 0x04000DF1 RID: 3569
 	deactivating
+}
 }

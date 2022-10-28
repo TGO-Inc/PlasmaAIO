@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000C6 RID: 198
 public class RotationalHingeDriver : ComponentDriver
 {
@@ -142,4 +144,5 @@ public class RotationalHingeDriver : ComponentDriver
 
 	// Token: 0x04000841 RID: 2113
 	private const string _FMODParamIsBlocked = "IsBlocked";
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000175 RID: 373
 public static class PhysicsUtilities
 {
@@ -17,4 +19,5 @@ public static class PhysicsUtilities
 
         return default;
     }
+}
 }

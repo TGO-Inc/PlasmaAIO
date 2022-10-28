@@ -1,10 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI.Extensions;
+using PlasmaAPI.GameClass.UnityEngine.UI.Extensions;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200026E RID: 622
 	public class ProcessorUIMinimap : MonoBehaviour, IPointerClickHandler, IEventSystemHandler, IDragHandler, IEndDragHandler

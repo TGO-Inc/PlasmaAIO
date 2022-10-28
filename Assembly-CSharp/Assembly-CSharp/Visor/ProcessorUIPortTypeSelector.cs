@@ -1,7 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x02000272 RID: 626
 	public class ProcessorUIPortTypeSelector : MonoBehaviour, IEscapeHandler

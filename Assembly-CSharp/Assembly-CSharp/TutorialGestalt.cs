@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000027 RID: 39
 [CreateAssetMenu(menuName = "Plasma/Tutorial Gestalt")]
 public class TutorialGestalt : SerializedScriptableObject
@@ -26,4 +28,5 @@ public class TutorialGestalt : SerializedScriptableObject
 
 	// Token: 0x040000EA RID: 234
 	public TutorialGestaltEnum id;
+}
 }

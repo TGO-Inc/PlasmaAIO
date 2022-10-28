@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EasyFSM
+namespace PlasmaAPI.GameClass.EasyFSM
 {
 	// Token: 0x02000226 RID: 550
 	public static class EasyFSM

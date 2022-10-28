@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200018D RID: 397
 public struct SerializedDyamicProp
 {
@@ -18,4 +20,5 @@ public struct SerializedDyamicProp
 
 	// Token: 0x04000C8F RID: 3215
 	public Vector3 angularVelocity;
+}
 }

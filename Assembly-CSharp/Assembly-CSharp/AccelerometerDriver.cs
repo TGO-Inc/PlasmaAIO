@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000059 RID: 89
 public class AccelerometerDriver : ComponentDriver
 {
@@ -54,4 +56,5 @@ public class AccelerometerDriver : ComponentDriver
 
 	// Token: 0x040004E3 RID: 1251
 	private Transform _transform;
+}
 }

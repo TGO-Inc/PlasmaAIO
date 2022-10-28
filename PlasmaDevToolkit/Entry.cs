@@ -17,19 +17,16 @@ using Console = PlasmaDevToolkit.Overrides.Console;
 using static PlasmaDevToolkit.Patches.LoggerController;
 using static PlasmaDevToolkit.Patches.SteamController;
 using static PlasmaDevToolkit.Patches.Controllers;
-using PlasmaDevToolkit.ModLoader;
+using PlasmaDevToolkit.DevToolkit;
+using PlasmaAPI.GameClass;
+using PlasmaAPI.Application;
 
-namespace Doorstop
+namespace PlasmaDevToolkit
 {
-    public class Entrypoint
+    public class Entry
     {
-        enum PatchType
-        {
-            Prefix,
-            Postfix
-        }
-        static Harmony Patch;
-        static readonly List<Tuple<Tuple<Type, string, Type[]>, Tuple<Type, string, Type[]>, PatchType>> ManualPatches = new List<Tuple<Tuple<Type, string, Type[]>, Tuple<Type, string, Type[]>, PatchType>>()
+        internal Harmony Patch;
+        internal readonly List<Tuple<Tuple<Type, string, Type[]>, Tuple<Type, string, Type[]>, PatchType>> ManualPatches = new List<Tuple<Tuple<Type, string, Type[]>, Tuple<Type, string, Type[]>, PatchType>>()
         {
             new Tuple<Tuple<Type, string, Type[]>, Tuple<Type, string, Type[]>, PatchType>(
                 new Tuple<Type, string, Type[]>(typeof(LoggerController), "LogMessage", new Type[] { typeof(LogType), typeof(LoggerController.LogClass), typeof(string) }),
@@ -37,54 +34,30 @@ namespace Doorstop
                 PatchType.Prefix
             )
         };
-        static CommandCommunication CommandHandler;
-
-        [STAThread]
-        public static void Start()
+        internal CommandCommunication CommandHandler;
+        public Entry()
         {
-            AppDomain currentDomain = AppDomain.CurrentDomain;
-            var preloaded_assemblies = currentDomain.GetAssemblies();
-            currentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
-            currentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            
+            string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            File.WriteAllText(dir + "\\log.txt", "ASAGFS");
+            /*
             Console.Init();
             System.Console.ForegroundColor = ConsoleColor.Red;
             System.Console.WriteLine("[Debug Console Initialized]");
             System.Console.ResetColor();
 
-            foreach (Assembly preloaded in preloaded_assemblies)
-            {
-                AssemblyManager.LoadedAssemblies[preloaded.GetName().Name].Assembly = preloaded;
-            }
+            AssemblyManager.OnAssemblyLoad("PlasmaLibrary", ContinuePatching);
+            AssemblyManager.OnAssemblyLoad("netstandard", StartComServer);
 
             Patch = new Harmony("tgo.mod.loader");
             Patch.CreateClassProcessor(typeof(Init)).Patch();
             Patch.CreateClassProcessor(typeof(RequestUserInformation)).Patch();
-            Patch.CreateClassProcessor(typeof(Update)).Patch();
-
-            AssemblyManager.LoadedAssemblies["PlasmaLibrary"].AssemblyLoaded += ContinuePatching;
-            AssemblyManager.LoadedAssemblies["netstandard"].AssemblyLoaded += StartComServer;
+            Patch.CreateClassProcessor(typeof(Update)).Patch();*/
         }
-        private static void StartComServer()
+        private void StartComServer()
         {
             CommandHandler = new CommandCommunication();
         }
-
-        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs a)
-        {
-            Exception e = (Exception)a.ExceptionObject;
-            File.WriteAllText("crash-" + DateTime.Now.Ticks + ".log", string.Join("\r\n", e.Message, e.StackTrace));
-        }
-        private static void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
-        {
-            string name = args.LoadedAssembly.GetName().Name;
-
-            if (AssemblyManager.LoadedAssemblies.ContainsKey(name))
-                AssemblyManager.LoadedAssemblies[args.LoadedAssembly.GetName().Name].Assembly = args.LoadedAssembly;
-            else
-                AssemblyManager.LoadedAssemblies.TryAdd(name, new AssemblyContainer(args.LoadedAssembly));
-        }
-        private static void ContinuePatching()
+        private void ContinuePatching()
         {
             MethodInfo original0 = typeof(Holder).GetMethod("Awake", BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { }, null);
             MethodInfo prefix0 = typeof(Awake).GetMethod("Prefix", BindingFlags.Static | BindingFlags.Public, null, new Type[] { }, null);
@@ -119,7 +92,7 @@ namespace Doorstop
             Application.logMessageReceived -= LogMessageReceived;
             Application.logMessageReceived += LogMessageReceived;
         }
-        private static void LogMessageReceived(string condition, string stackTrace, LogType type)
+        private void LogMessageReceived(string condition, string stackTrace, LogType type)
         {
             if (condition.StartsWith("<color")) return;
             if (type.Equals(LogType.Exception | LogType.Error))
@@ -127,5 +100,10 @@ namespace Doorstop
             else
                 Console.FormatMessage(type, LoggerController.LogClass.Generic, condition);
         }
+    }
+    internal enum PatchType
+    {
+        Prefix,
+        Postfix
     }
 }

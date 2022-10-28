@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000D5 RID: 213
 public class SmokeEmitterDriver : ParticleEmitterCommonDriver
 {
@@ -8,4 +10,5 @@ public class SmokeEmitterDriver : ParticleEmitterCommonDriver
 	{
 
 	}
+}
 }

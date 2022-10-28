@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200011B RID: 283
 public class PhysicsForceAgent : Agent
 {
@@ -47,4 +49,5 @@ public class PhysicsForceAgent : Agent
 
 	// Token: 0x040009D5 RID: 2517
 	private bool _apply;
+}
 }

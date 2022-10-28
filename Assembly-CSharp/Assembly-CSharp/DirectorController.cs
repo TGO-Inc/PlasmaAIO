@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000039 RID: 57
 public class DirectorController : Controller
 {
@@ -110,4 +112,5 @@ public class DirectorController : Controller
 		// Token: 0x04001979 RID: 6521
 		RemoteClient
 	}
+}
 }

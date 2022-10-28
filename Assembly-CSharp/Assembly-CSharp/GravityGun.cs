@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000172 RID: 370
 public class GravityGun : MonoBehaviour
 {
@@ -184,4 +186,5 @@ public class GravityGun : MonoBehaviour
 
 	// Token: 0x04000BCB RID: 3019
 	private const string _FMODParamThrow = "Throw";
+}
 }

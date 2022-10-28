@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using DG.Tweening;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001B1 RID: 433
 public class MatSphereBehaviour : MonoBehaviour
 {
@@ -53,4 +55,5 @@ public class MatSphereBehaviour : MonoBehaviour
 
 	// Token: 0x04000DD2 RID: 3538
 	public Bounds bigBounds;
+}
 }

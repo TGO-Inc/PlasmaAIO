@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000EA RID: 234
 public abstract class JsonCreationConverter<T> : JsonConverter
 {
@@ -31,4 +33,5 @@ public abstract class JsonCreationConverter<T> : JsonConverter
 
         return default;
     }
+}
 }

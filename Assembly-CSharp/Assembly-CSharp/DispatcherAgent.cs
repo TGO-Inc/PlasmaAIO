@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000FA RID: 250
 public class DispatcherAgent : Agent
 {
@@ -51,4 +53,5 @@ public class DispatcherAgent : Agent
 
 	// Token: 0x0400095C RID: 2396
 	private AgentProperty _forwardPayloadProperty;
+}
 }

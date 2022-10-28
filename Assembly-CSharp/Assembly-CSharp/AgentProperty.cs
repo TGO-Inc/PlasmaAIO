@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Reflection;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000055 RID: 85
 public class AgentProperty
 {
@@ -462,4 +464,5 @@ public class AgentProperty
 	// Token: 0x0200033F RID: 831
 	// (Invoke) Token: 0x06001FFF RID: 8191
 	public delegate void AgentPropertyEvent(AgentProperty property);
+}
 }

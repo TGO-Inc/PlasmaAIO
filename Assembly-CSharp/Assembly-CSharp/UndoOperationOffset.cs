@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200015E RID: 350
 public class UndoOperationOffset : UndoOperation
 {
@@ -17,4 +19,5 @@ public class UndoOperationOffset : UndoOperation
 
 	// Token: 0x04000B51 RID: 2897
 	private float _offset;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000144 RID: 324
 public class Articulation : MonoBehaviour
 {
@@ -32,4 +34,5 @@ public class Articulation : MonoBehaviour
 			return base.GetComponentsInChildren<ArticulationBody>();
 		}
 	}
+}
 }

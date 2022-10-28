@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000EE RID: 238
 public class DisplayUIImage : DisplayUIElement
 {
@@ -33,4 +35,5 @@ public class DisplayUIImage : DisplayUIElement
 
 	// Token: 0x0400092B RID: 2347
 	public int index;
+}
 }

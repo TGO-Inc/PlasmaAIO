@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000178 RID: 376
 public class PlasmaPhysicsConstraintConstantRelativeForce : PlasmaPhysicsConstraint
 {
@@ -24,4 +26,5 @@ public class PlasmaPhysicsConstraintConstantRelativeForce : PlasmaPhysicsConstra
 	{
 
 	}
+}
 }

@@ -1,11 +1,13 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Common.Math;
+using PlasmaAPI.GameClass.Common.Math;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000008 RID: 8
 public class BuildReplayComponent : MonoBehaviour
 {
@@ -177,4 +179,5 @@ public class BuildReplayComponent : MonoBehaviour
 
 	// Token: 0x0400003D RID: 61
 	private bool _openSketch;
+}
 }

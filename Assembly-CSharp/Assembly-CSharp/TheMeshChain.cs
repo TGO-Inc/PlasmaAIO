@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000194 RID: 404
 public class TheMeshChain
 {
@@ -141,4 +143,5 @@ public class TheMeshChain
 		// Token: 0x04001D6C RID: 7532
 		All = 7
 	}
+}
 }

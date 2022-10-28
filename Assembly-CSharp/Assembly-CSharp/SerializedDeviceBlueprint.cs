@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000187 RID: 391
 public class SerializedDeviceBlueprint
 {
@@ -8,4 +10,5 @@ public class SerializedDeviceBlueprint
 
 	// Token: 0x04000C42 RID: 3138
 	public SerializedAssetsLibrary assetsLibrary;
+}
 }

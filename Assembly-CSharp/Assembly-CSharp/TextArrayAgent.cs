@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using Newtonsoft.Json;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200012B RID: 299
 public class TextArrayAgent : Agent
 {
@@ -198,4 +200,5 @@ public class TextArrayAgent : Agent
 
 	// Token: 0x04000A17 RID: 2583
 	private const int _maxValues = 1024;
+}
 }

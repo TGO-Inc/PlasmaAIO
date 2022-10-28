@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening;
-using EasyFSM;
+using PlasmaAPI.GameClass.EasyFSM;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000034 RID: 52
 public class Controllers : MonoBehaviour
 {
@@ -55,4 +57,5 @@ public class Controllers : MonoBehaviour
 
 	// Token: 0x04000158 RID: 344
 	public static List<Controller> controllers;
+}
 }

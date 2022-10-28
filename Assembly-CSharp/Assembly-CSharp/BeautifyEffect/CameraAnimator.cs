@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BeautifyEffect
+namespace PlasmaAPI.GameClass.BeautifyEffect
 {
 	// Token: 0x020002BA RID: 698
 	public class CameraAnimator : MonoBehaviour

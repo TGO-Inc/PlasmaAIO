@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000BD RID: 189
 public class ProcessorAgent : Agent
 {
@@ -284,4 +286,5 @@ public class ProcessorAgent : Agent
 		// Token: 0x04001C4B RID: 7243
 		Error
 	}
+}
 }

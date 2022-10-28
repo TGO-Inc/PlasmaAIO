@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200013B RID: 315
 public class VariableReaderAgent : Agent
 {
@@ -19,4 +21,5 @@ public class VariableReaderAgent : Agent
 
 	// Token: 0x04000A63 RID: 2659
 	private AgentProperty _variableProperty;
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200009C RID: 156
 public class LateralExtenderAgent : Agent
 {
@@ -67,4 +69,5 @@ public class LateralExtenderAgent : Agent
 		// Token: 0x04001C03 RID: 7171
 		UpdateVisuals = 4
 	}
+}
 }

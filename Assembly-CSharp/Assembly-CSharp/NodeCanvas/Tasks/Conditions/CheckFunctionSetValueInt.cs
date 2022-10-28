@@ -6,7 +6,7 @@ using ParadoxNotion;
 using ParadoxNotion.Design;
 using UnityEngine;
 
-namespace NodeCanvas.Tasks.Conditions
+namespace PlasmaAPI.GameClass.NodeCanvas.Tasks.Conditions
 {
 	// Token: 0x0200022B RID: 555
 	[Category("✫ Script Control/Standalone Only")]

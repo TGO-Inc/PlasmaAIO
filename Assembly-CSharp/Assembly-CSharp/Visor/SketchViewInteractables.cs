@@ -1,6 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200025F RID: 607
 	public enum SketchViewInteractables

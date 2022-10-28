@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000124 RID: 292
 public class RepeaterAgent : Agent
 {
@@ -51,4 +53,5 @@ public class RepeaterAgent : Agent
 
 	// Token: 0x040009F6 RID: 2550
 	private AgentProperty _repetitionsProperty;
+}
 }

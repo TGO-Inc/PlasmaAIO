@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000157 RID: 343
 public class UndoOperation
 {
@@ -16,4 +18,5 @@ public class UndoOperation
 
 	// Token: 0x04000B3F RID: 2879
 	public bool linkedToPrevious;
+}
 }

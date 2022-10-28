@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000FF RID: 255
 public class FormatterAgent : Agent
 {
@@ -10,4 +12,5 @@ public class FormatterAgent : Agent
 	{
 
 	}
+}
 }

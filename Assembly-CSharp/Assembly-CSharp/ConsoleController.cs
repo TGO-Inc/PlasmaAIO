@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using QFSW.QC;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000037 RID: 55
 public class ConsoleController : Controller
 {
@@ -141,4 +143,5 @@ public class ConsoleController : Controller
 
 	// Token: 0x0400017B RID: 379
 	private QuantumConsole _quantumConsole;
+}
 }

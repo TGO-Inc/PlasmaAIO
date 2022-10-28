@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001AE RID: 430
 public enum ActiveObjectType
 {
@@ -9,4 +11,5 @@ public enum ActiveObjectType
 	triangle,
 	// Token: 0x04000DC0 RID: 3520
 	none
+}
 }

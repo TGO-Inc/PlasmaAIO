@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using Newtonsoft.Json;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200012D RID: 301
 public class TextArrayDecomposerAgent : Agent
 {
@@ -22,4 +24,5 @@ public class TextArrayDecomposerAgent : Agent
 
 	// Token: 0x04000A19 RID: 2585
 	private AgentProperty _arrayProperty;
+}
 }

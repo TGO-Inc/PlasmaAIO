@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using FMODUnity;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000B2 RID: 178
 public class ParticleEmitterCommonDriver : ComponentDriver
 {
@@ -139,4 +141,5 @@ public class ParticleEmitterCommonDriver : ComponentDriver
 
 	// Token: 0x040007A6 RID: 1958
 	protected int _updateVisualsCommandId;
+}
 }

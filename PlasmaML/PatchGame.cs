@@ -59,6 +59,10 @@ namespace PlasmaML
 
             File.Copy(Path.Combine(Path.GetDirectoryName(_asm.Location), "ModLoader.dll"), Path.Combine(game_dir, "ModLoader.dll"), true);
 
+            string debug = Path.Combine(Path.GetDirectoryName(_asm.Location), "DevToolkit.dll");
+            if(File.Exists(debug))
+                File.Copy(debug, Path.Combine(game_dir, "DevToolkit.dll"), true);
+
             string path = Assembly.GetExecutingAssembly().GetManifestResourceNames().Where(n => n.EndsWith("0Harmony.dll")).FirstOrDefault();
             Debug.WriteLine(path);
             var harmony = File.OpenWrite(Path.Combine(game_dir, "0Harmony.dll"));

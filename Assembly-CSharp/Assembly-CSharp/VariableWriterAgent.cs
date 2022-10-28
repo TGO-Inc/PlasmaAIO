@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200013D RID: 317
 public class VariableWriterAgent : Agent
 {
@@ -22,4 +24,5 @@ public class VariableWriterAgent : Agent
 
 	// Token: 0x04000A67 RID: 2663
 	private AgentProperty _valueProperty;
+}
 }

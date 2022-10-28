@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200009F RID: 159
 public class LCDDriver : ComponentDriver
 {
@@ -102,4 +104,5 @@ public class LCDDriver : ComponentDriver
 
 	// Token: 0x04000726 RID: 1830
 	private const float _cursorBlinkInterval = 0.3f;
+}
 }

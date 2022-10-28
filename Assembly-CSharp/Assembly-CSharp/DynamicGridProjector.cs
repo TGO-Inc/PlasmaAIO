@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200014B RID: 331
 public class DynamicGridProjector : MonoBehaviour
 {
@@ -142,4 +144,5 @@ public class DynamicGridProjector : MonoBehaviour
 		// Token: 0x04001CFF RID: 7423
 		Cylinder
 	}
+}
 }

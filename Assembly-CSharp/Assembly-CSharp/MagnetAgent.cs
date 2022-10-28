@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000A8 RID: 168
 public class MagnetAgent : Agent
 {
@@ -13,4 +15,5 @@ public class MagnetAgent : Agent
 		// Token: 0x04001C17 RID: 7191
 		SetRange
 	}
+}
 }

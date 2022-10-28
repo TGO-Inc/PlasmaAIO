@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200009E RID: 158
 public class LCDAgent : Agent, IDataSelectionProvider
 {
@@ -128,4 +130,5 @@ public class LCDAgent : Agent, IDataSelectionProvider
 		// Token: 0x04001C09 RID: 7177
 		SetState
 	}
+}
 }

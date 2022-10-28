@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using Newtonsoft.Json;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000130 RID: 304
 public class TextManipulatorAgent : Agent
 {
@@ -35,4 +37,5 @@ public class TextManipulatorAgent : Agent
 
 	// Token: 0x04000A22 RID: 2594
 	private AgentProperty _textProperty;
+}
 }

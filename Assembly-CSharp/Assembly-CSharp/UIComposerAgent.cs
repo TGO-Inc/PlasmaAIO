@@ -1,11 +1,13 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using UnityEngine;
-using Visor;
+using PlasmaAPI.GameClass.Visor;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000137 RID: 311
 public class UIComposerAgent : Agent
 {
@@ -128,4 +130,5 @@ public class UIComposerAgent : Agent
 
 	// Token: 0x04000A52 RID: 2642
 	private Camera _camera;
+}
 }

@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200011F RID: 287
 public class PropertyReaderAgent : Agent
 {
@@ -20,4 +22,5 @@ public class PropertyReaderAgent : Agent
 	{
 
 	}
+}
 }

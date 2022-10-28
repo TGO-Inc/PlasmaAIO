@@ -1,9 +1,11 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000085 RID: 133
 public class GamepadInterfaceDriver : ComponentDriver
 {
@@ -122,4 +124,5 @@ public class GamepadInterfaceDriver : ComponentDriver
 
 	// Token: 0x04000634 RID: 1588
 	private int _colorId;
+}
 }

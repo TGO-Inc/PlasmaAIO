@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200015C RID: 348
 public class UndoOperationRotateComponent : UndoOperation
 {
@@ -18,4 +20,5 @@ public class UndoOperationRotateComponent : UndoOperation
 
 	// Token: 0x04000B4F RID: 2895
 	private Vector3 _pitchYawRoll;
+}
 }

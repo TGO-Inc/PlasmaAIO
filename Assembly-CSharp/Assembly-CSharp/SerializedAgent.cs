@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000184 RID: 388
 public class SerializedAgent
 {
@@ -42,4 +44,5 @@ public class SerializedAgent
 	// Token: 0x04000C21 RID: 3105
 	[NonSerialized]
 	private const int currentVersion = 1;
+}
 }

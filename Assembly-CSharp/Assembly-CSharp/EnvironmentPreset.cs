@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200016B RID: 363
 [CreateAssetMenu(menuName = "Plasma/Environment Preset")]
 [Serializable]
@@ -86,4 +88,5 @@ public class EnvironmentPreset : SerializedScriptableObject
 
 	// Token: 0x04000B9F RID: 2975
 	public PostProcessProfile ppProfile;
+}
 }

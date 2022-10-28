@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Rewired;
 using Sirenix.OdinInspector;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000004 RID: 4
 public class AgentDebugger : SerializedMonoBehaviour
 {
@@ -20,4 +22,5 @@ public class AgentDebugger : SerializedMonoBehaviour
 
 	// Token: 0x0400000A RID: 10
 	private bool _panelsVisible;
+}
 }

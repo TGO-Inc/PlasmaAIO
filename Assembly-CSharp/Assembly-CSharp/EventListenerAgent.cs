@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000FD RID: 253
 public class EventListenerAgent : Agent
 {
@@ -19,4 +21,5 @@ public class EventListenerAgent : Agent
 
 	// Token: 0x04000962 RID: 2402
 	private AgentProperty _payloadProperty;
+}
 }

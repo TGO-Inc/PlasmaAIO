@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000158 RID: 344
 public class UndoOperationPaint : UndoOperation
 {
@@ -20,4 +22,5 @@ public class UndoOperationPaint : UndoOperation
 
 	// Token: 0x04000B41 RID: 2881
 	private bool _alternate;
+}
 }

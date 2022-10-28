@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000166 RID: 358
 [CreateAssetMenu(menuName = "Plasma/Biome Gestalt")]
 public class BiomeGestalt : SerializedScriptableObject
@@ -65,4 +67,5 @@ public class BiomeGestalt : SerializedScriptableObject
 
 	// Token: 0x04000B74 RID: 2932
 	public BiomeGestaltEnum id;
+}
 }

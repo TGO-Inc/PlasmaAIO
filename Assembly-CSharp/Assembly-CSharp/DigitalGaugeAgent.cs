@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200006A RID: 106
 public class DigitalGaugeAgent : Agent
 {
@@ -63,4 +65,5 @@ public class DigitalGaugeAgent : Agent
 		// Token: 0x04001BAE RID: 7086
 		UpdateVisuals
 	}
+}
 }

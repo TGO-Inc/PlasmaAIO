@@ -1,8 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using ZenFulcrum.EmbeddedBrowser;
 
-namespace Visor
+namespace PlasmaAPI.GameClass.Visor 
 {
 	// Token: 0x0200024F RID: 591
 	public class EncyclopediaPopup : MonoBehaviour, IGenericWindow

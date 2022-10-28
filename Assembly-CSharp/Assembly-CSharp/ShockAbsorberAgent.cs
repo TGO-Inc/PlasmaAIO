@@ -1,5 +1,7 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000CE RID: 206
 public class ShockAbsorberAgent : Agent
 {
@@ -9,4 +11,5 @@ public class ShockAbsorberAgent : Agent
 		// Token: 0x04001C65 RID: 7269
 		SetPhysics = 1
 	}
+}
 }

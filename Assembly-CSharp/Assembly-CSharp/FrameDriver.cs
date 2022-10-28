@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000081 RID: 129
 public class FrameDriver : ComponentDriver
 {
@@ -31,4 +33,5 @@ public class FrameDriver : ComponentDriver
 
 	// Token: 0x04000603 RID: 1539
 	private AgentProperty _contentProperty;
+}
 }

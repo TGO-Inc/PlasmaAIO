@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000120 RID: 288
 public class RandomNumberAgent : Agent
 {
@@ -43,4 +45,5 @@ public class RandomNumberAgent : Agent
 
 	// Token: 0x040009E7 RID: 2535
 	private AgentProperty _integersOnlyProperty;
+}
 }

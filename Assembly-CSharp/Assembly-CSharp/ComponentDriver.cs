@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Rewired;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000146 RID: 326
 public class ComponentDriver : SerializedMonoBehaviour
 {
@@ -275,4 +277,5 @@ public class ComponentDriver : SerializedMonoBehaviour
 
 	// Token: 0x04000A7C RID: 2684
 	private Agent _agent;
+}
 }

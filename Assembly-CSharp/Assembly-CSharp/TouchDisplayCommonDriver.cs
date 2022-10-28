@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020000E1 RID: 225
 public class TouchDisplayCommonDriver : DisplayCommonDriver
 {
@@ -55,4 +57,5 @@ public class TouchDisplayCommonDriver : DisplayCommonDriver
 
 	// Token: 0x040008EA RID: 2282
 	private bool _active;
+}
 }

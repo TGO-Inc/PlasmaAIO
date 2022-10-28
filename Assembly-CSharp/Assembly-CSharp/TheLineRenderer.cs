@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000192 RID: 402
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshFilter))]
@@ -196,4 +198,5 @@ public class TheLineRenderer : TheMeshChainRenderer
 	[FormerlySerializedAs("m_WorldSpaceData")]
 	[Tooltip("Draw lines in worldspace (or local space) - driven via shader.")]
 	private bool m_UseWorldSpace;
+}
 }

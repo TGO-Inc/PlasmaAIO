@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000090 RID: 144
 public class JoystickAgent : Agent
 {
@@ -60,4 +62,5 @@ public class JoystickAgent : Agent
 		// Token: 0x04001BDA RID: 7130
 		SetReturnToCenter
 	}
+}
 }

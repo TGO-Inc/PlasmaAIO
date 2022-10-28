@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x020001A7 RID: 423
 [ExecuteInEditMode]
 public class AuraPostProcess2 : MonoBehaviour
@@ -32,4 +34,5 @@ public class AuraPostProcess2 : MonoBehaviour
 	// Token: 0x04000D5D RID: 3421
 	[SerializeField]
 	private Material postprocessMaterial;
+}
 }

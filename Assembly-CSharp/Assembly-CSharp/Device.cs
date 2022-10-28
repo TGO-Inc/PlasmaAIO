@@ -1,14 +1,16 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Behavior;
-using Common.Math;
+using PlasmaAPI.GameClass.Common.Math;
 using FMOD.Studio;
 using FMODUnity;
 using Rewired;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000149 RID: 329
 public class Device : MonoBehaviour
 {
@@ -1193,4 +1195,5 @@ public class Device : MonoBehaviour
 	// Token: 0x020003AB RID: 939
 	// (Invoke) Token: 0x060020BB RID: 8379
 	public delegate void DeviceEvent(int guid);
+}
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace UnityTemplateProjects
+namespace PlasmaAPI.GameClass.UnityTemplateProjects
 {
 	// Token: 0x020001BE RID: 446
 	public class SimpleCameraControllerino : MonoBehaviour

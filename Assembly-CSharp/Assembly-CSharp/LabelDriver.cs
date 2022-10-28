@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000099 RID: 153
 public class LabelDriver : ComponentDriver
 {
@@ -74,4 +76,5 @@ public class LabelDriver : ComponentDriver
 
 	// Token: 0x040006DF RID: 1759
 	private TextAlignmentOptions[] _alignments;
+}
 }

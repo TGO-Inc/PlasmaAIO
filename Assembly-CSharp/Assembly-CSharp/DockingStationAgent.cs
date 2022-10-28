@@ -1,7 +1,9 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000072 RID: 114
 public class DockingStationAgent : Agent
 {
@@ -57,4 +59,5 @@ public class DockingStationAgent : Agent
 		// Token: 0x04001BBF RID: 7103
 		Undock = 1
 	}
+}
 }

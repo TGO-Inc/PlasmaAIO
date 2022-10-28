@@ -1,12 +1,14 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
-using EasyFSM;
+using PlasmaAPI.GameClass.EasyFSM;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000197 RID: 407
 public class VFXDevice : MonoBehaviour
 {
@@ -188,4 +190,5 @@ public class VFXDevice : MonoBehaviour
 		// Token: 0x04001D77 RID: 7543
 		TurnOffTransparencyAndUpdate
 	}
+}
 }

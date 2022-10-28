@@ -1,8 +1,10 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Common.Extension;
-using Common.Math;
+using PlasmaAPI.GameClass.Common.Math;
 using UnityEngine;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x0200002A RID: 42
 public class ComponentRotator : MonoBehaviour
 {
@@ -216,4 +218,5 @@ public class ComponentRotator : MonoBehaviour
 		// Token: 0x0400195F RID: 6495
 		public bool canMirror;
 	}
+}
 }

@@ -1,6 +1,8 @@
+using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using Behavior;
 
+namespace PlasmaAPI.GameClass {
 // Token: 0x02000121 RID: 289
 public class RangeMapperAgent : Agent, IDataSelectionProvider
 {
@@ -40,4 +42,5 @@ public class RangeMapperAgent : Agent, IDataSelectionProvider
 
 	// Token: 0x040009EF RID: 2543
 	private FloatRange _secondRange;
+}
 }
