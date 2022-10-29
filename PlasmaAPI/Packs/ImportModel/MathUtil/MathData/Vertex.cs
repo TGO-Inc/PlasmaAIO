@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PlasmaAPI.Packs.Model.MathUtil
+namespace PlasmaAPI.Packs.ImportModel.MathUtil
 {
     /// <summary>
     /// Vertex structure used for triangulation.

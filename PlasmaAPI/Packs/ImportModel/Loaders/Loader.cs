@@ -13,7 +13,7 @@ using UnityEditor;
 /// <summary>
 /// Asynchronous importer and loader
 /// </summary>
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
 
     /// <summary>

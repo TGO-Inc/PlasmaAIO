@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Component that imports objects from a model, both at run-rime and as assets in Editor.

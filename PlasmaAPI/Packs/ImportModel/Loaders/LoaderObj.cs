@@ -9,7 +9,7 @@ using System.Globalization;
 //using PlasmaDevToolkit.Overrides;
 //using Console = PlasmaDevToolkit.Overrides.Console;
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Class for loading OBJ files into Unity scene at run-time and in editor mode.

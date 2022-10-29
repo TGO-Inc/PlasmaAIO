@@ -6,7 +6,7 @@ using UnityEngine;
 /// Mathematical utility algorithms and related data.
 /// Derived from Erik Nordeus's tutorial: https://www.habrador.com/tutorials/math/10-triangulation/
 /// </summary>
-namespace PlasmaAPI.Packs.Model.MathUtil
+namespace PlasmaAPI.Packs.ImportModel.MathUtil
 {
     internal static class Triangulation
     {

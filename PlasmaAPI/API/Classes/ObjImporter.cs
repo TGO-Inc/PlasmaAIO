@@ -1,5 +1,5 @@
 ﻿using PlasmaAPI.GameClass.Visor;
-using PlasmaAPI.Packs.Model;
+using PlasmaAPI.Packs.ImportModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

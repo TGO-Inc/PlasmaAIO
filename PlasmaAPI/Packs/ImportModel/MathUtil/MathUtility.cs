@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PlasmaAPI.Packs.Model.MathUtil
+namespace PlasmaAPI.Packs.ImportModel.MathUtil
 {
     /// <summary>
     /// Collection of useful mathematical methods.

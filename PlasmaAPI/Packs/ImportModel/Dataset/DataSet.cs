@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Data set for storing data in a neutral format for a generic model

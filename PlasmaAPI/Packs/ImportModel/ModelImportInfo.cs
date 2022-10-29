@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Model import settings, used for batch importing.

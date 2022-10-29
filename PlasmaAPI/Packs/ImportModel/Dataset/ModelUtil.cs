@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rendering = UnityEngine.Rendering;
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Utility class for model import

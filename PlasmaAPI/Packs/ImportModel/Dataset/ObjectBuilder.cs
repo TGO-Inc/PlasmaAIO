@@ -5,7 +5,7 @@ using Rendering = UnityEngine.Rendering;
 using UnityEditor;
 #endif
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Build the game object hierarchy with meshes and materials from a DataSet and a MaterialData list.

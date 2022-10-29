@@ -42,8 +42,6 @@ namespace PlasmaAPI.PatchUtil
                 }
                 
             }
-
-            methods.ForEach(m => File.AppendAllText("logxtt.txt", $"[{methods.Count()}] {assemblyName}, {type}, {m.Name} : {m.ReturnType.Name}\n"));
             methods.ForEach(m => CreatePatch(assemblyName, type, m, false));
         }
         public static void CreatePatch(string assemblyName, PatchType type, Action PatchMethod)
@@ -62,8 +60,6 @@ namespace PlasmaAPI.PatchUtil
         {
             if (AssemblyManager.LoadedAssemblies.TryGetValue(assemblyName, out AssemblyContainer asmc))
             {
-                File.AppendAllText("error-file.txt", method.Name + "\n");
-
                 Type[] Types = asmc.Assembly.GetTypes();
                 string TargetClassName = method.DeclaringType.Name;
                 Type TargetClass = Types.Where(t => t.Name.Equals(TargetClassName)).FirstOrDefault();

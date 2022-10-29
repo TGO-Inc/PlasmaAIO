@@ -1,7 +1,7 @@
 using System.Collections;
 using System.IO;
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Interface for classes that access the filesystem.

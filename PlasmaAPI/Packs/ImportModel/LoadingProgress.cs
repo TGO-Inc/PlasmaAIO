@@ -1,7 +1,7 @@
 ﻿//using PlasmaDevToolkit.Overrides;
 using System.Collections.Generic;
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Loading progress information for a single OBJ loader

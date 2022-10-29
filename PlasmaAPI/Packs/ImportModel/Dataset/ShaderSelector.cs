@@ -1,4 +1,4 @@
-﻿namespace PlasmaAPI.Packs.Model
+﻿namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Default implementation of IShaderSelector using predefined shaders.

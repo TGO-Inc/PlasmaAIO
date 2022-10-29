@@ -1,4 +1,4 @@
-﻿namespace PlasmaAPI.Packs.Model
+﻿namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Interface for classes that select the shader to use based on the material data.

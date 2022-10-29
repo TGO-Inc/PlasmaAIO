@@ -1,4 +1,4 @@
-namespace PlasmaAPI.Packs.Model.MathUtil
+namespace PlasmaAPI.Packs.ImportModel.MathUtil
 {
     /// <summary>
     /// Triangle data structure.

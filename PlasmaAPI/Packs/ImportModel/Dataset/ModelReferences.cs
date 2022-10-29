@@ -8,7 +8,7 @@ using UnityEngine;
 using Unity.Collections; // ReadOnly attribute
 #endif
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Component used to keep track of resources used by a loaded model.

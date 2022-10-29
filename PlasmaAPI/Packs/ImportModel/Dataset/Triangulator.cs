@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PlasmaAPI.Packs.Model.MathUtil;
+using PlasmaAPI.Packs.ImportModel.MathUtil;
 
-namespace PlasmaAPI.Packs.Model
+namespace PlasmaAPI.Packs.ImportModel
 {
     /// <summary>
     /// Implements triangulation of a face of a data set.
