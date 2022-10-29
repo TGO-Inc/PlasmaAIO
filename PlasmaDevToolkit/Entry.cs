@@ -36,7 +36,7 @@ namespace PlasmaDevToolkit
             AssemblyManager.OnAssemblyLoad("PlasmaLibrary", ContinuePatching);
             AssemblyManager.OnAssemblyLoad("netstandard", StartComServer);
             
-            // AssemblyManager.OnAssemblyLoad("QFSW.QC", () => PatchManager.CreatePatch<QuantumConsole>("QFSW.QC", PatchType.Postfix));
+            AssemblyManager.OnAssemblyLoad("netstandard", () => PatchManager.CreatePatch<QuantumConsole>("QFSW.QC", PatchType.Postfix));
             
             PatchManager.CreatePatch<SteamController>("Assembly-CSharp", PatchType.Prefix);
         }
@@ -52,7 +52,6 @@ namespace PlasmaDevToolkit
             Application.logMessageReceived -= LogMessageReceived;
             Application.logMessageReceived += LogMessageReceived;
 
-            
         }
         private void LogMessageReceived(string condition, string stackTrace, LogType type)
         {
