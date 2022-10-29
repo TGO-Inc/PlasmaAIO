@@ -12,8 +12,8 @@ namespace PlasmaDevToolkit.Patches
     {
         public static void Initialize(ref QuantumKeyConfig ____keyConfig)
         {
-            ____keyConfig = ScriptableObject.CreateInstance<QuantumKeyConfig>();
-            ____keyConfig.ToggleConsoleVisibilityKey = KeyCode.F4;
+            //____keyConfig = ScriptableObject.CreateInstance<QuantumKeyConfig>();
+            //____keyConfig.ToggleConsoleVisibilityKey = KeyCode.F4;
         }
     }
 }
