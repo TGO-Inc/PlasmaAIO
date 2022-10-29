@@ -63,35 +63,35 @@
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SharedInternalsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.SharedInternalsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +131,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp\PlasmaMap.csproj">
+    <ProjectReference Include="..\PlasmaMap\PlasmaMap\PlasmaMap.csproj">
       <Project>{9630b967-a794-42d6-88f7-a469318d67cc}</Project>
       <Name>PlasmaMap</Name>
     </ProjectReference>

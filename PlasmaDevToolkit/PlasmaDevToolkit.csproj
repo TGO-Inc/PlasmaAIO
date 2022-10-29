@@ -63,17 +63,17 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="QFSW.QC">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\QFSW.QC.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\QFSW.QC.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Sirenix.Serialization.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\Sirenix.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Utilities">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Sirenix.Utilities.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\Sirenix.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -206,10 +206,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -233,7 +233,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp\PlasmaMap.csproj">
+    <ProjectReference Include="..\PlasmaMap\PlasmaMap\PlasmaMap.csproj">
       <Project>{9630b967-a794-42d6-88f7-a469318d67cc}</Project>
       <Name>PlasmaMap</Name>
     </ProjectReference>

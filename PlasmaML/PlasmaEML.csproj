@@ -108,7 +108,7 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -178,7 +178,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp\PlasmaMap.csproj">
+    <ProjectReference Include="..\PlasmaMap\PlasmaMap\PlasmaMap.csproj">
       <Project>{9630b967-a794-42d6-88f7-a469318d67cc}</Project>
       <Name>PlasmaMap</Name>
     </ProjectReference>
