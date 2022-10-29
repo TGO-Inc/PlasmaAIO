@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PlasmaAPI.API.Patches
+namespace PlasmaAPI.API.GameHooks
 {
     internal class UpdateHandle : MonoBehaviour
     {
