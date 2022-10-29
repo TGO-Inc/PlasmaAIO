@@ -8,6 +8,12 @@ using DG.Tweening.Plugins.Options;
 using DigitalRuby.FastLineRenderer;
 using Rewired;
 using UnityEngine;
+using SketchConnection = PlasmaAPI.GameClass.Behavior.SketchConnection;
+using Sketch = PlasmaAPI.GameClass.Behavior.Sketch;
+using SketchNodePort = PlasmaAPI.GameClass.Behavior.SketchNodePort;
+using SketchNode = PlasmaAPI.GameClass.Behavior.SketchNode;
+using IDataSelectionProvider = PlasmaAPI.GameClass.Behavior.IDataSelectionProvider;
+using Data = PlasmaAPI.GameClass.Behavior.Data;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

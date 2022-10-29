@@ -15,6 +15,9 @@ using Rewired;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using SketchConnection = PlasmaAPI.GameClass.Behavior.SketchConnection;
+using SketchNode = PlasmaAPI.GameClass.Behavior.SketchNode;
+using Sketch = PlasmaAPI.GameClass.Behavior.Sketch;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Data = PlasmaAPI.GameClass.Behavior.Data;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

@@ -3,6 +3,7 @@ using PlasmaAPI.GameClass.Behavior;
 using Behavior;
 using UnityEngine;
 using UnityEngine.UI;
+using Data = PlasmaAPI.GameClass.Behavior.Data;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

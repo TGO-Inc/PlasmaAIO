@@ -4,6 +4,7 @@ using Behavior;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Data = PlasmaAPI.GameClass.Behavior.Data;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

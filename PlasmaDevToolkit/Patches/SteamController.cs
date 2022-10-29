@@ -7,39 +7,31 @@ using System.Threading.Tasks;
 using _SteamController = PlasmaAPI.GameClass.SteamController;
 using PlasmaDevToolkit.Overrides;
 using Console = PlasmaDevToolkit.Overrides.Console;
+using System.IO;
 
 namespace PlasmaDevToolkit.Patches
 {
     internal class SteamController
     {
-        [HarmonyPatch(typeof(_SteamController), nameof(_SteamController.Init))]
-        public class Init
+        public static bool Init() => true;
+        public static bool Init(ref bool ___skipSteamInitialization)
         {
-            public static bool Prefix(ref bool ___skipSteamInitialization)
-            {
-                ___skipSteamInitialization = true;
-                return true;
-            }
+            ___skipSteamInitialization = true;
+            return true;
         }
-        [HarmonyPatch(typeof(_SteamController), nameof(_SteamController.RequestUserInformation))]
-        public class RequestUserInformation
+        public static bool RequestUserInformation() => true;
+        public static bool RequestUserInformation(ref bool __result, out string userName)
         {
-            public static bool Prefix(ref bool __result, out string userName)
-            {
-                userName = "Dev";
-                __result = true;
-                return false;
-            }
+            userName = "Dev";
+            __result = true;
+            return false;
         }
-        [HarmonyPatch(typeof(_SteamController), "Update")]
-        public class Update
+        /*
+        public static bool Update()
         {
-            public static bool Prefix()
-            {
-                while (Console.Busy())
-                    Task.Delay(1).Wait();
-                return true;
-            }
-        }
+            while (Console.Busy())
+                Task.Delay(1).Wait();
+            return true;
+        }*/
     }
 }

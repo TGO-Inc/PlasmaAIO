@@ -8,6 +8,9 @@ using DG.Tweening.Plugins.Options;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using SketchNodePort = PlasmaAPI.GameClass.Behavior.SketchNodePort;
+using SketchNode = PlasmaAPI.GameClass.Behavior.SketchNode;
+using SketchNotifications = PlasmaAPI.GameClass.Behavior.SketchNotifications;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

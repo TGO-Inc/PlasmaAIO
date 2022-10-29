@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -19,13 +20,14 @@ namespace PlasmaAPI.Application
             /// PRE LOADED SECTION
             { "mscorlib", new AssemblyContainer(null, AssemblyType.System) },
             { "ModLoader", new AssemblyContainer(null, AssemblyType.Modded) },
+            { "PlasmaMap", new AssemblyContainer(null, AssemblyType.Modded) },
+            /// END PRE LOADED SECTION
             { "0Harmony", new AssemblyContainer(null, AssemblyType.Modded) },
             { "Assembly-CSharp", new AssemblyContainer(null, AssemblyType.Game) },
             { "Sirenix.Serialization", new AssemblyContainer(null, AssemblyType.Sirenix) },
             { "UnityEngine", new AssemblyContainer(null, AssemblyType.CriticalUnity) },
             { "UnityEngine.CoreModule", new AssemblyContainer(null, AssemblyType.CriticalUnity) },
             { "Sirenix.Serialization.Config", new AssemblyContainer(null, AssemblyType.Sirenix) },
-            /// END PRE LOADED SECTION
             { "System", new AssemblyContainer(null, AssemblyType.System) },
             { "System.Core", new AssemblyContainer(null, AssemblyType.System) },
             { "Mono.Security", new AssemblyContainer(null, AssemblyType.Modded) },
@@ -180,6 +182,10 @@ namespace PlasmaAPI.Application
                 }
                 else if (add)
                 {
+                    if (container.IsLoaded && Callback.Method.GetParameters().Length == 1)
+                        Callback.DynamicInvoke(container.Assembly);
+                    else if (container.IsLoaded)
+                        Callback.DynamicInvoke();
                     return container.AssemblyLoaded.TryAdd(Guid.NewGuid(), Callback);
                 }
             }

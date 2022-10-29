@@ -13,23 +13,16 @@ namespace PlasmaDevToolkit.Patches
 {
     internal class WorldController
     { 
-        [HarmonyPatch(typeof(_WorldController), nameof(_WorldController.Init))]
-        public class Init
+        public static bool Init(_WorldController __instance)
         {
-            public static void Postfix(_WorldController __instance)
-            {
-                __instance.disableGuruMeditation = true;
-                __instance.skipLoadingScreen = true;
-            }
+            __instance.disableGuruMeditation = true;
+            __instance.skipLoadingScreen = true;
+            return true;
         }
-        [HarmonyPatch(typeof(_WorldController), nameof(_WorldController.ShouldOpenExceptionPopup))]
-        public class ShouldOpenExceptionPopup
+        public static bool ShouldOpenExceptionPopup(ref bool __result)
         {
-            public static bool Prefix(ref bool __result)
-            {
-                __result = false;
-                return false;
-            }
+            __result = false;
+            return false;
         }
     }
 }

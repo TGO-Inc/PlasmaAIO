@@ -1,3 +1,9 @@
+using IDataSelectionProvider = PlasmaAPI.GameClass.Behavior.IDataSelectionProvider;
+using SketchNode = PlasmaAPI.GameClass.Behavior.SketchNode;
+using SketchNodePort = PlasmaAPI.GameClass.Behavior.SketchNodePort;
+using Sketch = PlasmaAPI.GameClass.Behavior.Sketch;
+using SketchConnection = PlasmaAPI.GameClass.Behavior.SketchConnection;
+using SketchNotifications = PlasmaAPI.GameClass.Behavior.SketchNotifications;
 using PlasmaAPI.GameClass.Behavior;
 ﻿using System;
 using System.Collections.Generic;
@@ -5,6 +11,7 @@ using System.Reflection;
 using Behavior;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Data = PlasmaAPI.GameClass.Behavior.Data;
 
 namespace PlasmaAPI.GameClass {
 // Token: 0x02000056 RID: 86

@@ -1,5 +1,6 @@
 ﻿using PlasmaAPI.Application;
 using PlasmaAPI.GameClass;
+using PlasmaAPI.PatchUtil;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,35 +9,43 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using UnityEngine;
 
 namespace Doorstop
 {
-    public static class Entrypoint
+    public class Entrypoint
     {
+        private static Assembly CurrentAssembly;
         private static Assembly DevToolkit;
+        private static Assembly MapAssembly;
         private static object DevToolkitInstance;
-        private static AppDomain currentDomain;
+        private static AppDomain CurrentDomain;
+
         [STAThread]
         public static void Start()
         {
-            currentDomain = AppDomain.CurrentDomain;
-            var preloaded_assemblies = currentDomain.GetAssemblies();
-            currentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
-            currentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            CurrentAssembly = Assembly.GetExecutingAssembly();
+            CurrentDomain = AppDomain.CurrentDomain;
+            var preloaded_assemblies = CurrentDomain.GetAssemblies();
+            CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
+            CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
             foreach (Assembly preloaded in preloaded_assemblies)
             {
                 string name = preloaded.GetName().Name;
-                File.AppendAllLines("start.txt", new string[] { name });
+                if (name.Equals("PlasmaMap"))
+                    MapAssembly = preloaded;
                 AssemblyManager.UpdateAssemblyInfo(name, preloaded);
             }
 
-            AssemblyManager.OnAssemblyLoad("Assembly-CSharp", ImportDevToolkit);
-        }
+            PatchManager.Initialize();
 
-        private static void ImportDevToolkit()
+            var asm = CurrentDomain.Load(new AssemblyName("Assembly-CSharp"));
+            ImportDevToolkit(asm);
+        }
+        private static void ImportDevToolkit(object assembly)
         {
-            string dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string dir = Path.GetDirectoryName(CurrentAssembly.Location);
             foreach (string file in Directory.GetFiles(dir))
             {
                 if (Path.GetFileName(file).Equals("DevToolkit.dll"))
@@ -44,13 +53,15 @@ namespace Doorstop
                     try
                     {
                         byte[] bytes = File.ReadAllBytes(file);
-                        DevToolkit = currentDomain.Load(bytes);
+                        DevToolkit = CurrentDomain.Load(bytes);
                         Type @class = DevToolkit.GetTypes().Where(t => t.Namespace.Equals("PlasmaDevToolkit") && t.Name.Equals("Entry")).FirstOrDefault();
-                        DevToolkitInstance = @class.GetConstructor(new Type[0]).Invoke(new object[0]);
+                        DevToolkitInstance = Activator.CreateInstance(@class, CurrentAssembly, (Assembly)assembly, MapAssembly);
+                        MethodInfo method = @class.GetRuntimeMethods().Where(m => m.Name.Equals("Start")).FirstOrDefault();
+                        method.Invoke(DevToolkitInstance, null);
                     }
                     catch (Exception e)
                     {
-                        File.AppendAllLines("error.txt", new string[] { e.InnerException.Message });
+                        File.AppendAllLines("error.txt", new string[] { e.ToString() });
                     }
                 }
             }
@@ -64,7 +75,6 @@ namespace Doorstop
         private static void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
         {
             string name = args.LoadedAssembly.GetName().Name;
-            File.AppendAllLines("added.txt", new string[] { name });
             AssemblyManager.UpdateAssemblyInfo(name, args.LoadedAssembly);
         }
     }

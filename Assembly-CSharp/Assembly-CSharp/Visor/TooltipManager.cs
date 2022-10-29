@@ -4,6 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Behavior;
 using UnityEngine;
+using Data = PlasmaAPI.GameClass.Behavior.Data;
+using Sketch = PlasmaAPI.GameClass.Behavior.Sketch;
+using SketchNode = PlasmaAPI.GameClass.Behavior.SketchNode;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

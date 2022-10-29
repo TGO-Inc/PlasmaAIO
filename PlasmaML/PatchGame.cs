@@ -58,6 +58,7 @@ namespace PlasmaML
             }
 
             File.Copy(Path.Combine(Path.GetDirectoryName(_asm.Location), "ModLoader.dll"), Path.Combine(game_dir, "ModLoader.dll"), true);
+            File.Copy(Path.Combine(Path.GetDirectoryName(_asm.Location), "PlasmaMap.dll"), Path.Combine(game_dir, "PlasmaMap.dll"), true);
 
             string debug = Path.Combine(Path.GetDirectoryName(_asm.Location), "DevToolkit.dll");
             if(File.Exists(debug))

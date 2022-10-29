@@ -4,6 +4,8 @@ using Behavior;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Sketch = PlasmaAPI.GameClass.Behavior.Sketch;
+using SketchNode = PlasmaAPI.GameClass.Behavior.SketchNode;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

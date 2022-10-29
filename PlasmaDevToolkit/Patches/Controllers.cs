@@ -12,12 +12,9 @@ namespace PlasmaDevToolkit.Patches
 {
     public class Controllers
     {
-        public class Awake
+        public static void Awake()
         {
-            public static void Prefix()
-            {
-                Console.FormatMessage(LogType.Log, PlasmaAPI.GameClass.LoggerController.LogClass.Generic, "LOAD AWAKE");
-            }
+            TimeUtil.UpdateLoad();
         }
     }
 }

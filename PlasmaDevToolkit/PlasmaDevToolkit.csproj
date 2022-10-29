@@ -3,7 +3,7 @@
   <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>10.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,29 +56,6 @@
     <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Lib.Harmony.2.2.2\lib\net48\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenPro, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\DOTweenPro.dll</HintPath>
-    </Reference>
-    <Reference Include="FMODUnity, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\FMODUnity.dll</HintPath>
-    </Reference>
-    <Reference Include="GlitchLibraryAssembly, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\GlitchLibraryAssembly.dll</HintPath>
-    </Reference>
-    <Reference Include="jianglong.library.gif-player, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\jianglong.library.gif-player.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -88,31 +65,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="QFSW.QC, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="QFSW.QC">
       <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\QFSW.QC.dll</HintPath>
     </Reference>
-    <Reference Include="Rewired_Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Rewired_Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Rewired_Windows, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Rewired_Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Sirenix.OdinInspector.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Sirenix.Serialization">
       <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Sirenix.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.Serialization.Config, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Sirenix.Serialization.Config.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Sirenix.Utilities">
       <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Sirenix.Utilities.dll</HintPath>
     </Reference>
@@ -246,38 +205,11 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Tayx.Graphy">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\Tayx.Graphy.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.ARModule">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.ARModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.ClusterRendererModule.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.ImageConversionModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.PhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.SharedInternalsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.UnityWebRequestModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>..\Assembly-CSharp\Assembly-CSharp\bin\x64\Debug\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -301,9 +233,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp\Assembly-CSharp.csproj">
+    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp\PlasmaMap.csproj">
       <Project>{9630b967-a794-42d6-88f7-a469318d67cc}</Project>
-      <Name>Assembly-CSharp</Name>
+      <Name>PlasmaMap</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlasmaAPI\PlasmaMLL.csproj">
       <Project>{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}</Project>

@@ -16,6 +16,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Data = PlasmaAPI.GameClass.Behavior.Data;
+using Sketch = PlasmaAPI.GameClass.Behavior.Sketch;
+using SketchNotifications = PlasmaAPI.GameClass.Behavior.SketchNotifications;
+using SketchNode = PlasmaAPI.GameClass.Behavior.SketchNode;
 
 namespace PlasmaAPI.GameClass.Visor 
 {

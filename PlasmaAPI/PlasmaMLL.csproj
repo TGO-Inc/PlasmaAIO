@@ -50,6 +50,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.2.2\lib\net48\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -124,16 +127,20 @@
     <Compile Include="Packs\Model\MultiObjectImporter.cs" />
     <Compile Include="Packs\Model\ObjectImporter.cs" />
     <Compile Include="Packs\Model\PathSettings.cs" />
+    <Compile Include="PatchUtil\PatchManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp\Assembly-CSharp.csproj">
+    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp\PlasmaMap.csproj">
       <Project>{9630b967-a794-42d6-88f7-a469318d67cc}</Project>
-      <Name>Assembly-CSharp</Name>
+      <Name>PlasmaMap</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\Abstractions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

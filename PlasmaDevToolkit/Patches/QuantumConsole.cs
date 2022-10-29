@@ -10,14 +10,11 @@ namespace PlasmaDevToolkit.Patches
 {
     internal class QuantumConsole
     {
-        public class Initialize
+        public static bool Initialize(ref QuantumKeyConfig ____keyConfig)
         {
-            public static bool Postfix(ref QuantumKeyConfig ____keyConfig)
-            {
-                ____keyConfig = ScriptableObject.CreateInstance<QuantumKeyConfig>();
-                ____keyConfig.ToggleConsoleVisibilityKey = KeyCode.F4;
-                return true;
-            }
+            ____keyConfig = ScriptableObject.CreateInstance<QuantumKeyConfig>();
+            ____keyConfig.ToggleConsoleVisibilityKey = KeyCode.F4;
+            return true;
         }
     }
 }

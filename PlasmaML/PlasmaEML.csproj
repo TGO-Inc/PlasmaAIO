@@ -178,6 +178,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Assembly-CSharp\Assembly-CSharp\PlasmaMap.csproj">
+      <Project>{9630b967-a794-42d6-88f7-a469318d67cc}</Project>
+      <Name>PlasmaMap</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PlasmaAPI\PlasmaMLL.csproj">
       <Project>{0f7c5a3d-3a62-47d3-b41e-637ef6b9ae73}</Project>
       <Name>PlasmaMLL</Name>

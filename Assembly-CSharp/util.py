@@ -1,20 +1,20 @@
 import os
 
-main_dir = os.getcwd() + "\\Assembly-CSharp\\Visor"
+main_dir = os.getcwd() + "\\Assembly-CSharp\\Assembly-CSharp"
+
 
 def empty_methods(path):
-    with open(path) as f: s = f.read()
-    if not "using PlasmaAPI.GameClass.Behavior;" in s:
-        s = "using PlasmaAPI.GameClass.Behavior;\n" + s
-    file_open = open(path, 'w')
-    file_open.write(s)
+    spl = str(path).split("\\")
+    name = spl[-1].split(".cs")[0]
+    file_open = open(main_dir + "\\..\\out.txt", 'a')
+    file_open.write(f"[assembly: TypeForwardedTo(typeof({name}))]\n")
 
 def main(_dir):
     for item in os.scandir(_dir):
         if item.is_file():
             if item.name.endswith(".cs"):
                 empty_methods(item.path)
-        #else:
-        #    main(item.path)
+        else:
+            main(item.path)
 
 main(main_dir)

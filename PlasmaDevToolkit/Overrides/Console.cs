@@ -16,6 +16,7 @@ using Random = System.Random;
 using System.Runtime.InteropServices;
 using System.Timers;
 using static PlasmaAPI.GameClass.LoggerController;
+using System.Runtime.ExceptionServices;
 
 namespace PlasmaDevToolkit.Overrides
 {
@@ -132,15 +133,8 @@ namespace PlasmaDevToolkit.Overrides
                 name = method.Name;
             }
 
-            string Frame = "0";
-            try
-            {
-                Frame = Time.frameCount.ToString();
-            }
-            catch { }
-
             Console.Write("[");
-            Console.Write(Frame, ConsoleColor.Cyan);
+            Console.Write(TimeUtil.GetFrame(), ConsoleColor.Cyan);
             Console.Write("] ");
 
             color = Console.ClosestConsoleColor(Color.HSVToRGB((float)logClass / 10f * 0.5f + 0.5f, 0.6f, 0.8f, false));
@@ -235,5 +229,23 @@ namespace PlasmaDevToolkit.Overrides
         internal static extern int AllocConsole();
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern int FreeConsole();
+    }
+    public static class TimeUtil
+    {
+        private static bool IsLoaded = false;
+        private static int Frame()
+        {
+            return Time.frameCount;
+        }
+        public static int GetFrame()
+        {
+            if (IsLoaded)
+                return Frame();
+            return 0;
+        }
+        internal static void UpdateLoad()
+        {
+            IsLoaded = true;
+        }
     }
 }

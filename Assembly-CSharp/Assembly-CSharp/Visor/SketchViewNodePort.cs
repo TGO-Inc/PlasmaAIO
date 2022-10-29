@@ -6,6 +6,7 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Options;
 using UnityEngine;
+using SketchNodePort = PlasmaAPI.GameClass.Behavior.SketchNodePort;
 
 namespace PlasmaAPI.GameClass.Visor 
 {
