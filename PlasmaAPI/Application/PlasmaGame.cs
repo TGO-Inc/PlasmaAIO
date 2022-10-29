@@ -7,6 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace PlasmaAPI.Application
 {
@@ -57,6 +58,22 @@ namespace PlasmaAPI.Application
         public static void AddMethodSuffix(object @method)
         {
 
+        }
+
+
+
+
+
+        internal static GameObject UpdateHandle;
+        internal static void OnGameInit()
+        {
+            if (OnGameInitialization != null)
+                OnGameInitialization.Invoke();
+        }
+        internal static void OnGameUpdate()
+        {
+            if (OnUpdate != null)
+                OnUpdate.Invoke();
         }
     }
 }

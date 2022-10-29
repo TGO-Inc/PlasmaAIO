@@ -1,5 +1,5 @@
-﻿using PlasmaAPI.Application;
-using PlasmaAPI.GameClass;
+﻿using PlasmaAPI.API.Patches;
+using PlasmaAPI.Application;
 using PlasmaAPI.PatchUtil;
 using System;
 using System.Collections.Generic;
@@ -40,7 +40,23 @@ namespace Doorstop
 
             PatchManager.Initialize();
 
-            ImportDevToolkit(CurrentDomain.Load(new AssemblyName("Assembly-CSharp")));
+            InitializeAPI();
+        }
+        private static void InitializeAPI()
+        {
+            Assembly AssemblyCSharp = CurrentDomain.Load(new AssemblyName("Assembly-CSharp"));
+            AssemblyManager.OnAssemblyLoad("PlasmaLibrary", ContinuePatching);
+            ImportDevToolkit(AssemblyCSharp);
+        }
+        private static void ContinuePatching()
+        {
+            PlasmaGame.OnGameInitialization += InitializeUpdateHandle;
+            PatchManager.CreatePatch<Controllers>("Assembly-CSharp", PatchType.Prefix);
+        }
+        private static void InitializeUpdateHandle()
+        {
+            PlasmaGame.UpdateHandle = new GameObject("UpdateHandle");
+            PlasmaGame.UpdateHandle.AddComponent<UpdateHandle>();
         }
         private static void ImportDevToolkit(object assembly)
         {

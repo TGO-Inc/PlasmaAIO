@@ -95,6 +95,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Classes\UpdateHandle.cs" />
+    <Compile Include="API\Patches\Controllers.cs" />
     <Compile Include="Application\Assembly\AssemblyContainer.cs" />
     <Compile Include="Application\Assembly\AssemblyManager.cs" />
     <Compile Include="Application\Assembly\AssemblyType.cs" />
@@ -136,9 +138,7 @@
       <Name>PlasmaMap</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="API\Abstractions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

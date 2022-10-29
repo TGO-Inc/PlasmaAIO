@@ -7,6 +7,7 @@ using PlasmaAPI.Application;
 using GameClass = PlasmaAPI.GameClass;
 using UnityEngine;
 using PlasmaAPI.PatchUtil;
+using PlasmaAPI.GameClass.Visor;
 
 namespace PlasmaDevToolkit
 {
@@ -47,10 +48,11 @@ namespace PlasmaDevToolkit
         {
             PatchManager.CreatePatch<LoggerController>("Assembly-CSharp", PatchType.Prefix);
             PatchManager.CreatePatch<WorldController>("Assembly-CSharp", PatchType.Prefix);
-            PatchManager.CreatePatch<Controllers>("Assembly-CSharp", PatchType.Postfix);
 
             Application.logMessageReceived -= LogMessageReceived;
             Application.logMessageReceived += LogMessageReceived;
+
+            
         }
         private void LogMessageReceived(string condition, string stackTrace, LogType type)
         {

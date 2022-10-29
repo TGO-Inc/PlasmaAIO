@@ -26,12 +26,5 @@ namespace PlasmaDevToolkit.Patches
             __result = true;
             return false;
         }
-        /*
-        public static bool Update()
-        {
-            while (Console.Busy())
-                Task.Delay(1).Wait();
-            return true;
-        }*/
     }
 }

@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PlasmaDevToolkit.Overrides;
 using UnityEngine;
 using System;
-using Console = PlasmaDevToolkit.Overrides.Console;
+using PlasmaAPI.Application;
 
-namespace PlasmaDevToolkit.Patches
+namespace PlasmaAPI.API.Patches
 {
-    public class Controllers
+    internal class Controllers
     {
         public static void Awake()
         {
-            TimeUtil.UpdateLoad();
+            PlasmaGame.OnGameInit();
         }
     }
 }

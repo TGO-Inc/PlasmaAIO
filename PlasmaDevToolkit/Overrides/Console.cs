@@ -17,6 +17,7 @@ using System.Runtime.InteropServices;
 using System.Timers;
 using static PlasmaAPI.GameClass.LoggerController;
 using System.Runtime.ExceptionServices;
+using PlasmaAPI.Application;
 
 namespace PlasmaDevToolkit.Overrides
 {
@@ -57,6 +58,14 @@ namespace PlasmaDevToolkit.Overrides
 
             WriteStream = new Task(BeginWrite);
             WriteStream.Start();
+
+            PlasmaGame.OnGameInitialization += TimeUtil.UpdateLoad;
+            PlasmaGame.OnUpdate += MainThreadFreeze;
+        }
+        private static void MainThreadFreeze()
+        {
+            while (Busy())
+                Task.Delay(1).Wait();
         }
         private static async void CheckFreeze_Elapsed(object sender, ElapsedEventArgs e)
         {

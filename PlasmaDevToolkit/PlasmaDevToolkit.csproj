@@ -220,7 +220,6 @@
     <Compile Include="DevToolkit\Extensions\SocketExtrensions.cs" />
     <Compile Include="DevToolkit\SocketCommunication\CommandHandler.cs" />
     <Compile Include="Overrides\Console.cs" />
-    <Compile Include="Patches\Controllers.cs" />
     <Compile Include="Patches\LoggerController.cs" />
     <Compile Include="Patches\QuantumConsole.cs" />
     <Compile Include="Patches\SteamController.cs" />
