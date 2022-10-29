@@ -95,14 +95,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\Classes\UpdateHandle.cs" />
+    <Compile Include="Application\GameHooks\UpdateHandle.cs" />
     <Compile Include="API\Patches\Controllers.cs" />
     <Compile Include="Application\Assembly\AssemblyContainer.cs" />
     <Compile Include="Application\Assembly\AssemblyManager.cs" />
     <Compile Include="Application\Assembly\AssemblyType.cs" />
     <Compile Include="Application\Extensions\Extensions.cs" />
     <Compile Include="Application\PlasmaGame.cs" />
-    <Compile Include="Application\GameHooks\ObjImporter.cs" />
+    <Compile Include="API\Classes\ObjImporter.cs" />
     <Compile Include="Entry.cs" />
     <Compile Include="Packs\ImportModel\Dataset\DataSet.cs" />
     <Compile Include="Packs\ImportModel\Dataset\IMaterialFactory.cs" />
