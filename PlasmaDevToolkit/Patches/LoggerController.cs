@@ -47,10 +47,10 @@ namespace PlasmaDevToolkit.Patches
             return true;
         }
     }
-    public static class LoggerUtil
+    internal static class LoggerUtil
     {
-        static readonly Dictionary<string, DateTime> last_console_times = new Dictionary<string, DateTime>();
-        static readonly string[] DefaultFilter = new string[]
+        private static readonly Dictionary<string, DateTime> last_console_times = new Dictionary<string, DateTime>();
+        private static readonly string[] DefaultFilter = new string[]
         {
             "lateupdate",
             "processoperations",
