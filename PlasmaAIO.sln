@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaDevToolkit", "PlasmaD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaMLL", "PlasmaAPI\PlasmaMLL.csproj", "{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaMap", "Assembly-CSharp\Assembly-CSharp\PlasmaMap.csproj", "{9630B967-A794-42D6-88F7-A469318D67CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlasmaMap", "PlasmaMap\PlasmaMap\PlasmaMap.csproj", "{9630B967-A794-42D6-88F7-A469318D67CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

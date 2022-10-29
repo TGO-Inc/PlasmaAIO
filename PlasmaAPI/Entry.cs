@@ -40,8 +40,7 @@ namespace Doorstop
 
             PatchManager.Initialize();
 
-            var asm = CurrentDomain.Load(new AssemblyName("Assembly-CSharp"));
-            ImportDevToolkit(asm);
+            ImportDevToolkit(CurrentDomain.Load(new AssemblyName("Assembly-CSharp")));
         }
         private static void ImportDevToolkit(object assembly)
         {
@@ -50,19 +49,12 @@ namespace Doorstop
             {
                 if (Path.GetFileName(file).Equals("DevToolkit.dll"))
                 {
-                    try
-                    {
-                        byte[] bytes = File.ReadAllBytes(file);
-                        DevToolkit = CurrentDomain.Load(bytes);
-                        Type @class = DevToolkit.GetTypes().Where(t => t.Namespace.Equals("PlasmaDevToolkit") && t.Name.Equals("Entry")).FirstOrDefault();
-                        DevToolkitInstance = Activator.CreateInstance(@class, CurrentAssembly, (Assembly)assembly, MapAssembly);
-                        MethodInfo method = @class.GetRuntimeMethods().Where(m => m.Name.Equals("Start")).FirstOrDefault();
-                        method.Invoke(DevToolkitInstance, null);
-                    }
-                    catch (Exception e)
-                    {
-                        File.AppendAllLines("error.txt", new string[] { e.ToString() });
-                    }
+                    byte[] bytes = File.ReadAllBytes(file);
+                    DevToolkit = CurrentDomain.Load(bytes);
+                    Type @class = DevToolkit.GetTypes().Where(t => t.Namespace.Equals("PlasmaDevToolkit") && t.Name.Equals("Entry")).FirstOrDefault();
+                    DevToolkitInstance = Activator.CreateInstance(@class, CurrentAssembly, (Assembly)assembly, MapAssembly);
+                    MethodInfo method = @class.GetRuntimeMethods().Where(m => m.Name.Equals("Start")).FirstOrDefault();
+                    method.Invoke(DevToolkitInstance, null);
                 }
             }
         }
