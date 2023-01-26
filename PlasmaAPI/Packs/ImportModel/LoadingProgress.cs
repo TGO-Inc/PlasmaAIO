@@ -1,5 +1,6 @@
 ﻿//using PlasmaDevToolkit.Overrides;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace PlasmaAPI.Packs.ImportModel
 {
@@ -15,7 +16,7 @@ namespace PlasmaAPI.Packs.ImportModel
             get { return msg; }
             set
             {
-                //Console.FormatMessage(value);
+                Debug.LogWarning(value);
                 msg = value;
             }
         }

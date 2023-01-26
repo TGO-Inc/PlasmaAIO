@@ -1,13 +1,12 @@
-﻿using System;
+﻿extern alias GameClass;
+using System;
 using System.Reflection;
 using Console = PlasmaDevToolkit.Overrides.Console;
 using PlasmaDevToolkit.Patches;
 using PlasmaDevToolkit.DevToolkit;
 using PlasmaAPI.Application;
-using GameClass = PlasmaAPI.GameClass;
-using UnityEngine;
 using PlasmaAPI.PatchUtil;
-using PlasmaAPI.GameClass.Visor;
+using UnityEngine;
 
 namespace PlasmaDevToolkit
 {

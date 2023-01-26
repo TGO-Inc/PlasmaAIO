@@ -1,4 +1,6 @@
-﻿using System;
+﻿extern alias GameClass;
+using GameClass;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -15,9 +17,9 @@ using System.Collections.Concurrent;
 using Random = System.Random;
 using System.Runtime.InteropServices;
 using System.Timers;
-using static PlasmaAPI.GameClass.LoggerController;
 using System.Runtime.ExceptionServices;
 using PlasmaAPI.Application;
+using static GameClass::LoggerController;
 
 namespace PlasmaDevToolkit.Overrides
 {
@@ -131,16 +133,9 @@ namespace PlasmaDevToolkit.Overrides
         private static void TryWrite(LogType? type, LogClass? logClass, StackTrace trace, string message)
         {
             ConsoleColor color;
-            MethodBase method = trace.GetFrame(Math.Min(4, trace.FrameCount - 1)).GetMethod();
+            MethodBase method = trace.GetFrame(trace.FrameCount - 1).GetMethod();
             string @class = method.ReflectedType.Name;
             string name = method.Name;
-
-            if (name.Equals("LogFormat"))
-            {
-                method = trace.GetFrame(trace.FrameCount - 1).GetMethod();
-                @class = method.ReflectedType.Name;
-                name = method.Name;
-            }
 
             Console.Write("[");
             Console.Write(TimeUtil.GetFrame(), ConsoleColor.Cyan);
@@ -241,7 +236,7 @@ namespace PlasmaDevToolkit.Overrides
     }
     public static class TimeUtil
     {
-        private static bool IsLoaded = false;
+        private static volatile bool IsLoaded = false;
         private static int Frame()
         {
             return Time.frameCount;

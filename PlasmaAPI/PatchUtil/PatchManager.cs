@@ -2,6 +2,7 @@
 using PlasmaAPI.Application;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -44,10 +45,6 @@ namespace PlasmaAPI.PatchUtil
             }
             methods.ForEach(m => CreatePatch(assemblyName, type, m, false));
         }
-        public static void CreatePatch(string assemblyName, PatchType type, Action PatchMethod)
-        {
-            CreatePatch(assemblyName, type, PatchMethod.Method);
-        }
         public static void CreatePatch(string assemblyName, PatchType type, HarmonyPatchVoid PatchMethod)
         {
             CreatePatch(assemblyName, type, PatchMethod.Method);
@@ -62,7 +59,7 @@ namespace PlasmaAPI.PatchUtil
             {
                 Type[] Types = asmc.Assembly.GetTypes();
                 string TargetClassName = method.DeclaringType.Name;
-                Type TargetClass = Types.Where(t => t.Name.Equals(TargetClassName)).FirstOrDefault();
+                Type TargetClass = Types.Where(t => t.FullName.EndsWith(TargetClassName)).FirstOrDefault();
                 MethodInfo TargetMethod = TargetClass.GetRuntimeMethods().Where(m => m.Name.Equals(method.Name)).FirstOrDefault();
 
                 if (check)
@@ -73,7 +70,7 @@ namespace PlasmaAPI.PatchUtil
                             if (info.GetParameters().Length > 0)
                                 method = info;
                 }
-
+                
                 switch (type)
                 {
                     case PatchType.Prefix:
@@ -84,6 +81,7 @@ namespace PlasmaAPI.PatchUtil
                         break;
                 }
             }
+
         }
     }
     public enum PatchType

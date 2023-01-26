@@ -81,8 +81,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>sign-asm.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -94,7 +93,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B784CB2AA3D1174F08DAD780283F6DDB4D16FC7C</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>73D668D6A87EB9C049D0153BCAA6CFFB3CAE3362</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>sign.pfx</ManifestKeyFile>
@@ -172,16 +171,13 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="sign-asm.pfx" />
     <None Include="sign.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PlasmaMap\PlasmaMap\PlasmaMap.csproj">
-      <Project>{9630b967-a794-42d6-88f7-a469318d67cc}</Project>
-      <Name>PlasmaMap</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PlasmaAPI\PlasmaMLL.csproj">
       <Project>{0f7c5a3d-3a62-47d3-b41e-637ef6b9ae73}</Project>
       <Name>PlasmaMLL</Name>
@@ -204,6 +200,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper">
+      <Version>10.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf">
       <Version>1.1.0</Version>
     </PackageReference>
@@ -230,6 +229,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release signtool sign /f "$(SolutionDir)$(ProjectName)\sign.pfx" /p tgopassword /a $(TargetPath)</PostBuildEvent>
+    <PostBuildEvent>:: if $(ConfigurationName) == Release signtool sign /f "$(SolutionDir)$(ProjectName)\sign.pfx" /p tgopassword /a $(TargetPath)</PostBuildEvent>
   </PropertyGroup>
 </Project>

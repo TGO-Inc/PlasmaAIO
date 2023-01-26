@@ -1,6 +1,7 @@
 ﻿//using PlasmaDevToolkit.Overrides;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,7 +36,7 @@ namespace PlasmaAPI.Packs.ImportModel
         /// Load a set of files with their own import options
         /// </summary>
         /// <param name="modelsInfo">List of file import entries</param>
-        public void ImportModelListAsync(ModelImportInfo[] modelsInfo)
+        public void ImportModelListAsync(ModelImportInfo[] modelsInfo, Assembly asm)
         {
             if (modelsInfo == null)
             {
@@ -48,7 +49,7 @@ namespace PlasmaAPI.Packs.ImportModel
                 string filePath = modelsInfo[i].path;
                 if (string.IsNullOrEmpty(filePath))
                 {
-                    //Console.FormatMessage($"File path missing for the model at position {i} in the list.");
+                    Debug.LogWarning($"File path missing for the model at position {i} in the list.");
                     continue;
                 }
 
@@ -59,21 +60,8 @@ namespace PlasmaAPI.Packs.ImportModel
                 {
                     options = defaultImportOptions;
                 }
-                ImportModelAsync(objName, filePath, transform, options);
+                ImportModelAsync(objName, filePath, transform, options, asm);
             }
         }
-
-
-        /// <summary>
-        /// Import the list of objects in objectList.
-        /// </summary>
-        protected virtual void Start()
-        {
-            if (autoLoadOnStart)
-            {
-                ImportModelListAsync(objectsList.ToArray());
-            }
-        }
-
     }
 }

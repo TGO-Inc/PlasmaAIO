@@ -57,24 +57,22 @@ namespace PlasmaML
                 File.WriteAllText(Path.Combine(game_dir, "doorstop_config.ini"), result);
             }
 
+            game_dir = Path.Combine(game_dir, "ModLoader");
+            Directory.CreateDirectory(game_dir);
+
             File.Copy(Path.Combine(Path.GetDirectoryName(_asm.Location), "ModLoader.dll"), Path.Combine(game_dir, "ModLoader.dll"), true);
-            File.Copy(Path.Combine(Path.GetDirectoryName(_asm.Location), "PlasmaMap.dll"), Path.Combine(game_dir, "PlasmaMap.dll"), true);
+            
+            File.Copy("C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\Microsoft.CSharp.dll", Path.Combine(game_dir, "Microsoft.CSharp.dll"), true);
 
             string debug = Path.Combine(Path.GetDirectoryName(_asm.Location), "DevToolkit.dll");
             if(File.Exists(debug))
                 File.Copy(debug, Path.Combine(game_dir, "DevToolkit.dll"), true);
 
             string path = Assembly.GetExecutingAssembly().GetManifestResourceNames().Where(n => n.EndsWith("0Harmony.dll")).FirstOrDefault();
-            Debug.WriteLine(path);
             var harmony = File.OpenWrite(Path.Combine(game_dir, "0Harmony.dll"));
             Assembly.GetExecutingAssembly().GetManifestResourceStream(path).CopyTo(harmony);
             harmony.Flush();
             harmony.Close();
-        }
-
-        public byte[] GetDecmpiled(string file)
-        {
-            return new byte[0];
         }
     }
 }

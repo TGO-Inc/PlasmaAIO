@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Reflection;
 //using PlasmaDevToolkit.Overrides;
 //using Console = PlasmaDevToolkit.Overrides.Console;
 #if UNITY_EDITOR
@@ -69,7 +70,7 @@ namespace PlasmaAPI.Packs.ImportModel
             string ext = Path.GetExtension(absolutePath);
             if (string.IsNullOrEmpty(ext))
             {
-                //Console.FormatMessage("No extension defined, unable to detect file format", LogType.Error);
+                Debug.LogWarning("No extension defined, unable to detect file format");
                 return null;
             }
             Loader loader = null;
@@ -79,7 +80,7 @@ namespace PlasmaAPI.Packs.ImportModel
                 if (!ext.EndsWith(".obj"))
                 {
                     // TODO: other formats supported? Remark: often there are zip and rar archives without extension.
-                    //Console.FormatMessage("Unable to detect file format in " + ext, LogType.Error);
+                    Debug.LogWarning("Unable to detect file format in " + ext);
                     return null;
                 }
                 loader = gameObject.AddComponent<LoaderObj>();
@@ -93,7 +94,7 @@ namespace PlasmaAPI.Packs.ImportModel
                         break;
                     // TODO: add mode formats here...
                     default:
-                        //Console.FormatMessage($"File format not supported ({ext})", LogType.Error);
+                        Debug.LogWarning($"File format not supported ({ext})");
                         return null;
                 }
             }
@@ -112,7 +113,7 @@ namespace PlasmaAPI.Packs.ImportModel
         /// <param name="filePath"></param>
         /// <param name="parentObj"></param>
         /// <param name="options"></param>
-        public void ImportModelAsync(string objName, string filePath, Transform parentObj, ImportOptions options)
+        public void ImportModelAsync(string objName, string filePath, Transform parentObj, ImportOptions options, Assembly asm)
         {
             if (loaderList == null)
             {
@@ -127,7 +128,7 @@ namespace PlasmaAPI.Packs.ImportModel
                 }
             }
             // If the given path is a URI leave it as it is, else get its absolute path
-            string absolutePath = filePath.Contains("//") ? filePath : Path.GetFullPath(filePath);
+            string absolutePath = filePath;
             Loader loader = CreateLoader(absolutePath);
             if (loader == null)
             {
@@ -141,7 +142,7 @@ namespace PlasmaAPI.Packs.ImportModel
                 objName = Path.GetFileNameWithoutExtension(absolutePath);
             }
             allLoaded = false;
-            StartCoroutine(loader.Load(objName, absolutePath, parentObj));
+            StartCoroutine(loader.Load(objName, absolutePath, parentObj, asm));
         }
 
 

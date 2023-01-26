@@ -169,6 +169,12 @@ namespace PlasmaAPI.Application
         {
             return AssemblyLoad(AssemblyName, Callback, add);
         }
+        internal static IEnumerable<AssemblyContainer> GetLoadedAssemblies()
+        {
+            foreach (var asm in LoadedAssemblies)
+                if (asm.Value.IsLoaded)
+                    yield return asm.Value;
+        }
         internal static bool AssemblyLoad(string AssemblyName, Delegate Callback, bool add)
         {
             if (LoadedAssemblies.TryGetValue(AssemblyName, out AssemblyContainer container))

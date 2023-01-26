@@ -21,7 +21,7 @@ namespace PlasmaDevToolkit.DevToolkit.SocketCommunication
                 case CommandEx.importObj:
                     string path = string.Join("", userCommand.Args);
                     Console.FormatMessage($"Imporing \"{path}\"", UnityEngine.LogType.Warning);
-                    ObjImporter.ImportModel(path);
+                    //ObjImporter.ImportModel(path, null);
                     break;
             }
         }

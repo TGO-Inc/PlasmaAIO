@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Networking;
 //using PlasmaDevToolkit.Overrides;
@@ -175,7 +176,7 @@ namespace PlasmaAPI.Packs.ImportModel
         /// <param name="absolutePath">absolute file path</param>
         /// <param name="parentObj">Transform to which attach the loaded object (null=scene)</param>
         /// <returns>You can use StartCoroutine( loader.Load(...) )</returns>
-        public IEnumerator Load(string objName, string absolutePath, Transform parentObj)
+        public IEnumerator Load(string objName, string absolutePath, Transform parentObj, Assembly asm)
         {
             string fileName = Path.GetFileName(absolutePath);
             string fileNameNoExt = Path.GetFileNameWithoutExtension(absolutePath);
@@ -186,11 +187,11 @@ namespace PlasmaAPI.Packs.ImportModel
             objLoadingProgress.fileName = fileName;
             objLoadingProgress.error = false;
             objLoadingProgress.message = "Loading " + fileName + "...";
-            //Console.FormatMessage($"Loading {objName} from: {absolutePath}...");
+            Debug.LogWarning($"Loading {objName} from: {absolutePath}...");
 
             yield return null;
 
-            string normalizedPath = absolutePath.Replace('\\', '/');
+            string normalizedPath = absolutePath;
 
 
             // TODO: implementation of a caching mechanism for models downloaded from an URL
@@ -198,7 +199,7 @@ namespace PlasmaAPI.Packs.ImportModel
             // if the model was already loaded duplicate the existing object
             if (buildOptions != null && buildOptions.reuseLoaded && loadedModels.ContainsKey(normalizedPath) && loadedModels[normalizedPath] != null)
             {
-                //Console.FormatMessage($"File {normalizedPath} already loaded, creating instance.");
+                Debug.LogWarning($"File {normalizedPath} already loaded, creating instance.");
                 instanceCount[normalizedPath]++;
                 if (name == null || name == "") objName = objName + "_" + instanceCount[normalizedPath];
                 objLoadingProgress.message = "Instantiating " + objName + "...";
@@ -223,7 +224,7 @@ namespace PlasmaAPI.Packs.ImportModel
 
             float lastTime = Time.realtimeSinceStartup;
             float startTime = lastTime;
-            yield return LoadModelFile(normalizedPath);
+            yield return LoadModelFile(normalizedPath, asm);
             loadStats.modelParseTime = Time.realtimeSinceStartup - lastTime;
 
             if (objLoadingProgress.error)
@@ -235,22 +236,23 @@ namespace PlasmaAPI.Packs.ImportModel
             lastTime = Time.realtimeSinceStartup;
             if (HasMaterialLibrary)
             {
-                yield return LoadMaterialLibrary(normalizedPath);
+                yield return LoadMaterialLibrary(normalizedPath, asm);
             }
             loadStats.materialsParseTime = Time.realtimeSinceStartup - lastTime;
             lastTime = Time.realtimeSinceStartup;
-            yield return Build(normalizedPath, objName, parentObj);
+            yield return Build(normalizedPath, objName, parentObj, asm);
             loadStats.buildTime = Time.realtimeSinceStartup - lastTime;
             loadStats.totalTime = Time.realtimeSinceStartup - startTime;
-            //Console.FormatMessage("Done: " + objName
-            //    + "\n  Loaded in " + loadStats.totalTime + " seconds"
-            //    + "\n  Model data parsed in " + loadStats.modelParseTime + " seconds"
-            //    + "\n  Material data parsed in " + loadStats.materialsParseTime + " seconds"
-            //   + "\n  Game objects built in " + loadStats.buildTime + " seconds"
-            //    + "\n    textures: " + loadStats.buildStats.texturesTime + " seconds"
-            //    + "\n    materials: " + loadStats.buildStats.materialsTime + " seconds"
-            //    + "\n    objects: " + loadStats.buildStats.objectsTime + " seconds"
-            //    );
+            /*
+            Debug.LogWarning("Done: " + objName
+                + "\n  Loaded in " + loadStats.totalTime + " seconds"
+                + "\n  Model data parsed in " + loadStats.modelParseTime + " seconds"
+                + "\n  Material data parsed in " + loadStats.materialsParseTime + " seconds"
+               + "\n  Game objects built in " + loadStats.buildTime + " seconds"
+                + "\n    textures: " + loadStats.buildStats.texturesTime + " seconds"
+                + "\n    materials: " + loadStats.buildStats.materialsTime + " seconds"
+                + "\n    objects: " + loadStats.buildStats.objectsTime + " seconds"
+                );*/
             //totalProgress.singleProgress.Remove(objLoadingProgress);
             OnLoaded(loadedModels[normalizedPath], absolutePath);
         }
@@ -261,21 +263,21 @@ namespace PlasmaAPI.Packs.ImportModel
         /// </summary>
         /// <param name="absolutePath">absolute path of the model</param>
         /// <returns>List of paths of the textures referenced by the model</returns>
-        public abstract string[] ParseTexturePaths(string absolutePath);
+        public abstract string[] ParseTexturePaths(string absolutePath, Assembly asm);
 
         /// <summary>
         /// Load the main model file
         /// </summary>
         /// <param name="absolutePath">absolute file path</param>
         /// <remarks>This is called by Load() method</remarks>
-        protected abstract IEnumerator LoadModelFile(string absolutePath);
+        protected abstract IEnumerator LoadModelFile(string absolutePath, Assembly asm);
 
         /// <summary>
         /// Load the material library from the given path.
         /// </summary>
         /// <param name="absolutePath">absolute file path</param>
         /// <remarks>This is called by Load() method</remarks>
-        protected abstract IEnumerator LoadMaterialLibrary(string absolutePath);
+        protected abstract IEnumerator LoadMaterialLibrary(string absolutePath, Assembly asm);
 
 
         /// <summary>
@@ -285,13 +287,12 @@ namespace PlasmaAPI.Packs.ImportModel
         /// <param name="objName">Name of the main game object (model root)</param>
         /// <param name="parentTransform">transform to which the model root will be attached (if null it will be a root aobject)</param>
         /// <remarks>This is called by Load() method</remarks>
-        protected IEnumerator Build(string absolutePath, string objName, Transform parentTransform)
+        protected IEnumerator Build(string absolutePath, string objName, Transform parentTransform, Assembly asm)
         {
             float prevTime = Time.realtimeSinceStartup;
             GameObject newObj = new GameObject(objName);
             if (parentTransform != null) newObj.transform.SetParent(parentTransform.transform, false);
             ModelReferences modelRefs = newObj.AddComponent<ModelReferences>();
-            OnCreated(newObj, absolutePath);
 
             if (materialData != null)
             {
@@ -305,7 +306,7 @@ namespace PlasmaAPI.Packs.ImportModel
                     if (mtl.diffuseTexPath != null)
                     {
                         {
-                            yield return LoadMaterialTexture(basePath, mtl.diffuseTexPath);
+                            yield return LoadMaterialTexture(asm, mtl.diffuseTexPath);
                             mtl.diffuseTex = loadedTexture;
                         }
                         modelRefs.AddTexture(mtl.diffuseTex);
@@ -314,7 +315,7 @@ namespace PlasmaAPI.Packs.ImportModel
                     if (mtl.bumpTexPath != null)
                     {
                         {
-                            yield return LoadMaterialTexture(basePath, mtl.bumpTexPath);
+                            yield return LoadMaterialTexture(asm, mtl.bumpTexPath);
                             mtl.bumpTex = loadedTexture;
                         }
                         modelRefs.AddTexture(mtl.bumpTex);
@@ -323,7 +324,7 @@ namespace PlasmaAPI.Packs.ImportModel
                     if (mtl.specularTexPath != null)
                     {
                         {
-                            yield return LoadMaterialTexture(basePath, mtl.specularTexPath);
+                            yield return LoadMaterialTexture(asm, mtl.specularTexPath);
                             mtl.specularTex = loadedTexture;
                         }
                         modelRefs.AddTexture(mtl.specularTex);
@@ -332,13 +333,14 @@ namespace PlasmaAPI.Packs.ImportModel
                     if (mtl.opacityTexPath != null)
                     {
                         {
-                            yield return LoadMaterialTexture(basePath, mtl.opacityTexPath);
+                            yield return LoadMaterialTexture(asm, mtl.opacityTexPath);
                             mtl.opacityTex = loadedTexture;
                         }
                         modelRefs.AddTexture(mtl.opacityTex);
                     }
                 }
             }
+
             loadStats.buildStats.texturesTime = Time.realtimeSinceStartup - prevTime;
             prevTime = Time.realtimeSinceStartup;
 
@@ -350,6 +352,8 @@ namespace PlasmaAPI.Packs.ImportModel
             bool hasColors = dataSet.colorList.Count > 0;
             bool hasMaterials = materialData != null;
             Builder.InitBuildMaterials(materialData, hasColors, modelRefs);
+
+
             float objInitPerc = objLoadingProgress.percentage;
             if (hasMaterials)
             {
@@ -362,9 +366,11 @@ namespace PlasmaAPI.Packs.ImportModel
                 prevTime = Time.realtimeSinceStartup;
             }
 
+            OnCreated(newObj, absolutePath);
+
             objLoadingProgress.message = "Building scene objects...";
 
-           ////newObj.transform.localScale = Vector3.one * Scaling;
+            ////newObj.transform.localScale = Vector3.one * Scaling;
             float initProgress = objLoadingProgress.percentage;
             Builder.StartBuildObjectAsync(dataSet, newObj);
             while (Builder.BuildObjectAsync(ref info))
@@ -430,11 +436,7 @@ namespace PlasmaAPI.Packs.ImportModel
                         }
                     }
                 }
-                if (buildOptions != null && buildOptions.hideWhileLoading)
-                {
-                    obj.SetActive(true);
-                }
-
+                obj.SetActive(false);
                 if (ModelLoaded != null)
                 {
                     ModelLoaded(obj, absolutePath);
@@ -492,12 +494,12 @@ namespace PlasmaAPI.Packs.ImportModel
         }
 
 
-        private IEnumerator LoadMaterialTexture(string basePath, string path)
+        private IEnumerator LoadMaterialTexture(Assembly asm, string path)
         {
             loadedTexture = null;
-            string texPath = GetTextureUrl(basePath, path);
+            //string texPath = GetTextureUrl(basePath, path);
 
-            var enumerable = Filesystem.DownloadTexture(texPath);
+            var enumerable = Filesystem.DownloadTexture(path, asm);
 
             yield return enumerable;
 

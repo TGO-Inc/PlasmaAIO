@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Globalization;
+using System.Reflection;
+using System.Linq;
 //using PlasmaDevToolkit.Overrides;
 //using Console = PlasmaDevToolkit.Overrides.Console;
 
@@ -48,12 +50,12 @@ namespace PlasmaAPI.Packs.ImportModel
         /// </summary>
         /// <param name="absolutePath">absolute file path</param>
         /// <returns>The list of dependencies (textures files, if any).</returns>
-        public override string[] ParseTexturePaths(string absolutePath)
+        public override string[] ParseTexturePaths(string absolutePath, Assembly asm)
         {
             List<string> mtlTexPathList = new List<string>();
             string basePath = GetDirName(absolutePath);
 
-            string mtlLibName = ParseMaterialLibName(absolutePath);
+            string mtlLibName = ParseMaterialLibName(absolutePath, asm);
 
             if (!string.IsNullOrEmpty(mtlLibName))
             {
@@ -87,10 +89,10 @@ namespace PlasmaAPI.Packs.ImportModel
         }
 
 
-        protected override IEnumerator LoadModelFile(string absolutePath)
+        protected override IEnumerator LoadModelFile(string absolutePath, Assembly asm)
         {
-            string url = absolutePath.Contains("//") ? absolutePath : "file:///" + absolutePath;
-            yield return LoadOrDownloadText(url);
+            //string url = absolutePath.Contains("//") ? absolutePath : "file:///" + absolutePath;
+            yield return LoadOrDownloadText(absolutePath, asm);
 
             if (string.IsNullOrEmpty(loadedText))
             {
@@ -103,16 +105,17 @@ namespace PlasmaAPI.Packs.ImportModel
                 totalProgress.singleProgress.Remove(objLoadingProgress);
                 yield break;
             }
-            //Debug.LogFormat("Parsing geometry data in {0}...", www.url);
+            Debug.LogFormat("Parsing geometry data in {0}...", absolutePath);
 
             yield return ParseGeometryData(loadedText);
         }
 
 
-        protected override IEnumerator LoadMaterialLibrary(string absolutePath)
+        protected override IEnumerator LoadMaterialLibrary(string absolutePath, Assembly asm)
         {
             string mtlPath;
             string basePath = GetDirName(absolutePath);
+            /*
             if (absolutePath.Contains("//"))
             {
                 int pos;
@@ -139,19 +142,22 @@ namespace PlasmaAPI.Packs.ImportModel
                     mtlPath = "file:///" + basePath + mtlLib;
                 }
             }
-            yield return LoadOrDownloadText(mtlPath,false);
+            */
+            mtlPath = Path.GetFileNameWithoutExtension(absolutePath) + ".mtl";
+            yield return LoadOrDownloadText(mtlPath, asm);
+            /*
             if (loadedText == null)
             {
                 mtlLib = Path.GetFileName(mtlLib);
                 mtlPath = "file:///" + basePath + mtlLib;
-                //Console.FormatMessage($"Material library {mtlLib} loaded from the same directory as the OBJ file.\n");
-
+                Debug.LogWarning($"Material library {mtlLib} loaded from the same directory as the OBJ file.\n");
                 yield return LoadOrDownloadText(mtlPath);
             }
+            */
 
             if (loadedText != null)
             {
-                ////Console.FormatMessage("Parsing material library {0}...";
+                //Debug.LogWarning("Parsing material library {0}...";
                 objLoadingProgress.message = "Parsing material library...";
                 ParseMaterialData(loadedText);
             }
@@ -370,9 +376,11 @@ namespace PlasmaAPI.Packs.ImportModel
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        private string ParseMaterialLibName(string path)
+        private string ParseMaterialLibName(string path, Assembly asm)
         {
-            string[] lines = Filesystem.ReadAllLines(path);
+            using var stream = asm.GetManifestResourceStream(asm.GetManifestResourceNames().Where(m => m.EndsWith(path)).FirstOrDefault());
+            using StreamReader reader = new StreamReader(stream);
+            string[] lines = reader.ReadToEnd().Split('\n');
 
             objLoadingProgress.message = "Parsing geometry data...";
 
@@ -624,11 +632,11 @@ namespace PlasmaAPI.Packs.ImportModel
         }
 
 
-        private IEnumerator LoadOrDownloadText(string url, bool notifyErrors = true)
+        private IEnumerator LoadOrDownloadText(string url, Assembly asm, bool notifyErrors = true)
         {
             loadedText = null;
 
-            var enumerable = Filesystem.DownloadUri(url, notifyErrors);
+            var enumerable = Filesystem.DownloadUri(url, notifyErrors, asm);
 
             yield return enumerable;
 

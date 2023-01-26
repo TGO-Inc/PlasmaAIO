@@ -1,6 +1,10 @@
 //using PlasmaDevToolkit.Overrides;
+using ImageProcessor;
 using System.Collections;
 using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Windows.Media.Imaging;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -26,8 +30,25 @@ namespace PlasmaAPI.Packs.ImportModel
             return File.OpenRead(path);
         }
 
-        public IEnumerator DownloadUri(string uri, bool notifyErrors)
+        public IEnumerator DownloadUri(string uri, bool notifyErrors, Assembly asm)
         {
+
+            var resourceName = string.Empty;
+
+            foreach (var assemblyName in asm.GetManifestResourceNames())
+            {
+                if (assemblyName.EndsWith(uri))
+                {
+                    resourceName = assemblyName;
+                }
+            }
+            using (var stream = asm.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                yield return reader.ReadToEnd();
+            }
+
+            /*
 //#if UNITY_2018_3_OR_NEWER
             UnityWebRequest uwr = UnityWebRequest.Get(uri);
             yield return uwr.SendWebRequest();
@@ -40,7 +61,7 @@ namespace PlasmaAPI.Packs.ImportModel
             {
                 if (notifyErrors)
                 {
-                    //Console.FormatMessage(uwr.error, LogType.Error);
+                    Debug.LogWarning(uwr.error, LogType.Error);
                 }
 
                 yield return null;
@@ -67,10 +88,11 @@ namespace PlasmaAPI.Packs.ImportModel
             {
                 yield return www.text;
             }
+            
 #endif*/
         }
 
-        public IEnumerator DownloadTexture(string uri)
+        public IEnumerator DownloadTexture(string uri, Assembly asm)
         {
 #if UNITY_2018_3_OR_NEWER
             using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(uri))
@@ -94,18 +116,7 @@ namespace PlasmaAPI.Packs.ImportModel
             }
             /*
 #else
-            WWW loader = new WWW(uri);
-            yield return loader;
-
-            if (loader.error != null)
-            {
-                Debug.LogError(loader.error);
-                yield return null;
-            }
-            else
-            {
-                yield return LoadTexture(loader);
-            }
+            yield return LoadTexture(uri, asm);
 #endif
         }
 
@@ -113,35 +124,18 @@ namespace PlasmaAPI.Packs.ImportModel
         /// <summary>
         /// Load a texture from the URL got from the parameter.
         /// </summary>
-        private Texture2D LoadTexture(WWW loader)
+        private Texture2D LoadTexture(string path, Assembly asm)
         {
-            string ext = Path.GetExtension(loader.url).ToLower();
             Texture2D tex = null;
+            
+            using var stream = asm.GetManifestResourceStream(asm.GetManifestResourceNames().Where(m => m.EndsWith(path)).FirstOrDefault());
+            using var reader = new BinaryReader(stream);
+            var img = new ImageFactory()
+                .Load(stream)
+                .AutoRotate();
 
-            // TODO: add support for more formats (bmp, gif, dds, ...)
-            if (ext == ".tga")
-            {
-                tex = TextureLoader.LoadTextureFromUrl(loader.url);
-                //tex = TgaLoader.LoadTGA(new MemoryStream(loader.bytes));
-            }
-            else if (ext == ".png" || ext == ".jpg" || ext == ".jpeg")
-            {
-                tex = loader.texture;
-            }
-            else
-            {
-                Debug.LogWarning("Unsupported texture format: " + ext);
-            }
-
-            if (tex == null)
-            {
-                Debug.LogErrorFormat("Failed to load texture {0}", loader.url);
-            }
-            else
-            {
-                //tex.alphaIsTransparency = true;
-                //tex.filterMode = FilterMode.Trilinear;
-            }
+            tex = new Texture2D(img.Image.Width, img.Image.Height);
+            tex.LoadImage(reader.ReadBytes(int.MaxValue));
 
             return tex;
         }

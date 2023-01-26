@@ -1,19 +1,11 @@
-﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PlasmaDevToolkit.Overrides;
-using _WorldController = PlasmaAPI.GameClass.WorldController;
-using UnityEngine;
-using Console = PlasmaDevToolkit.Overrides.Console;
+﻿extern alias GameClass;
+using GameClass;
 
 namespace PlasmaDevToolkit.Patches
 {
     internal class WorldController
     { 
-        public static bool Init(_WorldController __instance)
+        public static bool Init(GameClass.WorldController __instance)
         {
             __instance.disableGuruMeditation = true;
             __instance.skipLoadingScreen = true;

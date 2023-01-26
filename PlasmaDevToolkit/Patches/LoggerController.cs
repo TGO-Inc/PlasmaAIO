@@ -1,38 +1,38 @@
-﻿using System;
+﻿extern alias GameClass;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using _LoggerController = PlasmaAPI.GameClass.LoggerController;
 using Console = PlasmaDevToolkit.Overrides.Console;
 using System.Diagnostics;
 using UnityEngine;
-using static PlasmaAPI.GameClass.LoggerController;
 using PlasmaDevToolkit.Overrides;
+using static GameClass::LoggerController;
 
 namespace PlasmaDevToolkit.Patches
 {
     internal class LoggerController
     {
-        public static bool Log(_LoggerController __instance, LogClass logClass, string message, string id)
+        public static bool Log(LogClass logClass, string message, string id)
         {
-            if (LoggerUtil.PassesGarbage(LogDetail.Minimal, logClass, message))
+            if (LoggerUtil.PassesGarbage(LogDetail.Default, logClass, message))
             {
                 Console.FormatMessage(LogType.Log, logClass, message);
             }
             return true;
         }
 
-        public static bool LogVerbose(_LoggerController __instance, LogClass logClass, string message, string id)
+        public static bool LogVerbose(LogClass logClass, string message, string id)
         {
-            if (LoggerUtil.PassesGarbage(LogDetail.Minimal, logClass, message))
+            if (LoggerUtil.PassesGarbage(LogDetail.Default, logClass, message))
             {
                 Console.FormatMessage(LogType.Log, logClass, message);
             }
             return true;
         }
 
-        public static bool LogWarning(_LoggerController __instance, ref LogClass logClass, string message)
+        public static bool LogWarning(ref LogClass logClass, string message)
         {
-            if (LoggerUtil.PassesGarbage(LogDetail.Minimal, logClass, message))
+            if (LoggerUtil.PassesGarbage(LogDetail.Default, logClass, message))
             {
                 Console.FormatMessage(LogType.Warning, logClass, message);
             }
@@ -52,7 +52,7 @@ namespace PlasmaDevToolkit.Patches
         private static readonly string[] DefaultFilter = new string[]
         {
             "lateupdate",
-            "processoperations",
+            //"processoperations",
             "handleonpreupdatedevices",
             "schedulecopytexture",
             "scheduleadvancedcopytexture",
@@ -68,7 +68,7 @@ namespace PlasmaDevToolkit.Patches
 
                     string name = new StackTrace().GetFrame(4).GetMethod().Name.ToLower().Trim();
 
-                    if (DefaultFilter.Contains(name)) return false;
+                    if (DefaultFilter.Contains(name) && TimeUtil.GetFrame() > 0) return false;
 
                     if (detail.Equals(LogDetail.Minimal))
                     {

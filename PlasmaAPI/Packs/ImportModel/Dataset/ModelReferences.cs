@@ -21,17 +21,17 @@ namespace PlasmaAPI.Packs.ImportModel
         [ReadOnly]
         [SerializeField]
 //#endif
-        private List<Mesh> meshReferences = new List<Mesh>();
+        public List<Mesh> meshReferences = new List<Mesh>();
 //#if UNITY_2018_1_OR_NEWER
         [ReadOnly]
         [SerializeField]
-//#endif
-        private List<Material> materialReferences = new List<Material>();
+        //#endif
+        public List<Material> materialReferences = new List<Material>();
 //#if UNITY_2018_1_OR_NEWER
         [ReadOnly]
         [SerializeField]
-//#endif
-        private List<Texture2D> textureReferences = new List<Texture2D>();
+        //#endif
+        public List<Texture2D> textureReferences = new List<Texture2D>();
 
         /// <summary>
         /// Add a reference to a created mesh.
@@ -85,7 +85,7 @@ namespace PlasmaAPI.Packs.ImportModel
             {
                 Destroy(mesh);
             }
-            //Console.FormatMessage($"{numResources} resources destroyed for object {gameObject.name}");
+            Debug.LogWarning($"{numResources} resources destroyed for object {gameObject.name}");
         }
 
     }

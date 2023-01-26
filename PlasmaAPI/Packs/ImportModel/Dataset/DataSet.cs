@@ -248,7 +248,7 @@ namespace PlasmaAPI.Packs.ImportModel
                     stats += "\n    " + gd.name + " has " + gd.faces.Count + " faces(s)";
                 }
             }
-            //Console.FormatMessage(stats);
+            Debug.LogWarning(stats);
         }
 
 

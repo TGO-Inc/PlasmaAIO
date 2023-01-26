@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static PlasmaAPI.GameClass.VFXComponent;
 
 namespace PlasmaAPI.Application
 {
@@ -23,11 +23,12 @@ namespace PlasmaAPI.Application
             set
             {
                 if (_assembly != value)
-                    foreach (var i in AssemblyLoaded.Values)
-                        if (value != null && i.Method.GetParameters().Length == 1)
-                            i.DynamicInvoke(value);
-                        else if (value != null)
-                            i.DynamicInvoke();
+                    if (AssemblyLoaded != null)
+                        foreach (var i in AssemblyLoaded.Values)
+                            if (value != null && i.Method.GetParameters().Length == 1)
+                                i.DynamicInvoke(value);
+                            else if (value != null)
+                                i.DynamicInvoke();
 
                 _assembly = value;
             }

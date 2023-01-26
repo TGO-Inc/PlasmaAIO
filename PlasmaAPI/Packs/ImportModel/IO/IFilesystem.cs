@@ -1,5 +1,6 @@
 using System.Collections;
 using System.IO;
+using System.Reflection;
 
 namespace PlasmaAPI.Packs.ImportModel
 {
@@ -35,13 +36,13 @@ namespace PlasmaAPI.Packs.ImportModel
         /// <param name="uri">The URI to download.</param>
         /// <param name="notifyErrors">Whether to notify of errors.</param>
         /// <returns>An enumerator usable as Coroutine in Unity.</returns>
-        IEnumerator DownloadUri(string uri, bool notifyErrors);
+        IEnumerator DownloadUri(string uri, bool notifyErrors, Assembly asm);
 
         /// <summary>
         /// Downloads the specified URI as texture.
         /// </summary>
         /// <param name="uri">The URI to download.</param>
         /// <returns>An enumerator usable as Coroutine in Unity.</returns>
-        IEnumerator DownloadTexture(string uri);
+        IEnumerator DownloadTexture(string uri, Assembly asm);
     }
 }

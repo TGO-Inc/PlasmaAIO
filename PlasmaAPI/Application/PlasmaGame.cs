@@ -60,10 +60,6 @@ namespace PlasmaAPI.Application
 
         }
 
-
-
-
-
         internal static GameObject UpdateHandle;
         internal static void OnGameInit()
         {
