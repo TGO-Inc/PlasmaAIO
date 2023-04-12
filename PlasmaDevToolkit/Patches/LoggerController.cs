@@ -12,9 +12,10 @@ namespace PlasmaDevToolkit.Patches
 {
     internal class LoggerController
     {
+        public static LogDetail logDetail = LogDetail.Default;
         public static bool Log(LogClass logClass, string message, string id)
         {
-            if (LoggerUtil.PassesGarbage(LogDetail.Default, logClass, message))
+            if (LoggerUtil.PassesGarbage(logDetail, logClass, message))
             {
                 Console.FormatMessage(LogType.Log, logClass, message);
             }
@@ -23,7 +24,7 @@ namespace PlasmaDevToolkit.Patches
 
         public static bool LogVerbose(LogClass logClass, string message, string id)
         {
-            if (LoggerUtil.PassesGarbage(LogDetail.Default, logClass, message))
+            if (LoggerUtil.PassesGarbage(logDetail, logClass, message))
             {
                 Console.FormatMessage(LogType.Log, logClass, message);
             }
@@ -32,7 +33,7 @@ namespace PlasmaDevToolkit.Patches
 
         public static bool LogWarning(ref LogClass logClass, string message)
         {
-            if (LoggerUtil.PassesGarbage(LogDetail.Default, logClass, message))
+            if (LoggerUtil.PassesGarbage(logDetail, logClass, message))
             {
                 Console.FormatMessage(LogType.Warning, logClass, message);
             }
@@ -52,40 +53,44 @@ namespace PlasmaDevToolkit.Patches
         private static readonly string[] DefaultFilter = new string[]
         {
             "lateupdate",
-            //"processoperations",
+            "processoperations",
             "handleonpreupdatedevices",
             "schedulecopytexture",
+            "schedulecamerarender",
             "scheduleadvancedcopytexture",
-            "schedulecleartexture"
+            "schedulecleartexture",
+            "fetchdata",
+            "broadcast"
         };
         public static bool PassesGarbage(LogDetail detail, LogClass logclass, string msg)
         {
             if (TimeUtil.GetFrame() > 0)
             {
-                if (!detail.Equals(LogDetail.All))
+                if (detail.Equals(LogDetail.All)) return true;
+
+                if (logclass.Equals(LogClass.Sketch)) return false;
+                    
+                string name = new StackTrace().GetFrame(4).GetMethod().Name.ToLower().Trim();
+
+                if (TimeUtil.GetFrame() > 0 && DefaultFilter.Contains(name)) return false;
+
+                /*
+                if (detail.Equals(LogDetail.Minimal))
                 {
-                    if (logclass.Equals(LogClass.Sketch)) return false;
-
-                    string name = new StackTrace().GetFrame(4).GetMethod().Name.ToLower().Trim();
-
-                    if (DefaultFilter.Contains(name) && TimeUtil.GetFrame() > 0) return false;
-
-                    if (detail.Equals(LogDetail.Minimal))
+                    DateTime now = DateTime.UtcNow;
+                    bool key = last_console_times.ContainsKey(name);
+                    if (key)
                     {
-                        DateTime now = DateTime.UtcNow;
-                        bool key = last_console_times.ContainsKey(name);
-                        if (key)
-                        {
-                            TimeSpan diff = now - last_console_times[name];
-                            if (Math.Abs(diff.TotalMilliseconds) < 50) return false;
-                            last_console_times[name] = now;
-                        }
-                        else
-                        {
-                            last_console_times.Add(name, now);
-                        }
+                        TimeSpan diff = now - last_console_times[name];
+                        if (Math.Abs(diff.TotalMilliseconds) < 50) return false;
+                        last_console_times[name] = now;
+                    }
+                    else
+                    {
+                        last_console_times.Add(name, now);
                     }
                 }
+                */
             }
             return true;
         }

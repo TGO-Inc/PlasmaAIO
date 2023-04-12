@@ -1,4 +1,6 @@
 ﻿extern alias GameClass;
+extern alias PLibrary;
+using PLibrary;
 using GameClass;
 using HarmonyLib;
 using PlasmaAPI.Application.Game;
@@ -36,7 +38,6 @@ namespace PlasmaAPI.API.Patches
     }
     internal class ComponentItem
     {
-        static int applied = 0;
         public static void Setup(AgentGestaltEnum theComponentGestaltId, GameClass.Visor.ComponentItem __instance)
         {
             GameClass.Holder.componentGestalts.TryGetValue(theComponentGestaltId, out AgentGestalt agentGestalt);
@@ -44,15 +45,6 @@ namespace PlasmaAPI.API.Patches
             __instance.preview.sprite = agentGestalt.componentPreview;
             __instance.description.text = agentGestalt.description;
             __instance.massValue.text = agentGestalt.componentMass.ToString("F2", CultureInfo.InvariantCulture) + " Kg";
-        }
-    }
-    internal class VisorUIController
-    {
-        public static void Init(GameClass.VisorUIController __instance)
-        {
-            File.WriteAllLines("logx.txt", GameClass.Holder.componentGestalts.Values.Select(g => g.displayName));
-            File.WriteAllLines("logT.txt", GameClass.Holder.componentGestalts.Keys.Select(g => g.ToString()));
-            File.WriteAllLines("log0.txt", __instance.componentLibraryItems.Keys.Select(g => g.ToString()));
         }
     }
 }

@@ -1,23 +1,16 @@
 ﻿extern alias GameClass;
-using GameClass;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnityEngine;
 using Color = UnityEngine.Color;
 using System.Drawing;
-using Sirenix.Utilities;
 using System.Reflection;
 using System.Collections.Concurrent;
-using Random = System.Random;
 using System.Runtime.InteropServices;
 using System.Timers;
-using System.Runtime.ExceptionServices;
+using System.Linq;
 using PlasmaAPI.Application;
 using static GameClass::LoggerController;
 
@@ -28,8 +21,7 @@ namespace PlasmaDevToolkit.Overrides
         private volatile static bool IsBusy = false;
         public static bool Busy()
         {
-            if (!IsBusy)
-                FreezeContext.Enqueue(' ');
+            if (!IsBusy) FreezeContext.Enqueue(' ');
             return IsBusy;
         }
         private static readonly ConcurrentQueue<char> FreezeContext = new ConcurrentQueue<char>();
@@ -47,14 +39,14 @@ namespace PlasmaDevToolkit.Overrides
             System.Console.ResetColor();
             DefaultColor = System.Console.ForegroundColor;
 
-            System.Console.Title = "Plasma Debug Console";
+            System.Console.Title = "Plasma UnityEngine.Debug Console";
             System.Console.Clear();
 
             CheckFreeze = new Timer()
             {
                 AutoReset = true,
                 Enabled = true,
-                Interval = 100
+                Interval = 10
             };
             CheckFreeze.Elapsed += CheckFreeze_Elapsed;
 
@@ -66,14 +58,13 @@ namespace PlasmaDevToolkit.Overrides
         }
         private static void MainThreadFreeze()
         {
-            while (Busy())
-                Task.Delay(1).Wait();
+            while (Busy()) Task.Delay(10).Wait();
         }
         private static async void CheckFreeze_Elapsed(object sender, ElapsedEventArgs e)
         {
             if (FreezeContext.TryDequeue(out char x))
             {
-                Task Timeout = Task.Delay(TimeSpan.FromMilliseconds(50));
+                Task Timeout = Task.Delay(TimeSpan.FromMilliseconds(150));
                 Task Write = Task.Run(() =>
                 {
                     Console.Write(x);
@@ -124,10 +115,11 @@ namespace PlasmaDevToolkit.Overrides
         {
             while (true)
             {
-                if (LogContext.TryDequeue(out (LogType Type, LogClass Class, StackTrace Trace, string Message) data))
+                while (LogContext.TryDequeue(out (LogType Type, LogClass Class, StackTrace Trace, string Message) data))
                 {
-                    TryWrite(data.Type, data.Class, data.Trace, data.Message);
+                    Console.TryWrite(data.Type, data.Class, data.Trace, data.Message);
                 }
+                Task.Delay(1).Wait();
             }
         }
         private static void TryWrite(LogType? type, LogClass? logClass, StackTrace trace, string message)
@@ -149,17 +141,20 @@ namespace PlasmaDevToolkit.Overrides
 
             color = Console.ClosestConsoleColor(Color.HSVToRGB(name.GetHashCode() / 2.1474836E+09f * 0.5f + 0.5f, 0.6f, 0.8f, false), true);
 
-            /*
+
             if (type.Equals(LogType.Exception) || type.Equals(LogType.Error))
             {
-                string method_class = message.Split('\n')[6].Split(' ')[0].Trim();
+                string[] tmp = message.Split('\n')[6].Split(' ');
+                string method_class = tmp[tmp.Length-1].Trim();
                 var ar = method_class.Split('.');
-                name = ar[ar.Length - 1];
-                ar[ar.Length - 1] = null;
-                @class = string.Join(".", ar.Where(x => x != null));
+                @class = ar[0];
+                ar[0] = null;
+                name = string.Join(".", ar.Where(x => x != null));
+                // ar[1] = null;
+                // string.Join(".", ar.Where(x => x != null));
                 color = ConsoleColor.DarkYellow;
             }
-            */
+
 
             Console.Write(@class + ".", ConsoleColor.DarkGray);
             Console.Write(name, color);
@@ -173,7 +168,7 @@ namespace PlasmaDevToolkit.Overrides
             if (type.Equals(LogType.Assert))
                 color = ConsoleColor.DarkBlue;
 
-                Console.WriteLine(message, color);
+            Console.WriteLine(message, color);
         }
         public static void FormatMessage(LogType type, LogClass logClass, string message)
         {
@@ -234,7 +229,7 @@ namespace PlasmaDevToolkit.Overrides
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern int FreeConsole();
     }
-    public static class TimeUtil
+    internal static class TimeUtil
     {
         private static volatile bool IsLoaded = false;
         private static int Frame()
@@ -245,7 +240,8 @@ namespace PlasmaDevToolkit.Overrides
         {
             if (IsLoaded)
                 return Frame();
-            return 0;
+            else
+                return 0;
         }
         internal static void UpdateLoad()
         {

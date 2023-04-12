@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using Doorstop;
+using HarmonyLib;
 using PlasmaAPI.Application;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace PlasmaAPI.PatchUtil
         public static void CreatePatch<T>(string assemblyName, PatchType type)
         {
             Type BaseClass = typeof(T);
-            List<MethodInfo> methods = BaseClass.GetRuntimeMethods().Where(m => m.DeclaringType.Name.Equals(BaseClass.Name)).ToList();
+            List<MethodInfo> methods = BaseClass.GetRuntimeMethods().Where(m=>m.DeclaringType == BaseClass).ToList();
 
-            foreach (var method in methods.ToArray())
+            foreach (var method in methods)
             {
                 MethodInfo[] duplicates = methods.Where(m => m.Name.Equals(method.Name)).ToArray();
                 if (duplicates.Count() > 1)
@@ -41,8 +42,8 @@ namespace PlasmaAPI.PatchUtil
                         }
                     }
                 }
-                
             }
+
             methods.ForEach(m => CreatePatch(assemblyName, type, m, false));
         }
         public static void CreatePatch(string assemblyName, PatchType type, HarmonyPatchVoid PatchMethod)
@@ -57,31 +58,43 @@ namespace PlasmaAPI.PatchUtil
         {
             if (AssemblyManager.LoadedAssemblies.TryGetValue(assemblyName, out AssemblyContainer asmc))
             {
-                Type[] Types = asmc.Assembly.GetTypes();
-                string TargetClassName = method.DeclaringType.Name;
-                Type TargetClass = Types.Where(t => t.FullName.EndsWith(TargetClassName)).FirstOrDefault();
-                MethodInfo TargetMethod = TargetClass.GetRuntimeMethods().Where(m => m.Name.Equals(method.Name)).FirstOrDefault();
+                if (asmc.IsLoaded)
+                {
+                    Type[] Types = asmc.Assembly.GetTypes();
+                    string TargetClassName = method.DeclaringType.Name;
 
-                if (check)
-                {
-                    IEnumerable<MethodInfo> methods = method.DeclaringType.GetRuntimeMethods().Where(m => m.Name.Equals(method.Name));
-                    if (methods.Count() > 1)
-                        foreach (MethodInfo info in methods)
-                            if (info.GetParameters().Length > 0)
-                                method = info;
-                }
-                
-                switch (type)
-                {
-                    case PatchType.Prefix:
-                        Patch.CreateProcessor(TargetMethod).AddPrefix(new HarmonyMethod(method)).Patch();
-                        break;
-                    case PatchType.Postfix:
-                        Patch.CreateProcessor(TargetMethod).AddPostfix(new HarmonyMethod(method)).Patch();
-                        break;
+                    Type TargetClass = Types.Where(t => t.FullName.EndsWith(TargetClassName)).FirstOrDefault();
+                    MethodInfo TargetMethod = TargetClass.GetRuntimeMethods().Where(m => m.Name.Equals(method.Name)).FirstOrDefault();
+                    if (check)
+                    {
+                        IEnumerable<MethodInfo> methods = method.DeclaringType.GetRuntimeMethods().Where(m => m.Name.Equals(method.Name));
+                        if (methods.Count() > 1)
+                            foreach (MethodInfo info in methods)
+                                if (info.GetParameters().Length > 0)
+                                    method = info;
+                    }
+                    try
+                    {
+                        switch (type)
+                        {
+                            case PatchType.Prefix:
+                                Patch.CreateProcessor(TargetMethod).AddPrefix(new HarmonyMethod(method)).Patch();
+                                Entrypoint.Log("Created PREFIX for: " + TargetMethod.DeclaringType.Name + "." + TargetMethod.Name);
+                                break;
+                            case PatchType.Postfix:
+                                Patch.CreateProcessor(TargetMethod).AddPostfix(new HarmonyMethod(method)).Patch();
+                                Entrypoint.Log("Created POSTFIX for: " + TargetMethod.DeclaringType.Name + "." + TargetMethod.Name);
+                                break;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Entrypoint.Log(e.ToString());
+                    }
+                    return;
                 }
             }
-
+            AssemblyManager.OnAssemblyLoad(assemblyName, () => CreatePatch(assemblyName, type, method, check));
         }
     }
     public enum PatchType

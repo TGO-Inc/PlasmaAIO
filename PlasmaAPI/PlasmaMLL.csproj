@@ -46,14 +46,20 @@
     </Reference>
     <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Aliases>GameClass</Aliases>
+    </Reference>
+    <Reference Include="AssimpNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=0d51b391f59f42a6, processorArchitecture=MSIL">
+      <HintPath>..\packages\AssimpNet.4.1.0\lib\net40\AssimpNet.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="GLTFSerialization">
+      <HintPath>Z:\Model\UnityGLTF\UnityGLTF\bin\Debug\GLTFSerialization.dll</HintPath>
     </Reference>
     <Reference Include="ImageProcessor, Version=2.9.1.225, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ImageProcessor.2.9.1\lib\net452\ImageProcessor.dll</HintPath>
@@ -65,14 +71,19 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="PlasmaLibrary">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\PlasmaLibrary.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\PlasmaLibrary.dll</HintPath>
+      <Aliases>PLibrary</Aliases>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="Sirenix.Serialization">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Serialization.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Sirenix.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Sirenix.Serialization.Config, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Sirenix.Utilities">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.4\lib\net472\SixLabors.ImageSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -205,6 +216,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
       <Private>True</Private>
@@ -228,30 +242,43 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityGLTF">
+      <HintPath>Z:\Model\UnityGLTF\UnityGLTF\bin\Debug\UnityGLTF.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Classes\AbstractGestalt.cs" />
     <Compile Include="API\Classes\ComponentManager.cs" />
-    <Compile Include="API\Classes\Resources.cs" />
+    <Compile Include="Application\InternalClass\AgentKey.cs" />
+    <Compile Include="Application\InternalClass\AgentDictionary.cs" />
+    <Compile Include="Application\InternalClass\ByteArrayIndex.cs" />
+    <Compile Include="Application\InternalClass\Crc32.cs" />
+    <Compile Include="Application\InternalClass\ResourceStream.cs" />
+    <Compile Include="Application\InternalClass\ShaderMaterial.cs" />
+    <Compile Include="API\Patches\ComponenetHandler.cs" />
     <Compile Include="API\Patches\Device.cs" />
+    <Compile Include="API\Patches\FemaleSocketPoint.cs" />
+    <Compile Include="API\Patches\Object.cs" />
     <Compile Include="API\Patches\ProcessorUI.cs" />
     <Compile Include="API\Patches\Resources.cs" />
+    <Compile Include="API\Patches\VFXComponent.cs" />
     <Compile Include="Application\GameHooks\UpdateHandle.cs" />
     <Compile Include="API\Patches\Holder.cs" />
     <Compile Include="Application\Assembly\AssemblyContainer.cs" />
@@ -259,40 +286,44 @@
     <Compile Include="Application\Assembly\AssemblyType.cs" />
     <Compile Include="Application\Extensions\Extensions.cs" />
     <Compile Include="Application\Game\CategoryManager.cs" />
+    <Compile Include="Application\InternalClass\GenericObject.cs" />
+    <Compile Include="API\Classes\GestaltInitializationData.cs" />
     <Compile Include="Application\PlasmaGame.cs" />
-    <Compile Include="API\Classes\ObjImporter.cs" />
+    <Compile Include="API\Classes\FileManager.cs" />
     <Compile Include="Entry.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\DataSet.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\IMaterialFactory.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\IShaderSelector.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\MaterialData.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\MaterialFactory.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\ModelReferences.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\ModelUtil.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\ObjectBuilder.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\ShaderSelector.cs" />
-    <Compile Include="Packs\ImportModel\Dataset\Triangulator.cs" />
-    <Compile Include="Packs\ImportModel\ImportOptions.cs" />
-    <Compile Include="Packs\ImportModel\IO\FileFilesystem.cs" />
-    <Compile Include="Packs\ImportModel\IO\IFilesystem.cs" />
-    <Compile Include="Packs\ImportModel\Loaders\Loader.cs" />
-    <Compile Include="Packs\ImportModel\Loaders\LoaderObj.cs" />
-    <Compile Include="Packs\ImportModel\Loaders\TextureLoader.cs" />
-    <Compile Include="Packs\ImportModel\LoadingProgress.cs" />
-    <Compile Include="Packs\ImportModel\MathUtil\MathData\Triangle.cs" />
-    <Compile Include="Packs\ImportModel\MathUtil\MathData\Vertex.cs" />
-    <Compile Include="Packs\ImportModel\MathUtil\MathUtility.cs" />
-    <Compile Include="Packs\ImportModel\MathUtil\Triangulation.cs" />
-    <Compile Include="Packs\ImportModel\ModelImportInfo.cs" />
-    <Compile Include="Packs\ImportModel\MultiObjectImporter.cs" />
-    <Compile Include="Packs\ImportModel\ObjectImporter.cs" />
-    <Compile Include="Packs\ImportModel\PathSettings.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\BlendShape.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Components\LODBackupComponent.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Components\LODGeneratorHelper.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Exceptions\ValidateSimplificationOptionsException.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Internal\BlendShapeContainer.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Internal\BlendShapeFrameContainer.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Internal\BorderVertex.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Internal\Ref.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Internal\Triangle.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Internal\UVChannels.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Internal\Vertex.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\LODGenerator.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\LODLevel.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Math\MathHelper.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Math\SymmetricMatrix.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Math\Vector3d.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\MeshCombiner.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\MeshSimplifier.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\SimplificationOptions.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Utility\IOUtils.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Utility\MeshUtils.cs" />
+    <Compile Include="Packs\3D\MeshSimplifier\Utility\ResizableArray.cs" />
+    <Compile Include="Packs\3D\ObjectImporter\ImageFormatDetector.cs" />
+    <Compile Include="Packs\3D\ObjectImporter\WavefrontIO.cs" />
+    <Compile Include="Packs\3D\ObjectImporter\GenericModelIO.cs" />
+    <Compile Include="Packs\3D\ObjectImporter\MeshImporter.cs" />
+    <Compile Include="Packs\3D\ObjectImporter\MeshMaterialBinding.cs" />
+    <Compile Include="Packs\3D\ObjectImporter\MeshType.cs" />
+    <Compile Include="Packs\3D\ObjectImporter\ModelUtil.cs" />
+    <Compile Include="Packs\3D\ObjectImporter\StreamAsIO.cs" />
     <Compile Include="PatchUtil\PatchManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="API\Patches\System.Enum.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Packs\Components\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -313,8 +344,10 @@
     <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets'))" />
     <Error Condition="!Exists('..\packages\Fody.6.6.4\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.6.4\build\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+    <Error Condition="!Exists('..\packages\AssimpNet.4.1.0\build\AssimpNet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AssimpNet.4.1.0\build\AssimpNet.targets'))" />
   </Target>
   <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" />
   <Import Project="..\packages\Fody.6.6.4\build\Fody.targets" Condition="Exists('..\packages\Fody.6.6.4\build\Fody.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\AssimpNet.4.1.0\build\AssimpNet.targets" Condition="Exists('..\packages\AssimpNet.4.1.0\build\AssimpNet.targets')" />
 </Project>

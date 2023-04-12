@@ -1,4 +1,7 @@
-﻿using PlasmaAPI.Application.Extensions;
+﻿extern alias GameClass;
+
+using Doorstop;
+using PlasmaAPI.Application.Extensions;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -7,6 +10,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static GameClass::VFXComponent;
 
 namespace PlasmaAPI.Application
 {
@@ -17,6 +21,7 @@ namespace PlasmaAPI.Application
 
         internal static ConcurrentDictionary<string, AssemblyContainer> LoadedAssemblies = new ConcurrentDictionary<string, AssemblyContainer>()
         {
+            /*
             /// PRE LOADED SECTION
             { "mscorlib", new AssemblyContainer(null, AssemblyType.System) },
             { "ModLoader", new AssemblyContainer(null, AssemblyType.Modded) },
@@ -151,6 +156,7 @@ namespace PlasmaAPI.Application
             { "Sirenix.Serialization.RuntimeEmitted", new AssemblyContainer(null, AssemblyType.Sirenix) },
             { "System.ServiceModel.Internals", new AssemblyContainer(null, AssemblyType.System) },
             { "System.Data", new AssemblyContainer(null, AssemblyType.System) }
+            */
         };
         public static bool UpdateAssemblyInfo(string AssemblyName, Assembly assemblyInfo)
         {
@@ -159,6 +165,7 @@ namespace PlasmaAPI.Application
                 container.Assembly = assemblyInfo;
                 return true;
             }
+            // Entrypoint.Log("New Container for: " + AssemblyName);
             return LoadedAssemblies.TryAdd(AssemblyName, new AssemblyContainer(assemblyInfo));
         }
         public static bool OnAssemblyLoad(string AssemblyName, OnLoadedArg Callback, bool add = true)
@@ -169,13 +176,13 @@ namespace PlasmaAPI.Application
         {
             return AssemblyLoad(AssemblyName, Callback, add);
         }
-        internal static IEnumerable<AssemblyContainer> GetLoadedAssemblies()
+        private static IEnumerable<AssemblyContainer> GetLoadedAssemblies()
         {
             foreach (var asm in LoadedAssemblies)
                 if (asm.Value.IsLoaded)
                     yield return asm.Value;
         }
-        internal static bool AssemblyLoad(string AssemblyName, Delegate Callback, bool add)
+        private static bool AssemblyLoad(string AssemblyName, Delegate Callback, bool add)
         {
             if (LoadedAssemblies.TryGetValue(AssemblyName, out AssemblyContainer container))
             {
@@ -185,15 +192,23 @@ namespace PlasmaAPI.Application
                     {
                         return container.AssemblyLoaded.TryRemove(id, out Delegate _);
                     }
+                    return true;
                 }
                 else if (add)
                 {
                     if (container.IsLoaded && Callback.Method.GetParameters().Length == 1)
-                        Callback.DynamicInvoke(container.Assembly);
-                    else if (container.IsLoaded)
-                        Callback.DynamicInvoke();
+                        return Callback.DynamicInvoke(container.Assembly) != null;
+                    else if (container.IsLoaded && Callback.Method.GetParameters().Length == 0)
+                        return Callback.DynamicInvoke() != null;
+                    Entrypoint.Log("Did not invoke for: " + AssemblyName);
                     return container.AssemblyLoaded.TryAdd(Guid.NewGuid(), Callback);
                 }
+            }
+            else
+            {
+                Entrypoint.Log("New Container for: " + AssemblyName);
+                container = new AssemblyContainer(null, AssemblyType.System);
+                return container.AssemblyLoaded.TryAdd(Guid.NewGuid(), Callback) && LoadedAssemblies.TryAdd(AssemblyName, container);
             }
             return false;
         }

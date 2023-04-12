@@ -1,7 +1,12 @@
 ﻿extern alias GameClass;
+extern alias PLibrary;
+using PLibrary;
 using GameClass;
+using PlasmaAPI.API.Classes;
 using PlasmaAPI.Application.Game;
+using PlasmaAPI.Application.InternalClass;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,86 +15,214 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using static GameClass::VFXComponent;
+using System.CodeDom;
+using PlasmaAPI.Packs;
+using PlasmaAPI.API.Patches;
+using Doorstop;
 
 namespace PlasmaAPI.API
 {
     public class ComponentManager
     {
-        public static void AddNewComponent(Type @class, string DisplayName, Assembly asm)
+        internal static AgentDictionary ModdedComponents
+            = new AgentDictionary();
+
+        internal static GameObject StaticReference = null;
+        internal static void UpdateStaticReference(GameObject reference)
         {
-            Patches.Resources.asm = asm;
-            //ResourceManager.AddToResources(ComponentType.Component.String(), null);
-            /*
-            if (ResourceManager.CloneObjects.TryGetValue(ComponentType.Component.String(), out UnityEngine.Object obj))
-            {
-                AgentGestalt gestalt = (AgentGestalt)ScriptableObject.CreateInstance(obj.GetType());
-                File.WriteAllText("Clone.txt", gestalt.ToString());
-            }*/
-            /*
-            AgentGestalt gestalt = (AgentGestalt)ScriptableObject.CreateInstance(typeof(AgentGestalt));
-            gestalt.componentCategory = AgentGestalt.ComponentCategories.Structure;
-            gestalt.properties = new Dictionary<int, AgentGestalt.Property>();
-            gestalt.ports = new Dictionary<int, AgentGestalt.Port>();
-            gestalt.type = AgentGestalt.Types.Component;
-            gestalt.agent = null;
-            gestalt.componentPreview = Sprite.Create(new Texture2D(1, 1), new Rect(0, 0, 1, 1), Vector2.zero);
-            gestalt.componentMass = 10;
-            gestalt.hideFlags = HideFlags.None;
-            gestalt.hideNode = false;
-            gestalt.developersOnly = false;
-            gestalt.componentHidden = false;
-            gestalt.componentIcon = Sprite.Create(new Texture2D(1, 1), new Rect(0, 0, 1, 1), Vector2.zero);
-            gestalt.displayName = DisplayName;
-            gestalt.componentPrefab = new GameObject(DisplayName)
-            {
-                layer = 0,
-                isStatic = false,
-                tag = "Untagged",
-                hideFlags = HideFlags.None
-            };
-            gestalt.componentPrefab.AddComponent<Colorizer>();
-            gestalt.componentPrefab.AddComponent<VFXComponent>();
-            var obj = gestalt.componentPrefab.AddComponent<ComponentHandler>();
-            obj.gameObject.AddComponent<Colorizer>();
-            obj.gameObject.AddComponent<VFXComponent>();
-            obj.gameObject.AddComponent<SubComponentHandler>();
-            gestalt.affectedByProjectileExplosion = false;
-            gestalt.advanced = false;
-            gestalt.nodeAlwaysRun = true;
-            gestalt.componentSupportSecondarySnappingPointChild = true;
-            gestalt.defaultsToKinematic = true;
-            gestalt.nodeCategory = AgentCategoryEnum.Misc;
-            gestalt.componentIds = new Dictionary<int, string>() { { 0, "ARPL_Main" } };
-            gestalt.name = DisplayName;
-            gestalt.description = "Airplane go brrr";
-            gestalt.keywords = "air,plane,plain,airplane,airplain";
-            gestalt.id = (AgentGestaltEnum)(gestalt.displayName.GetHashCode() * -1) + 1000;
-            CategoryManager.CreateNewGestalt(gestalt);
-            ResourceManager.AddToResources("Gestalts/Component Agents", gestalt);
-            */
+            StaticReference = reference;
         }
-        public static void AddNodeDebug(Type @class, Type @class0)
+        internal static GameObject InstantiatePrefab(GameObject reference, AgentGestalt d)
         {
-            Patches.Resources.asm = Assembly.GetAssembly(@class);
-            Patches.Resources.type = @class;
-            Patches.Resources.type0 = @class0;
-            /*
-            AgentGestalt gestalt = (AgentGestalt)ScriptableObject.CreateInstance(typeof(AgentGestalt));
-            gestalt.properties = new Dictionary<int, AgentGestalt.Property>();
-            gestalt.ports = new Dictionary<int, AgentGestalt.Port>();
-            gestalt.type = AgentGestalt.Types.Logic;
-            gestalt.agent = @class;
-            gestalt.displayName = "TEST NODE";
-            gestalt.name = "TEST NODE";
-            gestalt.hideFlags = HideFlags.None;
-            gestalt.hideNode = false;
-            gestalt.developersOnly = false;
-            gestalt.nodeRepeatable = false;
-            gestalt.description = "test node for testing nodes";
-            gestalt.nodeCategory = AgentCategoryEnum.Misc;
-            gestalt.id = (AgentGestaltEnum)(gestalt.displayName.GetHashCode() * -1) + 1000;
-            ResourceManager.AddToResources("Gestalts/Logic Agents", gestalt);
-            */
+            var tmp = ModdedComponents.Where(c => c.Key.AgentId.Equals(d.id));
+            if (tmp.Count() > 0)
+            {
+                var Gestalt = tmp.FirstOrDefault().Value;
+
+                List<MeshRenderer> renderers = new List<MeshRenderer>();
+                var comPref = new GameObject
+                {
+                    name = d.name,
+                    layer = LayerMask.NameToLayer("Default")
+                };
+
+                GameObject.DontDestroyOnLoad(comPref);
+
+                var driver = comPref.AddComponent(Gestalt.Driver);
+
+                var sub_comp = new GameObject
+                {
+                    name = d.name + "_Base",
+                };
+                var sub_handler = sub_comp.AddComponent<GameClass.SubComponentHandler>();
+                sub_handler.subComponentIndex = 0;
+                sub_handler.parentSubComponent = null;
+                sub_handler.massRatio = 1;
+                sub_comp.transform.SetParent(comPref.transform);
+
+                var articulation_body_comp = new GameObject
+                {
+                    layer = LayerMask.NameToLayer("Default"),
+                    name = "ArticulationBody"
+                };
+                var articulation_body = articulation_body_comp.AddComponent<ArticulationBody>();
+                articulation_body.collisionDetectionMode = CollisionDetectionMode.Discrete;
+                articulation_body.linearDamping = 0.05f;
+                articulation_body.angularDamping = 0.05f;
+                articulation_body.immovable = false;
+                articulation_body.mass = 1;
+                articulation_body.useGravity = true;
+                /// Articulation Body
+                {
+                    var colliders = new GameObject
+                    {
+                        tag = "CollidersGroup",
+                        name = "Colliders",
+                        layer = LayerMask.NameToLayer("Default")
+                    };
+
+                    colliders.transform.SetParent(articulation_body.transform);
+                }
+
+                articulation_body_comp.transform.SetParent(sub_comp.transform);
+
+                var renderer_comp = new GameObject
+                {
+                    layer = LayerMask.NameToLayer("Default"),
+                    tag = "ComponentRenderGroup",
+                    name = "Render"
+                };
+                renderer_comp.transform.SetParent(sub_comp.transform);
+                renderer_comp.transform.localScale = Vector3.one;
+                /// Render
+                {
+                    var main = new GameObject
+                    {
+                        layer = LayerMask.NameToLayer("Default"),
+                        name = d.name + "_Main"
+                    };
+                    main.transform.SetParent(renderer_comp.transform);
+
+                    GameObject ret = MeshImporter.Load(Gestalt, comPref);
+
+                    ret.transform.SetParent(main.transform);
+
+                    renderers = ret.GetComponentsInChildren<MeshRenderer>(includeInactive: true).ToList();
+
+                    var tree = new GameObject
+                    {
+                        layer = LayerMask.NameToLayer("Default"),
+                        tag = "IgnoreMeshRenderer",
+                        name = "Tree Node"
+                    };
+
+                    var tree_filter = tree.AddComponent<MeshFilter>();
+                    var tree_renderer = tree.AddComponent<MeshRenderer>();
+
+                    var reference_tree_renderer = reference.GetComponentsInChildren<MeshRenderer>().Where(x => x.name == "Tree Node").FirstOrDefault();
+                    Application.Extensions.Extensions.MapValues(tree_renderer, reference_tree_renderer);
+                    var reference_tree_filter = reference.GetComponentsInChildren<MeshFilter>().Where(x => x.name == "Tree Node").FirstOrDefault();
+                    Application.Extensions.Extensions.MapValues(reference_tree_filter, tree_filter);
+
+                    tree.transform.SetParent(renderer_comp.transform);
+                    {
+                        var icon = new GameObject
+                        {
+                            tag = "IgnoreMeshRenderer",
+                            layer = LayerMask.NameToLayer("Default"),
+                            name = "Icon"
+                        };
+                        var icon_filter = icon.AddComponent<MeshFilter>();
+                        var icon_renderer = icon.AddComponent<MeshRenderer>();
+
+                        var reference_icon_renderer = reference.GetComponentsInChildren<MeshRenderer>().Where(x => x.name == "Icon").FirstOrDefault();
+                        Application.Extensions.Extensions.MapValues(icon_renderer, reference_icon_renderer);
+                        var reference_icon_filter = reference.GetComponentsInChildren<MeshFilter>().Where(x => x.name == "Icon").FirstOrDefault();
+                        Application.Extensions.Extensions.MapValues(reference_icon_filter, icon_filter);
+
+                        icon.transform.SetParent(tree.transform);
+                    }
+
+                    var socket = new GameObject
+                    {
+                        name = "Socket"
+                    };
+                    socket.transform.SetParent(renderer_comp.transform);
+                    /// Socket
+                    {
+
+                        var color = comPref.AddComponent<Colorizer>();
+                        color.renderers = new List<MeshRenderer>();
+
+                        // comPref.SetActive(false);
+                        var socket_fsp = socket.AddComponent<GameClass.FemaleSocketPoint>();
+                        socket_fsp.transform.SetParent(socket.transform);
+
+                        if (socket_fsp.meshGameObject == null)
+                        {
+                            socket_fsp.meshGameObject = new GameObject()
+                            {
+                                name = "Mesh",
+                                tag = "IgnoreMeshRenderer"
+                            };
+                            socket_fsp.meshGameObject.AddComponent<MeshRenderer>();
+                            socket_fsp.meshGameObject.transform.SetParent(socket_fsp.transform);
+                        }
+
+                        var socket_filter = socket_fsp.meshGameObject.GetComponent<MeshFilter>() ?? socket_fsp.meshGameObject.AddComponent<MeshFilter>();
+                        socket_filter.sharedMesh = reference.GetComponentsInChildren<Mesh>().Where(x => x.name == "Socket Mesh B").FirstOrDefault();
+
+                        var socket_renderer = socket_fsp.meshGameObject.GetComponent<MeshRenderer>() ?? socket_fsp.meshGameObject.AddComponent<MeshRenderer>();
+                        var reference_socket_renderer = reference.GetComponentsInChildren<MeshRenderer>().Where(x => x.name == "Mesh").FirstOrDefault();
+
+                        /// Map Values
+                        Application.Extensions.Extensions.MapValues(reference_socket_renderer, socket_renderer);
+
+                        var socket_collider = socket_fsp.meshGameObject.AddComponent<SphereCollider>();
+                        socket_collider.radius = 0.25f;
+
+                        socket_fsp.orientationPreference = SnappingGeneric.ChildOrientationPreference.Any;
+
+                        var vfx = comPref.AddComponent<GameClass.VFXComponent>();
+                        vfx.specialMaterials = new Dictionary<MeshRenderer, SpecialMaterial>();
+
+                        foreach (MeshRenderer r in renderers)
+                            vfx.specialMaterials.Add(r, new SpecialMaterial() { transparent = new ShaderMaterial(Shader.Find("Plasma/Component Standard v1.3 No Tess")), wireframeSolid = r.material });
+
+                        var handler = comPref.GetComponent<GameClass.ComponentHandler>() ?? comPref.AddComponent<GameClass.ComponentHandler>();
+                    }
+
+
+                    var collection = comPref.GetComponentsInChildren<ComponentMeshHandler>().Where(x => x.name.Equals("Wireframe Collider"));
+                    if (collection.Count() == 1)
+                    {
+                        var s = ret.GetComponentsInChildren<MeshFilter>().FirstOrDefault().transform.localScale;
+                        collection.First().transform.localScale = s;
+                }
+                }
+
+                return comPref;
+            }
+            else
+            {
+                Debug.LogError("Tried to create non existing modded component");
+                return null;
+            }
+        }
+        public static GameObject GetNewAgentPrefab(Guid guid)
+        {
+            var holder = new GameObject() { name = guid.ToString() };
+            GameObject.DontDestroyOnLoad(holder);
+            holder.SetActive(false);
+            return holder;
+        }
+        public static void NewComponent(Type gestalt)
+        {
+            if (!Patches.Resources.Components.Contains(gestalt))
+            {
+                Patches.Resources.Components.Add(gestalt);
+            }
         }
     }
     public enum ComponentType

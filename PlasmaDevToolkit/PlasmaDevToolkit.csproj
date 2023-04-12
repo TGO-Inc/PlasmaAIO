@@ -53,7 +53,7 @@
       <HintPath>..\packages\Lib.Harmony.2.2.2\lib\net48\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Aliases>GameClass</Aliases>
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -66,14 +66,18 @@
       <HintPath>..\PlasmaMap\PlasmaMap\bin\x64\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PlasmaLibrary">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\PlasmaLibrary.dll</HintPath>
+      <Aliases>PLibrary</Aliases>
+    </Reference>
     <Reference Include="QFSW.QC">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\QFSW.QC.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\QFSW.QC.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization">
       <HintPath>..\PlasmaAPI\bin\x64\Debug\Sirenix.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Utilities">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -211,6 +215,9 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\PlasmaAPI\bin\x64\Debug\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entry.cs" />
@@ -232,12 +239,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PlasmaAPI\PlasmaMLL.csproj">
-      <Project>{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}</Project>
-      <Name>PlasmaMLL</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -245,7 +246,16 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\RuntimeUnityEditor\RuntimeUnityEditor\RuntimeUnityEditor.Core.csproj">
+      <Project>{a66a97b4-f32f-4748-8332-48f0876f0aac}</Project>
+      <Name>RuntimeUnityEditor.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlasmaAPI\PlasmaMLL.csproj">
+      <Project>{0f7c5a3d-3a62-47d3-b41e-637ef6b9ae73}</Project>
+      <Name>PlasmaMLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -1,4 +1,5 @@
 ﻿
+using Doorstop;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -26,9 +27,15 @@ namespace PlasmaAPI.Application
                     if (AssemblyLoaded != null)
                         foreach (var i in AssemblyLoaded.Values)
                             if (value != null && i.Method.GetParameters().Length == 1)
+                            {
+                                // Entrypoint.Log("Invoked Callback (arg): " + i.Method.Name);
                                 i.DynamicInvoke(value);
+                            }
                             else if (value != null)
+                            {
+                                // Entrypoint.Log("Invoked Callback: " + i.Method.Name);
                                 i.DynamicInvoke();
+                            }
 
                 _assembly = value;
             }
@@ -54,6 +61,8 @@ namespace PlasmaAPI.Application
                 string n when n.Contains("system") => AssemblyType.System,
                 string n when n.Contains("unity") => AssemblyType.Unity,
                 string n when n.Contains("sirenix") => AssemblyType.Sirenix,
+                string n when n.Contains("plasma") => AssemblyType.Game,
+                string n when n.Contains("assembly") => AssemblyType.Game,
                 _ => AssemblyType.Modded,
             };
         }

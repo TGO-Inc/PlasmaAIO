@@ -81,7 +81,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>sign-asm.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>sign-generated.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -171,8 +171,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="sign-asm.pfx" />
-    <None Include="sign.pfx" />
+    <None Include="sign-generated.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

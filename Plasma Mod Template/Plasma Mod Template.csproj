@@ -18,7 +18,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Mods\</OutputPath>
+    <OutputPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Mods\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
@@ -33,108 +33,131 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference PrivateAssets="All" Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Aliases>GameClass</Aliases>
     </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    <Reference PrivateAssets="All" Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="DOTween">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\DOTween.dll</HintPath>
+    <Reference Include="AssimpNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=0d51b391f59f42a6" />
+    <Reference PrivateAssets="All" Include="DOTween">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\DOTween.dll</HintPath>
     </Reference>
-    <Reference Include="DOTweenPro">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\DOTweenPro.dll</HintPath>
+    <Reference PrivateAssets="All" Include="DOTweenPro">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\DOTweenPro.dll</HintPath>
     </Reference>
-    <Reference Include="FMODUnity">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\FMODUnity.dll</HintPath>
+    <Reference PrivateAssets="All" Include="FMODUnity">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\FMODUnity.dll</HintPath>
     </Reference>
-    <Reference Include="PlasmaLibrary">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\PlasmaLibrary.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference PrivateAssets="All" Include="PlasmaLibrary">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\PlasmaLibrary.dll</HintPath>
+      <Aliases>PLibrary</Aliases>
     </Reference>
-    <Reference Include="QFSW.QC">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\QFSW.QC.dll</HintPath>
+    <Reference PrivateAssets="All" Include="QFSW.QC">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\QFSW.QC.dll</HintPath>
     </Reference>
-    <Reference Include="Rewired_Core">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Rewired_Core.dll</HintPath>
+    <Reference PrivateAssets="All" Include="Rewired_Core">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Rewired_Core.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.OdinInspector.Attributes.dll</HintPath>
+    <Reference PrivateAssets="All" Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.Serialization">
+    <Reference PrivateAssets="All" Include="Sirenix.Serialization">
       <HintPath>..\PlasmaAPI\bin\x64\Debug\Sirenix.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Sirenix.Utilities">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
+    <Reference PrivateAssets="All" Include="Sirenix.Utilities">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+    <Reference PrivateAssets="All" Include="System" />
+    <Reference PrivateAssets="All" Include="System.Core" />
+    <Reference PrivateAssets="All" Include="System.Xml.Linq" />
+    <Reference PrivateAssets="All" Include="Microsoft.CSharp" />
+    <Reference PrivateAssets="All" Include="System.Net.Http" />
+    <Reference PrivateAssets="All" Include="System.Xml" />
+    <Reference PrivateAssets="All" Include="Unity.Postprocessing.Runtime">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine">
+    <Reference PrivateAssets="All" Include="UnityEngine">
       <HintPath>..\PlasmaAPI\bin\x64\Debug\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    <Reference PrivateAssets="All" Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule">
+    <Reference PrivateAssets="All" Include="UnityEngine.CoreModule">
       <HintPath>..\PlasmaAPI\bin\x64\Debug\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+    <Reference PrivateAssets="All" Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    <Reference PrivateAssets="All" Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.VideoModule">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma Demo\Plasma_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+    <Reference PrivateAssets="All" Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="UnityEngine.VideoModule">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Airplane\Scripts\AirplaneComponent.cs" />
+    <Compile Include="Components\173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0\Duck\Scripts\DuckAgent.cs" />
+    <Compile Include="Components\173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0\Duck\Scripts\DuckDriver.cs" />
+    <Compile Include="Components\173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0\Duck\Scripts\DuckGestalt.cs" />
+    <Compile Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Scripts\AirplaneAgent.cs" />
+    <Compile Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Scripts\AirplaneDriver.cs" />
+    <Compile Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Scripts\AirplaneGestalt.cs" />
+    <Compile Include="Components\ca4de6c3-55a9-4516-95b2-4bc178e923f7\Car\Scripts\CarAgent.cs" />
+    <Compile Include="Components\ca4de6c3-55a9-4516-95b2-4bc178e923f7\Car\Scripts\CarDriver.cs" />
+    <Compile Include="Components\ca4de6c3-55a9-4516-95b2-4bc178e923f7\Car\Scripts\CarGestalt.cs" />
     <Compile Include="Initialization.cs" />
-    <Compile Include="Nodes\Scripts\AirplaneNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Components\Airplane\Mesh\Airplane.obj" />
-    <EmbeddedResource Include="Components\Airplane\Textures\11803_Airplane_body_diff.jpg" />
-    <EmbeddedResource Include="Components\Airplane\Textures\11803_Airplane_tail_diff.jpg" />
-    <EmbeddedResource Include="Components\Airplane\Textures\11803_Airplane_wing_big_L_diff.jpg" />
-    <EmbeddedResource Include="Components\Airplane\Textures\11803_Airplane_wing_big_R_diff.jpg" />
-    <EmbeddedResource Include="Components\Airplane\Textures\11803_Airplane_wing_details_L_diff.jpg" />
-    <EmbeddedResource Include="Components\Airplane\Textures\11803_Airplane_wing_details_R_diff.jpg" />
-    <EmbeddedResource Include="Components\Airplane\Mesh\Airplane.mtl" />
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Mesh\Airplane.obj" />
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Textures\11803_Airplane_body_diff.jpg" />
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Textures\11803_Airplane_tail_diff.jpg" />
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Textures\11803_Airplane_wing_big_L_diff.jpg" />
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Textures\11803_Airplane_wing_big_R_diff.jpg" />
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Textures\11803_Airplane_wing_details_L_diff.jpg" />
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Textures\11803_Airplane_wing_details_R_diff.jpg" />
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Mesh\Airplane.mtl" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PlasmaAPI\PlasmaMLL.csproj">
+    <ProjectReference PrivateAssets="All" Include="..\PlasmaAPI\PlasmaMLL.csproj">
       <Project>{0f7c5a3d-3a62-47d3-b41e-637ef6b9ae73}</Project>
       <Name>PlasmaMLL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EmbeddedResource Include="Components\ca4de6c3-55a9-4516-95b2-4bc178e923f7\Car\Mesh\car.obj" />
+    <EmbeddedResource Include="Components\ca4de6c3-55a9-4516-95b2-4bc178e923f7\Car\Mesh\car.mtl" />
+    <EmbeddedResource Include="Components\173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0\Duck\Mesh\obj_decor_babyduck.fbx" />
+    <EmbeddedResource Include="Components\173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0\Duck\Textures\obj_decor_babyduck_asg.tga" />
+    <EmbeddedResource Include="Components\173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0\Duck\Textures\obj_decor_babyduck_dif.tga" />
+    <EmbeddedResource Include="Components\173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0\Duck\Textures\obj_decor_babyduck_nor.tga" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Components\ca4de6c3-55a9-4516-95b2-4bc178e923f7\Car\Textures\VH_CompactCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Components\1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8\Airplane\Previews\preview.png" />
+    <EmbeddedResource Include="Components\ca4de6c3-55a9-4516-95b2-4bc178e923f7\Car\Previews\preview.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Components\173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0\Duck\Previews\preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>@ECHO OFF
-SETLOCAL
-SET "sourcedir=E:\SteamLibrary\steamapps\common\Plasma Demo\Mods"
-SET "keepfile=MY_FIRST_MOD.dll"
-:: SET "keepdir=keep me"
-
-:: FOR /d %25%25a IN ("%25sourcedir%25\*") DO IF /i NOT "%25%25~nxa"=="%25keepdir%25" RD /S /Q "%25%25a"
-FOR %25%25a IN ("%25sourcedir%25\*") DO IF /i NOT "%25%25~nxa"=="%25keepfile%25" DEL "%25%25a"
-
-GOTO :EOF</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -53,13 +53,13 @@ namespace PlasmaML
             var ico = bitmap.GetHicon();
             tray.Icon = System.Drawing.Icon.FromHandle(ico);
             tray.Visibility = Visibility.Visible;
-            tray.ToolTip = new TextBlock() { Text = "Plasma Debug" };
+            tray.ToolTip = new TextBlock() { Text = "Plasma UnityEngine.Debug" };
             var menu = new ContextMenu();
             var close = new MenuItem() { Header = "Exit" };
             close.Click += Close_Click;
             menu.Items.Add(close);
             tray.ContextMenu = menu;
-            new PatchGame(GetGameDir());
+            new PatchGame(GameDir);
             StartGame();
             new MainWindow().Show();
         }
@@ -110,7 +110,7 @@ namespace PlasmaML
             }
             foreach (string path in paths)
             {
-                string assembliesPath = $"{path}\\steamapps\\common\\Plasma Demo";
+                string assembliesPath = $"{path}\\steamapps\\common\\Plasma";
                 if (Directory.Exists(assembliesPath)) return assembliesPath;
             }
 

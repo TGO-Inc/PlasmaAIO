@@ -1,8 +1,8 @@
 ﻿
 using PlasmaAPI.API;
 using PlasmaAPI.Application;
-using PlasmaAPI.Mods.MY_FIRST_MOD.Components.Scripts;
-using PlasmaAPI.Mods.MY_FIRST_MOD.Nodes.Scripts;
+using PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts;
+using System.IO;
 
 namespace PlasmaAPI.Mods.MY_FIRST_MOD
 {
@@ -21,17 +21,15 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD
             /*
             * start hooks here
             */
-            ComponentManager.AddNodeDebug(typeof(AirplaneNode), typeof(AirplaneComponent));
-            
             PlasmaGame.OnGameInitialization += PlasmaGame_OnGameInitialization;
+            ComponentManager.NewComponent(typeof(AirplaneGestalt));
+            ComponentManager.NewComponent(typeof(CarGestalt));
+            ComponentManager.NewComponent(typeof(DuckGestalt));
         }
 
         private void PlasmaGame_OnGameInitialization()
         {
-            //ImportModel
-            //ComponentManager.AddNewComponent(typeof(AirplaneNode), "Airplane");
-            //ComponentManager.AddNodeDebug(typeof(AirplaneNode));
-
+            
         }
     }
 }

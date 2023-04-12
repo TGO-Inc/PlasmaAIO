@@ -1,4 +1,6 @@
 ﻿extern alias GameClass;
+extern alias PLibrary;
+using PLibrary;
 using GameClass;
 using System;
 using System.Collections.Concurrent;
@@ -10,22 +12,30 @@ using System.Threading.Tasks;
 
 namespace PlasmaAPI.Application.Game
 {
-    internal static class CategoryManager
+    public static class CategoryManager
     {
-        private static int currentNodeId = 3;
-        private static int currentGestaltId = 302;
-        private static int currentComponentId = 3;
+        private static readonly int HashFactor = 999;
         public static ConcurrentDictionary<string, AgentCategoryEnum> AgentCategories = new ConcurrentDictionary<string, AgentCategoryEnum>();
         public static ConcurrentDictionary<AgentGestalt, AgentGestaltEnum> AgentGestalts = new ConcurrentDictionary<AgentGestalt, AgentGestaltEnum>();
         public static ConcurrentDictionary<string, AgentGestaltEnum> AgentGestaltEnum = new ConcurrentDictionary<string, AgentGestaltEnum>();
         public static ConcurrentDictionary<string, AgentGestalt.ComponentCategories> ComponentCategories = new ConcurrentDictionary<string, AgentGestalt.ComponentCategories>();
-        public static AgentCategoryEnum CreateNewGenericGategory(string name)
+        public static AgentCategoryEnum CreateGenericGategory(string name)
         {
             name = name.ToUpperInvariant();
             if (AgentCategories.ContainsKey(name))
                 return AgentCategories[name];
-            AgentCategories.TryAdd(name, (AgentCategoryEnum)(++currentNodeId));
-            return (AgentCategoryEnum)currentNodeId;
+            int hash = Math.Abs(name.GetHashCode()) + HashFactor;
+            AgentCategories.TryAdd(name, (AgentCategoryEnum)hash);
+            return (AgentCategoryEnum)hash;
+        }
+        public static AgentGestaltEnum CreateGestaltEnum(string name)
+        {
+            name = name.ToUpperInvariant();
+            if (AgentGestaltEnum.ContainsKey(name))
+                return AgentGestaltEnum[name];
+            int hash = Math.Abs(name.GetHashCode()) + HashFactor;
+            AgentGestaltEnum.TryAdd(name, (AgentGestaltEnum)(hash));
+            return (AgentGestaltEnum)hash;
         }
         public static void CreateNewGestalt(AgentGestalt name)
         {
@@ -33,13 +43,14 @@ namespace PlasmaAPI.Application.Game
             AgentGestaltEnum.TryAdd(name.name, name.id);
             AgentGestalts.TryAdd(name, name.id);
         }
-        public static AgentGestalt.ComponentCategories CreateNewComponentGategory(string name)
+        public static AgentGestalt.ComponentCategories CreateComponentGategory(string name)
         {
             name = name.ToUpperInvariant();
             if (ComponentCategories.ContainsKey(name))
                 return ComponentCategories[name];
-            ComponentCategories.TryAdd(name, (AgentGestalt.ComponentCategories)(++currentComponentId));
-            return (AgentGestalt.ComponentCategories)currentComponentId;
+            int hash = Math.Abs(name.GetHashCode()) + HashFactor;
+            ComponentCategories.TryAdd(name, (AgentGestalt.ComponentCategories)(hash));
+            return (AgentGestalt.ComponentCategories)hash;
         }
     }
 }

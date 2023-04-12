@@ -1,4 +1,6 @@
 ﻿extern alias GameClass;
+extern alias PLibrary;
+using PLibrary;
 using GameClass;
 using PlasmaAPI.Application.Game;
 using System;
@@ -23,7 +25,7 @@ namespace PlasmaAPI.API.Patches
     }
     public class EnumPatch
     {
-        static void TryParseEnum<EnumType>(Type enumType, string value, ref EnumType parseResult, ref bool __result)
+        public static void TryParseEnum<EnumType>(Type enumType, string value, ref EnumType parseResult, ref bool __result)
         {
             if (__result == false && EnumUtil.converter_t.ContainsKey(enumType))
             {
@@ -59,7 +61,7 @@ namespace PlasmaAPI.API.Patches
             }
         }
 
-        static void GetNames(Type enumType, ref string[] __result)
+        public static void GetNames(Type enumType, ref string[] __result)
         {
             if (EnumUtil.converter_t.ContainsKey(enumType))
             {

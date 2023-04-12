@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plasma Mod Template", "Plas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity Prefab Util", "..\UnityPrefab Parser\UnityPrefab Parser\Unity Prefab Util.csproj", "{DDF0789E-5FC1-4ABD-A283-D20997F12502}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntimeUnityEditor.Core", "..\RuntimeUnityEditor\RuntimeUnityEditor\RuntimeUnityEditor.Core.csproj", "{A66A97B4-F32F-4748-8332-48F0876F0AAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,14 @@ Global
 		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|x64.ActiveCfg = Release|x64
 		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|x64.Build.0 = Release|x64
+		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Debug|x64.Build.0 = Debug|Any CPU
+		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Release|x64.ActiveCfg = Release|Any CPU
+		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

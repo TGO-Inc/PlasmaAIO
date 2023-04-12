@@ -1,4 +1,6 @@
 ﻿extern alias GameClass;
+extern alias PLibrary;
+using PLibrary;
 using GameClass;
 using HarmonyLib;
 using PlasmaAPI.Application.Game;
@@ -7,16 +9,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using UnityEngine;
+using System.Xml.Linq;
+using PlasmaAPI.API.Classes;
 
 namespace PlasmaAPI.API.Patches
 {
-    [HarmonyPatch(typeof(GameClass.Device))]
     internal class Device
     {
-        [HarmonyPrefix]
-        [HarmonyPatch("AddComponent")]
-        public static bool AddComponent(GameClass.Device __instance, ComponentHandler component, int theGuid, string theDisplayName, AgentGestaltEnum agentGestaltId)
+        public static bool AddComponent(GameClass.Device __instance, GameClass.ComponentHandler component, int theGuid, string theDisplayName, AgentGestaltEnum agentGestaltId)
         {
             if (CategoryManager.AgentGestaltEnum.Values.Contains(agentGestaltId))
             {
@@ -48,6 +51,22 @@ namespace PlasmaAPI.API.Patches
                 return false;
             }
             return true;
+        }
+
+        public static void LoadComponent(GameClass.Device __instance, object[] __args)
+        {
+            /*
+            SerializedComponent serializedComponent = (SerializedComponent)__args[0];
+            Agent agent = __instance.GetAgent(serializedComponent.agentId);
+            if (Guid.TryParse(agent.gestalt.componentPrefab.name.Replace("(Clone)", "").Trim(), out Guid trace))
+            {
+                var test2 = ComponentManager.ModdedComponents.Where(c => c.Key.AgentGuid.Equals(trace)).FirstOrDefault();
+                Debug.LogWarning(test2.Value.displayName);
+                agent.gestalt.componentPrefab = ComponentManager.InstantiatePrefab(ComponentManager.StaticReference, test2.Value);
+                agent.gestalt.componentPrefab.SetActive(false);
+                GameObject.DontDestroyOnLoad(agent.gestalt.componentPrefab);
+            }
+            */
         }
     }
 }

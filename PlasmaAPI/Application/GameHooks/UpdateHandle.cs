@@ -11,7 +11,7 @@ namespace PlasmaAPI.API.GameHooks
     {
         private void Update()
         {
-            PlasmaAPI.Application.PlasmaGame.OnGameUpdate();
+            Application.PlasmaGame.OnGameUpdate();
         }
     }
 }
