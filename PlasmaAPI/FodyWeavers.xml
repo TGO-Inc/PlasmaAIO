@@ -3,7 +3,9 @@
     <IncludeAssemblies>
 		AutoMapper
 		ImageProcessor
+		SixLabors.ImageSharp
 		Microsoft.CSharp
+		AssimpNet
 	</IncludeAssemblies>
   </Costura>
 </Weavers>

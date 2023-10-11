@@ -42,6 +42,8 @@ namespace PlasmaML
                 }
             }
 
+            _asm.GetManifestResourceNames().ToList().ForEach(name => Debug.WriteLine(name));
+
             using (Stream stream = _asm.GetManifestResourceStream(assembly))
             {
                 using var memoryStream = new MemoryStream();
@@ -60,8 +62,17 @@ namespace PlasmaML
             game_dir = Path.Combine(game_dir, "ModLoader");
             Directory.CreateDirectory(game_dir);
 
-            File.Copy(Path.Combine(Path.GetDirectoryName(_asm.Location), "ModLoader.dll"), Path.Combine(game_dir, "ModLoader.dll"), true);
-            
+            /*File.Copy(Path.Combine(Path.GetDirectoryName(_asm.Location), "ModLoader.dll"), Path.Combine(game_dir, "ModLoader.dll"), true);
+
+            using (Stream stream = _asm.GetManifestResourceStream("PlasmaML.Custom.Microsoft.CSharp.dll"))
+            {
+                using BinaryReader reader = new BinaryReader(stream);
+                var result = reader.ReadBytes((int)reader.BaseStream.Length);
+                File.WriteAllBytes(Path.Combine(game_dir, "Microsoft.CSharp.dll"), result);
+            }
+
+            //File.Copy(Path.Combine(Path.GetDirectoryName(_asm.Location), "Microsoft.CSharp.dll"), Path.Combine(game_dir, "Microsoft.CSharp.dll"), true);
+
             //File.Copy("C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\Microsoft.CSharp.dll", Path.Combine(game_dir, "Microsoft.CSharp.dll"), true);
 
             string debug = Path.Combine(Path.GetDirectoryName(_asm.Location), "DevToolkit.dll");
@@ -72,7 +83,7 @@ namespace PlasmaML
             var harmony = File.OpenWrite(Path.Combine(game_dir, "0Harmony.dll"));
             Assembly.GetExecutingAssembly().GetManifestResourceStream(path).CopyTo(harmony);
             harmony.Flush();
-            harmony.Close();
+            harmony.Close();*/
         }
     }
 }

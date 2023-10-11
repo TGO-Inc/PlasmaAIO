@@ -21,13 +21,11 @@ using Newtonsoft.Json;
 using PlasmaAPI.Packs.MeshUtil.Internal;
 using PlasmaAPI.API.Classes;
 using System.Collections;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp;
+
 using Color = UnityEngine.Color;
-using SixLabors.ImageSharp.Processing.Processors.Transforms;
-using SixLabors.ImageSharp.Processing;
 using System.Windows.Media.Media3D;
 using Assimp.Unmanaged;
+using StbImageSharp;
 
 namespace PlasmaAPI.Packs
 {
@@ -514,31 +512,27 @@ namespace PlasmaAPI.Packs
         private static Texture2D LoadTexture(Stream stream, Color4D c)
         {
             var baseColor = new Color(c.R, c.G, c.B, c.A);
-            // var format = ImageFormatDetector.DetectImageFormat(stream);
-            // Load the TGA image using ImageSharp
-            using (Image<Rgba32> image = Image.Load<Rgba32>(stream))
+
+            // Load the image using StbImageSharp
+            ImageResult result = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
+            Texture2D texture = new Texture2D(result.Width, result.Height, TextureFormat.RGBA32, false);
+
+            for (int y = 0; y < result.Height; y++)
             {
-                Texture2D texture = new Texture2D(image.Width, image.Height, TextureFormat.RGBA32, false);
-
-                image.Mutate(x => x.Flip(FlipMode.Vertical));
-
-                for (int y = 0; y < image.Height; y++)
+                for (int x = 0; x < result.Width; x++)
                 {
-                    for (int x = 0; x < image.Width; x++)
-                    {
-                        Rgba32 pixel = image[x, y];
-                        Color color = new Color(pixel.R / 255f,
-                                                pixel.G / 255f,
-                                                pixel.B / 255f,
-                                                pixel.A / 255f);
-                        Color mixedColor = Color.Lerp(baseColor, color, color.a);
-                        texture.SetPixel(x, y, mixedColor);
-                    }
+                    int idx = (y * result.Width + x) * 4; // 4 because of RedGreenBlueAlpha
+                    Color color = new Color(result.Data[idx] / 255f,
+                                            result.Data[idx + 1] / 255f,
+                                            result.Data[idx + 2] / 255f,
+                                            result.Data[idx + 3] / 255f);
+                    Color mixedColor = Color.Lerp(baseColor, color, color.a);
+                    texture.SetPixel(x, y, mixedColor);
                 }
-
-                texture.Apply();
-                return texture;
             }
+
+            texture.Apply();
+            return texture;
         }
 
         private static Texture2D LoadTexture(byte[] byteArray, Color4D c)

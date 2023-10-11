@@ -40,36 +40,36 @@ namespace PlasmaML
         public App()
         {
             self = this;
-            CurrentDirectory = new DirectoryInfo(Assembly.GetExecutingAssembly().Location);
-            GameDir = GetGameDir();
-            handle = GetConsoleWindow();
-            ShowWindow(handle, SW_HIDE);
-            _handler += new EventHandler(Handler);
-            SetConsoleCtrlHandler(_handler, true);
-            AppDomain.CurrentDomain.ProcessExit += new System.EventHandler(end_game);
-            tray = new TaskbarIcon();
+            this.CurrentDirectory = new DirectoryInfo(Assembly.GetExecutingAssembly().Location);
+            this.GameDir = GetGameDir();
+            //handle = GetConsoleWindow();
+            //ShowWindow(handle, SW_HIDE);
+            //_handler += new EventHandler(Handler);
+            //SetConsoleCtrlHandler(_handler, true);
+            AppDomain.CurrentDomain.ProcessExit += EndGame;
+            this.tray = new TaskbarIcon();
             string lp = Assembly.GetExecutingAssembly().GetManifestResourceNames().Where(n => n.EndsWith("icon.ico")).FirstOrDefault();
             System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(Assembly.GetExecutingAssembly().GetManifestResourceStream(lp));
             var ico = bitmap.GetHicon();
-            tray.Icon = System.Drawing.Icon.FromHandle(ico);
-            tray.Visibility = Visibility.Visible;
-            tray.ToolTip = new TextBlock() { Text = "Plasma UnityEngine.Debug" };
+            this.tray.Icon = System.Drawing.Icon.FromHandle(ico);
+            this.tray.Visibility = Visibility.Visible;
+            this.tray.ToolTip = new TextBlock() { Text = "Plasma UnityEngine.Debug" };
             var menu = new ContextMenu();
             var close = new MenuItem() { Header = "Exit" };
             close.Click += Close_Click;
             menu.Items.Add(close);
-            tray.ContextMenu = menu;
-            new PatchGame(GameDir);
-            StartGame();
-            new MainWindow().Show();
+            this.tray.ContextMenu = menu;
+            new PatchGame(this.GameDir);
+            this.StartGame();
+            //new MainWindow().Show();
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            end_game(sender, e);
+            EndGame(sender, e);
         }
 
-        private void end_game(object sender, EventArgs e)
+        private void EndGame(object sender, EventArgs e)
         {
             foreach (var process in Process.GetProcessesByName("Plasma"))
             {
@@ -84,14 +84,19 @@ namespace PlasmaML
         }
         public void StartGame()
         {
-            string outputDir = CurrentDirectory.Parent.FullName;
+            string outputDir = this.CurrentDirectory.Parent.FullName;
             string dll = Path.Combine(outputDir, "ModLoader.dll");
             Registry.SetValue("HKEY_CURRENT_USER\\SOFTWARE\\DryLicorice\\Plasma", "ModLoader", dll);
-            Game = Process.Start(Path.Combine(GameDir, "Plasma.exe"));
+
+            this.Game = Process.Start(new ProcessStartInfo()
+            {
+                FileName = Path.Combine(this.GameDir, "Plasma.exe"),
+                WorkingDirectory = this.GameDir,
+            });
             Task.Run(() =>
             {
-                Game.WaitForExit();
-                end_game(null, null);
+                this.Game.WaitForExit();
+                this.EndGame(null, null);
             });
         }
 
@@ -105,15 +110,17 @@ namespace PlasmaML
 
             string config = File.ReadAllText($"{paths[0]}\\config\\config.vdf");
             foreach (Match match in Regex.Matches(config, "\"BaseInstallFolder_[0-9]\"\\s+\"([^\"]+)\""))
-            {
                 paths.Add(match.Groups[1].Value.Replace("\\\\", "\\"));
-            }
+            
+            string startVDF = File.ReadAllText($"{paths[0]}\\steamapps\\libraryfolders.vdf");
+            foreach (Match match in Regex.Matches(startVDF, "\"path\"\\s+\"([^\"]+)\""))
+                paths.Add(match.Groups[1].Value.Replace("\\\\", "\\"));
+            
             foreach (string path in paths)
             {
                 string assembliesPath = $"{path}\\steamapps\\common\\Plasma";
                 if (Directory.Exists(assembliesPath)) return assembliesPath;
             }
-
             return null;
         }
         [DllImport("kernel32.dll")]
@@ -142,7 +149,7 @@ namespace PlasmaML
 
         private static bool Handler(CtrlType sig)
         {
-            App.self.end_game(null,null);
+            App.self.EndGame(null,null);
 
             //shutdown right away so there are no lingering threads
             Environment.Exit(-1);

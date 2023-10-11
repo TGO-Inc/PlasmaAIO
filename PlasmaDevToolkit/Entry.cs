@@ -31,19 +31,29 @@ namespace PlasmaDevToolkit
         [STAThread]
         public void Start()
         {
-            Console.Init();
-            //Console.
-            System.Console.ForegroundColor = ConsoleColor.Red;
-            System.Console.WriteLine("[Debug Console Initialized]: " + (Environment.Is64BitProcess ? "Plasma x64" : "Plasma x32"));
-            System.Console.ResetColor();
+            try
+            {
+                Console.Init();
+                System.Console.ForegroundColor = ConsoleColor.Red;
+                System.Console.WriteLine("[Debug Console Initialized]: " + (Environment.Is64BitProcess ? "Plasma x64" : "Plasma x32"));
+                System.Console.ResetColor();
 
-            // AssemblyManager.OnAssemblyLoad("PlasmaLibrary", ContinuePatching);
-            AssemblyManager.OnAssemblyLoad("UnityEngine.UIModule", PatchLogging);
+                // Old? I think
+                // AssemblyManager.OnAssemblyLoad("PlasmaLibrary", ContinuePatching);
+                AssemblyManager.OnAssemblyLoad("FMODUnity", PatchLogging);
 
-            //AssemblyManager.OnAssemblyLoad("netstandard", StartComServer);
-            //AssemblyManager.OnAssemblyLoad("mcs", () => PatchManager.CreatePatch<QuantumConsole>("QFSW.QC", PatchType.Postfix));
-            //PatchManager.CreatePatch<SteamController>("Assembly-CSharp", PatchType.Prefix);
-            PlasmaGame.OnGameInitialization += PlasmaGame_OnGameInitialization;
+                // Optional
+                // AssemblyManager.OnAssemblyLoad("netstandard", StartComServer);
+                AssemblyManager.OnAssemblyLoad("mcs", () => PatchManager.CreatePatch<QuantumConsole>("QFSW.QC", PatchType.Postfix));
+
+                // TODO: Fix steam controller. it breaks for what ever reason. CreatePatch is supposed to have try/catch but ok
+                // PatchManager.CreatePatch<SteamController>("Assembly-CSharp", PatchType.Prefix);
+                PlasmaGame.OnGameInitialization += PlasmaGame_OnGameInitialization;
+            }
+            catch(Exception e)
+            {
+                Doorstop.Entrypoint.CrashHandle(e);
+            }
         }
 
         private void PlasmaGame_OnGameInitialization()
@@ -55,7 +65,7 @@ namespace PlasmaDevToolkit
         {
             Application.logMessageReceived -= LogMessageReceived;
             Application.logMessageReceived += LogMessageReceived;
-
+            
             PatchManager.CreatePatch<LoggerController>("Assembly-CSharp", PatchType.Prefix);
             PatchManager.CreatePatch<WorldController>("Assembly-CSharp", PatchType.Prefix);
         }
@@ -84,6 +94,7 @@ namespace PlasmaDevToolkit
             go1 = UnityEngine.Object.Instantiate(go1);
         }
     }
+    
     internal class RuntimeUnityEditor5 : MonoBehaviour
     {
         public static RuntimeUnityEditorCore Instance { get; private set; }

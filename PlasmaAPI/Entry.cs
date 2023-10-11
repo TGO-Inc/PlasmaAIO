@@ -1,60 +1,74 @@
-﻿extern alias GameClass;
+﻿
+extern alias GameClass;
 using HarmonyLib;
 using PlasmaAPI.API.GameHooks;
 using PlasmaAPI.API.Patches;
 using PlasmaAPI.Application;
 using PlasmaAPI.PatchUtil;
-using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Xml.Linq;
 using UnityEngine;
+
+using System;
 
 namespace Doorstop
 {
     public class Entrypoint
     {
+        
+        private static Assembly DevToolkit;
+        private static object DevToolkitInstance;
         private static DirectoryInfo BaseDirectory;
         private static Assembly CurrentAssembly;
-        private static Assembly DevToolkit;
         private static Assembly MapAssembly;
         internal static Assembly AssemblyCSharp;
-        private static object DevToolkitInstance;
         internal static AppDomain CurrentDomain;
         
+
         [STAThread]
         public static void Start()
         {
-            CosturaUtility.Initialize();
-
             CurrentAssembly = Assembly.GetExecutingAssembly();
             BaseDirectory = Directory.GetParent(Path.GetDirectoryName(CurrentAssembly.Location));
             CurrentDomain = AppDomain.CurrentDomain;
-            CurrentDomain.Load(File.ReadAllBytes(Path.Combine(BaseDirectory.FullName, "ModLoader", "Microsoft.CSharp.dll")));
-            
-            var preloaded_assemblies = CurrentDomain.GetAssemblies();
-            CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
-            CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-
-            foreach (Assembly preloaded in preloaded_assemblies)
+            try
             {
-                string name = preloaded.GetName().Name;
-                //File.AppendAllText("asm.txt", name+"\n");
-                if (name.Equals("PlasmaMap"))
-                    MapAssembly = preloaded;
-                AssemblyManager.UpdateAssemblyInfo(name, preloaded);
+                CurrentDomain.Load(File.ReadAllBytes(Path.Combine(BaseDirectory.FullName, "ModLoader", "Microsoft.CSharp.dll")));
             }
+            catch (Exception e)
+            {
+                //CrashHandle(e);
+            }
+            try
+            {
+                var preloaded_assemblies = CurrentDomain.GetAssemblies();
+                CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
+                CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            
+                foreach (Assembly preloaded in preloaded_assemblies)
+                {
+                    string name = preloaded.GetName().Name;
+                    if (name.Equals("PlasmaMap")) MapAssembly = preloaded;
+                    AssemblyManager.UpdateAssemblyInfo(name, preloaded);
+                }
 
-            PatchManager.Initialize();
+                PatchManager.Initialize();
 
-            InitializeAPI();
+                InitializeAPI();
 
-            LoadMods();
+                LoadMods();
+            }
+            catch (Exception e)
+            {
+                CrashHandle(e);
+            }
         }
 
-        private static void CrashHandle(Exception e)
+        public static void CrashHandle(Exception e)
         {
-            File.WriteAllText("crash-" + DateTime.Now.Ticks + ".log", e.ToString());
+            File.WriteAllText("crash-" + (DateTime.Now.Ticks + new System.Random().Next(999)) + ".log", e.ToString());
         }
 
         private static void InitializeAPI()
@@ -126,7 +140,7 @@ namespace Doorstop
             PlasmaGame.UpdateHandle = new GameObject("UpdateHandle");
             PlasmaGame.UpdateHandle.AddComponent<UpdateHandle>();
         }
-        private static void ImportDevToolkit(object assembly)
+        private static void ImportDevToolkit(Assembly assembly)
         {
             string path = Path.GetDirectoryName(CurrentAssembly.Location);
             foreach (FileInfo file in new DirectoryInfo(path).GetFiles())
@@ -135,7 +149,7 @@ namespace Doorstop
                 {
                     DevToolkit = CurrentDomain.Load(File.ReadAllBytes(file.FullName));
                     Type @class = DevToolkit.GetTypes().Where(t => t.Namespace.Equals("PlasmaDevToolkit") && t.Name.Equals("Entry")).FirstOrDefault();
-                    DevToolkitInstance = Activator.CreateInstance(@class, CurrentAssembly, (Assembly)assembly, MapAssembly);
+                    DevToolkitInstance = Activator.CreateInstance(@class, CurrentAssembly, assembly, MapAssembly);
                     MethodInfo method = @class.GetRuntimeMethods().Where(m => m.Name.Equals("Start")).FirstOrDefault();
                     method.Invoke(DevToolkitInstance, null);
                 }
@@ -150,6 +164,7 @@ namespace Doorstop
                     if(!File.Exists(Path.Combine(BaseDirectory.FullName, "Plasma_Data", "Managed", file.Name)))
                         LoadModFromFile(file);
         }
+        
         internal static void Log(string message)
         {
             if (DevToolkit != null)
@@ -159,6 +174,7 @@ namespace Doorstop
                 logger.Invoke(DevToolkitInstance, new object[] { LogType.Log, GameClass.LoggerController.LogClass.Generic, message });
             }
         }
+        
         private static void LoadModFromFile(FileInfo file)
         {
             try
@@ -184,7 +200,7 @@ namespace Doorstop
             }
             catch (Exception e)
             {
-                // File.WriteAllText("mod_load_error.txt", e.ToString());
+                File.WriteAllText("mod_load_error.txt", e.ToString());
             }
         }
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs a)
@@ -204,5 +220,6 @@ namespace Doorstop
                 File.WriteAllText("assembly.log", e.ToString());
             }
         }
+        
     }
 }
