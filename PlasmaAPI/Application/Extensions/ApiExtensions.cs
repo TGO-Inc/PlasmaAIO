@@ -17,7 +17,7 @@ using UnityEngine.UI;
 
 namespace PlasmaAPI.Application.Extensions
 {
-    public static class Extensions
+    public static class ApiExtensions
     {
         internal static void Add(this ConcurrentDictionary<string, AssemblyContainer> dictionary, string name, AssemblyContainer assembly)
         {

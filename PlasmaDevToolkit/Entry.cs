@@ -46,8 +46,6 @@ namespace PlasmaDevToolkit
                 // AssemblyManager.OnAssemblyLoad("netstandard", StartComServer);
                 AssemblyManager.OnAssemblyLoad("mcs", () => PatchManager.CreatePatch<QuantumConsole>("QFSW.QC", PatchType.Postfix));
 
-                // TODO: Fix steam controller. it breaks for what ever reason. CreatePatch is supposed to have try/catch but ok
-                // PatchManager.CreatePatch<SteamController>("Assembly-CSharp", PatchType.Prefix);
                 PlasmaGame.OnGameInitialization += PlasmaGame_OnGameInitialization;
             }
             catch(Exception e)

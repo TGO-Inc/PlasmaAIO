@@ -1,6 +1,6 @@
 ﻿extern alias PLibrary;
-using PlasmaAPI.API;
 using PLibrary;
+using PlasmaAPI.API;
 using System;
 using System.Collections.Generic;
 using PlasmaAPI.Application.Game;
@@ -22,7 +22,7 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
         private readonly Type driver;
         public CarGestalt()
         {
-            this._guid = Guid.NewGuid();
+            this._guid = Guid.Parse("ca4de6c3-55a9-4516-95b2-4bc178e923f7");
             this.advanced = false;
             this.affectedByProjectileExplosion = true;
             this.agent = typeof(CarAgent);
@@ -70,7 +70,8 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
             this.experimental = true;
             this.handlesModuleProperties = false;
             this.hideNode = true;
-            this.id = CategoryManager.CreateGestaltEnum(this.displayName);
+            /// NEVER change this value, once you've shared the mod
+            this.id = CategoryManager.CreateGestaltEnum(this.Guid);
             this.keywords = "car,drive,go,wheel";
             this.modifierAffectsAllBodies = false;
             this.name = "Car";
@@ -84,8 +85,8 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
             this.processesModuleInterfaces = false;
             this.properties = new Dictionary<int, Property>();
             this.simulatedPhysicsWhenMounted = false;
-            this.spawnScale = Vector3.one;
-            this._scaleOffset = Vector3.one * 10;
+            this.spawnScale = Vector3.one * 10;
+            this._scaleOffset = Vector3.one;
             this.type = Types.Component;
 
             this._mesh = FileManager.GetFilesInPath("Mesh", "ca4de6c3-55a9-4516-95b2-4bc178e923f7", this).ToEnum();

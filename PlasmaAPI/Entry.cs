@@ -12,6 +12,8 @@ using System.Xml.Linq;
 using UnityEngine;
 
 using System;
+using System.Security;
+using System.Runtime.CompilerServices;
 
 namespace Doorstop
 {
@@ -33,20 +35,21 @@ namespace Doorstop
             CurrentAssembly = Assembly.GetExecutingAssembly();
             BaseDirectory = Directory.GetParent(Path.GetDirectoryName(CurrentAssembly.Location));
             CurrentDomain = AppDomain.CurrentDomain;
-            try
+            /*try
             {
-                CurrentDomain.Load(File.ReadAllBytes(Path.Combine(BaseDirectory.FullName, "ModLoader", "Microsoft.CSharp.dll")));
+                // Maybe not needed anymore?
+                // CurrentDomain.Load(File.ReadAllBytes(Path.Combine(BaseDirectory.FullName, "ModLoader", "Microsoft.CSharp.dll")));
             }
             catch (Exception e)
             {
-                //CrashHandle(e);
-            }
+                CrashHandle(e);
+            }*/
             try
             {
                 var preloaded_assemblies = CurrentDomain.GetAssemblies();
                 CurrentDomain.AssemblyLoad += CurrentDomain_AssemblyLoad;
                 CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            
+
                 foreach (Assembly preloaded in preloaded_assemblies)
                 {
                     string name = preloaded.GetName().Name;
@@ -56,14 +59,19 @@ namespace Doorstop
 
                 PatchManager.Initialize();
 
-                InitializeAPI();
+                // need to wait, lucky number is 60? idek
+                AssemblyManager.OnAssemblyLoad(60, () =>
+                {
+                    InitializeAPI();
 
-                LoadMods();
+                    LoadMods();
+                });
             }
             catch (Exception e)
             {
                 CrashHandle(e);
             }
+
         }
 
         public static void CrashHandle(Exception e)
@@ -157,14 +165,26 @@ namespace Doorstop
         }
         private static void LoadMods()
         {
-            DirectoryInfo mods = Directory.CreateDirectory(Path.Combine(BaseDirectory.FullName, "Mods"));
-            
-            foreach(FileInfo file in mods.EnumerateFiles())
-                if (file.Extension.ToLower().Equals(".dll"))
-                    if(!File.Exists(Path.Combine(BaseDirectory.FullName, "Plasma_Data", "Managed", file.Name)))
-                        LoadModFromFile(file);
+            string path = Path.Combine(BaseDirectory.FullName, "Mods");
+            DirectoryInfo mods = new DirectoryInfo(path);
+
+            if (!mods.Exists)
+                mods.Create();
+
+            foreach (FileInfo file in mods.GetFiles())
+            {
+                if (!file.Extension.ToLower().Equals(".dll"))
+                    continue;
+
+                if (File.Exists(Path.Combine(BaseDirectory.FullName, "Plasma_Data", "Managed", file.Name)))
+                    continue;
+
+                Log(Path.Combine(BaseDirectory.FullName, "Plasma_Data", "Managed", file.Name));
+
+                LoadModFromFile(file);
+            }
         }
-        
+
         internal static void Log(string message)
         {
             if (DevToolkit != null)
@@ -179,28 +199,29 @@ namespace Doorstop
         {
             try
             {
-                byte[] bytes = File.ReadAllBytes(file.FullName);
-                var asm = CurrentDomain.Load(bytes);
+                var asm = CurrentDomain.Load(File.ReadAllBytes(file.FullName));
 
                 Log("Loaded DLL: " + file.Name);
-
+                
                 Type entry_class = asm.GetTypes().Where(t =>
                     t.Namespace.Equals("PlasmaAPI.Mods." + Path.GetFileNameWithoutExtension(file.Name))
                     && t.Name.Equals("Initialization")
-                ).FirstOrDefault();
+                ).FirstOrDefault() ?? throw new Exception("class is null");
 
-                if (entry_class == null) throw new Exception("class is null");
-                var ModInstance = Activator.CreateInstance(entry_class);
-                if (ModInstance == null) throw new Exception("instance is null");
-                MethodInfo method = entry_class.GetRuntimeMethods().Where(m => m.Name.Equals("Start")).FirstOrDefault();
-                if (method == null) throw new Exception("method is null");
-                method.Invoke(ModInstance, null);
+                var ModInstance = Activator.CreateInstance(entry_class) ?? throw new Exception("instance is null");
+                
+                MethodInfo method = entry_class.GetRuntimeMethods()
+                    .Where(m => m.Name.Equals("Start"))
+                    .FirstOrDefault() ?? throw new Exception("method is null");
+                
+                method.Invoke(ModInstance, new object[0]);
 
                 Log("Mod Initialized: " + file.Name);
             }
             catch (Exception e)
             {
-                File.WriteAllText("mod_load_error.txt", e.ToString());
+                // this could be normal, an example is when loading non NET dll files on accident
+                // File.WriteAllText("mod_load_error.txt", e.ToString());
             }
         }
         private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs a)
@@ -210,7 +231,7 @@ namespace Doorstop
         private static void CurrentDomain_AssemblyLoad(object sender, AssemblyLoadEventArgs args)
         {
             string name = args.LoadedAssembly.GetName().Name;
-            //File.AppendAllText("asm.txt", name + "\n");
+            // File.AppendAllText("asm.txt", name + "\n");
             try
             {
                 AssemblyManager.UpdateAssemblyInfo(name, args.LoadedAssembly);

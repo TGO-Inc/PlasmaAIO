@@ -55,7 +55,7 @@ namespace PlasmaAPI.API
                 {
                     name = d.name + "_Base",
                 };
-                var sub_handler = sub_comp.AddComponent<GameClass.SubComponentHandler>();
+                var sub_handler = sub_comp.AddComponent<SubComponentHandler>();
                 sub_handler.subComponentIndex = 0;
                 sub_handler.parentSubComponent = null;
                 sub_handler.massRatio = 1;
@@ -121,9 +121,9 @@ namespace PlasmaAPI.API
                     var tree_renderer = tree.AddComponent<MeshRenderer>();
 
                     var reference_tree_renderer = reference.GetComponentsInChildren<MeshRenderer>().Where(x => x.name == "Tree Node").FirstOrDefault();
-                    Application.Extensions.Extensions.MapValues(tree_renderer, reference_tree_renderer);
+                    Application.Extensions.ApiExtensions.MapValues(tree_renderer, reference_tree_renderer);
                     var reference_tree_filter = reference.GetComponentsInChildren<MeshFilter>().Where(x => x.name == "Tree Node").FirstOrDefault();
-                    Application.Extensions.Extensions.MapValues(reference_tree_filter, tree_filter);
+                    Application.Extensions.ApiExtensions.MapValues(reference_tree_filter, tree_filter);
 
                     tree.transform.SetParent(renderer_comp.transform);
                     {
@@ -137,9 +137,9 @@ namespace PlasmaAPI.API
                         var icon_renderer = icon.AddComponent<MeshRenderer>();
 
                         var reference_icon_renderer = reference.GetComponentsInChildren<MeshRenderer>().Where(x => x.name == "Icon").FirstOrDefault();
-                        Application.Extensions.Extensions.MapValues(icon_renderer, reference_icon_renderer);
+                        Application.Extensions.ApiExtensions.MapValues(icon_renderer, reference_icon_renderer);
                         var reference_icon_filter = reference.GetComponentsInChildren<MeshFilter>().Where(x => x.name == "Icon").FirstOrDefault();
-                        Application.Extensions.Extensions.MapValues(reference_icon_filter, icon_filter);
+                        Application.Extensions.ApiExtensions.MapValues(reference_icon_filter, icon_filter);
 
                         icon.transform.SetParent(tree.transform);
                     }
@@ -177,7 +177,7 @@ namespace PlasmaAPI.API
                         var reference_socket_renderer = reference.GetComponentsInChildren<MeshRenderer>().Where(x => x.name == "Mesh").FirstOrDefault();
 
                         /// Map Values
-                        Application.Extensions.Extensions.MapValues(reference_socket_renderer, socket_renderer);
+                        Application.Extensions.ApiExtensions.MapValues(reference_socket_renderer, socket_renderer);
 
                         var socket_collider = socket_fsp.meshGameObject.AddComponent<SphereCollider>();
                         socket_collider.radius = 0.25f;
@@ -193,13 +193,14 @@ namespace PlasmaAPI.API
                         var handler = comPref.GetComponent<GameClass.ComponentHandler>() ?? comPref.AddComponent<GameClass.ComponentHandler>();
                     }
 
-
+                    /*
                     var collection = comPref.GetComponentsInChildren<ComponentMeshHandler>().Where(x => x.name.Equals("Wireframe Collider"));
                     if (collection.Count() == 1)
                     {
                         var s = ret.GetComponentsInChildren<MeshFilter>().FirstOrDefault().transform.localScale;
                         collection.First().transform.localScale = s;
-                }
+                    }
+                    */
                 }
 
                 return comPref;

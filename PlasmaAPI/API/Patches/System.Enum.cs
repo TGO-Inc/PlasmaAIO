@@ -42,7 +42,7 @@ namespace PlasmaAPI.API.Patches
                         break;
                     case 2:
                         File.WriteAllText("parse problem here.txt", "");
-                        //if (CategoryManager.AgentGestalts.TryGetValue(value., out AgentGestaltEnum g))
+                        //if (CategoryManager.AgentGestalts.TryGetValue(value, out AgentGestaltEnum g))
                         //    target = g;
                         break;
 

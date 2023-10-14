@@ -24,7 +24,7 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
         private readonly Type driver;
         public AirplaneGestalt()
         {
-            this._guid = Guid.NewGuid();
+            this._guid = Guid.Parse("1a4ee7ee-b8bc-4d1a-a6a5-ba487c6de0a8");
             this.advanced = false;
             this.affectedByProjectileExplosion = true;
             this.agent = typeof(AirplaneAgent);
@@ -72,7 +72,8 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
             this.experimental = true;
             this.handlesModuleProperties = false;
             this.hideNode = true;
-            this.id = CategoryManager.CreateGestaltEnum(this.displayName);
+            /// NEVER change this value, once you've shared the mod
+            this.id = CategoryManager.CreateGestaltEnum(this.Guid);
             this.keywords = "air,plane,airplane,fly,sky";
             this.modifierAffectsAllBodies = false;
             this.name = "Airplane";

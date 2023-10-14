@@ -43,11 +43,13 @@ internal class Program
         string GameDir = GetGameDir();
         DirectoryInfo DataDir = new(Path.Combine(GameDir, "Plasma_Data", "Managed"));
         DirectoryInfo ModsDir = new(Path.Combine(GameDir, "Mods"));
-        DirectoryInfo ModLoaderDir = new(Path.Combine(GameDir, "ModLoader"));
         IEnumerable<string> GameDLLs = DataDir.GetFiles().Select(f => f.Name);
+        
+        DirectoryInfo ModLoaderDir = new(Path.Combine(GameDir, "ModLoader"));
+        ModLoaderDir.GetFiles().Where(f => GameDLLs.Contains(f.Name) || f.Extension.Equals(".xml")).DeleteAll();
+        IEnumerable<string> ModDLLs = ModLoaderDir.GetFiles().Select(f => f.Name);
 
-        ModsDir.GetFiles().Where(f => GameDLLs.Contains(f.Name)).DeleteAll();
-        ModLoaderDir.GetFiles().Where(f => GameDLLs.Contains(f.Name)).DeleteAll();
+        ModsDir.GetFiles().Where(f => GameDLLs.Contains(f.Name) || f.Extension.Equals(".xml") || ModDLLs.Contains(f.Name)).DeleteAll();
     }
 }
 internal static class Extensions

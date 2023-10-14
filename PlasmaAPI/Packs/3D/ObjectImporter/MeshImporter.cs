@@ -424,7 +424,7 @@ namespace PlasmaAPI.Packs
                         Assimp.Quaternion aQuat = new Assimp.Quaternion();
                         Assimp.Vector3D aTranslation = new Assimp.Vector3D();
                         node.Transform.Decompose(out aScale, out aQuat, out aTranslation);
-                        var Scale = new UnityEngine.Vector3(aScale.X * Gestalt.ScaleOffset.x, aScale.Y * Gestalt.ScaleOffset.y, aScale.Z * Gestalt.ScaleOffset.z);
+                        var Scale = new Vector3(aScale.X * Gestalt.ScaleOffset.x, aScale.Y * Gestalt.ScaleOffset.y, aScale.Z * Gestalt.ScaleOffset.z);
                         uOb.transform.localScale = Scale;
 
                         if (root != null)
@@ -458,7 +458,7 @@ namespace PlasmaAPI.Packs
                         UnityEngine.Quaternion uQuat = new UnityEngine.Quaternion(aQuat.X, aQuat.Y, aQuat.Z, aQuat.W);
                         var euler = uQuat.eulerAngles;
                         
-                        uOb.transform.localPosition = new UnityEngine.Vector3(aTranslation.X, aTranslation.Y, aTranslation.Z);
+                        uOb.transform.localPosition = new Vector3(aTranslation.X, aTranslation.Y, aTranslation.Z);
                         uOb.transform.localRotation = UnityEngine.Quaternion.Euler(euler.x, -euler.y, euler.z);
 
                         ret.Add(uOb);
@@ -509,13 +509,27 @@ namespace PlasmaAPI.Packs
 
             return ret;
         }
-        private static Texture2D LoadTexture(Stream stream, Color4D c)
+        internal enum Rotation
+        {
+            None = 0,
+            Ninety = 90,
+            OneEighty = 180,
+            TwoSeventy = 270,
+            VerticalFlip,
+            HorizontalFlip
+        }
+
+        private static Texture2D LoadTexture(Stream stream, Color4D c, Rotation transform = Rotation.VerticalFlip)
         {
             var baseColor = new Color(c.R, c.G, c.B, c.A);
 
             // Load the image using StbImageSharp
             ImageResult result = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
-            Texture2D texture = new Texture2D(result.Width, result.Height, TextureFormat.RGBA32, false);
+
+            int width = (transform == Rotation.Ninety || transform == Rotation.TwoSeventy) ? result.Height : result.Width;
+            int height = (transform == Rotation.Ninety || transform == Rotation.TwoSeventy) ? result.Width : result.Height;
+
+            Texture2D texture = new Texture2D(width, height, TextureFormat.RGBAFloat, false);
 
             for (int y = 0; y < result.Height; y++)
             {
@@ -526,6 +540,65 @@ namespace PlasmaAPI.Packs
                                             result.Data[idx + 1] / 255f,
                                             result.Data[idx + 2] / 255f,
                                             result.Data[idx + 3] / 255f);
+
+                    Color mixedColor = Color.Lerp(baseColor, color, color.a);
+
+                    int newX, newY;
+                    switch (transform)
+                    {
+                        case Rotation.Ninety:
+                            newX = y;
+                            newY = result.Width - 1 - x;
+                            break;
+                        case Rotation.OneEighty:
+                            newX = result.Width - 1 - x;
+                            newY = result.Height - 1 - y;
+                            break;
+                        case Rotation.TwoSeventy:
+                            newX = result.Height - 1 - y;
+                            newY = x;
+                            break;
+                        case Rotation.VerticalFlip:
+                            newX = x;
+                            newY = result.Height - 1 - y;
+                            break;
+                        case Rotation.HorizontalFlip:
+                            newX = result.Width - 1 - x;
+                            newY = y;
+                            break;
+                        default:
+                            newX = x;
+                            newY = y;
+                            break;
+                    }
+
+                    texture.SetPixel(newX, newY, mixedColor);
+                }
+            }
+
+            texture.Apply();
+            return texture;
+        }
+
+        /*
+        private static Texture2D LoadTexture(Stream stream, Color4D c)
+        {
+            var baseColor = new Color(c.R, c.G, c.B, c.A);
+
+            // Load the image using StbImageSharp
+            ImageResult result = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
+            Texture2D texture = new Texture2D(result.Width, result.Height, TextureFormat.RGBAFloat, false);
+
+            for (int y = 0; y < result.Height; y++)
+            {
+                for (int x = 0; x < result.Width; x++)
+                {
+                    int idx = (y * result.Width + x) * 4; // 4 because of RedGreenBlueAlpha
+                    Color color = new Color(result.Data[idx] / 255f,
+                                            result.Data[idx + 1] / 255f,
+                                            result.Data[idx + 2] / 255f,
+                                            result.Data[idx + 3] / 255f);
+
                     Color mixedColor = Color.Lerp(baseColor, color, color.a);
                     texture.SetPixel(x, y, mixedColor);
                 }
@@ -533,7 +606,7 @@ namespace PlasmaAPI.Packs
 
             texture.Apply();
             return texture;
-        }
+        }*/
 
         private static Texture2D LoadTexture(byte[] byteArray, Color4D c)
         {

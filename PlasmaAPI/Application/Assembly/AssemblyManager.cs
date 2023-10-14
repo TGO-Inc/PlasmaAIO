@@ -1,6 +1,7 @@
 ﻿extern alias GameClass;
 
 using Doorstop;
+using HarmonyLib;
 using PlasmaAPI.Application.Extensions;
 using System;
 using System.Collections.Concurrent;
@@ -19,6 +20,7 @@ namespace PlasmaAPI.Application
         public delegate void OnLoadedArg(params object[] args);
         public delegate void OnLoaded();
 
+        private static ConcurrentDictionary<int, List<Delegate>> DelegatesOnNum = new ConcurrentDictionary<int, List<Delegate>>();
         internal static ConcurrentDictionary<string, AssemblyContainer> LoadedAssemblies = new ConcurrentDictionary<string, AssemblyContainer>()
         {
             /*
@@ -165,8 +167,15 @@ namespace PlasmaAPI.Application
                 container.Assembly = assemblyInfo;
                 return true;
             }
-            // Entrypoint.Log("New Container for: " + AssemblyName);
-            return LoadedAssemblies.TryAdd(AssemblyName, new AssemblyContainer(assemblyInfo));
+            try
+            {
+                // Entrypoint.Log("New Container for: " + AssemblyName);
+                return LoadedAssemblies.TryAdd(AssemblyName, new AssemblyContainer(assemblyInfo));
+            }
+            finally
+            {
+                CheckDelegatesOnNum();
+            }
         }
         public static bool OnAssemblyLoad(string AssemblyName, OnLoadedArg Callback, bool add = true)
         {
@@ -175,6 +184,10 @@ namespace PlasmaAPI.Application
         public static bool OnAssemblyLoad(string AssemblyName, OnLoaded Callback, bool add = true)
         {
             return AssemblyLoad(AssemblyName, Callback, add);
+        }
+        public static void OnAssemblyLoad(int count, OnLoaded Callback)
+        {
+            AssemblyLoad(count, Callback);
         }
         private static IEnumerable<AssemblyContainer> GetLoadedAssemblies()
         {
@@ -211,6 +224,16 @@ namespace PlasmaAPI.Application
                 return container.AssemblyLoaded.TryAdd(Guid.NewGuid(), Callback) && LoadedAssemblies.TryAdd(AssemblyName, container);
             }
             return false;
+        }
+        private static void CheckDelegatesOnNum()
+        {
+            if (DelegatesOnNum.TryGetValue(LoadedAssemblies.Keys.Count, out var list))
+                foreach (var d in list)
+                    d.DynamicInvoke();
+        }
+        private static void AssemblyLoad(int count, Delegate Callback)
+        {
+            DelegatesOnNum.AddOrUpdate(count, (_) => new List<Delegate>() { Callback }, (_, l) => l.AddItem(Callback).ToList());
         }
     }
 }

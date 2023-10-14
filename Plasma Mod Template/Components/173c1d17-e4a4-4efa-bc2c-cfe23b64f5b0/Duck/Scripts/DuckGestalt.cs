@@ -27,8 +27,8 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
         private readonly CustomTextureOverride? _customTextureData;
         public DuckGestalt()
         {
-            this._scaleOffset = Vector3.one / 10;
             this._guid = Guid.Parse("173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0");
+            this._scaleOffset = Vector3.one;
             this._mesh = FileManager.GetFilesInPath("Mesh", this.Guid, this).ToEnum();
             this._tex = FileManager.GetFilesInPath("Textures", this.Guid, this).ToDict();
             this._customTextureData = new CustomTextureOverride()
@@ -83,9 +83,9 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
             this.componentPreview = Sprite.Create(uTexture, Rect.MinMaxRect(0, 0, uTexture.width, uTexture.height), new Vector2(uTexture.width / 2, uTexture.height / 2));
             this.componentReactsToRaycast = true;
             this.componentReactsToScaling = true;
-            this.componentScaleXLimits = new FloatRange(0.1f, 1000f);
-            this.componentScaleYLimits = new FloatRange(0.1f, 1000f);
-            this.componentScaleZLimits = new FloatRange(0.1f, 1000f);
+            this.componentScaleXLimits = new FloatRange(0.01f, 1000f);
+            this.componentScaleYLimits = new FloatRange(0.01f, 1000f);
+            this.componentScaleZLimits = new FloatRange(0.01f, 1000f);
             this.componentSupportSecondarySnappingPointChild = true;
             this.componentSuppressTerrainImpactSFX = false;
             this.componentVolumeControl = false;
@@ -99,7 +99,8 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
             this.experimental = true;
             this.handlesModuleProperties = false;
             this.hideNode = true;
-            this.id = CategoryManager.CreateGestaltEnum(this.displayName);
+            /// NEVER change this value, once you've shared the mod
+            this.id = CategoryManager.CreateGestaltEnum(this.Guid);
             this.keywords = "duck,swim,animal,pond,fly";
             this.modifierAffectsAllBodies = false;
             this.name = "Duck";
