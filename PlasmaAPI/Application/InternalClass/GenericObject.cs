@@ -4,7 +4,7 @@ using PLibrary;
 using GameClass;
 using System;
 
-namespace PlasmaAPI.Application.InternalClass
+namespace Plasma.Application.InternalClass
 {
     internal class GenericObject<T>
     {

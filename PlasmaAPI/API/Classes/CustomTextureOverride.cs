@@ -6,7 +6,7 @@ using System;
 using UnityEngine;
 using Assimp;
 
-namespace PlasmaAPI.API
+namespace Plasma.API
 {
     public struct CustomTextureOverride
     {

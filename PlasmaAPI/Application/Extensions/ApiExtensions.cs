@@ -1,8 +1,8 @@
 ﻿using Assimp.Unmanaged;
 using MonoMod.Utils;
 using Newtonsoft.Json;
-using PlasmaAPI.API.Patches;
-using PlasmaAPI.Application.InternalClass;
+using Plasma.API.Patches;
+using Plasma.Application.InternalClass;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PlasmaAPI.Application.Extensions
+namespace Plasma.Application.Extensions
 {
     public static class ApiExtensions
     {
@@ -107,8 +107,8 @@ namespace PlasmaAPI.Application.Extensions
             double AspectRatioY = 1;
             if (keepAspectRatio)
             {
-                AspectRatioX = Math.Min(texture2D.width / (double)texture2D.height, 1);
-                AspectRatioY = Math.Min(texture2D.height / (double)texture2D.width, 1);
+                AspectRatioX = Math.Min(texture2D.width / Math.Max(texture2D.height, 0.001), 1);
+                AspectRatioY = Math.Min(texture2D.height / Math.Max(texture2D.width, 0.001), 1);
             }
             TextureScale.Bilinear(texture2D, (int)(targetX * AspectRatioX), (int)(targetY * AspectRatioY));
         }

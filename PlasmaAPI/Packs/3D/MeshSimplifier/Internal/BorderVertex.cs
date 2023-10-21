@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace   PlasmaAPI.Packs.MeshUtil.Internal
+namespace   Plasma.Packs.MeshUtil.Internal
 {
     internal struct BorderVertex
     {

@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using PlasmaAPI.Application.InternalClass;
+using Plasma.Application.InternalClass;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PlasmaAPI.Packs.MeshUtil
+namespace Plasma.Packs.MeshUtil
 {
     public class ModelUtil
     {

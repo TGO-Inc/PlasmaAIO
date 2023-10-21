@@ -1,5 +1,5 @@
 ﻿using Assimp;
-using PlasmaAPI.Application.InternalClass;
+using Plasma.Application.InternalClass;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlasmaAPI.Packs.MeshUtil
+namespace Plasma.Packs.MeshUtil
 {
     internal class StreamAsIO : IOStream
     {

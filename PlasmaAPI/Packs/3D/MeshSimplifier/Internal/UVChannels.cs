@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace   PlasmaAPI.Packs.MeshUtil.Internal
+namespace   Plasma.Packs.MeshUtil.Internal
 {
     internal class UVChannels<TVec>
     {

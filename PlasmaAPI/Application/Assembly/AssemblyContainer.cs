@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlasmaAPI.Application
+namespace Plasma.Application
 {
     internal class AssemblyContainer
     {

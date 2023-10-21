@@ -4,13 +4,13 @@ using System.Reflection;
 using Console = PlasmaDevToolkit.Overrides.Console;
 using PlasmaDevToolkit.Patches;
 using PlasmaDevToolkit.DevToolkit;
-using PlasmaAPI.Application;
-using PlasmaAPI.PatchUtil;
+using Plasma.Application;
+using Plasma.PatchUtil;
 using UnityEngine;
 using System.Threading.Tasks;
-using PlasmaAPI.Mods.RuntimeUnityEditor.Core;
-using PlasmaAPI.Mods.RuntimeUnityEditor.Core.Utils;
-using PlasmaAPI.Mods.RuntimeUnityEditor.Core.Utils.Abstractions;
+using Plasma.Mods.RuntimeUnityEditor.Core;
+using Plasma.Mods.RuntimeUnityEditor.Core.Utils;
+using Plasma.Mods.RuntimeUnityEditor.Core.Utils.Abstractions;
 
 namespace PlasmaDevToolkit
 {

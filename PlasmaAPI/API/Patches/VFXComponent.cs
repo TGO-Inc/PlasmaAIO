@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PlasmaAPI.API.Patches
+namespace Plasma.API.Patches
 {
     internal class VFXComponent
     {

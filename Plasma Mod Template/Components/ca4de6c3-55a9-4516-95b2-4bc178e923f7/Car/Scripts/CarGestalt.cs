@@ -1,23 +1,23 @@
 ﻿extern alias PLibrary;
 using PLibrary;
-using PlasmaAPI.API;
+using Plasma.API;
 using System;
 using System.Collections.Generic;
-using PlasmaAPI.Application.Game;
+using Plasma.Application.Game;
 using UnityEngine;
-using PlasmaAPI.API.Classes;
-using PlasmaAPI.Application.InternalClass;
-using PlasmaAPI.Packs;
-using PlasmaAPI.Application.Extensions;
-using PlasmaAPI.Mods.MY_FIRST_MOD.Car;
+using Plasma.API.Classes;
+using Plasma.Application.InternalClass;
+using Plasma.Packs;
+using Plasma.Application.Extensions;
+using Plasma.Mods.MY_FIRST_MOD.Car;
 
-namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
+namespace Plasma.Mods.MY_FIRST_MOD.Gestalts
 {
     internal class CarGestalt : AbstractGestalt
     {
         private readonly Guid _guid;
         private readonly Vector3 _scaleOffset;
-        private readonly IEnumerable<ResourceStream> _mesh;
+        private readonly IEnumerable<(string Name, ResourceStream Data)> _mesh;
         private readonly Dictionary<string, ResourceStream> _tex;
         private readonly Type driver;
         public CarGestalt()
@@ -89,13 +89,13 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
             this._scaleOffset = Vector3.one;
             this.type = Types.Component;
 
-            this._mesh = FileManager.GetFilesInPath("Mesh", "ca4de6c3-55a9-4516-95b2-4bc178e923f7", this).ToEnum();
+            this._mesh = FileManager.GetFilesInPath("Mesh", "ca4de6c3-55a9-4516-95b2-4bc178e923f7", this);
             this._tex = FileManager.GetFilesInPath("Textures", "ca4de6c3-55a9-4516-95b2-4bc178e923f7", this).ToDict();
         }
 
         public override Guid Guid => _guid;
 
-        public override IEnumerable<ResourceStream> MeshResources => _mesh;
+        public override IEnumerable<(string Name, ResourceStream Data)> MeshResources => _mesh;
 
         public override Dictionary<string, ResourceStream> TextureResources => _tex;
 

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace   PlasmaAPI.Packs.MeshUtil
+namespace   Plasma.Packs.MeshUtil
 {
     /// <summary>
     /// A LOD (level of detail) level.

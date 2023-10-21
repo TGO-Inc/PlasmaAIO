@@ -1,4 +1,6 @@
 extern alias PLibrary;
+extern alias GameClass;
+
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -9,25 +11,28 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography;
 using System.Text;
 using Assimp;
-using PlasmaAPI.Application.Extensions;
-using PlasmaAPI.Packs.MeshUtil;
+using Plasma.Application.Extensions;
+using Plasma.Packs.MeshUtil;
 using UnityEngine;
 using Material = UnityEngine.Material;
 using Mesh = UnityEngine.Mesh;
-using PlasmaAPI.Application.InternalClass;
+using Plasma.Application.InternalClass;
 using System.Xml.Linq;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
-using PlasmaAPI.Packs.MeshUtil.Internal;
-using PlasmaAPI.API.Classes;
+using Plasma.Packs.MeshUtil.Internal;
+using Plasma.API.Classes;
 using System.Collections;
 
 using Color = UnityEngine.Color;
 using System.Windows.Media.Media3D;
 using Assimp.Unmanaged;
 using StbImageSharp;
+using static GameClass::LuaTableContent;
+using MonoMod.Utils;
+using ImageProcessor.Processors;
 
-namespace PlasmaAPI.Packs
+namespace Plasma.Packs
 {
     public class MeshImporter
     {
@@ -37,16 +42,26 @@ namespace PlasmaAPI.Packs
             if (FileStreams == null || Texture == null)
                 return (false, null);
 
+            string[] Keys = FileStreams.Keys.Select(k => k.ToLowerInvariant()).ToArray();
+            Dictionary<string, string> KeyMap = new Dictionary<string, string>();
+
+            foreach(var kvp in FileStreams.Keys.Select(k => new KeyValuePair<string, string>(k.ToLowerInvariant(), k)))
+                if (!KeyMap.ContainsKey(kvp.Key))
+                    KeyMap.Add(kvp.Key, kvp.Value);
+
             string[] Names = new string[]
             {
-                Path.GetFileName(Texture),
-                Path.GetFileNameWithoutExtension(Texture)
+                Texture.ToLowerInvariant(),
+                Path.GetFileName(Texture).ToLowerInvariant(),
+                Path.GetFileNameWithoutExtension(Texture).ToLowerInvariant()
             };
 
-            string TextureName = Names.Where(x => FileStreams.ContainsKey(x)).FirstOrDefault();
+            string TextureName = Names.Where(x => Keys.Contains(x)).FirstOrDefault();
 
             if (TextureName == default)
                 return (false, null);
+
+            TextureName = KeyMap[TextureName];
 
             if (FileStreams.TryGetValue(TextureName, out ResourceStream TextureStream))
             {
@@ -71,6 +86,7 @@ namespace PlasmaAPI.Packs
             if (wasFound)
             {
                 int length = (int)TextureStream.Length;
+                TextureStream.Position = 0;
                 using var reader = new BinaryReader(TextureStream);
                 return reader.ReadBytes(length);
             }
@@ -107,7 +123,7 @@ namespace PlasmaAPI.Packs
         public static GameObject Load(AbstractGestalt Gestalt, GameObject root)
         {
             var Mesh = Gestalt.MeshResources.First();
-            (Dictionary<string, ResourceStream> Textures, ResourceStream FileData) TextureData = (Gestalt.TextureResources, Gestalt.MeshResources.LastOrDefault());
+            (Dictionary<string, ResourceStream> Textures, (string Name, ResourceStream Data) File) = (Gestalt.TextureResources, Gestalt.MeshResources.LastOrDefault());
 
             AssimpContext importer = new AssimpContext();
             List<GameObject> ColliderHolder = new List<GameObject>();
@@ -120,10 +136,10 @@ namespace PlasmaAPI.Packs
                                 PostProcessSteps.SortByPrimitiveType |
                                 PostProcessSteps.GenerateSmoothNormals;
 
-            Mesh.Position = 0;
-            var hash = string.Join("", new Crc32().ComputeHash(Mesh).Select(h => h.ToString("X")));
+            Mesh.Data.Position = 0;
+            var hash = string.Join("", new Crc32().ComputeHash(Mesh.Data).Select(h => h.ToString("X")));
 
-            if (SavedMeshData.TryGetValue(hash, out (GameObject r, IEnumerable<GameObject> c)d))
+            if (MeshImporter.SavedMeshData.TryGetValue(hash, out (GameObject r, IEnumerable<GameObject> c)d))
             {
                 ColliderHolder.AddRange(d.c);
                 ret = GameObject.Instantiate(d.r);
@@ -133,10 +149,10 @@ namespace PlasmaAPI.Packs
             }
             else
             {
-                if (TextureData.FileData != default)
-                    io = new WavefrontIO(Mesh, TextureData);
+                if (ModelUtil.Detect(File.Data) == MeshType.OBJ)
+                    io = new WavefrontIO(Mesh, Textures);
                 else
-                    io = new GenericModelIO(Mesh, TextureData);
+                    io = new GenericModelIO(Mesh, Textures);
 
                 importer.SetIOSystem(io);
 
@@ -152,18 +168,21 @@ namespace PlasmaAPI.Packs
             if (Gestalt.CustomTextureData.HasValue)
             {
                 var tex_data = Gestalt.CustomTextureData.Value;
-                var mat = scene.Materials.FirstOrDefault(m => m.Name.Equals(tex_data.MaterialName));
-                if (mat != default)
+                var mlist = scene.Materials.Where(m => m.Name.Equals(tex_data.MaterialName)).ToArray();
+                
+                if (mlist.LongLength > 0)
                 {
+                    var mat = mlist[0];
                     mat.TextureDiffuse = tex_data.Diffuse;
                     mat.TextureNormal = tex_data.Normal;
                     mat.TextureSpecular = tex_data.Specular;
-                    WashColor = new Color4D(
-                        tex_data.BaseColor.r,
-                        tex_data.BaseColor.g,
-                        tex_data.BaseColor.b,
-                        tex_data.BaseColor.a);
                 }
+
+                WashColor = new Color4D(
+                    tex_data.BaseColor.r,
+                    tex_data.BaseColor.g,
+                    tex_data.BaseColor.b,
+                    tex_data.BaseColor.a);
             }
 
             /*
@@ -234,22 +253,26 @@ namespace PlasmaAPI.Packs
                         uMaterial.SetFloat("_Glossiness", m.Reflectivity);
                     }
 
-                    /*
+                    
                     // Normal
+                    /*
                     if (m.HasTextureNormal)
                     {
                         Texture2D uTexture = new Texture2D(2, 2);
 
-                        byte[] byteArray = MeshImporter.FindTexture(m.TextureNormal.FilePath, TextureData.Textures);
+                        byte[] byteArray = MeshImporter.FindTexture(m.TextureNormal.FilePath, Textures);
                         bool isLoaded = uTexture.LoadImage(byteArray);
                         if (!isLoaded)
                         {
-                            throw new Exception("Cannot find texture file: " + m.TextureNormal.FilePath);
+                            Debug.LogWarning("Failed to load texture file: " + m.TextureNormal.FilePath);
+                            //throw new Exception("Cannot find texture file: " + m.TextureNormal.FilePath);
                         }
-
-                        uMaterial.SetTexture("_DetailNmlTex", uTexture);
-                    }
-
+                        else
+                        {
+                            uMaterial.SetTexture("_DetailNmlTex", uTexture);
+                        }
+                    }*/
+                    /*
                     // Height
                     if (m.HasTextureHeight)
                     {
@@ -283,9 +306,30 @@ namespace PlasmaAPI.Packs
                     // Texture
                     if (m.HasTextureDiffuse)
                     {
-                        ResourceStream texStream = MeshImporter.FindTextureStream(m.TextureDiffuse.FilePath, TextureData.Textures);
-                        Texture2D uTexture = MeshImporter.LoadTexture(texStream, WashColor) ?? throw new Exception("Cannot find texture file: " + m.TextureDiffuse.FilePath);
-                        uMaterial.SetTexture("_DetailAlbTex", uTexture);
+                        ResourceStream texStream = MeshImporter.FindTextureStream(m.TextureDiffuse.FilePath, Textures);
+                        texStream ??= Textures.Values.Count > 0 ? Textures.Values.ToArray()[m.TextureDiffuse.TextureIndex] : null;
+                        if (texStream != null)
+                        {
+                            ResourceStream alpha = null;
+                            // Normal
+                            if (m.HasTextureNormal)
+                            {
+                                alpha = MeshImporter.FindTextureStream(m.TextureNormal.FilePath, Textures);
+                                /*
+                                bool isLoaded = uTexture.LoadImage(byteArray);
+                                if (!isLoaded)
+                                {
+                                    Debug.LogWarning("Failed to load texture file: " + m.TextureNormal.FilePath);
+                                    //throw new Exception("Cannot find texture file: " + m.TextureNormal.FilePath);
+                                }
+                                else
+                                {
+                                    uMaterial.SetTexture("_DetailNmlTex", uTexture);
+                                }*/
+                            }
+                            Texture2D uTexture = MeshImporter.LoadTexture(texStream, WashColor, alpha) ?? throw new Exception("Cannot find texture file: " + m.TextureDiffuse.FilePath);
+                            uMaterial.SetTexture("_DetailAlbTex", uTexture);
+                        }
                     }
                     else if (m.HasColorDiffuse)
                     {
@@ -398,10 +442,10 @@ namespace PlasmaAPI.Packs
             // Create GameObjects from nodes
             List<GameObject> NodeToGameObject(Node node, bool isRoot = true)
             {
-                List<GameObject> ret = new List<GameObject> ();
+                List<GameObject> Lret = new List<GameObject> ();
                 if (isRoot)
                 {
-                    ret.Add(new GameObject() { name = "MeshHolder" });
+                    Lret.Add(new GameObject() { name = "MeshHolder" });
                 }
                 // Set Mesh
                 if (node.HasMeshes)
@@ -433,8 +477,11 @@ namespace PlasmaAPI.Packs
                             simplifier.Initialize(mfilter.mesh);
 
                             int originalTriangleCount = mfilter.mesh.triangles.Length / 3;
-                            float simplificationPercentage = 1 - Mathf.Min(Mathf.Pow(1 - (200f / originalTriangleCount), 2), 1f);
-                            simplifier.SimplifyMesh(simplificationPercentage);
+                            if (originalTriangleCount > 400)
+                            {
+                                float simplificationPercentage = 1 - Mathf.Min(Mathf.Pow(1 - (200f / originalTriangleCount), 2), 1f);
+                                simplifier.SimplifyMesh(simplificationPercentage);
+                            }
 
                             GameObject collider = new GameObject
                             {
@@ -461,8 +508,13 @@ namespace PlasmaAPI.Packs
                         uOb.transform.localPosition = new Vector3(aTranslation.X, aTranslation.Y, aTranslation.Z);
                         uOb.transform.localRotation = UnityEngine.Quaternion.Euler(euler.x, -euler.y, euler.z);
 
-                        ret.Add(uOb);
+                        Lret.Add(uOb);
                     }
+                }
+
+                if (Lret.Count <= 0)
+                {
+                    Lret.Add(new GameObject() { name = "Blank" });
                 }
 
                 if (node.HasChildren)
@@ -473,13 +525,13 @@ namespace PlasmaAPI.Packs
                         int index = 0;
                         foreach (var c in uObChild)
                         {
-                            c.transform.SetParent(ret[index % ret.Count].transform, false);
+                            c.transform.SetParent(Lret[index % Lret.Count].transform, false);
                             index++;
                         }
                     }
                 }
 
-                return ret;
+                return Lret;
             }
 
             if (ret == null)
@@ -519,17 +571,31 @@ namespace PlasmaAPI.Packs
             HorizontalFlip
         }
 
-        private static Texture2D LoadTexture(Stream stream, Color4D c, Rotation transform = Rotation.VerticalFlip)
+        private static Texture2D LoadTexture(Stream stream, Color4D c, Stream AplhaStream = null, Rotation transform = Rotation.VerticalFlip)
         {
             var baseColor = new Color(c.R, c.G, c.B, c.A);
 
             // Load the image using StbImageSharp
             ImageResult result = ImageResult.FromStream(stream, ColorComponents.RedGreenBlueAlpha);
+            ImageResult alpha = null;
+            if (AplhaStream != null)
+                alpha = ImageResult.FromStream(AplhaStream, ColorComponents.Grey);
 
             int width = (transform == Rotation.Ninety || transform == Rotation.TwoSeventy) ? result.Height : result.Width;
             int height = (transform == Rotation.Ninety || transform == Rotation.TwoSeventy) ? result.Width : result.Height;
 
             Texture2D texture = new Texture2D(width, height, TextureFormat.RGBAFloat, false);
+
+            byte[] alphaOverride = null;
+            bool overrideAlpha = false;
+            if (alpha != null)
+            {
+                alphaOverride = alpha.Data;
+                overrideAlpha = true;
+                Debug.LogWarning(result.Data.LongLength);
+                Debug.LogWarning(alphaOverride.LongLength);
+                Debug.LogWarning(alphaOverride[200] / 255f);
+            }
 
             for (int y = 0; y < result.Height; y++)
             {
@@ -539,7 +605,7 @@ namespace PlasmaAPI.Packs
                     Color color = new Color(result.Data[idx] / 255f,
                                             result.Data[idx + 1] / 255f,
                                             result.Data[idx + 2] / 255f,
-                                            result.Data[idx + 3] / 255f);
+                                            overrideAlpha ? alphaOverride[y * result.Width + x] / 255f : result.Data[idx + 3] / 255f);
 
                     Color mixedColor = Color.Lerp(baseColor, color, color.a);
 

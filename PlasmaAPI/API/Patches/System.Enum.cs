@@ -2,7 +2,7 @@
 extern alias PLibrary;
 using PLibrary;
 using GameClass;
-using PlasmaAPI.Application.Game;
+using Plasma.Application.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.IO;
 using HarmonyLib;
 
-namespace PlasmaAPI.API.Patches
+namespace Plasma.API.Patches
 {
     internal static class EnumUtil
     {

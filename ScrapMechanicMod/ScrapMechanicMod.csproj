@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScrapMechanicMod</RootNamespace>
+    <AssemblyName>ScrapMechanicMod</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>F:\SteamLibrary\steamapps\common\Plasma\Mods\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>F:\SteamLibrary\steamapps\common\Plasma\Mods\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference PrivateAssets="All" Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Aliases>GameClass</Aliases>
+    </Reference>
+    <Reference PrivateAssets="All" Include="Assembly-CSharp-firstpass">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="DOTween">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\DOTween.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="DOTweenPro">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="FMODUnity">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference PrivateAssets="All" Include="PlasmaLibrary">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\PlasmaLibrary.dll</HintPath>
+      <Aliases>PLibrary</Aliases>
+    </Reference>
+    <Reference PrivateAssets="All" Include="QFSW.QC">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\QFSW.QC.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="Rewired_Core">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Rewired_Core.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="Sirenix.Serialization">
+      <HintPath>..\PlasmaAPI\bin\x64\Debug\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="Sirenix.Utilities">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="System" />
+    <Reference PrivateAssets="All" Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference PrivateAssets="All" Include="System.Xml.Linq" />
+    <Reference PrivateAssets="All" Include="Microsoft.CSharp" />
+    <Reference PrivateAssets="All" Include="System.Net.Http" />
+    <Reference PrivateAssets="All" Include="System.Xml" />
+    <Reference PrivateAssets="All" Include="Unity.Postprocessing.Runtime">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="UnityEngine">
+      <HintPath>..\PlasmaAPI\bin\x64\Debug\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="UnityEngine.AudioModule">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="UnityEngine.CoreModule">
+      <HintPath>..\PlasmaAPI\bin\x64\Debug\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="UnityEngine.PhysicsModule">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="UnityEngine.TerrainModule">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="UnityEngine.UIModule">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference PrivateAssets="All" Include="UnityEngine.VideoModule">
+      <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AssimpNet">
+      <Version>4.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="IndexRange">
+      <Version>1.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="StbImageSharp">
+      <Version>2.27.13</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InventoryDescriptionLoader.cs" />
+    <Compile Include="DataProcessor.cs" />
+    <Compile Include="DirectoryProcessor.cs" />
+    <Compile Include="IconMapProcessor.cs" />
+    <Compile Include="Initialization.cs" />
+    <Compile Include="LoadGestaltFormat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RendProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlasmaAPI\PlasmaMLL.csproj">
+      <Project>{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}</Project>
+      <Name>PlasmaMLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlasmaDevToolkit\PlasmaDevToolkit.csproj">
+      <Project>{f823247d-68cb-48ca-913f-4bb36ea958e1}</Project>
+      <Name>PlasmaDevToolkit</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

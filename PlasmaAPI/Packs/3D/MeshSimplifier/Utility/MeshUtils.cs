@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace PlasmaAPI.Packs.MeshUtil
+namespace Plasma.Packs.MeshUtil
 {
     /// <summary>
     /// Contains utility methods for meshes.

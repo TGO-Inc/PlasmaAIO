@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PlasmaAPI.Application
+namespace Plasma.Application
 {
     [PublicAPI]
     public static class PlasmaGame

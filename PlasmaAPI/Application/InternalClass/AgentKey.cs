@@ -11,7 +11,7 @@ using static GameClass::TheraBytes.BetterUi.BetterButton;
 using System.Security.Cryptography;
 using System.Security.Policy;
 
-namespace PlasmaAPI.Application.InternalClass
+namespace Plasma.Application.InternalClass
 {
     internal class AgentKey : IEquatable<AgentKey>
     {

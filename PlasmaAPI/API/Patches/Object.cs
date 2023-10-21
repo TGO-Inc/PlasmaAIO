@@ -1,12 +1,12 @@
 ﻿extern alias GameClass;
 using GameClass;
 using HarmonyLib;
-using PlasmaAPI.API.Classes;
+using Plasma.API.Classes;
 using System;
 using System.Linq;
 using UnityEngine;
 
-namespace PlasmaAPI.API.Patches
+namespace Plasma.API.Patches
 {
     [HarmonyPatch(typeof(UnityEngine.Object))]
     internal class ObjectPatchClass

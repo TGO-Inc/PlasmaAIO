@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace PlasmaAPI.API.Classes
+namespace Plasma.API.Classes
 {
     internal class ShaderMaterial : Material
     {

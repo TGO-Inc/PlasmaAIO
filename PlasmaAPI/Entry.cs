@@ -1,33 +1,37 @@
 ﻿
 extern alias GameClass;
 using HarmonyLib;
-using PlasmaAPI.API.GameHooks;
-using PlasmaAPI.API.Patches;
-using PlasmaAPI.Application;
-using PlasmaAPI.PatchUtil;
+using Plasma.API.GameHooks;
+using Plasma.API.Patches;
+using Plasma.Application;
+using Plasma.PatchUtil;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
 using UnityEngine;
-
 using System;
 using System.Security;
 using System.Runtime.CompilerServices;
+using Plasma.API.Classes;
+using PrefabUtil.Extensions;
+using Plasma.Mods;
 
 namespace Doorstop
 {
     public class Entrypoint
     {
-        
+
         private static Assembly DevToolkit;
         private static object DevToolkitInstance;
         private static DirectoryInfo BaseDirectory;
         private static Assembly CurrentAssembly;
         private static Assembly MapAssembly;
+        private static string _nameSpace = null;
+        internal static string NameSpace => _nameSpace ??= typeof(ModContainer_EMPTY_).Namespace.Split('.').MaxLength(2).Join(".");
         internal static Assembly AssemblyCSharp;
         internal static AppDomain CurrentDomain;
-        
+
 
         [STAThread]
         public static void Start()
@@ -82,13 +86,13 @@ namespace Doorstop
         private static void InitializeAPI()
         {
             AssemblyCSharp = CurrentDomain.Load(new AssemblyName("Assembly-CSharp"));
-            
+
             Type EnumResult = typeof(Enum).GetNestedType("EnumResult", BindingFlags.NonPublic);
             var original = typeof(Enum).GetRuntimeMethods().Where(m => m.Name.Equals("TryParseEnum")).FirstOrDefault();
             var target = typeof(EnumPatch).GetRuntimeMethods().Where(m => m.Name.Equals("TryParseEnum")).FirstOrDefault();
             var tinfo = target.MakeGenericMethod(EnumResult);
             PatchManager.Patch.Patch(original, postfix: new HarmonyMethod(tinfo));
-                
+
             original = typeof(Enum).GetRuntimeMethods().Where(m => m.Name.Equals("GetNames")).FirstOrDefault();
             target = typeof(EnumPatch).GetRuntimeMethods().Where(m => m.Name.Equals("GetNames")).FirstOrDefault();
             PatchManager.Patch.Patch(original, postfix: new HarmonyMethod(target));
@@ -116,7 +120,7 @@ namespace Doorstop
                     PatchManager.CreatePatch<ComponentItem>("Assembly-CSharp", PatchType.Prefix);
                     PatchManager.CreatePatch<Device>("Assembly-CSharp", PatchType.Prefix);
 
-                    PatchManager.CreatePatch<PlasmaAPI.API.Patches.Resources>("UnityEngine.CoreModule", PatchType.Postfix);
+                    PatchManager.CreatePatch<Plasma.API.Patches.Resources>("UnityEngine.CoreModule", PatchType.Postfix);
                     PatchManager.CreatePatch<VFXComponent>("Assembly-CSharp", PatchType.Prefix);
                     PatchManager.CreatePatch<FemaleSocketPoint>("Assembly-CSharp", PatchType.Prefix);
 
@@ -165,7 +169,7 @@ namespace Doorstop
         }
         private static void LoadMods()
         {
-            string path = Path.Combine(BaseDirectory.FullName, "Mods");
+            string path = Path.Combine(Entrypoint.BaseDirectory.FullName, "Mods");
             DirectoryInfo mods = new DirectoryInfo(path);
 
             if (!mods.Exists)
@@ -184,7 +188,6 @@ namespace Doorstop
                 LoadModFromFile(file);
             }
         }
-
         internal static void Log(string message)
         {
             if (DevToolkit != null)
@@ -192,9 +195,11 @@ namespace Doorstop
                 Type @class = DevToolkit.GetTypes().Where(t => t.Namespace.Equals("PlasmaDevToolkit.Overrides") && t.Name.Equals("Console")).FirstOrDefault();
                 MethodInfo logger = @class.GetRuntimeMethods().Where(m => m.Name.Equals("FormatMessage")).FirstOrDefault();
                 logger.Invoke(DevToolkitInstance, new object[] { LogType.Log, GameClass.LoggerController.LogClass.Generic, message });
+
+                // File.AppendAllText("log.txt", message + Environment.NewLine);
             }
         }
-        
+
         private static void LoadModFromFile(FileInfo file)
         {
             try
@@ -202,24 +207,31 @@ namespace Doorstop
                 var asm = CurrentDomain.Load(File.ReadAllBytes(file.FullName));
 
                 Log("Loaded DLL: " + file.Name);
-                
+                string modNS = Entrypoint.NameSpace + '.' + Path.GetFileNameWithoutExtension(file.Name);
+
                 Type entry_class = asm.GetTypes().Where(t =>
-                    t.Namespace.Equals("PlasmaAPI.Mods." + Path.GetFileNameWithoutExtension(file.Name))
+                    t.Namespace.Equals(modNS)
                     && t.Name.Equals("Initialization")
                 ).FirstOrDefault() ?? throw new Exception("class is null");
 
                 var ModInstance = Activator.CreateInstance(entry_class) ?? throw new Exception("instance is null");
-                
+
                 MethodInfo method = entry_class.GetRuntimeMethods()
                     .Where(m => m.Name.Equals("Start"))
                     .FirstOrDefault() ?? throw new Exception("method is null");
-                
+
                 method.Invoke(ModInstance, new object[0]);
 
                 Log("Mod Initialized: " + file.Name);
             }
             catch (Exception e)
             {
+                try
+                {
+                    AssemblyName.GetAssemblyName(file.FullName);
+                    Log(e.ToString());
+                }
+                catch { }
                 // this could be normal, an example is when loading non NET dll files on accident
                 // File.WriteAllText("mod_load_error.txt", e.ToString());
             }
@@ -241,6 +253,6 @@ namespace Doorstop
                 File.WriteAllText("assembly.log", e.ToString());
             }
         }
-        
+
     }
 }

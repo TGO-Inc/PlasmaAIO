@@ -1,7 +1,7 @@
 ﻿extern alias GameClass;
-using PlasmaAPI.Application;
+using Plasma.Application;
 
-namespace PlasmaAPI.API.Patches
+namespace Plasma.API.Patches
 {
     internal class Holder
     {

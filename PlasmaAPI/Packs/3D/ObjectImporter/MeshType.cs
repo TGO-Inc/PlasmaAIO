@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlasmaAPI.Packs
+namespace Plasma.Packs
 {
     public enum MeshType
     {

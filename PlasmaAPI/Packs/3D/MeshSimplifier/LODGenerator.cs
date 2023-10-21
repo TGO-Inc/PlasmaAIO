@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace  PlasmaAPI.Packs.MeshUtil
+namespace  Plasma.Packs.MeshUtil
 {
     /// <summary>
     /// Contains methods for generating LODs (level of details) for game objects.

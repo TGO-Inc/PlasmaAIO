@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PlasmaAPI.Mods.MY_FIRST_MOD.Duck
+namespace Plasma.Mods.MY_FIRST_MOD.Duck
 {
     internal class DuckDriver : ComponentDriver
     {

@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-using PlasmaAPI.Packs.MeshUtil.Internal;
+using Plasma.Packs.MeshUtil.Internal;
 
-namespace PlasmaAPI.Packs.MeshUtil
+namespace Plasma.Packs.MeshUtil
 {
     /// <summary>
     /// The mesh simplifier.

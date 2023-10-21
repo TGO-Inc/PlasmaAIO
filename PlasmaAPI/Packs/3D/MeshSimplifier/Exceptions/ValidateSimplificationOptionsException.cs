@@ -1,6 +1,6 @@
 using System;
 
-namespace   PlasmaAPI.Packs.MeshUtil
+namespace   Plasma.Packs.MeshUtil
 {
     /// <summary>
     /// An exception thrown when validating simplification options.

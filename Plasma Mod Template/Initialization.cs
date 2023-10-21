@@ -1,10 +1,10 @@
 ﻿
-using PlasmaAPI.API;
-using PlasmaAPI.Application;
-using PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts;
+using Plasma.API;
+using Plasma.Application;
+using Plasma.Mods.MY_FIRST_MOD.Gestalts;
 using System.IO;
 
-namespace PlasmaAPI.Mods.MY_FIRST_MOD
+namespace Plasma.Mods.MY_FIRST_MOD
 {
     public class Initialization
     {

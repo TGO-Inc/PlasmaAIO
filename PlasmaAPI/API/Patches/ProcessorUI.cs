@@ -3,7 +3,7 @@ extern alias PLibrary;
 using PLibrary;
 using GameClass;
 using HarmonyLib;
-using PlasmaAPI.Application.Game;
+using Plasma.Application.Game;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 
-namespace PlasmaAPI.API.Patches
+namespace Plasma.API.Patches
 {
     internal class ProcessorUICategoryItem
     {

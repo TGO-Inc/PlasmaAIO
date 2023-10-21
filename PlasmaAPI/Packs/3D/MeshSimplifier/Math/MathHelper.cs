@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace   PlasmaAPI.Packs.MeshUtil
+namespace   Plasma.Packs.MeshUtil
 {
     /// <summary>
     /// Math helpers.

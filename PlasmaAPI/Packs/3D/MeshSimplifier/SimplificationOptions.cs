@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-namespace PlasmaAPI.Packs.MeshUtil
+namespace Plasma.Packs.MeshUtil
 {
     /// <summary>
     /// Options for mesh simplification.

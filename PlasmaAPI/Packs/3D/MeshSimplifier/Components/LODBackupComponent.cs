@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace   PlasmaAPI.Packs.MeshUtil
+namespace   Plasma.Packs.MeshUtil
 {
     internal class LODBackupComponent : MonoBehaviour
     {

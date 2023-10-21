@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlasmaAPI.Application.InternalClass
+namespace Plasma.Application.InternalClass
 {
     internal class Crc32 : HashAlgorithm
     {

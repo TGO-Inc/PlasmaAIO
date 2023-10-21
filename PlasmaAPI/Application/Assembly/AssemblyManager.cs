@@ -2,7 +2,7 @@
 
 using Doorstop;
 using HarmonyLib;
-using PlasmaAPI.Application.Extensions;
+using Plasma.Application.Extensions;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static GameClass::VFXComponent;
 
-namespace PlasmaAPI.Application
+namespace Plasma.Application
 {
     public static class AssemblyManager
     {

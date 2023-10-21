@@ -2,8 +2,8 @@
 using Doorstop;
 using GameClass;
 using GameClass::TheraBytes.BetterUi;
-using PlasmaAPI.API.Classes;
-using PlasmaAPI.Application.InternalClass;
+using Plasma.API.Classes;
+using Plasma.Application.InternalClass;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace PlasmaAPI.API
+namespace Plasma.API
 {
     public class FileManager
     {

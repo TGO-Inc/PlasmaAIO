@@ -1,6 +1,6 @@
 ﻿using Doorstop;
 using HarmonyLib;
-using PlasmaAPI.Application;
+using Plasma.Application;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace PlasmaAPI.PatchUtil
+namespace Plasma.PatchUtil
 {
     public static class PatchManager
     {

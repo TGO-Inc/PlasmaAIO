@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PlasmaAPI.API.Patches
+namespace Plasma.API.Patches
 {
 
     [HarmonyPatch(typeof(GameClass.ComponentHandler))]
@@ -72,12 +72,14 @@ namespace PlasmaAPI.API.Patches
             massMultiplierField.SetValue(__instance, 1f);
 
             var physicMaterialField = AccessTools.Field(typeof(GameClass.ComponentHandler), "_physicMaterial");
-            var physicMaterial = new UnityEngine.PhysicMaterial();
-            physicMaterial.bounceCombine = PhysicMaterialCombine.Multiply;
-            physicMaterial.frictionCombine = PhysicMaterialCombine.Multiply;
-            physicMaterial.bounciness = GameClass.WorldController.defaultBounciness;
-            physicMaterial.dynamicFriction = GameClass.WorldController.defaultFriction;
-            physicMaterial.staticFriction = GameClass.WorldController.defaultFriction;
+            var physicMaterial = new UnityEngine.PhysicMaterial
+            {
+                bounceCombine = PhysicMaterialCombine.Multiply,
+                frictionCombine = PhysicMaterialCombine.Multiply,
+                bounciness = GameClass.WorldController.defaultBounciness,
+                dynamicFriction = GameClass.WorldController.defaultFriction,
+                staticFriction = GameClass.WorldController.defaultFriction
+            };
             physicMaterialField.SetValue(__instance, physicMaterial);
 
             var audioVolumeField = AccessTools.Property(typeof(GameClass.ComponentHandler), "audioVolume");

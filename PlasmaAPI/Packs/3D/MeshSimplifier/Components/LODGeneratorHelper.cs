@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace PlasmaAPI.Packs.MeshUtil
+namespace Plasma.Packs.MeshUtil
 {
     /// <summary>
     /// A LOD (level of detail) generator helper.

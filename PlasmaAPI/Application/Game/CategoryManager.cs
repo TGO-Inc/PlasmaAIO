@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PlasmaAPI.Application.Game
+namespace Plasma.Application.Game
 {
     public static class CategoryManager
     {
@@ -24,6 +24,7 @@ namespace PlasmaAPI.Application.Game
             string name = unique_id.ToString().ToUpperInvariant();
             if (AgentCategories.ContainsKey(name))
                 return AgentCategories[name];
+
             int hash = Math.Abs(name.GetHashCode()) + HashFactor;
             AgentCategories.TryAdd(name, (AgentCategoryEnum)hash);
             return (AgentCategoryEnum)hash;
@@ -33,6 +34,7 @@ namespace PlasmaAPI.Application.Game
             string name = unique_id.ToString().ToUpperInvariant();
             if (AgentGestaltEnum.ContainsKey(name))
                 return AgentGestaltEnum[name];
+
             int hash = Math.Abs(name.GetHashCode()) + HashFactor;
             AgentGestaltEnum.TryAdd(name, (AgentGestaltEnum)hash);
             return (AgentGestaltEnum)hash;
@@ -49,6 +51,7 @@ namespace PlasmaAPI.Application.Game
             name = name.ToUpperInvariant();
             if (ComponentCategories.ContainsKey(name))
                 return ComponentCategories[name];
+
             int hash = Math.Abs(name.GetHashCode()) + HashFactor;
             ComponentCategories.TryAdd(name, (AgentGestalt.ComponentCategories)(hash));
             return (AgentGestalt.ComponentCategories)hash;

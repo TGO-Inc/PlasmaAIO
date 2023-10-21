@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using UnityEngine;
 
-namespace   PlasmaAPI.Packs.MeshUtil.Internal
+namespace   Plasma.Packs.MeshUtil.Internal
 {
     internal class BlendShapeFrameContainer
     {

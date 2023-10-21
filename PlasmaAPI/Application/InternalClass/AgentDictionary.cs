@@ -2,11 +2,11 @@
 extern alias PLibrary;
 using PLibrary;
 using GameClass;
-using PlasmaAPI.API.Classes;
+using Plasma.API.Classes;
 using System;
 using System.Collections.Concurrent;
 
-namespace PlasmaAPI.Application.InternalClass
+namespace Plasma.Application.InternalClass
 {
     internal class AgentDictionary : ConcurrentDictionary<AgentKey, AbstractGestalt>
     {

@@ -2,9 +2,9 @@
 extern alias PLibrary;
 using PLibrary;
 using GameClass;
-using PlasmaAPI.API.Classes;
-using PlasmaAPI.Application.Game;
-using PlasmaAPI.Application.InternalClass;
+using Plasma.API.Classes;
+using Plasma.Application.Game;
+using Plasma.Application.InternalClass;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -17,11 +17,11 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static GameClass::VFXComponent;
 using System.CodeDom;
-using PlasmaAPI.Packs;
-using PlasmaAPI.API.Patches;
+using Plasma.Packs;
+using Plasma.API.Patches;
 using Doorstop;
 
-namespace PlasmaAPI.API
+namespace Plasma.API
 {
     public class ComponentManager
     {
@@ -224,6 +224,10 @@ namespace PlasmaAPI.API
             {
                 Patches.Resources.Components.Add(gestalt);
             }
+        }
+        public static void NewDyanamicComponent(object[] data, Func<DynamicGestalt, object[], bool> Callback)
+        {
+            Patches.Resources.DyanmicComponents.Add((data, Callback));
         }
     }
     public enum ComponentType

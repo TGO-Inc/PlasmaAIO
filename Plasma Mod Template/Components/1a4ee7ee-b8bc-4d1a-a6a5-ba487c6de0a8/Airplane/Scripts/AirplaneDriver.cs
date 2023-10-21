@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PlasmaAPI.Mods.MY_FIRST_MOD.Airplane
+namespace Plasma.Mods.MY_FIRST_MOD.Airplane
 {
     internal class AirplaneDriver : ComponentDriver
     {

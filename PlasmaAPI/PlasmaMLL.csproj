@@ -7,7 +7,7 @@
     <ProjectGuid>{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlasmaAPI</RootNamespace>
+    <RootNamespace>Plasma</RootNamespace>
     <AssemblyName>ModLoader</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -277,6 +277,7 @@
   <ItemGroup>
     <Compile Include="API\Classes\AbstractGestalt.cs" />
     <Compile Include="API\Classes\ComponentManager.cs" />
+    <Compile Include="API\Classes\DynamicGestalt.cs" />
     <Compile Include="Application\InternalClass\AgentKey.cs" />
     <Compile Include="Application\InternalClass\AgentDictionary.cs" />
     <Compile Include="Application\InternalClass\ByteArrayIndex.cs" />
@@ -298,7 +299,7 @@
     <Compile Include="Application\Extensions\ApiExtensions.cs" />
     <Compile Include="Application\Game\CategoryManager.cs" />
     <Compile Include="Application\InternalClass\GenericObject.cs" />
-    <Compile Include="API\Classes\GestaltInitializationData.cs" />
+    <Compile Include="API\Classes\CustomTextureOverride.cs" />
     <Compile Include="Application\PlasmaGame.cs" />
     <Compile Include="API\Classes\FileManager.cs" />
     <Compile Include="Entry.cs" />
@@ -332,6 +333,7 @@
     <Compile Include="Packs\3D\ObjectImporter\MeshType.cs" />
     <Compile Include="Packs\3D\ObjectImporter\ModelUtil.cs" />
     <Compile Include="Packs\3D\ObjectImporter\StreamAsIO.cs" />
+    <Compile Include="PatchUtil\ModContainer[EMPTY].cs" />
     <Compile Include="PatchUtil\PatchManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="API\Patches\System.Enum.cs" />

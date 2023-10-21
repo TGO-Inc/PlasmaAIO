@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntimeUnityEditor.Core", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostBuild", "PostBuild\PostBuild.csproj", "{D6C3DA4A-47B1-452C-B4A9-C4C3EB7DA67F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapMechanicMod", "ScrapMechanicMod\ScrapMechanicMod.csproj", "{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,14 @@ Global
 		{D6C3DA4A-47B1-452C-B4A9-C4C3EB7DA67F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D6C3DA4A-47B1-452C-B4A9-C4C3EB7DA67F}.Release|x64.ActiveCfg = Release|Any CPU
 		{D6C3DA4A-47B1-452C-B4A9-C4C3EB7DA67F}.Release|x64.Build.0 = Release|Any CPU
+		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Debug|x64.ActiveCfg = Debug|x64
+		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Debug|x64.Build.0 = Debug|x64
+		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Release|x64.ActiveCfg = Release|Any CPU
+		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,7 +3,7 @@ extern alias PLibrary;
 using PLibrary;
 using GameClass;
 using HarmonyLib;
-using PlasmaAPI.Application.Game;
+using Plasma.Application.Game;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +13,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using System.Xml.Linq;
-using PlasmaAPI.API.Classes;
+using Plasma.API.Classes;
 
-namespace PlasmaAPI.API.Patches
+namespace Plasma.API.Patches
 {
     internal class Device
     {

@@ -28,7 +28,7 @@
     <RegisterForComInterop>false</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>F:\SteamLibrary\steamapps\common\Plasma Demo\Mods\</OutputPath>
+    <OutputPath>F:\SteamLibrary\steamapps\common\Plasma\Mods\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -54,12 +54,11 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference PrivateAssets="All" Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Assembly-CSharp">
       <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Aliases>GameClass</Aliases>
     </Reference>
-    <Reference PrivateAssets="All" Include="Assembly-CSharp-firstpass">
+    <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>F:\SteamLibrary\steamapps\common\Plasma\Plasma_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference PrivateAssets="All" Include="DOTween">

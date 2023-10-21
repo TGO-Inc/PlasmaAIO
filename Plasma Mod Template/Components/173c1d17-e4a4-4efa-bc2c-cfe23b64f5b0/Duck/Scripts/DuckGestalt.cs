@@ -1,27 +1,27 @@
 ﻿extern alias PLibrary;
-using PlasmaAPI.API;
+using Plasma.API;
 using PLibrary;
 using System;
 using System.Collections.Generic;
-using PlasmaAPI.Application.Game;
+using Plasma.Application.Game;
 using UnityEngine;
-using PlasmaAPI.API.Classes;
+using Plasma.API.Classes;
 using System.IO;
 using System.Linq;
-using PlasmaAPI.Application.InternalClass;
-using PlasmaAPI.Packs;
-using PlasmaAPI.Application.Extensions;
-using PlasmaAPI.Mods.MY_FIRST_MOD.Duck;
+using Plasma.Application.InternalClass;
+using Plasma.Packs;
+using Plasma.Application.Extensions;
+using Plasma.Mods.MY_FIRST_MOD.Duck;
 using Assimp;
 using Newtonsoft.Json;
 
-namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
+namespace Plasma.Mods.MY_FIRST_MOD.Gestalts
 {
     internal class DuckGestalt : AbstractGestalt
     {
         private readonly Guid _guid;
         private readonly Vector3 _scaleOffset;
-        private readonly IEnumerable<ResourceStream> _mesh;
+        private readonly IEnumerable<(string Name, ResourceStream Data)> _mesh;
         private readonly Dictionary<string, ResourceStream> _tex;
         private readonly Type driver;
         private readonly CustomTextureOverride? _customTextureData;
@@ -29,7 +29,7 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
         {
             this._guid = Guid.Parse("173c1d17-e4a4-4efa-bc2c-cfe23b64f5b0");
             this._scaleOffset = Vector3.one;
-            this._mesh = FileManager.GetFilesInPath("Mesh", this.Guid, this).ToEnum();
+            this._mesh = FileManager.GetFilesInPath("Mesh", this.Guid, this);
             this._tex = FileManager.GetFilesInPath("Textures", this.Guid, this).ToDict();
             this._customTextureData = new CustomTextureOverride()
             {
@@ -83,9 +83,9 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
             this.componentPreview = Sprite.Create(uTexture, Rect.MinMaxRect(0, 0, uTexture.width, uTexture.height), new Vector2(uTexture.width / 2, uTexture.height / 2));
             this.componentReactsToRaycast = true;
             this.componentReactsToScaling = true;
-            this.componentScaleXLimits = new FloatRange(0.01f, 1000f);
-            this.componentScaleYLimits = new FloatRange(0.01f, 1000f);
-            this.componentScaleZLimits = new FloatRange(0.01f, 1000f);
+            this.componentScaleXLimits = new PLibrary.FloatRange(0.01f, 1000f);
+            this.componentScaleYLimits = new PLibrary.FloatRange(0.01f, 1000f);
+            this.componentScaleZLimits = new PLibrary.FloatRange(0.01f, 1000f);
             this.componentSupportSecondarySnappingPointChild = true;
             this.componentSuppressTerrainImpactSFX = false;
             this.componentVolumeControl = false;
@@ -120,7 +120,7 @@ namespace PlasmaAPI.Mods.MY_FIRST_MOD.Gestalts
 
         public override Guid Guid => _guid;
 
-        public override IEnumerable<ResourceStream> MeshResources => _mesh;
+        public override IEnumerable<(string Name, ResourceStream Data)> MeshResources => _mesh;
 
         public override Dictionary<string, ResourceStream> TextureResources => _tex;
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static UnityEngine.UI.GridLayoutGroup;
 
-namespace PlasmaAPI.API.Patches
+namespace Plasma.API.Patches
 {
     internal class FemaleSocketPoint
     {
