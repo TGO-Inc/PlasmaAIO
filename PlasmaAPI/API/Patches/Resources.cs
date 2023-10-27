@@ -28,14 +28,14 @@ namespace Plasma.API.Patches
             {
                 var newAry = __result.ToList();
                 ComponentManager.UpdateStaticReference(((AgentGestalt)newAry[0]).componentPrefab);
-                /*
+                
                 foreach (var Gestalt in Resources.Components)
                 {
                     AbstractGestalt new_comp = (AbstractGestalt)ScriptableObject.CreateInstance(Gestalt);                    
                     ComponentManager.ModdedComponents.TryAdd(new_comp);
                     newAry.Add(new_comp);
                 }
-                */
+                
                 foreach (var container in Resources.DyanmicComponents)
                 {
                     DynamicGestalt new_comp = (DynamicGestalt)ScriptableObject.CreateInstance(typeof(DynamicGestalt));

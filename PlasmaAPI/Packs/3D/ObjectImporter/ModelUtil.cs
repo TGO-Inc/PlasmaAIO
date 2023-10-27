@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Plasma.Packs.MeshUtil
 {
-    public class ModelUtil
+    internal class ModelUtil
     {
         private static readonly byte[] ColladaBytes = Encoding.ASCII.GetBytes("<COLLADA");
         private static readonly byte[] SvgBytes = Encoding.ASCII.GetBytes("<svg");

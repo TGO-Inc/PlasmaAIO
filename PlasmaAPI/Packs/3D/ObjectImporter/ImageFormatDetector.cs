@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Plasma.Packs.MeshUtil
 {
-    public enum ImageFormat
+    internal enum ImageFormat
     {
         Unknown,
         BMP,
@@ -19,7 +19,7 @@ namespace Plasma.Packs.MeshUtil
         TGA
     }
 
-    public static class ImageFormatDetector
+    internal static class ImageFormatDetector
     {
         public static ImageFormat DetectImageFormat(Stream stream)
         {

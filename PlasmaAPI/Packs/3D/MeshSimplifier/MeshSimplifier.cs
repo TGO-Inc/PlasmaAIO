@@ -14,7 +14,7 @@ namespace Plasma.Packs.MeshUtil
     /// The mesh simplifier.
     /// Deeply based on https://github.com/sp4cerat/Fast-Quadric-Mesh-Simplification but rewritten completely in C#.
     /// </summary>
-    public sealed class MeshSimplifier
+    internal sealed class MeshSimplifier
     {
         #region Consts & Static Read-Only
         private const int TriangleEdgeCount = 3;

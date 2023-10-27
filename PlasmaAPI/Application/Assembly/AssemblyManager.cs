@@ -20,8 +20,8 @@ namespace Plasma.Application
         public delegate void OnLoadedArg(params object[] args);
         public delegate void OnLoaded();
 
-        private static ConcurrentDictionary<int, List<Delegate>> DelegatesOnNum = new ConcurrentDictionary<int, List<Delegate>>();
-        internal static ConcurrentDictionary<string, AssemblyContainer> LoadedAssemblies = new ConcurrentDictionary<string, AssemblyContainer>()
+        private static readonly ConcurrentDictionary<int, List<Delegate>> DelegatesOnNum = new ConcurrentDictionary<int, List<Delegate>>();
+        internal static ConcurrentDictionary<string, AssemblyContainer> LoadedAssemblies { get; private set; } = new ConcurrentDictionary<string, AssemblyContainer>()
         {
             /*
             /// PRE LOADED SECTION

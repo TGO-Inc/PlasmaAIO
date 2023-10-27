@@ -34,7 +34,7 @@ using ImageProcessor.Processors;
 
 namespace Plasma.Packs
 {
-    public class MeshImporter
+    internal class MeshImporter
     {
         private static readonly ConcurrentDictionary<string, (GameObject, IEnumerable<GameObject>)> SavedMeshData = new ConcurrentDictionary<string, (GameObject, IEnumerable<GameObject>)>();
         internal static (bool, ResourceStream) GetFileStream(string Texture, Dictionary<string, ResourceStream> FileStreams)
@@ -592,9 +592,6 @@ namespace Plasma.Packs
             {
                 alphaOverride = alpha.Data;
                 overrideAlpha = true;
-                Debug.LogWarning(result.Data.LongLength);
-                Debug.LogWarning(alphaOverride.LongLength);
-                Debug.LogWarning(alphaOverride[200] / 255f);
             }
 
             for (int y = 0; y < result.Height; y++)

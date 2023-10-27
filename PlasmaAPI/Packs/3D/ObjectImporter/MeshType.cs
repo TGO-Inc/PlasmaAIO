@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Plasma.Packs
 {
-    public enum MeshType
+    internal enum MeshType
     {
         Unknown,
         FBX,
