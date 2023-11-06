@@ -34,7 +34,7 @@ using ImageProcessor.Processors;
 
 namespace Plasma.Packs
 {
-    internal class MeshImporter
+    public class MeshImporter
     {
         private static readonly ConcurrentDictionary<string, (GameObject, IEnumerable<GameObject>)> SavedMeshData = new ConcurrentDictionary<string, (GameObject, IEnumerable<GameObject>)>();
         internal static (bool, ResourceStream) GetFileStream(string Texture, Dictionary<string, ResourceStream> FileStreams)

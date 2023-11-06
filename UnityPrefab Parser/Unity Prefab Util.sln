@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity Prefab Util", "UnityPrefab Parser\Unity Prefab Util.csproj", "{DDF0789E-5FC1-4ABD-A283-D20997F12502}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|x64.ActiveCfg = Debug|x64
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|x64.Build.0 = Debug|x64
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|x64.ActiveCfg = Release|x64
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F2017CE-1622-41BA-B1EF-B0106DB20FF6}
+	EndGlobalSection
+EndGlobal

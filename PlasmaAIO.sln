@@ -14,13 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plasma Mod Template", "Plas
 		{0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73} = {0F7C5A3D-3A62-47D3-B41E-637EF6B9AE73}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity Prefab Util", "..\UnityPrefab Parser\UnityPrefab Parser\Unity Prefab Util.csproj", "{DDF0789E-5FC1-4ABD-A283-D20997F12502}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntimeUnityEditor.Core", "..\RuntimeUnityEditor\RuntimeUnityEditor\RuntimeUnityEditor.Core.csproj", "{A66A97B4-F32F-4748-8332-48F0876F0AAC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PostBuild", "PostBuild\PostBuild.csproj", "{D6C3DA4A-47B1-452C-B4A9-C4C3EB7DA67F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapMechanicMod", "ScrapMechanicMod\ScrapMechanicMod.csproj", "{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity Prefab Util", "UnityPrefab Parser\UnityPrefab Parser\Unity Prefab Util.csproj", "{DDF0789E-5FC1-4ABD-A283-D20997F12502}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,20 +58,6 @@ Global
 		{D6123884-07AE-4BC8-ABC5-ECDCA3FA930E}.Release|Any CPU.Build.0 = Release|x64
 		{D6123884-07AE-4BC8-ABC5-ECDCA3FA930E}.Release|x64.ActiveCfg = Release|x64
 		{D6123884-07AE-4BC8-ABC5-ECDCA3FA930E}.Release|x64.Build.0 = Release|x64
-		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|x64.ActiveCfg = Debug|x64
-		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|x64.ActiveCfg = Release|x64
-		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|x64.Build.0 = Release|x64
-		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Release|x64.ActiveCfg = Release|Any CPU
-		{A66A97B4-F32F-4748-8332-48F0876F0AAC}.Release|x64.Build.0 = Release|Any CPU
 		{D6C3DA4A-47B1-452C-B4A9-C4C3EB7DA67F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6C3DA4A-47B1-452C-B4A9-C4C3EB7DA67F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6C3DA4A-47B1-452C-B4A9-C4C3EB7DA67F}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -90,6 +74,14 @@ Global
 		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Release|x64.ActiveCfg = Release|Any CPU
 		{DD0B6278-1A23-4839-8DF7-38A8669D3CCD}.Release|x64.Build.0 = Release|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|x64.ActiveCfg = Debug|x64
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Debug|x64.Build.0 = Debug|x64
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|x64.ActiveCfg = Release|x64
+		{DDF0789E-5FC1-4ABD-A283-D20997F12502}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

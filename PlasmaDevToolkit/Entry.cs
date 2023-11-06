@@ -8,9 +8,11 @@ using Plasma.Application;
 using Plasma.PatchUtil;
 using UnityEngine;
 using System.Threading.Tasks;
+/*
 using Plasma.Mods.RuntimeUnityEditor.Core;
 using Plasma.Mods.RuntimeUnityEditor.Core.Utils;
 using Plasma.Mods.RuntimeUnityEditor.Core.Utils.Abstractions;
+*/
 
 namespace PlasmaDevToolkit
 {
@@ -56,7 +58,7 @@ namespace PlasmaDevToolkit
 
         private void PlasmaGame_OnGameInitialization()
         {
-            Creator.Create();
+            //Creator.Create();
         }
 
         private void PatchLogging()
@@ -82,6 +84,7 @@ namespace PlasmaDevToolkit
                 Console.FormatMessage(type, GameClass.LoggerController.LogClass.Generic, condition);
         }
     }
+    /*
     internal class Creator
     {
         public static void Create()
@@ -154,4 +157,5 @@ namespace PlasmaDevToolkit
         }
 
     }
+    */
 }
