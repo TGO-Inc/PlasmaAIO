@@ -51,11 +51,13 @@ namespace Plasma.API
             foreach (var item in fileList)
                 yield return (GetFileName(item), new ResourceStream(assembly.GetManifestResourceStream(item)));
         }
+
         internal static string GetFileName(string n)
         {
             var r = n.Split('.');
             return r[r.Length - 2];
         }
+
         internal static ResourceStream LoadFile(string file, Assembly asm)
         {
             var resourceName = string.Empty;

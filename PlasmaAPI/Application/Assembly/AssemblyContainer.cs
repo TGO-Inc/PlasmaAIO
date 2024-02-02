@@ -56,7 +56,7 @@ namespace Plasma.Application
         {
             AssemblyLoaded = new ConcurrentDictionary<Guid, Delegate>();
             Assembly = assembly;
-            Type = assembly.GetName().Name.ToLower() switch
+            Type = assembly.GetName().Name.ToLowerInvariant() switch
             {
                 string n when n.Contains("system") => AssemblyType.System,
                 string n when n.Contains("unity") => AssemblyType.Unity,

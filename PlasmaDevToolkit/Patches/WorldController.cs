@@ -1,16 +1,6 @@
 ﻿extern alias GameClass;
 extern alias PLibrary;
-using PLibrary;
 using GameClass;
-
-using Newtonsoft.Json.Bson;
-using Plasma.API.Patches;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
-using UnityEngine;
 
 namespace PlasmaDevToolkit.Patches
 {

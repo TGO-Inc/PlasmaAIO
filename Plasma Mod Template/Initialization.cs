@@ -25,6 +25,8 @@ namespace Plasma.Mods.MY_FIRST_MOD
             ComponentManager.NewComponent(typeof(AirplaneGestalt));
             ComponentManager.NewComponent(typeof(CarGestalt));
             ComponentManager.NewComponent(typeof(DuckGestalt));
+
+
         }
 
         private void PlasmaGame_OnGameInitialization()

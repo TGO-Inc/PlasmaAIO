@@ -335,7 +335,6 @@
     <Compile Include="Packs\3D\ObjectImporter\MeshType.cs" />
     <Compile Include="Packs\3D\ObjectImporter\ModelUtil.cs" />
     <Compile Include="Packs\3D\ObjectImporter\StreamAsIO.cs" />
-    <Compile Include="PatchUtil\ModContainer[EMPTY].cs" />
     <Compile Include="PatchUtil\PatchManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="API\Patches\System.Enum.cs" />

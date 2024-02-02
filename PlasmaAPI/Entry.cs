@@ -8,27 +8,19 @@ using Plasma.PatchUtil;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Xml.Linq;
 using UnityEngine;
 using System;
-using System.Security;
-using System.Runtime.CompilerServices;
-using Plasma.API.Classes;
 using PrefabUtil.Extensions;
-using Plasma.Mods;
 
 namespace Doorstop
 {
     public class Entrypoint
     {
-
         private static Assembly DevToolkit;
         private static object DevToolkitInstance;
         private static DirectoryInfo BaseDirectory;
         private static Assembly CurrentAssembly;
         private static Assembly MapAssembly;
-        private static string _nameSpace = null;
-        internal static string NameSpace => _nameSpace ??= typeof(ModContainer_EMPTY_).Namespace.Split('.').MaxLength(2).Join(".");
         internal static Assembly AssemblyCSharp;
         internal static AppDomain CurrentDomain;
 
@@ -103,6 +95,7 @@ namespace Doorstop
 
             ContinuePatching();
         }
+
         private static void ContinuePatching()
         {
             PlasmaGame.OnGameInitialization += InitializeUpdateHandle;
@@ -133,6 +126,7 @@ namespace Doorstop
                         m.GetParameters().Length == 1 &&
                         m.GetParameters()[0].ParameterType.IsGenericParameter
                     );
+
                     // Make it a generic method for Object (or any other specific type if needed)
                     var originalMethodGeneric = originalMethod.MakeGenericMethod(typeof(UnityEngine.Object));
 
@@ -207,7 +201,7 @@ namespace Doorstop
                 var asm = CurrentDomain.Load(File.ReadAllBytes(file.FullName));
 
                 Log("Loaded DLL: " + file.Name);
-                string modNS = Entrypoint.NameSpace + '.' + Path.GetFileNameWithoutExtension(file.Name);
+                string modNS = "Plasma.Mods." + Path.GetFileNameWithoutExtension(file.Name);
 
                 Type entry_class = asm.GetTypes().Where(t =>
                     t.Namespace.Equals(modNS)

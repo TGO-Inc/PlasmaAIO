@@ -59,6 +59,7 @@ namespace PlasmaDevToolkit
         private void PlasmaGame_OnGameInitialization()
         {
             //Creator.Create();
+            //UnityEngine.AssetBundle
         }
 
         private void PatchLogging()

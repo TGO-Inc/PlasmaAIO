@@ -43,10 +43,7 @@ namespace Plasma.API.Patches
                     }
                 }
                 agent.CopyConfiguredToRuntimeProperties();
-                if (componentDriver != null)
-                {
-                    componentDriver.OnWireframeEnter();
-                }
+                componentDriver?.OnWireframeEnter();
 
                 return false;
             }

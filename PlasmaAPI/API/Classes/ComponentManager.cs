@@ -211,6 +211,7 @@ namespace Plasma.API
                 return null;
             }
         }
+
         public static GameObject GetNewAgentPrefab(Guid guid)
         {
             var holder = new GameObject() { name = guid.ToString() };
@@ -218,6 +219,7 @@ namespace Plasma.API
             holder.SetActive(false);
             return holder;
         }
+
         public static void NewComponent(Type gestalt)
         {
             if (!Patches.Resources.Components.Contains(gestalt))
@@ -225,6 +227,7 @@ namespace Plasma.API
                 Patches.Resources.Components.Add(gestalt);
             }
         }
+
         public static void NewDyanamicComponent(object[] data, Func<DynamicGestalt, object[], bool> Callback)
         {
             Patches.Resources.DyanmicComponents.Add((data, Callback));

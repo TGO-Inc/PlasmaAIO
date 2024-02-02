@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using Plasma.Application.Game;
 using UnityEngine;
 using Plasma.API.Classes;
-using System.IO;
-using System.Linq;
 using Plasma.Application.InternalClass;
 using Plasma.Packs;
 using Plasma.Application.Extensions;

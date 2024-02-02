@@ -234,13 +234,11 @@ namespace Plasma.Mods.ScrapMechanicMod
         {
             var outputPath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
 
-            using (Bitmap bitmap = new Bitmap(image.Width, image.Height, PixelFormat.Format32bppArgb))
-            {
-                var bitmapData = bitmap.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.WriteOnly, bitmap.PixelFormat);
-                System.Runtime.InteropServices.Marshal.Copy(image.Data, 0, bitmapData.Scan0, image.Data.Length);
-                bitmap.UnlockBits(bitmapData);
-                bitmap.Save(outputPath, ImageFormat.Png);
-            }
+            using Bitmap bitmap = new Bitmap(image.Width, image.Height, PixelFormat.Format32bppArgb);
+            var bitmapData = bitmap.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.WriteOnly, bitmap.PixelFormat);
+            System.Runtime.InteropServices.Marshal.Copy(image.Data, 0, bitmapData.Scan0, image.Data.Length);
+            bitmap.UnlockBits(bitmapData);
+            bitmap.Save(outputPath, ImageFormat.Png);
         }
 
         private static string GetGameDir()

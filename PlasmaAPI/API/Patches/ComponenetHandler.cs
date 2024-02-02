@@ -117,6 +117,7 @@ namespace Plasma.API.Patches
 
             return false;
         }
+
         public static bool ValidateCurrentFemaleSocket(GameClass.ComponentHandler __instance)
         {
             var femaleSocketPointsField = AccessTools.Field(typeof(GameClass.ComponentHandler), "_femaleSocketPoints");
